@@ -1,0 +1,42 @@
+[
+  {
+    "theme": "light",
+    "state": "idle",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "complete",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "inspector",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "drawer",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "idle",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "complete",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "inspector",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "drawer",
+    "violations": []
+  }
+]

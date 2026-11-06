@@ -1,0 +1,1 @@
+import{lessons}from'../src/lessons';import{isPacket}from'../src/types';import{pcap}from'../src/wire/pcap';import{writeFileSync}from'node:fs';for(const l of lessons)writeFileSync(`qa/${l.id}.pcap`,pcap(l.steps.flatMap(s=>s.events).filter(isPacket)));

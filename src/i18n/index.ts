@@ -1,0 +1,9 @@
+import en,{ui}from'./en';import{read,write}from'../state/storage';import type{Lesson,Fact}from'../types';
+export const locales=[['en','English'],['es','Español'],['pt','Português'],['fr','Français'],['de','Deutsch'],['tr','Türkçe'],['uk','Українська'],['id','Bahasa Indonesia'],['ja','日本語'],['zh','简体中文'],['zh-TW','繁體中文'],['ko','한국어'],['hi','हिन्दी'],['ar','العربية'],['he','עברית']];
+type Locale=typeof en;let current:Locale=en;export let language='en';
+const loaders=import.meta.glob<{default:Locale}>('./*.locale.ts');
+export const t=(key:string)=>current.ui[key]||ui[key]||key;export const tr=(value:string)=>current.text[value]||value;
+export function labels(root:ParentNode=document){root.querySelectorAll<HTMLElement>('[data-t-label]').forEach(el=>{el.textContent=t(el.dataset.tLabel!)})}
+export async function changeLanguage(code:string){if(!locales.some(([c])=>c===code))code='en';if(code!=='en'){const load=loaders[`./${code}.locale.ts`];if(!load)throw new Error(`Language ${code} is not available`);current=(await load()).default}else current=en;language=code;document.documentElement.lang=code;document.documentElement.dir=['ar','he'].includes(code)?'rtl':'ltr';write('lang',code);labels()}
+export async function restoreLanguage(){await changeLanguage(read<string>('lang','en'))}
+export function localizedLesson(l:Lesson):Lesson{const facts=(f:Fact[]):Fact[]=>f.map(([a,b])=>[tr(a),tr(b)]);return{...l,title:tr(l.title),overview:{full:tr(l.overview.full),description:tr(l.overview.description),facts:facts(l.overview.facts)},outro:{title:tr(l.outro.title),desc:tr(l.outro.desc),text:tr(l.outro.text),facts:facts(l.outro.facts)},steps:l.steps.map(s=>({...s,title:tr(s.title),desc:tr(s.desc),detail:tr(s.detail),facts:facts(s.facts)}))}}

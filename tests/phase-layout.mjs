@@ -1,0 +1,4 @@
+import{chromium}from'@playwright/test';
+const b=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});const p=await b.newPage();
+for(const width of [1672,1180,900,640,375]){await p.setViewportSize({width,height:900});await p.goto('http://127.0.0.1:5173');await p.evaluate(()=>document.fonts.ready);console.log(width,await p.evaluate(()=>({layout:document.documentElement.dataset.layout,overflow:document.documentElement.scrollWidth>innerWidth})));await p.screenshot({path:`qa/phase-3-${width}.png`,fullPage:true})}
+await p.setViewportSize({width:1180,height:900});for(const theme of ['light','dark']){await p.locator(`.theme-toggle [data-theme="${theme}"]`).click();await p.reload();console.log(theme,await p.evaluate(()=>({theme:document.documentElement.dataset.theme,bg:getComputedStyle(document.documentElement).backgroundColor})));}await b.close();

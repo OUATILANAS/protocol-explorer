@@ -1,0 +1,10 @@
+import{readFileSync,writeFileSync,existsSync}from'node:fs';
+const{ui,strings}=JSON.parse(readFileSync('qa/translation-inventory.json','utf8'));const languages=['es','pt','fr','de','tr','uk','id','ja','zh','zh-TW','ko','hi','ar','he'];
+const cachePath='qa/translation-cache.json';const cache=existsSync(cachePath)?JSON.parse(readFileSync(cachePath,'utf8')):{};
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function translate(q,code){for(let attempt=0;attempt<5;attempt++){try{const url='https://translate.googleapis.com/translate_a/single?'+new URLSearchParams({client:'gtx',sl:'en',tl:code==='zh'?'zh-CN':code,dt:'t',q});const response=await fetch(url,{signal:AbortSignal.timeout(30000)});if(!response.ok)throw Error(String(response.status));const data=await response.json();return data[0].map(x=>x[0]||'').join('')}catch(e){if(attempt===4)throw e;await wait(1000*(attempt+1))}}}
+const batches=[];let batch=[],len=0;for(const s of strings){if(len+s.length>2700&&batch.length){batches.push(batch);batch=[];len=0}batch.push(s);len+=s.length+1}if(batch.length)batches.push(batch);
+let queue=languages.flatMap(code=>batches.map((batch,i)=>({code,batch,i})));let finished=0;
+async function worker(){while(queue.length){const{code,batch,i}=queue.shift();const key=code+':'+i;if(!cache[key]){const result=await translate(batch.join('\n'),code);const lines=result.split('\n');if(lines.length!==batch.length){const entries=[];for(const text of batch)entries.push(await translate(text,code));cache[key]=entries}else cache[key]=lines;writeFileSync(cachePath,JSON.stringify(cache))}finished++;if(finished%20===0)console.log('Translated batches',finished,'/',languages.length*batches.length)}}
+await Promise.all(Array.from({length:4},worker));
+for(const code of languages){const text={};batches.forEach((batch,i)=>batch.forEach((s,j)=>{text[s]=cache[code+':'+i][j]}));const translatedUI=Object.fromEntries(Object.entries(ui).map(([k,v])=>[k,text[v]||v]));writeFileSync(`src/i18n/${code}.locale.ts`,'export default '+JSON.stringify({ui:translatedUI,text})+';\n')}console.log('Generated',languages.length,'lazy locale modules,',strings.length,'strings each.');

@@ -1,0 +1,177 @@
+{
+  "errors": [],
+  "checks": [
+    {
+      "width": 1672,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 1672,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "width": 1180,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 1180,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 900,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "width": 640,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 640,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "id": "http",
+      "complete": true,
+      "rows": 7,
+      "expected": 7
+    },
+    {
+      "id": "https",
+      "complete": true,
+      "rows": 12,
+      "expected": 12
+    },
+    {
+      "id": "tcp",
+      "complete": true,
+      "rows": 16,
+      "expected": 16
+    },
+    {
+      "id": "udp",
+      "complete": true,
+      "rows": 7,
+      "expected": 7
+    },
+    {
+      "id": "ip",
+      "complete": true,
+      "rows": 4,
+      "expected": 4
+    },
+    {
+      "id": "dns",
+      "complete": true,
+      "rows": 8,
+      "expected": 8
+    },
+    {
+      "id": "dhcp",
+      "complete": true,
+      "rows": 6,
+      "expected": 6
+    },
+    {
+      "id": "icmp",
+      "complete": true,
+      "rows": 7,
+      "expected": 7
+    },
+    {
+      "id": "smtp",
+      "complete": true,
+      "rows": 30,
+      "expected": 30
+    },
+    {
+      "id": "pop3",
+      "complete": true,
+      "rows": 17,
+      "expected": 17
+    },
+    {
+      "id": "imap",
+      "complete": true,
+      "rows": 19,
+      "expected": 19
+    },
+    {
+      "id": "ftp",
+      "complete": true,
+      "rows": 21,
+      "expected": 21
+    },
+    {
+      "id": "ssh",
+      "complete": true,
+      "rows": 17,
+      "expected": 17
+    },
+    {
+      "id": "tls",
+      "complete": true,
+      "rows": 15,
+      "expected": 15
+    },
+    {
+      "language": "fr",
+      "dir": "ltr",
+      "title": "Détails de l'étape",
+      "description": "Un SYN démarre la connexion et propose des numéros de séquence. Le serveur en accuse réception avec SYN-ACK et le client envoie l'ACK final. Les deux points de terminaison suivent désormais le flux d’octets."
+    },
+    {
+      "language": "ar",
+      "dir": "rtl",
+      "title": "نظرة عامة على البروتوكول",
+      "description": "يطلب المتصفح موردًا، ويجيب الخادم بالحالة والعناوين والمحتوى. اتبع طلب الصفحة من البحث عن الاسم الأول إلى ملف HTML الذي يصل إلى شاشتك."
+    },
+    {
+      "language": "he",
+      "dir": "rtl",
+      "title": "סקירת פרוטוקול",
+      "description": "דפדפן מבקש משאב, ושרת עונה עם סטטוס, כותרות ותוכן. עקוב אחר בקשת דף מחיפוש השם הפרטי ועד ל-HTML שמגיע למסך שלך."
+    },
+    {
+      "language": "ja",
+      "dir": "ltr",
+      "title": "プロトコルの概要",
+      "description": "ブラウザはリソースを要求し、サーバーはステータス、ヘッダー、コンテンツで応答します。名前の検索から画面に表示される HTML まで、ページ リクエストに従います。"
+    },
+    {
+      "language": "en",
+      "dir": "ltr",
+      "title": "Protocol overview",
+      "description": "A browser asks for a resource, and a server answers with a status, headers and content. Follow a page request from the first name lookup to the HTML that arrives at your screen."
+    },
+    {
+      "theme": "light",
+      "violations": []
+    },
+    {
+      "theme": "dark",
+      "violations": []
+    }
+  ]
+}

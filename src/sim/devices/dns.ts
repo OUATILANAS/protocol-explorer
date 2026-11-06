@@ -1,0 +1,1 @@
+export const dns=()=>[0,-17,-34].map(y=>`<g transform="translate(0 ${y})"><path class="device-fill" d="m-32 0 35-20L35-1v15L0 34-32 15Z"/><path d="m-32 0 35-20L35-1 0 19Zm0 0v15L0 34l35-20V-1M0 19v15m-25-24 12 7M6 22l6-3m5-3 6-3"/><circle class="led" cx="-25" cy="11" r="1"/></g>`).join('');
