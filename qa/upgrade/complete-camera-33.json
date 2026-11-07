@@ -1,0 +1,311 @@
+[
+  {
+    "name": "reference",
+    "data": {
+      "view": "-41.26 273.10 470.00 331.38",
+      "box": {
+        "x": 488.296875,
+        "y": 77.359375,
+        "width": 833.03125,
+        "height": 587.34375
+      },
+      "client": {
+        "x": 60,
+        "y": 334,
+        "width": 254.48001098632812,
+        "height": 198
+      },
+      "children": [
+        {
+          "class": "device laptop",
+          "bbox": {
+            "x": 155.1300048828125,
+            "y": 373.5,
+            "width": 159.35000610351562,
+            "height": 158.5
+          },
+          "transform": null,
+          "style": "none"
+        },
+        {
+          "class": "node-label",
+          "bbox": {
+            "x": 73,
+            "y": 478.7664794921875,
+            "width": 98.98263549804688,
+            "height": 36.6187744140625
+          },
+          "transform": null,
+          "style": "none"
+        },
+        {
+          "class": "url-holder",
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 159.40000915527344,
+            "height": 58
+          },
+          "transform": "translate(60 334)",
+          "style": "matrix(1, 0, 0, 1, 60, 334)"
+        }
+      ]
+    }
+  },
+  {
+    "name": "local",
+    "data": {
+      "view": "-47.76 267.31 470.00 331.38",
+      "box": {
+        "x": 488.296875,
+        "y": 77.359375,
+        "width": 833.03125,
+        "height": 587.34375
+      },
+      "client": {
+        "x": 59.999996185302734,
+        "y": 334,
+        "width": 254.48001098632812,
+        "height": 198
+      },
+      "children": [
+        {
+          "class": "device-art",
+          "bbox": {
+            "x": 155.1300048828125,
+            "y": 373.5,
+            "width": 159.35000610351562,
+            "height": 158.5
+          },
+          "transform": null,
+          "style": "none"
+        },
+        {
+          "class": "node-label",
+          "bbox": {
+            "x": 73,
+            "y": 478.7664794921875,
+            "width": 98.98263549804688,
+            "height": 36.6187744140625
+          },
+          "transform": null,
+          "style": "none"
+        },
+        {
+          "class": null,
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 159.40000915527344,
+            "height": 58
+          },
+          "transform": "translate(200 392) scale(1.000) translate(-140 -58)",
+          "style": "matrix(1, 0, 0, 1, 60, 334)"
+        }
+      ],
+      "camera": {
+        "current": [
+          -47.7599983215332,
+          267.3089995123232,
+          470,
+          331.38200097535355
+        ],
+        "target": [
+          -47.7599983215332,
+          267.3089995123232,
+          470,
+          331.38200097535355
+        ],
+        "from": [
+          59.00000762939453,
+          11.911570818509972,
+          850.6599655151367,
+          599.7731947277261
+        ],
+        "elapsed": 5899.799999999999
+      },
+      "scene": {
+        "nodes": [
+          "client",
+          "router",
+          "internet",
+          "dns",
+          "web"
+        ],
+        "frame": "client",
+        "url": "www.example.com",
+        "urlVisible": true,
+        "urlLoaded": true,
+        "urlTyping": false,
+        "notes": [],
+        "packets": [
+          {
+            "type": "packet",
+            "from": "client",
+            "to": "dns",
+            "color": "blue",
+            "tag": "DNS QUERY",
+            "lines": [
+              "A? www.example.com"
+            ],
+            "row": {
+              "time": "0.000",
+              "src": "192.168.1.10",
+              "dst": "8.8.8.8",
+              "proto": "DNS",
+              "info": "Standard query A www.example.com",
+              "len": "75 B"
+            },
+            "sequence": {
+              "at": 0,
+              "latency": 12,
+              "labelFraction": 0.5
+            }
+          },
+          {
+            "type": "packet",
+            "from": "dns",
+            "to": "client",
+            "color": "blue",
+            "tag": "DNS REPLY",
+            "lines": [
+              "A 203.0.113.10"
+            ],
+            "row": {
+              "time": "0.012",
+              "src": "8.8.8.8",
+              "dst": "192.168.1.10",
+              "proto": "DNS",
+              "info": "Standard query response A 203.0.113.10",
+              "len": "91 B"
+            },
+            "sequence": {
+              "at": 12,
+              "latency": 12,
+              "labelFraction": 0.5
+            }
+          },
+          {
+            "type": "packet",
+            "from": "client",
+            "to": "web",
+            "color": "green",
+            "tag": "SYN",
+            "lines": [
+              "seq=0"
+            ],
+            "row": {
+              "time": "0.024",
+              "src": "192.168.1.10",
+              "dst": "203.0.113.10",
+              "proto": "TCP",
+              "info": "52344 → 80 [SYN] Seq=0",
+              "len": "66 B"
+            },
+            "sequence": {
+              "at": 34,
+              "latency": 17,
+              "labelFraction": 0.5
+            }
+          },
+          {
+            "type": "packet",
+            "from": "web",
+            "to": "client",
+            "color": "green",
+            "tag": "SYN-ACK",
+            "lines": [
+              "seq=0 ack=1"
+            ],
+            "row": {
+              "time": "0.041",
+              "src": "203.0.113.10",
+              "dst": "192.168.1.10",
+              "proto": "TCP",
+              "info": "80 → 52344 [SYN, ACK] Seq=0 Ack=1",
+              "len": "66 B"
+            },
+            "sequence": {
+              "at": 51,
+              "latency": 17,
+              "labelFraction": 0.5
+            }
+          },
+          {
+            "type": "packet",
+            "from": "client",
+            "to": "web",
+            "color": "green",
+            "tag": "ACK",
+            "lines": [
+              "seq=1 ack=1"
+            ],
+            "row": {
+              "time": "0.058",
+              "src": "192.168.1.10",
+              "dst": "203.0.113.10",
+              "proto": "TCP",
+              "info": "52344 → 80 [ACK] Seq=1 Ack=1",
+              "len": "60 B"
+            },
+            "sequence": {
+              "at": 68,
+              "latency": 37,
+              "labelFraction": 0.5
+            }
+          },
+          {
+            "type": "packet",
+            "from": "client",
+            "to": "web",
+            "color": "amber",
+            "tag": "GET /",
+            "lines": [
+              "GET / HTTP/1.1",
+              "Host: www.example.com"
+            ],
+            "row": {
+              "time": "0.058",
+              "src": "192.168.1.10",
+              "dst": "203.0.113.10",
+              "proto": "HTTP",
+              "info": "GET / HTTP/1.1",
+              "len": "484 B"
+            },
+            "sequence": {
+              "at": 88,
+              "latency": 23,
+              "labelFraction": 0.5
+            }
+          },
+          {
+            "type": "packet",
+            "from": "web",
+            "to": "client",
+            "color": "violet",
+            "tag": "200 OK",
+            "lines": [
+              "HTTP/1.1 200 OK",
+              "12.2 KB in 9 segments"
+            ],
+            "row": {
+              "time": "0.076",
+              "src": "203.0.113.10",
+              "dst": "192.168.1.10",
+              "proto": "HTTP",
+              "info": "HTTP/1.1 200 OK (text/html), 9 segments",
+              "len": "12.8 KB"
+            },
+            "sequence": {
+              "at": 114,
+              "latency": 17,
+              "labelFraction": 0.5
+            }
+          }
+        ],
+        "active": null,
+        "fraction": 1
+      }
+    }
+  }
+]

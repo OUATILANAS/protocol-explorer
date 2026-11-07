@@ -1,0 +1,50 @@
+[
+  {
+    "name": "pending-sheen",
+    "css": "@keyframes pending-sheen { \n  0% { background-position: 100% 0px; }\n  100% { background-position: 0px 0px; }\n}"
+  },
+  {
+    "name": "seg-fill",
+    "css": "@keyframes seg-fill { \n  0% { transform: scaleX(0); }\n}"
+  },
+  {
+    "name": "menu-in",
+    "css": "@keyframes menu-in { \n  0% { opacity: 0; transform: translateY(-4px) scale(0.97); }\n}"
+  },
+  {
+    "name": "dot-pop",
+    "css": "@keyframes dot-pop { \n  40% { transform: scale(1.35); }\n}"
+  },
+  {
+    "name": "step-in",
+    "css": "@keyframes step-in { \n  0% { opacity: 0; transform: translateY(-6px); }\n}"
+  },
+  {
+    "name": "step-spin",
+    "css": "@keyframes step-spin { \n  100% { rotate: 360deg; }\n}"
+  },
+  {
+    "name": "step-pop",
+    "css": "@keyframes step-pop { \n  40% { scale: 1.2; }\n}"
+  },
+  {
+    "name": "controls-in",
+    "css": "@keyframes controls-in { \n  0% { opacity: 0; transform: translateY(6px); }\n}"
+  },
+  {
+    "name": "lane-flow",
+    "css": "@keyframes lane-flow { \n  100% { stroke-dashoffset: -11; }\n}"
+  },
+  {
+    "name": "caret",
+    "css": "@keyframes caret { \n  50% { opacity: 1; }\n}"
+  },
+  {
+    "name": "menu-up",
+    "css": "@keyframes menu-up { \n  0% { opacity: 0; transform: translateY(4px) scale(0.97); }\n}"
+  },
+  {
+    "name": "dialog-in",
+    "css": "@keyframes dialog-in { \n  0% { opacity: 0; transform: translateY(8px) scale(0.98); }\n}"
+  }
+]
