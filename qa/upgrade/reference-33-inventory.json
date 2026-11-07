@@ -1,0 +1,200 @@
+[
+  {
+    "id": "http",
+    "category": "application",
+    "name": "HTTP",
+    "full": "Hypertext Transfer Protocol"
+  },
+  {
+    "id": "https",
+    "category": "security",
+    "name": "HTTPS",
+    "full": "HTTP Secure"
+  },
+  {
+    "id": "websocket",
+    "category": "application",
+    "name": "WebSocket",
+    "full": "Two-way web messaging"
+  },
+  {
+    "id": "webrtc",
+    "category": "application",
+    "name": "WebRTC",
+    "full": "Browser video calls"
+  },
+  {
+    "id": "quic",
+    "category": "core",
+    "name": "QUIC",
+    "full": "HTTP/3 over UDP"
+  },
+  {
+    "id": "tcp",
+    "category": "core",
+    "name": "TCP",
+    "full": "Transmission Control Protocol"
+  },
+  {
+    "id": "udp",
+    "category": "core",
+    "name": "UDP",
+    "full": "User Datagram Protocol"
+  },
+  {
+    "id": "ip",
+    "category": "core",
+    "name": "IP",
+    "full": "Internet Protocol"
+  },
+  {
+    "id": "bgp",
+    "category": "core",
+    "name": "BGP",
+    "full": "Routing between networks"
+  },
+  {
+    "id": "ipv6",
+    "category": "core",
+    "name": "IPv6",
+    "full": "Address setup, neighbour discovery"
+  },
+  {
+    "id": "dns",
+    "category": "application",
+    "name": "DNS",
+    "full": "Domain Name System"
+  },
+  {
+    "id": "doh",
+    "category": "security",
+    "name": "DNS over HTTPS",
+    "full": "Private DNS lookups"
+  },
+  {
+    "id": "dnssec",
+    "category": "security",
+    "name": "DNSSEC",
+    "full": "Signed DNS answers"
+  },
+  {
+    "id": "dhcp",
+    "category": "application",
+    "name": "DHCP",
+    "full": "Dynamic Host Configuration"
+  },
+  {
+    "id": "icmp",
+    "category": "core",
+    "name": "ICMP",
+    "full": "Internet Control Message"
+  },
+  {
+    "id": "ntp",
+    "category": "application",
+    "name": "NTP",
+    "full": "Network Time Protocol"
+  },
+  {
+    "id": "wifi",
+    "category": "core",
+    "name": "Wi-Fi",
+    "full": "Joining a network (WPA2)"
+  },
+  {
+    "id": "wpa3",
+    "category": "security",
+    "name": "WPA3",
+    "full": "Wi-Fi Protected Access 3"
+  },
+  {
+    "id": "radius",
+    "category": "security",
+    "name": "RADIUS",
+    "full": "802.1X Enterprise Wi-Fi"
+  },
+  {
+    "id": "portal",
+    "category": "application",
+    "name": "Captive Portal",
+    "full": "Hotel and café Wi-Fi logins"
+  },
+  {
+    "id": "smtp",
+    "category": "application",
+    "name": "SMTP",
+    "full": "Simple Mail Transfer Protocol"
+  },
+  {
+    "id": "pop3",
+    "category": "application",
+    "name": "POP3",
+    "full": "Post Office Protocol v3"
+  },
+  {
+    "id": "imap",
+    "category": "application",
+    "name": "IMAP",
+    "full": "Internet Message Access"
+  },
+  {
+    "id": "ftp",
+    "category": "application",
+    "name": "FTP",
+    "full": "File Transfer Protocol"
+  },
+  {
+    "id": "smb",
+    "category": "application",
+    "name": "SMB",
+    "full": "Windows file sharing"
+  },
+  {
+    "id": "ssh",
+    "category": "security",
+    "name": "SSH",
+    "full": "Secure Shell"
+  },
+  {
+    "id": "tls",
+    "category": "security",
+    "name": "TLS/SSL",
+    "full": "Transport Layer Security"
+  },
+  {
+    "id": "proxy",
+    "category": "application",
+    "name": "HTTP Proxy",
+    "full": "Forward proxy and CONNECT"
+  },
+  {
+    "id": "socks",
+    "category": "application",
+    "name": "SOCKS5",
+    "full": "Socket Secure proxy"
+  },
+  {
+    "id": "reverse",
+    "category": "application",
+    "name": "Reverse Proxy",
+    "full": "TLS offloading"
+  },
+  {
+    "id": "wireguard",
+    "category": "security",
+    "name": "WireGuard",
+    "full": "A modern VPN"
+  },
+  {
+    "id": "ipsec",
+    "category": "security",
+    "name": "IPsec",
+    "full": "IKEv2 and ESP"
+  },
+  {
+    "id": "modbus",
+    "category": "application",
+    "name": "Modbus",
+    "full": "Industrial control (OT)"
+  }
+]

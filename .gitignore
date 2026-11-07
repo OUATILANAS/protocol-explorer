@@ -8,3 +8,5 @@ qa/translation-cache.json
 reference-diff/
 qa/corrections/
 qa/**/*.png
+
+qa/reference-33/
