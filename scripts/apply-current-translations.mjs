@@ -18,6 +18,7 @@ for(const file of files){const code=file.slice(0,-10),staged=`qa/upgrade/transla
  for(const[key,value]of Object.entries(english))if(!['stepWord','overviewWord','of','steps','packet'].includes(key)&&lookup.has(norm(value)))data.ui[key]=lookup.get(norm(value));
  for(const key of Object.keys(data.text))if(key.length<=60&&lookup.has(norm(key)))data.text[key]=lookup.get(norm(key));
  for(const[key,value]of Object.entries(native))if(key.length<=60)data.text[key]=value;
+ for(const[key,value]of Object.entries(english)){let i=0;const tokens=value.match(/\{\w+\}/g)||[];data.ui[key]=data.ui[key].replace(/\{[^}]+\}/g,part=>tokens[i++]||part)}
  // Counters differ grammatically from the STEP transport button in several languages.
  const counter=native['STEP {n}'];if(counter)data.ui.stepWord=counter.split('{n}')[0].trim();
  await writeFile(root+'/'+file,'// review: newly authored lesson translations are machine drafts.\nexport default '+JSON.stringify(data)+';\n');console.log(code,'keys',Object.keys(data.text).length);
