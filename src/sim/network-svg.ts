@@ -2,9 +2,9 @@ import{paints,backdrop}from './network-paints';
 import{tr}from'../i18n';
 import type{NodeId,Frame,Scene,Lesson}from'../types';import{client}from'./devices/client';import{router}from'./devices/router';import{dns}from'./devices/dns';import{server}from'./devices/server';import{internet}from'./devices/internet';import{root}from'./devices/root';import{tld}from'./devices/tld';import{auth}from'./devices/auth';import{mx}from'./devices/mx';import{escape}from'../ui/side-panel';
 const extraPositions:Record<string,[number,number,string]>={relay:[0,0,'dns'],app:[173,97,'web'],lan:[-371,30,'dns'],isp:[155,126.5,'router'],transit:[315,26.5,'router'],hosting:[440,126.5,'router'],remote:[545,-9,'router'],peer:[920,-16,'client']};
-function extraDevice(id:string){const[x,y,kind]=extraPositions[id],builder=kind==='dns'?dns:kind==='web'?server:kind==='client'?client:router;return `<g transform="translate(${x} ${y})">${builder()}</g>`}
+function extraDevice(id:string){const[x,y,kind]=extraPositions[id],builder=kind==='dns'?dns:kind==='web'?server:kind==='client'?client:router;return `<g ${id==='peer'?'transform="translate(2320 0) scale(-1 1)"':''}><g transform="translate(${x} ${y})">${builder()}</g></g>`}
 
-export const nodes:Record<NodeId,{name:string;ip:string;x:number;y:number;art:()=>string}>={client:{name:'Client',ip:'192.168.1.10',x:225,y:310,art:client},router:{name:'Router',ip:'192.168.1.1',x:405,y:245,art:router},dns:{name:'DNS Resolver',ip:'8.8.8.8',x:525,y:150,art:dns},internet:{name:'Internet',ip:'',x:575,y:350,art:internet},web:{name:'Web Server',ip:'203.0.113.10',x:675,y:145,art:server},root:{name:'Root Server',ip:'198.41.0.4',x:370,y:80,art:root},tld:{name:'.com TLD Server',ip:'192.5.6.30',x:570,y:40,art:tld},auth:{name:'Authoritative Server',ip:'198.51.100.53',x:815,y:100,art:auth},mx:{name:'Mail Server',ip:'198.51.100.25',x:815,y:290,art:mx},relay:{name:'Proxy',ip:'203.0.113.30',x:760,y:360,art:()=>extraDevice('relay')},app:{name:'App Server',ip:'10.0.0.20',x:1000,y:180,art:()=>extraDevice('app')},lan:{name:'File Server',ip:'192.168.1.20',x:490,y:520,art:()=>extraDevice('lan')},isp:{name:'ISP Router',ip:'198.51.100.1',x:650,y:280,art:()=>extraDevice('isp')},transit:{name:'Transit Router',ip:'198.51.100.2',x:800,y:210,art:()=>extraDevice('transit')},hosting:{name:'Hosting Router',ip:'203.0.113.1',x:940,y:290,art:()=>extraDevice('hosting')},remote:{name:'Their Router',ip:'198.51.100.1',x:980,y:430,art:()=>extraDevice('remote')},peer:{name:'Their Laptop',ip:'198.51.100.200',x:1140,y:510,art:()=>extraDevice('peer')}};
+export const nodes:Record<NodeId,{name:string;ip:string;x:number;y:number;art:()=>string}>={client:{name:'Client',ip:'192.168.1.10',x:225,y:310,art:client},router:{name:'Router',ip:'192.168.1.1',x:405,y:245,art:router},dns:{name:'DNS Resolver',ip:'8.8.8.8',x:525,y:150,art:dns},internet:{name:'Internet',ip:'',x:575,y:350,art:internet},web:{name:'Web Server',ip:'203.0.113.10',x:675,y:145,art:server},root:{name:'Root Server',ip:'198.41.0.4',x:370,y:80,art:root},tld:{name:'.com TLD Server',ip:'192.5.6.30',x:570,y:40,art:tld},auth:{name:'Authoritative Server',ip:'198.51.100.53',x:815,y:100,art:auth},mx:{name:'Mail Server',ip:'198.51.100.25',x:815,y:290,art:mx},relay:{name:'Proxy',ip:'192.0.2.80',x:760,y:360,art:()=>extraDevice('relay')},app:{name:'App Server',ip:'10.0.0.20',x:1000,y:180,art:()=>extraDevice('app')},lan:{name:'File Server',ip:'192.168.1.20',x:490,y:520,art:()=>extraDevice('lan')},isp:{name:'ISP Router',ip:'AS 64500',x:650,y:280,art:()=>extraDevice('isp')},transit:{name:'Transit Router',ip:'AS 64510',x:800,y:210,art:()=>extraDevice('transit')},hosting:{name:'Hosting Router',ip:'AS 64511',x:940,y:290,art:()=>extraDevice('hosting')},remote:{name:'Their Router',ip:'198.51.100.200',x:980,y:430,art:()=>extraDevice('remote')},peer:{name:'Their Laptop',ip:'192.168.0.23',x:1140,y:510,art:()=>extraDevice('peer')}};
 export const frames:Record<Frame,number[]>={client:[95,135,440,300],local:[100,100,570,370],lookup:[100,15,680,450],full:[85,-5,735,455],root:[175,-65,760,470],tld:[220,-105,760,470],path:[85,-5,820,455],mailhost:[190,15,790,450],backend:[250,0,900,600],bgp:[250,0,1000,600],call:[100,0,1200,650],office:[100,100,900,600],relay:[100,0,1000,600],route:[150,0,1050,600]};
 export {path} from './flight';
 import {packetFlight,easeInOut,lanePoints} from './flight';
@@ -51,9 +51,15 @@ export function fitNetwork(scene:Scene){
  if(![x0,y0,x1,y1].every(Number.isFinite))return;
  const aspect=panel.width/panel.height,w=Math.max(x1-x0+28,(y1-y0+28)*aspect),h=w/aspect;
  if(scene.frame==='client'){
-  const client=svg.querySelector<SVGGElement>('[data-node="client"]')!,bounds=client.getBBox();
-  const width=Math.max(bounds.width+28,(bounds.height+28)*aspect,470),height=width/aspect;
-  frames.client=[bounds.x+(bounds.width-width)/2,bounds.y+(bounds.height-height)/2,width,height];
+  const client=svg.querySelector<SVGGElement>('[data-node="client"]')!;
+  const art=client.querySelector<SVGGElement>('.device-art')!.getBBox();
+  const label=client.querySelector<SVGGElement>('.node-label')!,lb=label.getBBox(),lm=label.transform.baseVal.consolidate()?.matrix??new DOMMatrix();
+  const holder=client.querySelector<SVGGElement>('#url-overlay')!,bar=holder.querySelector<SVGGElement>('.url-bar')!,ub=bar.getBBox(),um=holder.transform.baseVal.consolidate()?.matrix??new DOMMatrix();
+  // The camera frames the URL in its resting pose; the URL then expands into view.
+  const bounds=[art,{x:lm.a*lb.x+lm.e,y:lm.d*lb.y+lm.f,width:lm.a*lb.width,height:lm.d*lb.height},{x:um.a*(ub.x+ub.width*.83*.2)+um.e,y:um.d*(ub.y+ub.height*.2)+um.f,width:um.a*ub.width*.8,height:um.d*ub.height*.8}];
+  const left=Math.min(...bounds.map(b=>b.x)),top=Math.min(...bounds.map(b=>b.y)),right=Math.max(...bounds.map(b=>b.x+b.width)),bottom=Math.max(...bounds.map(b=>b.y+b.height));
+  const width=Math.max(right-left+28,(bottom-top+28)*aspect,470),height=width/aspect;
+  frames.client=[(left+right-width)/2,(top+bottom-height)/2,width,height];
  }else frames[scene.frame]=[(x0+x1-w)/2,(y0+y1-h)/2,w,h];
 }
 

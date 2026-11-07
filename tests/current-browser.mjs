@@ -11,4 +11,9 @@ for(const id of ids){
  await page.evaluate(()=>window.__protocol.openPacket(0));assert.ok(await page.locator('.inspector').count(),`${id}: first inspector`);await page.keyboard.press('Escape');
  await page.evaluate(()=>{const p=window.__protocol;p.openPacket(p.engine.scene.packets.length-1)});assert.ok(await page.locator('.inspector').count(),`${id}: last inspector`);await page.keyboard.press('Escape');
 }
-console.log('33 complete lessons and 66 packet inspectors: passed');assert.deepEqual(errors,[]);await browser.close();
+console.log('33 complete lessons and 66 packet inspectors: passed');
+await page.evaluate(async()=>{const p=window.__protocol;await p.prepareLesson('ipv6');p.engine.setLesson(p.lessons.find(l=>l.id==='ipv6'))});
+const initial=await page.locator('[data-node=client] .node-ip').textContent();
+await page.evaluate(()=>{const e=window.__protocol.engine;e.seek(e.lesson.steps.length)});await page.evaluate(()=>window.__protocol.engine.reset());
+assert.equal(await page.locator('[data-node=client] .node-ip').textContent(),initial);
+console.log('IPv6 label changes restore correctly after reset: passed');assert.deepEqual(errors,[]);await browser.close();

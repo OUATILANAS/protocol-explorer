@@ -28,3 +28,12 @@
 }.device-screen{fill:color-mix(in srgb,var(--active) 10%,var(--panel))}.led{fill:var(--green);stroke:none}
 .links path{fill:none;transition:stroke .35s,stroke-width .35s}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+@keyframes controls-in {
+  0% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes menu-up {
+  0% { opacity: 0; transform: translateY(4px) scale(.97); }
+}
+@keyframes dialog-in {
+  0% { opacity: 0; transform: translateY(8px) scale(.98); }
+}
