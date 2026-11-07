@@ -21,5 +21,14 @@ for(const width of [1680,375])for(const theme of ['light','dark']){
  await page.setViewportSize({width,height:width===375?812:945});await page.evaluate(t=>document.querySelector(`.theme-toggle [data-theme="${t}"]`).click(),theme);
  await page.evaluate(()=>window.__protocol.openPacket(6));await page.waitForTimeout(300);assert.equal(await page.locator('.ins-tab').count(),4);await page.screenshot({path:`qa/upgrade/segments-${width}-${theme}.png`});await page.keyboard.press('Escape');
 }
+await page.setViewportSize({width:1280,height:800});
+for(const code of ['fr','ar','en']){
+ await page.locator('[data-action=language]').click();await page.locator(`[data-locale="${code}"]`).click();await page.waitForFunction(c=>document.documentElement.lang===c,code);await page.waitForTimeout(500);
+ assert.equal(await page.locator('tr[data-packet="0"] td:nth-child(6)').textContent(),'Standard query A www.example.com');
+ assert.equal(await page.locator('.full-name').textContent(),'HTTP Secure');
+ await page.evaluate(()=>window.__protocol.openPacket(0));assert.ok((await page.locator('.ins-name').allTextContents()).includes('Source'));
+ if(code==='ar')assert.equal(await page.locator('html').getAttribute('dir'),'rtl');await page.keyboard.press('Escape');
+}
+console.log('Translated UI retains English packet Info, protocol names and field names: passed');
 assert.deepEqual(errors,[]);console.log('Segment tabs, reassembly, keyboard navigation and both themes/widths: passed');
 await browser.close();
