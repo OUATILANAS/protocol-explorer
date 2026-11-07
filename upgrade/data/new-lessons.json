@@ -1,0 +1,1990 @@
+{
+  "note": "New lessons for Protocol Explorer. 'teach' is a content brief: write the final explanation text in your own words, 2–4 sentences. Sizes are whole frames without FCS (Wi-Fi: 802.11 without radiotap/FCS), computed from the field notes. Build the encoders from the field notes; the encoder's computed size is authoritative. If it differs from this table, update the table and record why in DECISIONS.md. The packet test then locks the final values.",
+  "drawerOrder": [
+    "http",
+    "https",
+    "http3",
+    "websocket",
+    "tcp",
+    "udp",
+    "ip",
+    "ipv6",
+    "ethernet",
+    "wifi",
+    "dns",
+    "doh",
+    "dhcp",
+    "icmp",
+    "smtp",
+    "pop3",
+    "imap",
+    "ftp",
+    "ssh",
+    "tls"
+  ],
+  "categories": {
+    "core": [
+      "tcp",
+      "udp",
+      "ip",
+      "icmp",
+      "ipv6",
+      "ethernet"
+    ],
+    "application": [
+      "http",
+      "dns",
+      "dhcp",
+      "smtp",
+      "pop3",
+      "imap",
+      "ftp",
+      "http3",
+      "websocket"
+    ],
+    "security": [
+      "https",
+      "ssh",
+      "tls",
+      "wifi",
+      "doh"
+    ]
+  },
+  "categoryCounts": {
+    "core": 6,
+    "application": 9,
+    "security": 5,
+    "all": 20
+  },
+  "newDevices": {
+    "switch": "8-port Ethernet switch, no IP; port LEDs light when a frame passes",
+    "desktop": "Desktop tower + monitor, 192.168.1.20",
+    "ap": "Wi-Fi access point with two antennas; radio links drawn as dotted curves (not dashed lanes)"
+  },
+  "lessons": [
+    {
+      "id": "http3",
+      "name": "HTTP/3",
+      "fullName": "HTTP/3 over QUIC",
+      "title": "Faster Web over QUIC",
+      "layer": 7,
+      "category": "application",
+      "nodes": {
+        "client": "Client / 192.168.1.10",
+        "router": "Router / 192.168.1.1",
+        "dns": "DNS Resolver / 8.8.8.8",
+        "internet": "Internet",
+        "web": "Web Server / 203.0.113.10"
+      },
+      "legend": [
+        [
+          "blue",
+          "DNS"
+        ],
+        [
+          "teal",
+          "QUIC handshake"
+        ],
+        [
+          "amber",
+          "HTTP/3 request"
+        ],
+        [
+          "violet",
+          "HTTP/3 response"
+        ],
+        [
+          "green",
+          "ACK"
+        ],
+        [
+          null,
+          "Datagrams with Initial packets are padded to 1,200 bytes"
+        ]
+      ],
+      "overview": {
+        "full": "HTTP/3 over QUIC",
+        "facts": [
+          [
+            "Layer",
+            "Application (HTTP/3) over QUIC"
+          ],
+          [
+            "Default Port",
+            "443/UDP"
+          ],
+          [
+            "Transport",
+            "QUIC over UDP"
+          ],
+          [
+            "Security",
+            "TLS 1.3, built into QUIC"
+          ],
+          [
+            "Blocking",
+            "Per stream only"
+          ],
+          [
+            "Defined In",
+            "RFC 9114, RFC 9000, RFC 9001"
+          ]
+        ]
+      },
+      "outro": {
+        "title": "One round trip",
+        "desc": "The request left after a single round trip",
+        "facts": [
+          [
+            "Round trips before GET",
+            "1 (HTTPS: 2)"
+          ],
+          [
+            "GET sent at",
+            "0.042 s (HTTPS: 0.094 s)"
+          ],
+          [
+            "Response",
+            "11 QUIC datagrams"
+          ],
+          [
+            "Next visit",
+            "0-RTT: request in the first flight"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Ask for the HTTPS Record",
+          "desc": "DNS says the server speaks HTTP/3",
+          "teach": "An HTTPS (type 65) record carries alpn=h3,h2 and an IPv4 hint, so the browser can try QUIC straight away instead of learning it from an Alt-Svc header on a TCP connection.",
+          "facts": [
+            [
+              "Record type",
+              "HTTPS (65)"
+            ],
+            [
+              "ALPN",
+              "h3, h2"
+            ],
+            [
+              "Hint",
+              "ipv4hint=203.0.113.10"
+            ]
+          ],
+          "packets": [
+            0,
+            1
+          ]
+        },
+        {
+          "title": "QUIC Initial",
+          "desc": "TLS starts inside the first UDP datagram",
+          "teach": "The Client Hello travels in CRYPTO frames inside an Initial packet. Initial packets are protected with keys anyone can derive from the connection ID, so they hide nothing secret, but the datagram must be padded to at least 1,200 bytes so the server cannot be used to amplify attacks.",
+          "facts": [
+            [
+              "Port",
+              "54321 → 443/UDP"
+            ],
+            [
+              "Connection IDs",
+              "chosen by each side"
+            ],
+            [
+              "Padding",
+              "to 1,200 bytes"
+            ]
+          ],
+          "packets": [
+            2
+          ]
+        },
+        {
+          "title": "Server Flight",
+          "desc": "Hello, certificate and Finished in one go",
+          "teach": "The server answers with its Initial (Server Hello) and Handshake packets carrying the certificate and Finished. Until it has verified the client's address it may send at most three times the bytes it received.",
+          "facts": [
+            [
+              "Datagrams",
+              "3"
+            ],
+            [
+              "Limit",
+              "3 × bytes received"
+            ],
+            [
+              "Keys",
+              "Handshake keys now in use"
+            ]
+          ],
+          "packets": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "title": "Finish and Ask at Once",
+          "desc": "Finished and GET leave together",
+          "teach": "The client sends its Finished and, in the same flight, the first request on stream 0 using 1-RTT keys. Compare with HTTPS, where the GET waited for a TCP handshake and then a TLS handshake.",
+          "facts": [
+            [
+              "Stream",
+              "0 (client bidirectional)"
+            ],
+            [
+              "Header compression",
+              "QPACK"
+            ],
+            [
+              "Sent at",
+              "0.042 s"
+            ]
+          ],
+          "packets": [
+            6,
+            7
+          ]
+        },
+        {
+          "title": "Streams, Not One Pipe",
+          "desc": "Loss on one stream doesn't stall the others",
+          "teach": "The response arrives as STREAM frames spread over several datagrams. QUIC orders data per stream, so a lost datagram only delays the stream it belongs to; TCP would hold back everything behind it.",
+          "facts": [
+            [
+              "Body",
+              "text/html, 12.2 KB"
+            ],
+            [
+              "Datagrams",
+              "11"
+            ],
+            [
+              "Acknowledged",
+              "ACK frames, ranges"
+            ]
+          ],
+          "packets": [
+            8,
+            9
+          ]
+        },
+        {
+          "title": "Next Time: 0-RTT",
+          "desc": "The request rides in the first flight",
+          "teach": "With a session ticket from this visit, the next connection can send the GET as 0-RTT data next to the Client Hello. 0-RTT data can be replayed, so browsers use it only for safe requests such as GET.",
+          "facts": [
+            [
+              "Needs",
+              "Session ticket (PSK)"
+            ],
+            [
+              "Saves",
+              "One round trip"
+            ],
+            [
+              "Allowed for",
+              "Idempotent requests"
+            ]
+          ],
+          "packets": [
+            10,
+            11
+          ]
+        }
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query HTTPS www.example.com",
+          "size": "75 B",
+          "color": "blue",
+          "fields": "DNS header 12, question 21 (www.example.com, type HTTPS, class IN)"
+        },
+        {
+          "time": "0.012s",
+          "src": "8.8.8.8",
+          "dst": "192.168.1.10",
+          "proto": "DNS",
+          "info": "Standard query response HTTPS 1 . alpn=h3,h2 ipv4hint=203.0.113.10",
+          "size": "108 B",
+          "color": "blue",
+          "fields": "answer: name pointer, type 65, TTL, rdata = priority 1, target '.', alpn [h3,h2], ipv4hint"
+        },
+        {
+          "time": "0.024s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "Initial, DCID=8394c8f03e515708, PKN: 0, CRYPTO (Client Hello, SNI=www.example.com), PADDING",
+          "size": "1242 B",
+          "color": "teal",
+          "fields": "long header Initial; CRYPTO frame with TLS 1.3 Client Hello (ALPN h3, X25519MLKEM768 + X25519 key shares); PADDING to 1,200 B UDP payload"
+        },
+        {
+          "time": "0.041s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Initial (Server Hello, ACK), Handshake (Encrypted Extensions, Certificate)",
+          "size": "1242 B",
+          "color": "teal",
+          "fields": "coalesced Initial + Handshake packets, padded"
+        },
+        {
+          "time": "0.041s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Handshake (Certificate, continued)",
+          "size": "1242 B",
+          "color": "teal",
+          "fields": "Handshake packet, encrypted"
+        },
+        {
+          "time": "0.041s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Handshake (Certificate Verify, Finished)",
+          "size": "702 B",
+          "color": "teal",
+          "fields": "Handshake packet; 3 datagrams = 3,060 B of UDP payload, under 3 × 1,200"
+        },
+        {
+          "time": "0.042s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "Initial (ACK), Handshake (ACK, Finished), PADDING",
+          "size": "1242 B",
+          "color": "teal",
+          "fields": "carries an Initial packet, so padded to 1,200 B"
+        },
+        {
+          "time": "0.042s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "HTTP3",
+          "info": "1-RTT, HEADERS: GET / (stream 0)",
+          "size": "103 B",
+          "color": "amber",
+          "fields": "short header; STREAM frame (stream 0) with HTTP/3 HEADERS, QPACK-encoded :method GET, :path /, :authority www.example.com"
+        },
+        {
+          "time": "0.059s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "HTTP3",
+          "info": "1-RTT, HANDSHAKE_DONE, HEADERS: 200 OK, DATA, 11 datagrams",
+          "size": "13.3 KB",
+          "color": "violet",
+          "fields": "11 short-header datagrams of 1,200 B UDP payload carrying 12,493 B of HTML"
+        },
+        {
+          "time": "0.060s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "1-RTT, ACK",
+          "size": "73 B",
+          "color": "green",
+          "fields": "ACK frame acknowledging the response packets"
+        },
+        {
+          "time": "60.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "Initial (Client Hello, PSK), 0-RTT: HEADERS GET /",
+          "size": "1242 B",
+          "color": "amber",
+          "fields": "Initial with pre_shared_key + early_data, coalesced 0-RTT packet with the GET; padded"
+        },
+        {
+          "time": "60.017s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "HTTP3",
+          "info": "Initial, Handshake, 1-RTT: HEADERS 200 OK, DATA, 12 datagrams",
+          "size": "14.6 KB",
+          "color": "violet",
+          "fields": "handshake and response in the first server flight"
+        }
+      ]
+    },
+    {
+      "id": "ethernet",
+      "name": "Ethernet",
+      "fullName": "Ethernet & Switching",
+      "title": "Frames on the Local Network",
+      "layer": 2,
+      "category": "core",
+      "nodes": {
+        "client": "Laptop / 192.168.1.10",
+        "switch": "Switch / 8 ports",
+        "desktop": "Desktop / 192.168.1.20",
+        "router": "Router / 192.168.1.1"
+      },
+      "legend": [
+        [
+          "slate",
+          "ARP (broadcast)"
+        ],
+        [
+          "amber",
+          "From laptop"
+        ],
+        [
+          "violet",
+          "From desktop"
+        ],
+        [
+          "blue",
+          "Leaving the LAN"
+        ]
+      ],
+      "overview": {
+        "full": "Ethernet & Switching",
+        "facts": [
+          [
+            "Layer",
+            "Data link (Layer 2)"
+          ],
+          [
+            "Address",
+            "48-bit MAC"
+          ],
+          [
+            "Frame size",
+            "60–1,514 bytes (no FCS)"
+          ],
+          [
+            "Switch learns",
+            "Source MAC → port"
+          ],
+          [
+            "Unknown destination",
+            "Flooded to all ports"
+          ],
+          [
+            "Defined In",
+            "IEEE 802.3, IEEE 802.1Q"
+          ]
+        ]
+      },
+      "outro": {
+        "title": "Frames, not packets",
+        "desc": "The switch only reads MAC addresses",
+        "facts": [
+          [
+            "Frames sent",
+            "5"
+          ],
+          [
+            "MAC table",
+            "3 entries"
+          ],
+          [
+            "Flooded",
+            "1 frame (the broadcast)"
+          ],
+          [
+            "Next hop",
+            "Router MAC for remote IPs"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Who Has This IP?",
+          "desc": "ARP asks the whole segment",
+          "teach": "The laptop knows 192.168.1.20 is on its own subnet but not its MAC address, so it broadcasts an ARP request to ff:ff:ff:ff:ff:ff. The switch copies a broadcast out of every port except the one it came in on, and records that the laptop's MAC lives on port 1.",
+          "facts": [
+            [
+              "Destination MAC",
+              "ff:ff:ff:ff:ff:ff"
+            ],
+            [
+              "Switch action",
+              "Flood"
+            ],
+            [
+              "Learned",
+              "…:53:10 → port 1"
+            ]
+          ],
+          "packets": [
+            0
+          ]
+        },
+        {
+          "title": "The Switch Learns",
+          "desc": "Replies go to one port only",
+          "teach": "The desktop answers with a unicast ARP reply. The switch learns the desktop is on port 2 and, because it already knows the laptop, forwards the reply only to port 1.",
+          "facts": [
+            [
+              "Reply",
+              "Unicast"
+            ],
+            [
+              "Learned",
+              "…:53:20 → port 2"
+            ],
+            [
+              "Forwarded to",
+              "Port 1"
+            ]
+          ],
+          "packets": [
+            1
+          ]
+        },
+        {
+          "title": "Straight to the Right Port",
+          "desc": "Known MACs are never flooded",
+          "teach": "With both addresses in its table, the switch forwards the ping and its reply only between ports 1 and 2. The router's port never sees them.",
+          "facts": [
+            [
+              "Payload",
+              "ICMP echo, 32 bytes"
+            ],
+            [
+              "Ports used",
+              "1 ↔ 2"
+            ],
+            [
+              "Others see",
+              "Nothing"
+            ]
+          ],
+          "packets": [
+            2,
+            3
+          ]
+        },
+        {
+          "title": "Leaving the LAN",
+          "desc": "Remote IP, local MAC",
+          "teach": "For 8.8.8.8 the laptop uses its default gateway: the IP destination stays 8.8.8.8, but the Ethernet destination is the router's MAC. Every hop rewrites the Ethernet header; the IP header travels end to end.",
+          "facts": [
+            [
+              "IP destination",
+              "8.8.8.8"
+            ],
+            [
+              "MAC destination",
+              "00:00:5e:00:53:01 (router)"
+            ],
+            [
+              "Learned",
+              "…:53:01 → port 8"
+            ]
+          ],
+          "packets": [
+            4
+          ]
+        },
+        {
+          "title": "Forgetting Old Entries",
+          "desc": "Entries age out",
+          "teach": "A switch forgets a MAC it hasn't heard from in about 300 seconds, so a device moved to another port is found again by flooding. Nothing is configured: the table builds itself from traffic.",
+          "facts": [
+            [
+              "Aging time",
+              "300 s (default)"
+            ],
+            [
+              "Table size",
+              "Thousands of entries"
+            ],
+            [
+              "Configuration",
+              "None needed"
+            ]
+          ],
+          "packets": []
+        }
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "Broadcast",
+          "proto": "ARP",
+          "info": "Who has 192.168.1.20? Tell 192.168.1.10",
+          "size": "60 B",
+          "color": "slate",
+          "fields": "Ethernet 14 + ARP 28 + 18 B padding"
+        },
+        {
+          "time": "0.001s",
+          "src": "00:00:5e:00:53:20",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "ARP",
+          "info": "192.168.1.20 is at 00:00:5e:00:53:20",
+          "size": "60 B",
+          "color": "slate",
+          "fields": "ARP reply, padded"
+        },
+        {
+          "time": "0.002s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "ICMP",
+          "info": "Echo (ping) request id=0x0001, seq=1, ttl=128",
+          "size": "74 B",
+          "color": "amber",
+          "fields": "Ethernet → 00:00:5e:00:53:20; ICMP echo with 32-byte Windows payload"
+        },
+        {
+          "time": "0.003s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "ICMP",
+          "info": "Echo (ping) reply id=0x0001, seq=1, ttl=128",
+          "size": "74 B",
+          "color": "violet",
+          "fields": "same size reply"
+        },
+        {
+          "time": "5.000s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query A www.example.com",
+          "size": "75 B",
+          "color": "blue",
+          "fields": "Ethernet destination = router MAC 00:00:5e:00:53:01"
+        }
+      ]
+    },
+    {
+      "id": "wifi",
+      "name": "Wi-Fi",
+      "fullName": "Wi-Fi & WPA3",
+      "title": "Joining a Wireless Network",
+      "layer": 2,
+      "category": "security",
+      "nodes": {
+        "client": "Laptop / 00:00:5e:00:53:10",
+        "ap": "Access Point / HomeNet",
+        "router": "Router / 192.168.1.1"
+      },
+      "legend": [
+        [
+          "slate",
+          "Beacon"
+        ],
+        [
+          "teal",
+          "SAE (WPA3)"
+        ],
+        [
+          "amber",
+          "From laptop"
+        ],
+        [
+          "violet",
+          "From access point"
+        ],
+        [
+          "green",
+          "Encrypted data"
+        ],
+        [
+          null,
+          "Sizes exclude radiotap and FCS"
+        ]
+      ],
+      "overview": {
+        "full": "Wi-Fi & WPA3",
+        "facts": [
+          [
+            "Layer",
+            "Data link (Layer 2)"
+          ],
+          [
+            "Security",
+            "WPA3-Personal (SAE)"
+          ],
+          [
+            "Encryption",
+            "AES-CCMP, 128-bit"
+          ],
+          [
+            "Key exchange",
+            "SAE, then 4-way handshake"
+          ],
+          [
+            "Bands",
+            "2.4 / 5 / 6 GHz"
+          ],
+          [
+            "Defined In",
+            "IEEE 802.11-2020, Wi-Fi Alliance WPA3"
+          ]
+        ]
+      },
+      "outro": {
+        "title": "On the air, sealed",
+        "desc": "The password never crossed the air",
+        "facts": [
+          [
+            "Frames to join",
+            "11"
+          ],
+          [
+            "Password sent",
+            "Never"
+          ],
+          [
+            "Per-session key",
+            "PTK from the 4-way handshake"
+          ],
+          [
+            "Forward secrecy",
+            "Yes (SAE)"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Hearing the Network",
+          "desc": "Beacons announce the network",
+          "teach": "About ten times a second the access point broadcasts a beacon with its SSID, data rates and an RSN element saying it requires WPA3 (SAE). The laptop lists HomeNet from these beacons.",
+          "facts": [
+            [
+              "SSID",
+              "HomeNet"
+            ],
+            [
+              "Interval",
+              "100 TU ≈ 102 ms"
+            ],
+            [
+              "Requires",
+              "SAE (WPA3)"
+            ]
+          ],
+          "packets": [
+            0
+          ]
+        },
+        {
+          "title": "Prove the Password",
+          "desc": "SAE, without sending it",
+          "teach": "Both sides turn the password into a point on an elliptic curve and exchange commit messages, then confirm messages. Each proves it knows the password without revealing it, and an eavesdropper can't test guesses offline.",
+          "facts": [
+            [
+              "Method",
+              "SAE (Dragonfly)"
+            ],
+            [
+              "Group",
+              "19 (P-256)"
+            ],
+            [
+              "Result",
+              "PMK, fresh each time"
+            ]
+          ],
+          "packets": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "title": "Join",
+          "desc": "Association",
+          "teach": "The laptop asks to associate, repeating the SSID and the security it chose. The access point answers with an association ID: the laptop is now on the network, but can't send data yet.",
+          "facts": [
+            [
+              "AID",
+              "1"
+            ],
+            [
+              "Status",
+              "Success"
+            ],
+            [
+              "Cipher",
+              "CCMP-128"
+            ]
+          ],
+          "packets": [
+            5,
+            6
+          ]
+        },
+        {
+          "title": "The 4-Way Handshake",
+          "desc": "Turn the PMK into session keys",
+          "teach": "Two nonces and the PMK produce the pairwise key (PTK). Message 3 delivers the group key (GTK) for broadcasts, encrypted. Message 4 confirms; from here every frame is protected.",
+          "facts": [
+            [
+              "Messages",
+              "4 EAPOL-Key frames"
+            ],
+            [
+              "Pairwise key",
+              "PTK"
+            ],
+            [
+              "Group key",
+              "GTK (in message 3)"
+            ]
+          ],
+          "packets": [
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "title": "Everything Is Encrypted",
+          "desc": "CCMP protects each frame",
+          "teach": "The first real traffic, a DHCP Discover, travels inside a CCMP-protected data frame: an 8-byte CCMP header, the encrypted payload and an 8-byte integrity tag. Next stop: the DHCP lesson.",
+          "facts": [
+            [
+              "Inside",
+              "DHCP Discover"
+            ],
+            [
+              "Overhead",
+              "CCMP header 8 + MIC 8"
+            ],
+            [
+              "Visible",
+              "MAC addresses only"
+            ]
+          ],
+          "packets": [
+            11
+          ]
+        }
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "00:00:5e:00:53:a1",
+          "dst": "Broadcast",
+          "proto": "802.11",
+          "info": "Beacon frame, SN=1830, BI=100, SSID=\"HomeNet\"",
+          "size": "214 B",
+          "color": "slate",
+          "fields": "management header 24, timestamp/interval/capability 12, then SSID, rates, DS, TIM, country, RSN (AKM SAE), HT, VHT, WMM elements"
+        },
+        {
+          "time": "0.512s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:a1",
+          "proto": "802.11",
+          "info": "Authentication, SAE Commit, group 19",
+          "size": "128 B",
+          "color": "teal",
+          "fields": "algorithm 3 (SAE), seq 1, status 0, group 19, scalar 32, element 64"
+        },
+        {
+          "time": "0.515s",
+          "src": "00:00:5e:00:53:a1",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Authentication, SAE Commit, group 19",
+          "size": "128 B",
+          "color": "teal",
+          "fields": "same structure from the AP"
+        },
+        {
+          "time": "0.519s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:a1",
+          "proto": "802.11",
+          "info": "Authentication, SAE Confirm",
+          "size": "64 B",
+          "color": "teal",
+          "fields": "seq 2, send-confirm 2, confirm 32"
+        },
+        {
+          "time": "0.521s",
+          "src": "00:00:5e:00:53:a1",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Authentication, SAE Confirm",
+          "size": "64 B",
+          "color": "teal",
+          "fields": "from the AP"
+        },
+        {
+          "time": "0.523s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:a1",
+          "proto": "802.11",
+          "info": "Association Request, SSID=\"HomeNet\"",
+          "size": "111 B",
+          "color": "amber",
+          "fields": "capability, listen interval, SSID, rates, RSN, HT capabilities, extended capabilities"
+        },
+        {
+          "time": "0.526s",
+          "src": "00:00:5e:00:53:a1",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Association Response, AID=1, status=Success",
+          "size": "92 B",
+          "color": "violet",
+          "fields": "capability, status, AID, rates, HT capabilities, HT operation"
+        },
+        {
+          "time": "0.530s",
+          "src": "00:00:5e:00:53:a1",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 1 of 4)",
+          "size": "133 B",
+          "color": "violet",
+          "fields": "QoS data header 26, LLC/SNAP 8, EAPOL 4, key descriptor 95 (ANonce)"
+        },
+        {
+          "time": "0.533s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:a1",
+          "proto": "EAPOL",
+          "info": "Key (Message 2 of 4)",
+          "size": "159 B",
+          "color": "amber",
+          "fields": "SNonce, MIC, key data = RSN element (26)"
+        },
+        {
+          "time": "0.536s",
+          "src": "00:00:5e:00:53:a1",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 3 of 4)",
+          "size": "189 B",
+          "color": "violet",
+          "fields": "MIC, encrypted key data 56 (RSN element + GTK KDE, AES key wrap)"
+        },
+        {
+          "time": "0.538s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:a1",
+          "proto": "EAPOL",
+          "info": "Key (Message 4 of 4)",
+          "size": "133 B",
+          "color": "amber",
+          "fields": "MIC, no key data"
+        },
+        {
+          "time": "0.600s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:a1",
+          "proto": "802.11",
+          "info": "QoS Data, CCMP (protected): DHCP Discover inside",
+          "size": "378 B",
+          "color": "green",
+          "fields": "QoS data header 26, CCMP header 8, encrypted (LLC 8 + IPv4 20 + UDP 8 + DHCP 300), MIC 8"
+        }
+      ]
+    },
+    {
+      "id": "ipv6",
+      "name": "IPv6",
+      "fullName": "IPv6 & Neighbor Discovery",
+      "title": "Addresses Without DHCP",
+      "layer": 3,
+      "category": "core",
+      "nodes": {
+        "client": "Laptop / fe80::7c1a:…:5d21",
+        "router": "Router / fe80::1",
+        "internet": "Internet",
+        "web": "Web Server / 2001:db8:100::10"
+      },
+      "legend": [
+        [
+          "slate",
+          "Duplicate address check"
+        ],
+        [
+          "amber",
+          "From laptop"
+        ],
+        [
+          "violet",
+          "From router"
+        ],
+        [
+          "green",
+          "TCP"
+        ]
+      ],
+      "overview": {
+        "full": "IPv6 & Neighbor Discovery",
+        "facts": [
+          [
+            "Layer",
+            "Network (Layer 3)"
+          ],
+          [
+            "Address",
+            "128 bits"
+          ],
+          [
+            "Header",
+            "40 bytes, fixed"
+          ],
+          [
+            "Auto-configuration",
+            "SLAAC"
+          ],
+          [
+            "Neighbor discovery",
+            "ICMPv6 (no ARP)"
+          ],
+          [
+            "Defined In",
+            "RFC 8200, RFC 4861, RFC 4862"
+          ]
+        ]
+      },
+      "outro": {
+        "title": "Configured itself",
+        "desc": "No DHCP server, no ARP, no NAT",
+        "facts": [
+          [
+            "Addresses",
+            "Link-local + global"
+          ],
+          [
+            "Packets to configure",
+            "4"
+          ],
+          [
+            "NAT",
+            "None: end-to-end"
+          ],
+          [
+            "Router MAC",
+            "From the RA itself"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "An Address for the Link",
+          "desc": "Link-local, then check it's free",
+          "teach": "Every IPv6 interface gives itself a link-local address in fe80::/64. Before using it, the laptop sends a Neighbor Solicitation for that address from :: to its solicited-node multicast group: if nobody answers within a second, it's unique.",
+          "facts": [
+            [
+              "Address",
+              "fe80::7c1a:2f9b:43e0:5d21"
+            ],
+            [
+              "Check",
+              "Duplicate Address Detection"
+            ],
+            [
+              "Sent to",
+              "ff02::1:ffe0:5d21"
+            ]
+          ],
+          "packets": [
+            0
+          ]
+        },
+        {
+          "title": "Ask for a Router",
+          "desc": "Router Solicitation",
+          "teach": "Instead of waiting for the next periodic announcement, the laptop asks all routers (ff02::2) to advertise now.",
+          "facts": [
+            [
+              "To",
+              "ff02::2 (all routers)"
+            ],
+            [
+              "Option",
+              "Source link-layer address"
+            ],
+            [
+              "Hop limit",
+              "255"
+            ]
+          ],
+          "packets": [
+            1
+          ]
+        },
+        {
+          "title": "The Router Advertises",
+          "desc": "Prefix, DNS and the router's MAC",
+          "teach": "The Router Advertisement carries the network prefix 2001:db8:1::/64 with the autonomous flag, the MTU, a DNS server (RDNSS) and the router's own MAC, so the laptop never needs ARP for its gateway.",
+          "facts": [
+            [
+              "Prefix",
+              "2001:db8:1::/64"
+            ],
+            [
+              "Flags",
+              "A (autonomous)"
+            ],
+            [
+              "DNS",
+              "RDNSS 2001:db8:1::53"
+            ]
+          ],
+          "packets": [
+            2
+          ]
+        },
+        {
+          "title": "Build a Global Address",
+          "desc": "Prefix + interface ID",
+          "teach": "The laptop joins the advertised prefix to its 64-bit interface identifier and checks the result is unique, again with Duplicate Address Detection.",
+          "facts": [
+            [
+              "Address",
+              "2001:db8:1::7c1a:2f9b:43e0:5d21"
+            ],
+            [
+              "Method",
+              "SLAAC"
+            ],
+            [
+              "Lifetime",
+              "From the prefix option"
+            ]
+          ],
+          "packets": [
+            3
+          ]
+        },
+        {
+          "title": "Talk to the Internet",
+          "desc": "End to end, no NAT",
+          "teach": "A TCP connection to the web server uses the global address directly. The IPv6 header is 40 bytes with no checksum; routers decrement the hop limit, and there is no NAT rewriting addresses along the way.",
+          "facts": [
+            [
+              "Source",
+              "Global address"
+            ],
+            [
+              "Header",
+              "40 bytes"
+            ],
+            [
+              "Hop limit",
+              "64"
+            ]
+          ],
+          "packets": [
+            4,
+            5
+          ]
+        }
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "::",
+          "dst": "ff02::1:ffe0:5d21",
+          "proto": "ICMPv6",
+          "info": "Neighbor Solicitation for fe80::7c1a:2f9b:43e0:5d21",
+          "size": "78 B",
+          "color": "slate",
+          "fields": "Ethernet → 33:33:ff:e0:5d:21; IPv6 40; NS 24 (no source link-layer option during DAD)"
+        },
+        {
+          "time": "1.002s",
+          "src": "fe80::7c1a:2f9b:43e0:5d21",
+          "dst": "ff02::2",
+          "proto": "ICMPv6",
+          "info": "Router Solicitation from 00:00:5e:00:53:10",
+          "size": "70 B",
+          "color": "amber",
+          "fields": "RS 8 + source link-layer option 8"
+        },
+        {
+          "time": "1.010s",
+          "src": "fe80::1",
+          "dst": "ff02::1",
+          "proto": "ICMPv6",
+          "info": "Router Advertisement from 00:00:5e:00:53:01",
+          "size": "142 B",
+          "color": "violet",
+          "fields": "RA 16 + prefix information 32 + source link-layer 8 + MTU 8 + RDNSS 24"
+        },
+        {
+          "time": "1.011s",
+          "src": "::",
+          "dst": "ff02::1:ffe0:5d21",
+          "proto": "ICMPv6",
+          "info": "Neighbor Solicitation for 2001:db8:1:0:7c1a:2f9b:43e0:5d21",
+          "size": "78 B",
+          "color": "slate",
+          "fields": "same solicited-node group: same last 24 bits"
+        },
+        {
+          "time": "2.020s",
+          "src": "2001:db8:1:0:7c1a:2f9b:43e0:5d21",
+          "dst": "2001:db8:100::10",
+          "proto": "TCP",
+          "info": "52344 → 443 [SYN] Seq=0",
+          "size": "86 B",
+          "color": "green",
+          "fields": "IPv6 40 + TCP 32 (MSS 1440, SACK, window scale)"
+        },
+        {
+          "time": "2.037s",
+          "src": "2001:db8:100::10",
+          "dst": "2001:db8:1:0:7c1a:2f9b:43e0:5d21",
+          "proto": "TCP",
+          "info": "443 → 52344 [SYN, ACK] Seq=0 Ack=1",
+          "size": "86 B",
+          "color": "green",
+          "fields": "same size"
+        }
+      ]
+    },
+    {
+      "id": "websocket",
+      "name": "WebSocket",
+      "fullName": "WebSocket",
+      "title": "A Live Two-Way Channel",
+      "layer": 7,
+      "category": "application",
+      "nodes": {
+        "client": "Client / 192.168.1.10",
+        "router": "Router / 192.168.1.1",
+        "internet": "Internet",
+        "web": "chat.example.com / 203.0.113.30"
+      },
+      "legend": [
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "amber",
+          "From browser"
+        ],
+        [
+          "violet",
+          "From server"
+        ],
+        [
+          "slate",
+          "Control (ping, pong, close)"
+        ],
+        [
+          null,
+          "Real sites use wss:// (TLS)"
+        ]
+      ],
+      "overview": {
+        "full": "WebSocket",
+        "facts": [
+          [
+            "Layer",
+            "Application (Layer 7)"
+          ],
+          [
+            "Default Port",
+            "80 (wss: 443)"
+          ],
+          [
+            "Transport",
+            "TCP"
+          ],
+          [
+            "Starts as",
+            "HTTP/1.1 Upgrade"
+          ],
+          [
+            "Framing",
+            "Opcode, length, mask"
+          ],
+          [
+            "Defined In",
+            "RFC 6455"
+          ]
+        ]
+      },
+      "outro": {
+        "title": "Push, not poll",
+        "desc": "One connection, messages both ways",
+        "facts": [
+          [
+            "Handshake",
+            "1 HTTP exchange"
+          ],
+          [
+            "Smallest message",
+            "65 B on the wire"
+          ],
+          [
+            "Server push",
+            "Any time"
+          ],
+          [
+            "Overhead per frame",
+            "2–14 bytes"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "Open a Connection",
+          "desc": "An ordinary TCP handshake",
+          "teach": "A WebSocket starts life as an HTTP connection, so first comes the usual three-way handshake to port 80.",
+          "facts": [
+            [
+              "Server",
+              "chat.example.com"
+            ],
+            [
+              "Port",
+              "80"
+            ],
+            [
+              "Handshake",
+              "SYN → SYN-ACK → ACK"
+            ]
+          ],
+          "packets": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "title": "Ask to Upgrade",
+          "desc": "A GET with Upgrade: websocket",
+          "teach": "The browser sends a normal GET with Upgrade and Connection headers and a random 16-byte key, base64-encoded.",
+          "facts": [
+            [
+              "Key",
+              "dGhlIHNhbXBsZSBub25jZQ=="
+            ],
+            [
+              "Version",
+              "13"
+            ],
+            [
+              "Origin",
+              "http://chat.example.com"
+            ]
+          ],
+          "packets": [
+            3
+          ]
+        },
+        {
+          "title": "Switching Protocols",
+          "desc": "101, and HTTP is over",
+          "teach": "The server proves it understood by hashing the key with a fixed GUID (SHA-1, then base64) and answers 101. From the next byte on, the connection carries WebSocket frames, not HTTP.",
+          "facts": [
+            [
+              "Status",
+              "101"
+            ],
+            [
+              "Accept",
+              "s3pPLMBiTxaQ9kYGzzhZRbK+xOo="
+            ],
+            [
+              "Then",
+              "WebSocket frames"
+            ]
+          ],
+          "packets": [
+            4
+          ]
+        },
+        {
+          "title": "Messages Both Ways",
+          "desc": "Small frames, either side, any time",
+          "teach": "Frames from the browser are masked with a random 4-byte key; frames from the server aren't. Either side can send whenever it likes: the server pushes 'Bob joined' without being asked.",
+          "facts": [
+            [
+              "Opcode",
+              "1 (text)"
+            ],
+            [
+              "Client frames",
+              "Masked"
+            ],
+            [
+              "Header",
+              "2 bytes + mask"
+            ]
+          ],
+          "packets": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "title": "Still There?",
+          "desc": "Ping and pong",
+          "teach": "Every 30 seconds the server pings; the browser must answer with a pong. This keeps idle connections open through NATs and detects dead peers.",
+          "facts": [
+            [
+              "Ping opcode",
+              "9"
+            ],
+            [
+              "Pong opcode",
+              "10"
+            ],
+            [
+              "Interval",
+              "30 s (server choice)"
+            ]
+          ],
+          "packets": [
+            8,
+            9
+          ]
+        },
+        {
+          "title": "Closing",
+          "desc": "Close frames, then TCP FIN",
+          "teach": "Each side sends a close frame with status 1000 (normal), then the server closes the TCP connection.",
+          "facts": [
+            [
+              "Close code",
+              "1000 (normal)"
+            ],
+            [
+              "Opcode",
+              "8"
+            ],
+            [
+              "Then",
+              "TCP FIN"
+            ]
+          ],
+          "packets": [
+            10,
+            11,
+            12
+          ]
+        }
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "TCP",
+          "info": "52611 → 80 [SYN] Seq=0",
+          "size": "66 B",
+          "color": "green",
+          "fields": "TCP 32"
+        },
+        {
+          "time": "0.017s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "80 → 52611 [SYN, ACK] Seq=0 Ack=1",
+          "size": "66 B",
+          "color": "green",
+          "fields": "TCP 32"
+        },
+        {
+          "time": "0.034s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "TCP",
+          "info": "52611 → 80 [ACK] Seq=1 Ack=1",
+          "size": "60 B",
+          "color": "green",
+          "fields": "TCP 20, padded"
+        },
+        {
+          "time": "0.034s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "HTTP",
+          "info": "GET /chat HTTP/1.1 (Upgrade: websocket)",
+          "size": "246 B",
+          "color": "amber",
+          "fields": "192 B of headers: GET /chat HTTP/1.1 | Host: chat.example.com | Upgrade: websocket | Connection: Upgrade | Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ== | Sec-WebSocket-Version: 13 | Origin: http://chat.example.com"
+        },
+        {
+          "time": "0.051s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "HTTP",
+          "info": "HTTP/1.1 101 Switching Protocols",
+          "size": "183 B",
+          "color": "violet",
+          "fields": "129 B: HTTP/1.1 101 Switching Protocols | Upgrade: websocket | Connection: Upgrade | Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo="
+        },
+        {
+          "time": "0.300s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "WebSocket",
+          "info": "WebSocket Text [FIN] [MASKED]: hello",
+          "size": "65 B",
+          "color": "amber",
+          "fields": "FIN+opcode 1, MASK+len 5, masking key 4, payload 5"
+        },
+        {
+          "time": "0.318s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Text [FIN]: Bob joined",
+          "size": "66 B",
+          "color": "violet",
+          "fields": "unmasked, payload 10"
+        },
+        {
+          "time": "2.104s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Text [FIN]: {\"from\":\"bob\",\"text\":\"hi!\"}",
+          "size": "83 B",
+          "color": "violet",
+          "fields": "payload 27 (JSON)"
+        },
+        {
+          "time": "30.051s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Ping [FIN]",
+          "size": "60 B",
+          "color": "slate",
+          "fields": "opcode 9, no payload; frame padded to 60"
+        },
+        {
+          "time": "30.052s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "WebSocket",
+          "info": "WebSocket Pong [FIN] [MASKED]",
+          "size": "60 B",
+          "color": "slate",
+          "fields": "opcode 10, masked, padded"
+        },
+        {
+          "time": "45.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "WebSocket",
+          "info": "WebSocket Connection Close [FIN] [MASKED]",
+          "size": "62 B",
+          "color": "slate",
+          "fields": "opcode 8, status 1000"
+        },
+        {
+          "time": "45.017s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Connection Close [FIN]",
+          "size": "60 B",
+          "color": "slate",
+          "fields": "status 1000, padded"
+        },
+        {
+          "time": "45.017s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "80 → 52611 [FIN, ACK]",
+          "size": "60 B",
+          "color": "green",
+          "fields": "server closes"
+        }
+      ]
+    },
+    {
+      "id": "doh",
+      "name": "DoH",
+      "fullName": "DNS over HTTPS + DNSSEC",
+      "title": "Private, Verified Lookups",
+      "layer": 7,
+      "category": "security",
+      "nodes": {
+        "client": "Client / 192.168.1.10",
+        "router": "Router / 192.168.1.1",
+        "internet": "Internet",
+        "dns": "dns.example.net / 203.0.113.53",
+        "auth": "Authoritative Server / 198.51.100.53"
+      },
+      "legend": [
+        [
+          "blue",
+          "DNS"
+        ],
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "teal",
+          "TLS handshake"
+        ],
+        [
+          "amber",
+          "Query over HTTPS"
+        ],
+        [
+          "violet",
+          "Signed answers"
+        ],
+        [
+          null,
+          "DS chain from .com not shown"
+        ]
+      ],
+      "overview": {
+        "full": "DNS over HTTPS + DNSSEC",
+        "facts": [
+          [
+            "Layer",
+            "Application (Layer 7)"
+          ],
+          [
+            "Port",
+            "443 (DoH), 853 (DoT)"
+          ],
+          [
+            "Transport",
+            "HTTP/2 over TLS"
+          ],
+          [
+            "Media type",
+            "application/dns-message"
+          ],
+          [
+            "Integrity",
+            "DNSSEC: RRSIG, DNSKEY, DS"
+          ],
+          [
+            "Defined In",
+            "RFC 8484, RFC 4033–4035"
+          ]
+        ]
+      },
+      "outro": {
+        "title": "Hidden and checked",
+        "desc": "Encrypted on the way, verified at the source",
+        "facts": [
+          [
+            "On-path observers see",
+            "Resolver IP and SNI only"
+          ],
+          [
+            "Answer",
+            "A 203.0.113.10, AD set"
+          ],
+          [
+            "Signature",
+            "ECDSA P-256 (alg 13)"
+          ],
+          [
+            "Still visible",
+            "Which site you then connect to"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "title": "What Plain DNS Shows",
+          "desc": "The name, in clear text",
+          "teach": "A normal DNS query is a UDP datagram anyone on the path can read and even rewrite: your Wi-Fi, your ISP, a café network.",
+          "facts": [
+            [
+              "Transport",
+              "UDP 53"
+            ],
+            [
+              "Readable",
+              "Yes, every field"
+            ],
+            [
+              "Can be forged",
+              "Yes, without DNSSEC"
+            ]
+          ],
+          "packets": [
+            0,
+            1
+          ]
+        },
+        {
+          "title": "Connect to the Resolver",
+          "desc": "An ordinary HTTPS connection",
+          "teach": "The browser opens TCP and TLS to its DoH resolver exactly as it would to a website. On the wire it looks like any other HTTPS traffic to dns.example.net.",
+          "facts": [
+            [
+              "Resolver",
+              "dns.example.net"
+            ],
+            [
+              "Port",
+              "443"
+            ],
+            [
+              "SNI",
+              "dns.example.net"
+            ]
+          ],
+          "packets": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "title": "The Question, Inside HTTPS",
+          "desc": "POST /dns-query",
+          "teach": "The DNS message is sent unchanged as the body of an HTTP/2 POST with type application/dns-message, so nobody between the laptop and the resolver can read or alter it.",
+          "facts": [
+            [
+              "Method",
+              "POST /dns-query"
+            ],
+            [
+              "Body",
+              "Wire-format DNS message"
+            ],
+            [
+              "Visible",
+              "Size and timing only"
+            ]
+          ],
+          "packets": [
+            8
+          ]
+        },
+        {
+          "title": "Check the Signatures",
+          "desc": "DNSSEC from the resolver's side",
+          "teach": "The resolver asks with the DO bit set, gets the A record plus its RRSIG, then fetches example.com's DNSKEYs to verify the signature. The DNSKEY is itself vouched for by a DS record in .com, and so on up to the root trust anchor.",
+          "facts": [
+            [
+              "Flag",
+              "DO (DNSSEC OK)"
+            ],
+            [
+              "Algorithm",
+              "13 (ECDSA P-256)"
+            ],
+            [
+              "Chain",
+              "Root → .com → example.com"
+            ]
+          ],
+          "packets": [
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "title": "Answer, Encrypted and Verified",
+          "desc": "AD: authenticated data",
+          "teach": "The answer returns inside HTTPS with the AD flag, meaning the resolver validated the signature chain. Privacy comes from HTTPS; integrity from DNSSEC.",
+          "facts": [
+            [
+              "Status",
+              "HTTP 200"
+            ],
+            [
+              "Flag",
+              "AD set"
+            ],
+            [
+              "Answer",
+              "A 203.0.113.10"
+            ]
+          ],
+          "packets": [
+            13
+          ]
+        },
+        {
+          "title": "What's Still Visible",
+          "desc": "Not a privacy cure-all",
+          "teach": "Observers still see that you talk to dns.example.net, and the next TLS connection still names www.example.com in its SNI unless the site supports Encrypted Client Hello (ECH).",
+          "facts": [
+            [
+              "Visible",
+              "Resolver IP, SNI"
+            ],
+            [
+              "Fix for SNI",
+              "ECH"
+            ],
+            [
+              "Trust moves to",
+              "The resolver"
+            ]
+          ],
+          "packets": []
+        }
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.53",
+          "proto": "DNS",
+          "info": "Standard query A www.example.com",
+          "size": "75 B",
+          "color": "blue",
+          "fields": "plain DNS, for contrast"
+        },
+        {
+          "time": "0.012s",
+          "src": "203.0.113.53",
+          "dst": "192.168.1.10",
+          "proto": "DNS",
+          "info": "Standard query response A 203.0.113.10",
+          "size": "91 B",
+          "color": "blue",
+          "fields": "answer 16"
+        },
+        {
+          "time": "1.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.53",
+          "proto": "TCP",
+          "info": "52700 → 443 [SYN] Seq=0",
+          "size": "66 B",
+          "color": "green",
+          "fields": "TCP 32"
+        },
+        {
+          "time": "1.012s",
+          "src": "203.0.113.53",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "443 → 52700 [SYN, ACK] Seq=0 Ack=1",
+          "size": "66 B",
+          "color": "green",
+          "fields": "TCP 32"
+        },
+        {
+          "time": "1.024s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.53",
+          "proto": "TCP",
+          "info": "52700 → 443 [ACK] Seq=1 Ack=1",
+          "size": "60 B",
+          "color": "green",
+          "fields": "padded"
+        },
+        {
+          "time": "1.024s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.53",
+          "proto": "TLSv1.3",
+          "info": "Client Hello (SNI=dns.example.net)",
+          "size": "571 B",
+          "color": "teal",
+          "fields": "same structure as the mail lessons' Client Hello (X25519 only)"
+        },
+        {
+          "time": "1.036s",
+          "src": "203.0.113.53",
+          "dst": "192.168.1.10",
+          "proto": "TLSv1.3",
+          "info": "Server Hello + encrypted handshake, 2 segments",
+          "size": "2.9 KB",
+          "color": "teal",
+          "fields": "two TCP segments; see the segment fix in 02-fixes"
+        },
+        {
+          "time": "1.048s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.53",
+          "proto": "TLSv1.3",
+          "info": "Change Cipher Spec, Finished (encrypted)",
+          "size": "118 B",
+          "color": "teal",
+          "fields": "as in the mail lessons"
+        },
+        {
+          "time": "1.048s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.53",
+          "proto": "TLSv1.3",
+          "info": "Application Data (HTTP/2 POST /dns-query)",
+          "size": "166 B",
+          "color": "amber",
+          "fields": "encrypted: HEADERS (POST, content-type application/dns-message) + DATA (33-byte DNS query); exact size set by the encoder"
+        },
+        {
+          "time": "1.060s",
+          "src": "203.0.113.53",
+          "dst": "198.51.100.53",
+          "proto": "DNS",
+          "info": "Standard query A www.example.com OPT",
+          "size": "86 B",
+          "color": "blue",
+          "fields": "EDNS OPT 11 with DO bit"
+        },
+        {
+          "time": "1.080s",
+          "src": "198.51.100.53",
+          "dst": "203.0.113.53",
+          "proto": "DNS",
+          "info": "Standard query response A 203.0.113.10 RRSIG OPT",
+          "size": "209 B",
+          "color": "violet",
+          "fields": "A 16 + RRSIG (alg 13, signer example.com, 64-byte signature) + OPT"
+        },
+        {
+          "time": "1.081s",
+          "src": "203.0.113.53",
+          "dst": "198.51.100.53",
+          "proto": "DNS",
+          "info": "Standard query DNSKEY example.com OPT",
+          "size": "82 B",
+          "color": "blue",
+          "fields": "question example.com DNSKEY, DO bit"
+        },
+        {
+          "time": "1.101s",
+          "src": "198.51.100.53",
+          "dst": "203.0.113.53",
+          "proto": "DNS",
+          "info": "Standard query response DNSKEY DNSKEY RRSIG OPT",
+          "size": "349 B",
+          "color": "violet",
+          "fields": "KSK + ZSK (P-256, 68-byte rdata each) + RRSIG over the DNSKEY set"
+        },
+        {
+          "time": "1.102s",
+          "src": "203.0.113.53",
+          "dst": "192.168.1.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (HTTP/2 200, application/dns-message, AD)",
+          "size": "247 B",
+          "color": "violet",
+          "fields": "encrypted: HEADERS 200 + DATA (DNS response with AD flag); exact size set by the encoder"
+        }
+      ]
+    }
+  ]
+}

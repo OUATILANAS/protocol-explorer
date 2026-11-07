@@ -1,0 +1,765 @@
+{
+  "note": "Shuffle options at display time; 'answer' is the index before shuffling. 'packet' is the 1-based table row the explanation links to. Rewrite freely; translate with the lesson text.",
+  "quiz": {
+    "http": [
+      {
+        "q": "Why does the browser send a DNS query before the HTTP request?",
+        "options": [
+          "Packets are addressed by IP, not by name",
+          "HTTP requires DNS to encrypt the request",
+          "The server only accepts requests after a DNS check",
+          "DNS carries the HTTP headers"
+        ],
+        "answer": 0,
+        "why": "IP packets need an address; DNS turns www.example.com into 203.0.113.10.",
+        "packet": 1
+      },
+      {
+        "q": "Which packet finishes the TCP three-way handshake?",
+        "options": [
+          "The client's ACK",
+          "The server's SYN-ACK",
+          "The GET request",
+          "The DNS reply"
+        ],
+        "answer": 0,
+        "why": "SYN, SYN-ACK, then the client's ACK; only then can data flow.",
+        "packet": 5
+      },
+      {
+        "q": "The 12.2 KB page arrives as 9 TCP segments because…",
+        "options": [
+          "each segment carries at most the MSS of 1,460 bytes",
+          "HTTP splits every response into 9 parts",
+          "DNS limits replies to 9 packets",
+          "the router fragments large packets"
+        ],
+        "answer": 0,
+        "why": "TCP cuts the stream into segments no larger than the maximum segment size.",
+        "packet": 7
+      }
+    ],
+    "https": [
+      {
+        "q": "What can someone on the network still read in an HTTPS visit?",
+        "options": [
+          "The server name in the Client Hello (SNI)",
+          "The URL path",
+          "The cookies",
+          "The page content"
+        ],
+        "answer": 0,
+        "why": "Without Encrypted Client Hello, the SNI is sent in clear text; everything after the handshake is encrypted.",
+        "packet": 6
+      },
+      {
+        "q": "What does the server's certificate prove?",
+        "options": [
+          "That the server controls the name www.example.com",
+          "That the page has no malware",
+          "That the connection is fast",
+          "That DNS was not tampered with"
+        ],
+        "answer": 0,
+        "why": "A trusted CA signed a binding between the name and the server's public key.",
+        "packet": 7
+      },
+      {
+        "q": "Compared with HTTP, how many extra round trips before the GET?",
+        "options": [
+          "One (the TLS 1.3 handshake)",
+          "None",
+          "Three",
+          "One per certificate"
+        ],
+        "answer": 0,
+        "why": "TLS 1.3 needs one round trip after the TCP handshake before application data.",
+        "packet": 9
+      }
+    ],
+    "http3": [
+      {
+        "q": "Why is the client's first QUIC datagram padded to 1,200 bytes?",
+        "options": [
+          "So the server can't be used to amplify attacks",
+          "Because UDP has a minimum size",
+          "To make room for the HTML",
+          "To match the Ethernet MTU"
+        ],
+        "answer": 0,
+        "why": "The server may send at most three times what it received until the address is verified.",
+        "packet": 3
+      },
+      {
+        "q": "When does the GET leave in HTTP/3?",
+        "options": [
+          "With the client's Finished, after one round trip",
+          "After a TCP handshake and a TLS handshake",
+          "Before the Client Hello",
+          "Only after the server sends HANDSHAKE_DONE"
+        ],
+        "answer": 0,
+        "why": "QUIC merges transport and TLS handshakes, so the request goes after one round trip.",
+        "packet": 8
+      },
+      {
+        "q": "If one datagram of a response is lost, QUIC…",
+        "options": [
+          "delays only the stream that datagram belonged to",
+          "stops every stream until it's resent",
+          "closes the connection",
+          "switches back to TCP"
+        ],
+        "answer": 0,
+        "why": "QUIC orders data per stream, avoiding TCP's head-of-line blocking across streams.",
+        "packet": 9
+      }
+    ],
+    "websocket": [
+      {
+        "q": "How does a WebSocket connection begin?",
+        "options": [
+          "As an HTTP GET with Upgrade: websocket",
+          "With a special UDP handshake",
+          "With a TLS extension only",
+          "With a DNS record"
+        ],
+        "answer": 0,
+        "why": "The server answers 101 Switching Protocols and the connection then carries WebSocket frames.",
+        "packet": 4
+      },
+      {
+        "q": "Which frames must be masked?",
+        "options": [
+          "Frames from the browser to the server",
+          "Frames from the server",
+          "Only ping frames",
+          "None"
+        ],
+        "answer": 0,
+        "why": "Client-to-server frames carry a 4-byte masking key; server frames don't.",
+        "packet": 6
+      },
+      {
+        "q": "What is the ping/pong exchange for?",
+        "options": [
+          "Keeping idle connections alive and detecting dead peers",
+          "Measuring the page size",
+          "Renewing the TLS certificate",
+          "Changing the port"
+        ],
+        "answer": 0,
+        "why": "A peer must answer a ping with a pong.",
+        "packet": 9
+      }
+    ],
+    "tcp": [
+      {
+        "q": "How does the laptop tell the server a segment is missing?",
+        "options": [
+          "Duplicate ACK with SACK blocks",
+          "A new SYN",
+          "An ICMP error",
+          "Closing the connection"
+        ],
+        "answer": 0,
+        "why": "The ACK keeps asking for the gap, while SACK reports what arrived after it.",
+        "packet": 8
+      },
+      {
+        "q": "What does the server resend?",
+        "options": [
+          "Only the missing 1,460 bytes",
+          "The whole response",
+          "Every segment after the gap",
+          "Nothing; the laptop ignores it"
+        ],
+        "answer": 0,
+        "why": "With SACK, only the gap is retransmitted.",
+        "packet": 9
+      },
+      {
+        "q": "Why does every byte have a sequence number?",
+        "options": [
+          "So the receiver can order data and spot gaps",
+          "To encrypt it",
+          "To route it",
+          "To count users"
+        ],
+        "answer": 0,
+        "why": "Sequence and acknowledgment numbers make TCP reliable and ordered.",
+        "packet": 4
+      }
+    ],
+    "udp": [
+      {
+        "q": "What happens to the lost voice datagram?",
+        "options": [
+          "Nothing: UDP doesn't resend it",
+          "UDP resends it after 200 ms",
+          "The router resends it",
+          "The connection resets"
+        ],
+        "answer": 0,
+        "why": "UDP has no acknowledgments; the app decides how to cope.",
+        "packet": 7
+      },
+      {
+        "q": "Why is UDP a good fit for live voice?",
+        "options": [
+          "A late packet is useless, so waiting for resends would hurt more",
+          "UDP encrypts audio",
+          "UDP packets are larger",
+          "UDP guarantees order"
+        ],
+        "answer": 0,
+        "why": "Real-time audio prefers fresh data over complete data.",
+        "packet": 1
+      },
+      {
+        "q": "How big is a UDP header?",
+        "options": [
+          "8 bytes",
+          "20 bytes",
+          "32 bytes",
+          "40 bytes"
+        ],
+        "answer": 0,
+        "why": "Source port, destination port, length and checksum: 2 bytes each.",
+        "packet": 1
+      }
+    ],
+    "ip": [
+      {
+        "q": "How does the laptop find the router's MAC address?",
+        "options": [
+          "ARP broadcast",
+          "DNS query",
+          "DHCP request",
+          "ICMP echo"
+        ],
+        "answer": 0,
+        "why": "ARP maps an IPv4 address on the local network to a MAC address.",
+        "packet": 1
+      },
+      {
+        "q": "What changes when the packet passes through NAT?",
+        "options": [
+          "The source address and port",
+          "The destination address",
+          "The TCP flags",
+          "The payload"
+        ],
+        "answer": 0,
+        "why": "The router rewrites 192.168.1.10:52344 to its public address 198.51.100.7:40112.",
+        "packet": 4
+      },
+      {
+        "q": "Why does the TTL drop from 128 to 127?",
+        "options": [
+          "Each router decrements it by one",
+          "NAT halves it",
+          "The server sets it",
+          "TCP lowers it"
+        ],
+        "answer": 0,
+        "why": "TTL limits how many hops a packet can travel.",
+        "packet": 4
+      }
+    ],
+    "ipv6": [
+      {
+        "q": "Which protocol replaces ARP in IPv6?",
+        "options": [
+          "Neighbor Discovery (ICMPv6)",
+          "DHCPv6",
+          "IGMP",
+          "DNS"
+        ],
+        "answer": 0,
+        "why": "Neighbor Solicitation and Advertisement messages map addresses to MACs.",
+        "packet": 1
+      },
+      {
+        "q": "Where does the laptop's global address come from?",
+        "options": [
+          "The advertised prefix plus its own interface ID (SLAAC)",
+          "A DHCP server",
+          "The DNS resolver",
+          "The web server"
+        ],
+        "answer": 0,
+        "why": "The Router Advertisement provides 2001:db8:1::/64; the laptop adds its 64-bit identifier.",
+        "packet": 3
+      },
+      {
+        "q": "Why does the laptop send a Neighbor Solicitation for its own address?",
+        "options": [
+          "To check nobody else is using it (DAD)",
+          "To find the router",
+          "To ask for DNS",
+          "To start TCP"
+        ],
+        "answer": 0,
+        "why": "Duplicate Address Detection runs before any address is used.",
+        "packet": 1
+      }
+    ],
+    "ethernet": [
+      {
+        "q": "What does a switch do with a frame to an unknown MAC?",
+        "options": [
+          "Floods it out of every other port",
+          "Drops it",
+          "Sends it to the router",
+          "Asks DNS"
+        ],
+        "answer": 0,
+        "why": "Unknown and broadcast destinations are flooded; known ones go to one port.",
+        "packet": 1
+      },
+      {
+        "q": "How does the switch learn where a device is?",
+        "options": [
+          "From the source MAC of frames it receives",
+          "From the device's IP address",
+          "From DHCP",
+          "An administrator types it in"
+        ],
+        "answer": 0,
+        "why": "Each received frame teaches it source MAC → port.",
+        "packet": 2
+      },
+      {
+        "q": "Sending to 8.8.8.8, the Ethernet destination is…",
+        "options": [
+          "the router's MAC",
+          "8.8.8.8's MAC",
+          "ff:ff:ff:ff:ff:ff",
+          "the switch's MAC"
+        ],
+        "answer": 0,
+        "why": "Ethernet only reaches the next hop; IP carries the final destination.",
+        "packet": 5
+      }
+    ],
+    "wifi": [
+      {
+        "q": "Does the Wi-Fi password travel over the air in WPA3?",
+        "options": [
+          "No; SAE proves knowledge of it without sending it",
+          "Yes, encrypted with AES",
+          "Yes, hashed",
+          "Only in the beacon"
+        ],
+        "answer": 0,
+        "why": "SAE exchanges commit and confirm values derived from the password.",
+        "packet": 2
+      },
+      {
+        "q": "What does the 4-way handshake produce?",
+        "options": [
+          "The pairwise key (PTK) and the group key (GTK)",
+          "The SSID",
+          "An IP address",
+          "The certificate"
+        ],
+        "answer": 0,
+        "why": "Nonces plus the PMK give the PTK; message 3 delivers the GTK.",
+        "packet": 8
+      },
+      {
+        "q": "Which fields of an encrypted data frame are still visible?",
+        "options": [
+          "The MAC addresses in the 802.11 header",
+          "The DHCP message",
+          "The IP addresses",
+          "The website name"
+        ],
+        "answer": 0,
+        "why": "CCMP encrypts the payload, not the link-layer header.",
+        "packet": 12
+      }
+    ],
+    "dns": [
+      {
+        "q": "Which server first points the resolver to .com?",
+        "options": [
+          "A root server",
+          "The authoritative server",
+          "The laptop",
+          "The TLD server"
+        ],
+        "answer": 0,
+        "why": "Root servers answer with a referral to the .com servers.",
+        "packet": 3
+      },
+      {
+        "q": "What does 'recursion desired' ask the resolver to do?",
+        "options": [
+          "Do the whole lookup and return the final answer",
+          "Return only a referral",
+          "Cache nothing",
+          "Use TCP"
+        ],
+        "answer": 0,
+        "why": "The laptop asks one question; the resolver walks the hierarchy.",
+        "packet": 1
+      },
+      {
+        "q": "Why will the next lookup be faster?",
+        "options": [
+          "The resolver caches the answer for its TTL",
+          "The root server remembers the laptop",
+          "DNS switches to TCP",
+          "The browser skips DNS forever"
+        ],
+        "answer": 0,
+        "why": "Cached answers are reused until their TTL expires.",
+        "packet": 8
+      }
+    ],
+    "doh": [
+      {
+        "q": "With DoH, who can read the DNS question?",
+        "options": [
+          "Only the resolver",
+          "Anyone on the Wi-Fi",
+          "The root servers",
+          "The website"
+        ],
+        "answer": 0,
+        "why": "The query travels inside HTTPS to the resolver.",
+        "packet": 9
+      },
+      {
+        "q": "What does DNSSEC add?",
+        "options": [
+          "Proof the answer wasn't forged (signatures)",
+          "Encryption of the query",
+          "Faster lookups",
+          "A new port"
+        ],
+        "answer": 0,
+        "why": "RRSIG records are verified with DNSKEYs chained to the root.",
+        "packet": 11
+      },
+      {
+        "q": "What can an observer still see after DoH?",
+        "options": [
+          "The SNI of the site you then connect to (without ECH)",
+          "The DNS question",
+          "The DNS answer",
+          "Nothing at all"
+        ],
+        "answer": 0,
+        "why": "Encrypted Client Hello is needed to hide the site name in TLS.",
+        "packet": 14
+      }
+    ],
+    "dhcp": [
+      {
+        "q": "Why is the Discover sent from 0.0.0.0 to 255.255.255.255?",
+        "options": [
+          "The laptop has no address yet and doesn't know the server",
+          "To reach the internet",
+          "To hide the laptop",
+          "Because DHCP uses TCP"
+        ],
+        "answer": 0,
+        "why": "Broadcast reaches every device on the segment, including the DHCP server.",
+        "packet": 1
+      },
+      {
+        "q": "What does the Request message do?",
+        "options": [
+          "Accepts one offer, publicly",
+          "Asks for a DNS name",
+          "Renews the router",
+          "Asks for a MAC address"
+        ],
+        "answer": 0,
+        "why": "Broadcasting the Request tells other servers their offers were declined.",
+        "packet": 3
+      },
+      {
+        "q": "When does the laptop renew its lease?",
+        "options": [
+          "Halfway through the lease",
+          "Every minute",
+          "Only when rebooting",
+          "Never"
+        ],
+        "answer": 0,
+        "why": "Renewal (T1) starts at 50% of the lease time.",
+        "packet": 5
+      }
+    ],
+    "icmp": [
+      {
+        "q": "What does a router send when a packet's TTL reaches zero?",
+        "options": [
+          "ICMP Time Exceeded",
+          "TCP RST",
+          "DNS error",
+          "ARP reply"
+        ],
+        "answer": 0,
+        "why": "Traceroute uses these replies to name each hop.",
+        "packet": 4
+      },
+      {
+        "q": "How does traceroute discover the path?",
+        "options": [
+          "Sending probes with TTL 1, 2, 3 …",
+          "Asking DNS for the route",
+          "Reading the router's table",
+          "Using a special protocol"
+        ],
+        "answer": 0,
+        "why": "Each probe expires one hop further.",
+        "packet": 3
+      },
+      {
+        "q": "What does a ping measure?",
+        "options": [
+          "The round-trip time to a host",
+          "The download speed",
+          "The number of hops only",
+          "The page size"
+        ],
+        "answer": 0,
+        "why": "Echo request out, echo reply back.",
+        "packet": 2
+      }
+    ],
+    "smtp": [
+      {
+        "q": "How does the sending server find the recipient's mail server?",
+        "options": [
+          "An MX lookup in DNS",
+          "Asking the laptop",
+          "Port scanning",
+          "A root server"
+        ],
+        "answer": 0,
+        "why": "MX records name the mail servers for a domain.",
+        "packet": 16
+      },
+      {
+        "q": "What does STARTTLS do?",
+        "options": [
+          "Upgrades a plain connection on port 25 to TLS",
+          "Starts a new TCP connection",
+          "Signs the message",
+          "Sends the password"
+        ],
+        "answer": 0,
+        "why": "The session begins in plain text and switches to TLS.",
+        "packet": 26
+      },
+      {
+        "q": "Which port does the laptop use to submit mail in this lesson?",
+        "options": [
+          "465 (TLS from the start)",
+          "25",
+          "110",
+          "143"
+        ],
+        "answer": 0,
+        "why": "Implicit TLS submission uses port 465.",
+        "packet": 1
+      }
+    ],
+    "pop3": [
+      {
+        "q": "When is a message deleted from the server in POP3?",
+        "options": [
+          "At QUIT, after DELE",
+          "Immediately on RETR",
+          "Never",
+          "After 30 days"
+        ],
+        "answer": 0,
+        "why": "DELE marks it; the deletion happens when the session ends with QUIT.",
+        "packet": 18
+      },
+      {
+        "q": "What does STAT return?",
+        "options": [
+          "Number of messages and total size",
+          "The first message",
+          "The password",
+          "The server's certificate"
+        ],
+        "answer": 0,
+        "why": "'+OK 2 5120': two messages, 5,120 bytes.",
+        "packet": 13
+      },
+      {
+        "q": "Why can POP3 make mail disappear from other devices?",
+        "options": [
+          "It downloads and usually deletes from the server",
+          "It encrypts the mailbox",
+          "It renames folders",
+          "It uses UDP"
+        ],
+        "answer": 0,
+        "why": "POP3 is designed for one device taking the mail.",
+        "packet": 17
+      }
+    ],
+    "imap": [
+      {
+        "q": "Why do IMAP commands start with tags like a1, a2?",
+        "options": [
+          "To match responses to commands",
+          "To encrypt them",
+          "To set priority",
+          "To name folders"
+        ],
+        "answer": 0,
+        "why": "Tagged responses let several commands be in flight.",
+        "packet": 8
+      },
+      {
+        "q": "What does IDLE do?",
+        "options": [
+          "Lets the server push new-mail notifications",
+          "Closes the connection",
+          "Deletes old mail",
+          "Downloads everything"
+        ],
+        "answer": 0,
+        "why": "The client waits; the server reports changes as they happen.",
+        "packet": 14
+      },
+      {
+        "q": "Where is the \\Seen flag stored?",
+        "options": [
+          "On the server, so every device sees it",
+          "Only on the laptop",
+          "In DNS",
+          "In the message body"
+        ],
+        "answer": 0,
+        "why": "IMAP keeps state on the server.",
+        "packet": 13
+      }
+    ],
+    "ftp": [
+      {
+        "q": "Why does FTP open a second TCP connection?",
+        "options": [
+          "Files travel on a separate data connection",
+          "The first one failed",
+          "To encrypt the file",
+          "For DNS"
+        ],
+        "answer": 0,
+        "why": "Commands use port 21; data uses the port named by PASV.",
+        "packet": 13
+      },
+      {
+        "q": "Which risk does this lesson show?",
+        "options": [
+          "The password crosses the network in clear text",
+          "Files are compressed",
+          "The server is too slow",
+          "Ports are random"
+        ],
+        "answer": 0,
+        "why": "PASS secret is readable by anyone on the path.",
+        "packet": 7
+      },
+      {
+        "q": "How does the server name the data port in passive mode?",
+        "options": [
+          "In the 227 reply's six numbers",
+          "With a DNS record",
+          "In the certificate",
+          "By ICMP"
+        ],
+        "answer": 0,
+        "why": "(203,0,113,21,195,149) → 195 × 256 + 149 = 50069.",
+        "packet": 12
+      }
+    ],
+    "ssh": [
+      {
+        "q": "How does the laptop log in without sending a secret?",
+        "options": [
+          "It signs the session with its private key",
+          "It sends the password encrypted",
+          "It sends its public key only",
+          "The server trusts its IP"
+        ],
+        "answer": 0,
+        "why": "The server verifies the signature with the authorized public key.",
+        "packet": 18
+      },
+      {
+        "q": "What does the host key protect against?",
+        "options": [
+          "Talking to an impostor server",
+          "Slow connections",
+          "Lost packets",
+          "Typos"
+        ],
+        "answer": 0,
+        "why": "The client checks the server's host key against known_hosts.",
+        "packet": 9
+      },
+      {
+        "q": "Which messages are still readable on the wire?",
+        "options": [
+          "The version banners and algorithm lists",
+          "The commands typed",
+          "The login method",
+          "The output"
+        ],
+        "answer": 0,
+        "why": "Everything after NEWKEYS is encrypted.",
+        "packet": 4
+      }
+    ],
+    "tls": [
+      {
+        "q": "How many round trips does a TLS 1.3 full handshake take?",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "Zero always"
+        ],
+        "answer": 0,
+        "why": "Client Hello out, server flight back, then application data.",
+        "packet": 4
+      },
+      {
+        "q": "What carries the key share in TLS 1.3?",
+        "options": [
+          "The Client Hello and Server Hello",
+          "The certificate",
+          "The Finished message",
+          "The SYN"
+        ],
+        "answer": 0,
+        "why": "Key shares travel in the hellos, so keys exist after one round trip.",
+        "packet": 4
+      },
+      {
+        "q": "What is close_notify?",
+        "options": [
+          "An alert telling the peer no more data will follow",
+          "A certificate error",
+          "A DNS message",
+          "A TCP flag"
+        ],
+        "answer": 0,
+        "why": "It prevents truncation attacks before TCP closes.",
+        "packet": 12
+      }
+    ]
+  }
+}
