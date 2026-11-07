@@ -1,0 +1,6799 @@
+{
+  "reference": {
+    "lang": "fr",
+    "measure": {
+      "title": "Protocol Explorer · Learn how the internet works",
+      "layout": "medium",
+      "theme": "dark",
+      "page": [
+        1280,
+        800
+      ],
+      "fonts": [
+        "Iosevka 400 normal",
+        "Iosevka 500 normal",
+        "Iosevka 600 normal",
+        "Iosevka 700 normal",
+        "Iosevka 800 italic",
+        "Iosevka 800 normal"
+      ],
+      "texts": [
+        {
+          "key": "protocol",
+          "text": "PROTOCOL",
+          "rect": [
+            98,
+            16,
+            105.3,
+            23
+          ],
+          "size": 20,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.7,
+          "line": "24px",
+          "transform": "none",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "explorer",
+          "text": "EXPLORER",
+          "rect": [
+            204.3,
+            16,
+            93.6,
+            23
+          ],
+          "size": 20,
+          "weight": "800",
+          "style": "italic",
+          "tracking": 1.7,
+          "line": "24px",
+          "transform": "none",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "comment fonctionne internet",
+          "text": "COMMENT FONCTIONNE INTERNET",
+          "rect": [
+            98,
+            42,
+            192.5,
+            13
+          ],
+          "size": 11.5,
+          "weight": "400",
+          "style": "normal",
+          "tracking": 1.38,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(133, 156, 201)",
+          "svg": false
+        },
+        {
+          "key": "leçon en cours",
+          "text": "LEÇON EN COURS",
+          "rect": [
+            346.9,
+            7.5,
+            99.2,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.585,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "http · communication web",
+          "text": "HTTP · COMMUNICATION WEB",
+          "rect": [
+            346.9,
+            26.5,
+            237.6,
+            21
+          ],
+          "size": 18,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.9,
+          "line": "21px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "vue d’ensemble · 5 étapes",
+          "text": "VUE D’ENSEMBLE · 5 ÉTAPES",
+          "rect": [
+            346.9,
+            51.5,
+            164.5,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.58,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "votre progression",
+          "text": "VOTRE PROGRESSION",
+          "rect": [
+            751.8,
+            13.5,
+            120.5,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.585,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "0%",
+          "text": "0%",
+          "rect": [
+            927.2,
+            8.5,
+            20.5,
+            22
+          ],
+          "size": 19,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.76,
+          "line": "20px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "0",
+          "text": "0",
+          "rect": [
+            751.8,
+            49.5,
+            6.5,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "/ 14",
+          "text": "/ 14",
+          "rect": [
+            758.3,
+            49.5,
+            38.9,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "terminées",
+          "text": "TERMINÉES",
+          "rect": [
+            797.1,
+            49.5,
+            58.3,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "·",
+          "text": "·",
+          "rect": [
+            866,
+            49.5,
+            6.5,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(97, 130, 196)",
+          "svg": false
+        },
+        {
+          "key": "0 #2",
+          "text": "0",
+          "rect": [
+            882.9,
+            49.5,
+            6.5,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "en cours",
+          "text": "EN COURS",
+          "rect": [
+            895.9,
+            49.5,
+            51.8,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "conçu par",
+          "text": "CONÇU PAR",
+          "rect": [
+            972.7,
+            16.5,
+            63.8,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.585,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "dilumsanjaya",
+          "text": "DilumSanjaya",
+          "rect": [
+            992.7,
+            39.5,
+            87.4,
+            17
+          ],
+          "size": 14,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0.28,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "fr",
+          "text": "FR",
+          "rect": [
+            1141,
+            28.5,
+            15.1,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.81,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "protocoles internet",
+          "text": "PROTOCOLES INTERNET",
+          "rect": [
+            37,
+            90,
+            227.4,
+            25
+          ],
+          "size": 21,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.47,
+          "line": "32px",
+          "transform": "none",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "tous",
+          "text": "TOUS",
+          "rect": [
+            45.1,
+            140,
+            25,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "14",
+          "text": "14",
+          "rect": [
+            80,
+            141,
+            11,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "base",
+          "text": "BASE",
+          "rect": [
+            113.2,
+            140,
+            25,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "4",
+          "text": "4",
+          "rect": [
+            150.4,
+            141,
+            5.5,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(166, 180, 210)",
+          "svg": false
+        },
+        {
+          "key": "application",
+          "text": "APPLICATION",
+          "rect": [
+            180.3,
+            140,
+            68.6,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "7",
+          "text": "7",
+          "rect": [
+            261.1,
+            141,
+            5.5,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(166, 180, 210)",
+          "svg": false
+        },
+        {
+          "key": "sécurité",
+          "text": "SÉCURITÉ",
+          "rect": [
+            291,
+            140,
+            49.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "3",
+          "text": "3",
+          "rect": [
+            353.2,
+            141,
+            5.5,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(166, 180, 210)",
+          "svg": false
+        },
+        {
+          "key": "http",
+          "text": "HTTP",
+          "rect": [
+            84.5,
+            181.5,
+            35.2,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "transfert hypertexte",
+          "text": "Transfert hypertexte",
+          "rect": [
+            84.5,
+            200.5,
+            148.9,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "1",
+          "text": "1",
+          "rect": [
+            78,
+            240,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "requête du client",
+          "text": "REQUÊTE DU CLIENT",
+          "rect": [
+            106,
+            235,
+            126.2,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "le navigateur prépare la requête",
+          "text": "Le navigateur prépare la requête",
+          "rect": [
+            106,
+            252,
+            216,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "2",
+          "text": "2",
+          "rect": [
+            78,
+            284,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "résolution dns",
+          "text": "RÉSOLUTION DNS",
+          "rect": [
+            106,
+            279,
+            104,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "trouve l’adresse ip du serveur",
+          "text": "Trouve l’adresse IP du serveur",
+          "rect": [
+            106,
+            296,
+            202.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "3 #2",
+          "text": "3",
+          "rect": [
+            78,
+            328,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "connexion tcp",
+          "text": "CONNEXION TCP",
+          "rect": [
+            106,
+            323,
+            96.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "établit un lien fiable",
+          "text": "Établit un lien fiable",
+          "rect": [
+            106,
+            340,
+            148.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "4 #2",
+          "text": "4",
+          "rect": [
+            78,
+            372,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "échange http",
+          "text": "ÉCHANGE HTTP",
+          "rect": [
+            106,
+            367,
+            89.1,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "messages de requête et de réponse",
+          "text": "Messages de requête et de réponse",
+          "rect": [
+            106,
+            384,
+            222.8,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "5",
+          "text": "5",
+          "rect": [
+            78,
+            416,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "affichage de la page",
+          "text": "AFFICHAGE DE LA PAGE",
+          "rect": [
+            106,
+            411,
+            148.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "le navigateur affiche le contenu",
+          "text": "Le navigateur affiche le contenu",
+          "rect": [
+            106,
+            428,
+            216,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "https",
+          "text": "HTTPS",
+          "rect": [
+            84.5,
+            466.5,
+            44,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "http sécurisé",
+          "text": "HTTP sécurisé",
+          "rect": [
+            84.5,
+            485.5,
+            96.8,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "tcp",
+          "text": "TCP",
+          "rect": [
+            84.5,
+            513.5,
+            26.4,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "contrôle de transmission",
+          "text": "Contrôle de transmission",
+          "rect": [
+            84.5,
+            532.5,
+            178.7,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "udp",
+          "text": "UDP",
+          "rect": [
+            84.5,
+            560.5,
+            26.4,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "datagrammes utilisateur",
+          "text": "Datagrammes utilisateur",
+          "rect": [
+            84.5,
+            579.5,
+            171.3,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "ip",
+          "text": "IP",
+          "rect": [
+            84.5,
+            607.5,
+            17.6,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "protocole internet",
+          "text": "Protocole Internet",
+          "rect": [
+            84.5,
+            626.5,
+            134,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "dns",
+          "text": "DNS",
+          "rect": [
+            84.5,
+            654.5,
+            26.4,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "système de noms de domaine",
+          "text": "Système de noms de domaine",
+          "rect": [
+            84.5,
+            673.5,
+            193.6,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "dhcp",
+          "text": "DHCP",
+          "rect": [
+            84.5,
+            701.5,
+            35.2,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "configuration dynamique d’hôte",
+          "text": "Configuration dynamique d’hôte",
+          "rect": [
+            84.5,
+            720.5,
+            223.4,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "icmp",
+          "text": "ICMP",
+          "rect": [
+            84.5,
+            748.5,
+            35.2,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "messages de contrôle internet",
+          "text": "Messages de contrôle Internet",
+          "rect": [
+            84.5,
+            767.5,
+            215.9,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "internet",
+          "text": "Internet",
+          "rect": [
+            832,
+            425.3,
+            53,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "client",
+          "text": "Client",
+          "rect": [
+            411.7,
+            406.6,
+            39.7,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "192.168.1.10",
+          "text": "192.168.1.10",
+          "rect": [
+            411.7,
+            421.8,
+            78.3,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "routeur",
+          "text": "Routeur",
+          "rect": [
+            639.7,
+            364.2,
+            46.3,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "192.168.1.1",
+          "text": "192.168.1.1",
+          "rect": [
+            639.7,
+            379.4,
+            71.8,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "résolveur dns",
+          "text": "Résolveur DNS",
+          "rect": [
+            707.7,
+            192,
+            86.1,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "8.8.8.8",
+          "text": "8.8.8.8",
+          "rect": [
+            748.1,
+            207.3,
+            45.7,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "serveur web",
+          "text": "Serveur web",
+          "rect": [
+            868,
+            158.3,
+            72.8,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "203.0.113.10",
+          "text": "203.0.113.10",
+          "rect": [
+            868,
+            173.6,
+            78.3,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "réseau",
+          "text": "RÉSEAU",
+          "rect": [
+            449,
+            98,
+            40.3,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.72,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "séquence",
+          "text": "SÉQUENCE",
+          "rect": [
+            530.3,
+            98,
+            53.8,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.72,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "vue d’ensemble",
+          "text": "VUE D’ENSEMBLE",
+          "rect": [
+            984,
+            86.5,
+            146.3,
+            22
+          ],
+          "size": 19,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.95,
+          "line": "28px",
+          "transform": "none",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "http #2",
+          "text": "HTTP",
+          "rect": [
+            986,
+            131,
+            69.5,
+            37
+          ],
+          "size": 31,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.86,
+          "line": "40px",
+          "transform": "none",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "actif",
+          "text": "ACTIF",
+          "rect": [
+            1206.2,
+            140.5,
+            37.8,
+            16
+          ],
+          "size": 13.5,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.81,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(172, 241, 214)",
+          "svg": false
+        },
+        {
+          "key": "transfert hypertexte #2",
+          "text": "Transfert hypertexte",
+          "rect": [
+            986,
+            173,
+            168,
+            18
+          ],
+          "size": 16,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.4,
+          "line": "20px",
+          "transform": "none",
+          "color": "rgb(168, 187, 232)",
+          "svg": false
+        },
+        {
+          "key": "http est le protocole du web : un client demande une ressource, comme une page h",
+          "text": "HTTP est le protocole du web : un client demande une ressource, comme une page HTML, et le serveur répond par un code d’état, des en-têtes et généralement un corps. Chaque échange se compose d’une requête et d’une réponse, écrites en texte lisible en HTTP/1.1.",
+          "rect": [
+            986,
+            206,
+            262,
+            145
+          ],
+          "size": 13.1,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "21.5px",
+          "transform": "none",
+          "color": "rgb(169, 183, 216)",
+          "svg": false
+        },
+        {
+          "key": "couche",
+          "text": "COUCHE",
+          "rect": [
+            989,
+            371.5,
+            41.3,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "none",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "application (couche 7)",
+          "text": "Application (couche 7)",
+          "rect": [
+            1105,
+            372,
+            140.8,
+            15
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "port par défaut",
+          "text": "PORT PAR DÉFAUT",
+          "rect": [
+            989,
+            405.5,
+            103.4,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "none",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "80 (https: 443)",
+          "text": "80 (HTTPS: 443)",
+          "rect": [
+            1105,
+            406,
+            96,
+            15
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "transport",
+          "text": "TRANSPORT",
+          "rect": [
+            989,
+            439.5,
+            62,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "none",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "tcp #2",
+          "text": "TCP",
+          "rect": [
+            1105,
+            440,
+            19.2,
+            15
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "format des données",
+          "text": "FORMAT DES DONNÉES",
+          "rect": [
+            989,
+            468.5,
+            68.9,
+            31
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "none",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "texte (en-têtes + corps facultatif)",
+          "text": "Texte (en-têtes + corps facultatif)",
+          "rect": [
+            1105,
+            468.5,
+            147.2,
+            31
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "méthodes courantes",
+          "text": "MÉTHODES COURANTES",
+          "rect": [
+            989,
+            507.5,
+            62,
+            31
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "none",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "get, post, put, delete, head",
+          "text": "GET, POST, PUT, DELETE, HEAD",
+          "rect": [
+            1105,
+            507.5,
+            147.2,
+            31
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "flux de paquets",
+          "text": "FLUX DE PAQUETS",
+          "rect": [
+            420,
+            545.5,
+            189,
+            27
+          ],
+          "size": 22.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.35,
+          "line": "28px",
+          "transform": "none",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "dns #2",
+          "text": "DNS",
+          "rect": [
+            651,
+            551.5,
+            18.4,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "tcp #3",
+          "text": "TCP",
+          "rect": [
+            696.4,
+            551.5,
+            18.4,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "requête",
+          "text": "Requête",
+          "rect": [
+            741.8,
+            551.5,
+            42.8,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "réponse",
+          "text": "Réponse",
+          "rect": [
+            811.6,
+            551.5,
+            42.8,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "1×",
+          "text": "1×",
+          "rect": [
+            969.6,
+            551,
+            14.9,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "lecture",
+          "text": "LECTURE",
+          "rect": [
+            1087,
+            551,
+            52,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "avancer",
+          "text": "AVANCER",
+          "rect": [
+            1164,
+            551,
+            52,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "n°",
+          "text": "N°",
+          "rect": [
+            426,
+            584,
+            13,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "temps",
+          "text": "TEMPS",
+          "rect": [
+            476,
+            584,
+            32.4,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "source",
+          "text": "SOURCE",
+          "rect": [
+            556,
+            584,
+            38.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "destination",
+          "text": "DESTINATION",
+          "rect": [
+            682,
+            584,
+            71.3,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "protocole",
+          "text": "PROTOCOLE",
+          "rect": [
+            808,
+            584,
+            58.3,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "info",
+          "text": "INFO",
+          "rect": [
+            892,
+            584,
+            25.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "taille",
+          "text": "TAILLE",
+          "rect": [
+            1195,
+            584,
+            38.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "1 #2",
+          "text": "1",
+          "rect": [
+            433.9,
+            607.3,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.000s",
+          "text": "0.000s",
+          "rect": [
+            476,
+            606.8,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #2",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            606.8,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "8.8.8.8 #2",
+          "text": "8.8.8.8",
+          "rect": [
+            682,
+            606.8,
+            45.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "dns #3",
+          "text": "DNS",
+          "rect": [
+            808,
+            606.8,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "standard query a www.example.com",
+          "text": "Standard query A www.example.com",
+          "rect": [
+            892,
+            606.8,
+            208,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "75 b",
+          "text": "75 B",
+          "rect": [
+            1195,
+            606.8,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "2 #2",
+          "text": "2",
+          "rect": [
+            433.9,
+            632.8,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.012s",
+          "text": "0.012s",
+          "rect": [
+            476,
+            632.3,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "8.8.8.8 #3",
+          "text": "8.8.8.8",
+          "rect": [
+            556,
+            632.3,
+            45.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #3",
+          "text": "192.168.1.10",
+          "rect": [
+            682,
+            632.3,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "dns #4",
+          "text": "DNS",
+          "rect": [
+            808,
+            632.3,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "standard query response a 203.0.113.10",
+          "text": "Standard query response A 203.0.113.10",
+          "rect": [
+            892,
+            632.3,
+            247,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "91 b",
+          "text": "91 B",
+          "rect": [
+            1195,
+            632.3,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "3 #3",
+          "text": "3",
+          "rect": [
+            433.9,
+            658,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.024s",
+          "text": "0.024s",
+          "rect": [
+            476,
+            657.5,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #4",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            657.5,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #2",
+          "text": "203.0.113.10",
+          "rect": [
+            682,
+            657.5,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "tcp #4",
+          "text": "TCP",
+          "rect": [
+            808,
+            657.5,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "52344 → 80 [syn] seq=0",
+          "text": "52344 → 80 [SYN] Seq=0",
+          "rect": [
+            892,
+            657.5,
+            149.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "66 b",
+          "text": "66 B",
+          "rect": [
+            1195,
+            657.5,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "4 #3",
+          "text": "4",
+          "rect": [
+            433.9,
+            683.2,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.041s",
+          "text": "0.041s",
+          "rect": [
+            476,
+            682.7,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #3",
+          "text": "203.0.113.10",
+          "rect": [
+            556,
+            682.7,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #5",
+          "text": "192.168.1.10",
+          "rect": [
+            682,
+            682.7,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "tcp #5",
+          "text": "TCP",
+          "rect": [
+            808,
+            682.7,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "80 → 52344 [syn, ack] seq=0 ack=1",
+          "text": "80 → 52344 [SYN, ACK] Seq=0 Ack=1",
+          "rect": [
+            892,
+            682.7,
+            221,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "66 b #2",
+          "text": "66 B",
+          "rect": [
+            1195,
+            682.7,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "5 #2",
+          "text": "5",
+          "rect": [
+            433.9,
+            708.3,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.058s",
+          "text": "0.058s",
+          "rect": [
+            476,
+            707.8,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #6",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            707.8,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #4",
+          "text": "203.0.113.10",
+          "rect": [
+            682,
+            707.8,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "tcp #6",
+          "text": "TCP",
+          "rect": [
+            808,
+            707.8,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "52344 → 80 [ack] seq=1 ack=1",
+          "text": "52344 → 80 [ACK] Seq=1 Ack=1",
+          "rect": [
+            892,
+            707.8,
+            188.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "60 b",
+          "text": "60 B",
+          "rect": [
+            1195,
+            707.8,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "6",
+          "text": "6",
+          "rect": [
+            433.9,
+            733.5,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.058s #2",
+          "text": "0.058s",
+          "rect": [
+            476,
+            733,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #7",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            733,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #5",
+          "text": "203.0.113.10",
+          "rect": [
+            682,
+            733,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "http #3",
+          "text": "HTTP",
+          "rect": [
+            808,
+            733,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "get / http/1.1",
+          "text": "GET / HTTP/1.1",
+          "rect": [
+            892,
+            733,
+            91,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "484 b",
+          "text": "484 B",
+          "rect": [
+            1195,
+            733,
+            32.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "7 #2",
+          "text": "7",
+          "rect": [
+            433.9,
+            758.7,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.076s",
+          "text": "0.076s",
+          "rect": [
+            476,
+            758.2,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #6",
+          "text": "203.0.113.10",
+          "rect": [
+            556,
+            758.2,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #8",
+          "text": "192.168.1.10",
+          "rect": [
+            682,
+            758.2,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "http #4",
+          "text": "HTTP",
+          "rect": [
+            808,
+            758.2,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "http/1.1 200 ok (text/html), 9 segments",
+          "text": "HTTP/1.1 200 OK (text/html), 9 segments",
+          "rect": [
+            892,
+            758.2,
+            253.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "12.8 kb",
+          "text": "12.8 KB",
+          "rect": [
+            1195,
+            758.2,
+            45.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        }
+      ],
+      "boxes": [
+        {
+          "key": "fr",
+          "rect": [
+            1105.1,
+            19,
+            81.9,
+            36
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "thème",
+          "rect": [
+            1193,
+            19,
+            74,
+            36
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "mode sombre",
+          "rect": [
+            1230,
+            20,
+            36,
+            34
+          ],
+          "bg": "rgb(0, 65, 183)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "0px"
+        },
+        {
+          "key": "protocoles internet tous 14 base",
+          "rect": [
+            19,
+            76,
+            372,
+            710
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "tous 14 base 4 application",
+          "rect": [
+            36,
+            131,
+            339,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(29, 48, 78)",
+          "radius": "2px"
+        },
+        {
+          "key": "14",
+          "rect": [
+            75,
+            140,
+            21,
+            16
+          ],
+          "bg": "rgb(12, 63, 182)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "8px"
+        },
+        {
+          "key": "4",
+          "rect": [
+            143.1,
+            140,
+            20,
+            16
+          ],
+          "bg": "rgb(20, 30, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(166, 180, 210)",
+          "radius": "8px"
+        },
+        {
+          "key": "7",
+          "rect": [
+            253.9,
+            140,
+            20,
+            16
+          ],
+          "bg": "rgb(20, 30, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(166, 180, 210)",
+          "radius": "8px"
+        },
+        {
+          "key": "3",
+          "rect": [
+            345.9,
+            140,
+            20,
+            16
+          ],
+          "bg": "rgb(20, 30, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(166, 180, 210)",
+          "radius": "8px"
+        },
+        {
+          "key": "(span)",
+          "rect": [
+            37,
+            162,
+            67,
+            3
+          ],
+          "bg": "rgb(12, 63, 182)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "0px"
+        },
+        {
+          "key": "http transfert hypertexte",
+          "rect": [
+            36,
+            177,
+            339,
+            46
+          ],
+          "bg": "rgb(37, 22, 32)",
+          "borderWidth": 1,
+          "borderColor": "rgb(226, 98, 107)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #2",
+          "rect": [
+            52.5,
+            193,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "1",
+          "rect": [
+            70,
+            237,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "2",
+          "rect": [
+            70,
+            281,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "3 #2",
+          "rect": [
+            70,
+            325,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "4 #2",
+          "rect": [
+            70,
+            369,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "5",
+          "rect": [
+            70,
+            413,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "https http sécurisé",
+          "rect": [
+            36,
+            462,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #3",
+          "rect": [
+            52.5,
+            478,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "tcp contrôle de transmission",
+          "rect": [
+            36,
+            509,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #4",
+          "rect": [
+            52.5,
+            525,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "udp datagrammes utilisateur",
+          "rect": [
+            36,
+            556,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #5",
+          "rect": [
+            52.5,
+            572,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "ip protocole internet",
+          "rect": [
+            36,
+            603,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #6",
+          "rect": [
+            52.5,
+            619,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "dns système de noms de",
+          "rect": [
+            36,
+            650,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #7",
+          "rect": [
+            52.5,
+            666,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "dhcp configuration dynamique d’hôte",
+          "rect": [
+            36,
+            697,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #8",
+          "rect": [
+            52.5,
+            713,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "icmp messages de contrôle internet",
+          "rect": [
+            36,
+            744,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #9",
+          "rect": [
+            52.5,
+            760,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "internet client 192.168.1.10 routeur 192.168.1.1",
+          "rect": [
+            402,
+            76,
+            554,
+            446
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "réseau séquence",
+          "rect": [
+            415,
+            89,
+            184.1,
+            34
+          ],
+          "bg": "rgba(13, 18, 32, 0.92)",
+          "borderWidth": 1,
+          "borderColor": "rgb(29, 47, 77)",
+          "radius": "3px"
+        },
+        {
+          "key": "(i)",
+          "rect": [
+            419,
+            93,
+            81,
+            26
+          ],
+          "bg": "rgb(12, 63, 182)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "2px"
+        },
+        {
+          "key": "vue d’ensemble http actif transfert",
+          "rect": [
+            966,
+            76,
+            301,
+            446
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "actif",
+          "rect": [
+            1170.2,
+            135.5,
+            85.8,
+            27
+          ],
+          "bg": "rgb(24, 66, 47)",
+          "borderWidth": 0,
+          "borderColor": "rgb(172, 241, 214)",
+          "radius": "2px"
+        },
+        {
+          "key": "(i) #2",
+          "rect": [
+            1183.2,
+            142.5,
+            13,
+            13
+          ],
+          "bg": "rgb(11, 182, 116)",
+          "borderWidth": 0,
+          "borderColor": "rgb(172, 241, 214)",
+          "radius": "50%"
+        },
+        {
+          "key": "couche application (couche 7)",
+          "rect": [
+            982,
+            362.5,
+            274,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "port par défaut 80 (https:",
+          "rect": [
+            982,
+            396.5,
+            274,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "transport tcp",
+          "rect": [
+            982,
+            430.5,
+            274,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "format des données texte (en-têtes",
+          "rect": [
+            982,
+            464.5,
+            274,
+            39
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "méthodes courantes get, post, put,",
+          "rect": [
+            982,
+            503.5,
+            274,
+            39
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "flux de paquets dns tcp",
+          "rect": [
+            402,
+            538,
+            865,
+            248
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "1×",
+          "rect": [
+            950,
+            543.5,
+            54,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "étape précédente",
+          "rect": [
+            1013,
+            543.5,
+            34,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "lecture",
+          "rect": [
+            1052,
+            543.5,
+            100,
+            32
+          ],
+          "bg": "rgb(0, 65, 183)",
+          "borderWidth": 1,
+          "borderColor": "rgb(108, 153, 234)",
+          "radius": "2px"
+        },
+        {
+          "key": "avancer",
+          "rect": [
+            1157,
+            543.5,
+            66,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "réinitialiser",
+          "rect": [
+            1228,
+            543.5,
+            34,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "n°",
+          "rect": [
+            416,
+            581,
+            50,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "temps",
+          "rect": [
+            466,
+            581,
+            80,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "source",
+          "rect": [
+            546,
+            581,
+            126,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "destination",
+          "rect": [
+            672,
+            581,
+            126,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "protocole",
+          "rect": [
+            798,
+            581,
+            84,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "info",
+          "rect": [
+            882,
+            581,
+            303,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "taille",
+          "rect": [
+            1185,
+            581,
+            68,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        }
+      ]
+    },
+    "paragraphs": [
+      {
+        "class": "overview-desc",
+        "length": 260,
+        "height": 150.5
+      }
+    ]
+  },
+  "local": {
+    "lang": "fr",
+    "measure": {
+      "title": "Protocol Explorer · Learn how the internet works",
+      "layout": "medium",
+      "theme": "dark",
+      "page": [
+        1280,
+        800
+      ],
+      "fonts": [
+        "Iosevka 400 normal",
+        "Iosevka 500 normal",
+        "Iosevka 600 normal",
+        "Iosevka 700 normal",
+        "Iosevka 800 italic",
+        "Iosevka 800 normal"
+      ],
+      "texts": [
+        {
+          "key": "protocol",
+          "text": "Protocol",
+          "rect": [
+            98,
+            16,
+            105.3,
+            23
+          ],
+          "size": 20,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.7,
+          "line": "24px",
+          "transform": "uppercase",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "explorer",
+          "text": "Explorer",
+          "rect": [
+            204.3,
+            16,
+            93.6,
+            23
+          ],
+          "size": 20,
+          "weight": "800",
+          "style": "italic",
+          "tracking": 1.7,
+          "line": "24px",
+          "transform": "uppercase",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "learn how the internet works",
+          "text": "Learn how the internet works",
+          "rect": [
+            98,
+            42,
+            199.6,
+            13
+          ],
+          "size": 11.5,
+          "weight": "400",
+          "style": "normal",
+          "tracking": 1.38,
+          "line": "18px",
+          "transform": "uppercase",
+          "color": "rgb(133, 156, 201)",
+          "svg": false
+        },
+        {
+          "key": "maintenant, j'apprends",
+          "text": "Maintenant, j'apprends",
+          "rect": [
+            346.9,
+            7.5,
+            155.9,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.585,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "http · communication web",
+          "text": "HTTP · Communication Web",
+          "rect": [
+            346.9,
+            26.5,
+            237.6,
+            21
+          ],
+          "size": 18,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.9,
+          "line": "21px",
+          "transform": "uppercase",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "aperçu · 5 étapes",
+          "text": "Aperçu · 5 étapes",
+          "rect": [
+            346.9,
+            51.5,
+            111.7,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.572254,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "progrès de l'apprentissage",
+          "text": "Progrès de l'apprentissage",
+          "rect": [
+            733.9,
+            13.5,
+            184.2,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.585,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "0%",
+          "text": "0%",
+          "rect": [
+            927.1,
+            8.5,
+            20.5,
+            22
+          ],
+          "size": 19,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.76,
+          "line": "20px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "0",
+          "text": "0",
+          "rect": [
+            733.9,
+            49.5,
+            6.5,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "/ 14",
+          "text": "/ 14",
+          "rect": [
+            740.3,
+            49.5,
+            38.9,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "terminé",
+          "text": "Terminé",
+          "rect": [
+            779.2,
+            49.5,
+            45.4,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "·",
+          "text": "·",
+          "rect": [
+            835.1,
+            49.5,
+            6.5,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(97, 130, 196)",
+          "svg": false
+        },
+        {
+          "key": "0 #2",
+          "text": "0",
+          "rect": [
+            852.1,
+            49.5,
+            6.5,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "en cours",
+          "text": "en cours",
+          "rect": [
+            865,
+            49.5,
+            51.8,
+            15
+          ],
+          "size": 12,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "14px",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "conçu par",
+          "text": "Conçu par",
+          "rect": [
+            972.6,
+            16.5,
+            63.8,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.585,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "@anas",
+          "text": "@Anas",
+          "rect": [
+            992.6,
+            39.5,
+            36.4,
+            17
+          ],
+          "size": 14,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0.28,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "fr",
+          "text": "FR",
+          "rect": [
+            1140.9,
+            28.5,
+            15.1,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.81,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "protocoles internet",
+          "text": "Protocoles Internet",
+          "rect": [
+            37,
+            90,
+            227.4,
+            25
+          ],
+          "size": 21,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.47,
+          "line": "32px",
+          "transform": "uppercase",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "tout",
+          "text": "Tout",
+          "rect": [
+            48.3,
+            140,
+            25,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "14",
+          "text": "14",
+          "rect": [
+            83.2,
+            141,
+            11,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "uppercase",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "noyau",
+          "text": "Noyau",
+          "rect": [
+            120.8,
+            140,
+            31.2,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "4",
+          "text": "4",
+          "rect": [
+            164.3,
+            141,
+            5.5,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "uppercase",
+          "color": "rgb(166, 180, 210)",
+          "svg": false
+        },
+        {
+          "key": "demande",
+          "text": "Demande",
+          "rect": [
+            198.5,
+            140,
+            43.7,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "7",
+          "text": "7",
+          "rect": [
+            254.5,
+            141,
+            5.5,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "uppercase",
+          "color": "rgb(166, 180, 210)",
+          "svg": false
+        },
+        {
+          "key": "sécurité",
+          "text": "Sécurité",
+          "rect": [
+            288.8,
+            140,
+            49.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.24,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "3",
+          "text": "3",
+          "rect": [
+            351,
+            141,
+            5.5,
+            13
+          ],
+          "size": 11,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "uppercase",
+          "color": "rgb(166, 180, 210)",
+          "svg": false
+        },
+        {
+          "key": "http",
+          "text": "HTTP",
+          "rect": [
+            84.5,
+            181.5,
+            35.2,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "hypertext transfer protocol",
+          "text": "Hypertext Transfer Protocol",
+          "rect": [
+            84.5,
+            200.5,
+            201,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "1",
+          "text": "1",
+          "rect": [
+            78,
+            240,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "demande du client",
+          "text": "Demande du client",
+          "rect": [
+            106,
+            235,
+            126.2,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "uppercase",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "le navigateur prépare la requête",
+          "text": "Le navigateur prépare la requête",
+          "rect": [
+            106,
+            252,
+            216,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "2",
+          "text": "2",
+          "rect": [
+            78,
+            284,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "résolution dns",
+          "text": "Résolution DNS",
+          "rect": [
+            106,
+            279,
+            104,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "uppercase",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "trouve l'adresse ip du serveur",
+          "text": "Trouve l'adresse IP du serveur",
+          "rect": [
+            106,
+            296,
+            202.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "3 #2",
+          "text": "3",
+          "rect": [
+            78,
+            328,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "connexion tcp",
+          "text": "Connexion TCP",
+          "rect": [
+            106,
+            323,
+            96.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "uppercase",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "établit un lien fiable",
+          "text": "Établit un lien fiable",
+          "rect": [
+            106,
+            340,
+            148.5,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "4 #2",
+          "text": "4",
+          "rect": [
+            78,
+            372,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "échange http",
+          "text": "Échange HTTP",
+          "rect": [
+            106,
+            367,
+            89.1,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "uppercase",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "messages de demande et de réponse",
+          "text": "Messages de demande et de réponse",
+          "rect": [
+            106,
+            384,
+            222.8,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "5",
+          "text": "5",
+          "rect": [
+            78,
+            416,
+            6,
+            15
+          ],
+          "size": 12,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "rendu des pages",
+          "text": "Rendu des pages",
+          "rect": [
+            106,
+            411,
+            111.4,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "17px",
+          "transform": "uppercase",
+          "color": "rgb(171, 187, 227)",
+          "svg": false
+        },
+        {
+          "key": "le navigateur affiche le contenu",
+          "text": "Le navigateur affiche le contenu",
+          "rect": [
+            106,
+            428,
+            216,
+            16
+          ],
+          "size": 13.5,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "17px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "https",
+          "text": "HTTPS",
+          "rect": [
+            84.5,
+            466.5,
+            44,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "http secure",
+          "text": "HTTP Secure",
+          "rect": [
+            84.5,
+            485.5,
+            81.9,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "tcp",
+          "text": "TCP",
+          "rect": [
+            84.5,
+            513.5,
+            26.4,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "transmission control protocol",
+          "text": "Transmission Control Protocol",
+          "rect": [
+            84.5,
+            532.5,
+            215.9,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "udp",
+          "text": "UDP",
+          "rect": [
+            84.5,
+            560.5,
+            26.4,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "user datagram protocol",
+          "text": "User Datagram Protocol",
+          "rect": [
+            84.5,
+            579.5,
+            163.8,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "ip",
+          "text": "IP",
+          "rect": [
+            84.5,
+            607.5,
+            17.6,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "internet protocol",
+          "text": "Internet Protocol",
+          "rect": [
+            84.5,
+            626.5,
+            126.6,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "dns",
+          "text": "DNS",
+          "rect": [
+            84.5,
+            654.5,
+            26.4,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "domain name system",
+          "text": "Domain Name System",
+          "rect": [
+            84.5,
+            673.5,
+            134,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "dhcp",
+          "text": "DHCP",
+          "rect": [
+            84.5,
+            701.5,
+            35.2,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "dynamic host configuration",
+          "text": "Dynamic Host Configuration",
+          "rect": [
+            84.5,
+            720.5,
+            193.6,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "icmp",
+          "text": "ICMP",
+          "rect": [
+            84.5,
+            748.5,
+            35.2,
+            18
+          ],
+          "size": 16,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.8,
+          "line": "19px",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": false
+        },
+        {
+          "key": "internet control message",
+          "text": "Internet Control Message",
+          "rect": [
+            84.5,
+            767.5,
+            178.7,
+            17
+          ],
+          "size": 14.6,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.146,
+          "line": "18px",
+          "transform": "none",
+          "color": "rgb(153, 170, 207)",
+          "svg": false
+        },
+        {
+          "key": "internet",
+          "text": "Internet",
+          "rect": [
+            832,
+            425,
+            53,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "client",
+          "text": "Client",
+          "rect": [
+            411.7,
+            406.3,
+            39.7,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "192.168.1.10",
+          "text": "192.168.1.10",
+          "rect": [
+            411.7,
+            421.5,
+            78.3,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "routeur",
+          "text": "Routeur",
+          "rect": [
+            639.6,
+            363.8,
+            46.3,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "192.168.1.1",
+          "text": "192.168.1.1",
+          "rect": [
+            639.6,
+            379.1,
+            71.8,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "résolveur dns",
+          "text": "Résolveur DNS",
+          "rect": [
+            707.6,
+            191.7,
+            86.1,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "8.8.8.8",
+          "text": "8.8.8.8",
+          "rect": [
+            748.1,
+            206.9,
+            45.7,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "serveur web",
+          "text": "Serveur Web",
+          "rect": [
+            868,
+            158,
+            72.8,
+            15
+          ],
+          "size": 15.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.62,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(183, 198, 243)",
+          "svg": true
+        },
+        {
+          "key": "203.0.113.10",
+          "text": "203.0.113.10",
+          "rect": [
+            868,
+            173.3,
+            78.3,
+            14
+          ],
+          "size": 15,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.75,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(169, 187, 239)",
+          "svg": true
+        },
+        {
+          "key": "réseau",
+          "text": "Réseau",
+          "rect": [
+            449,
+            98,
+            40.3,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.72,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "séquence",
+          "text": "Séquence",
+          "rect": [
+            530.3,
+            98,
+            53.8,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.72,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(170, 183, 214)",
+          "svg": false
+        },
+        {
+          "key": "aperçu du protocole",
+          "text": "Aperçu du protocole",
+          "rect": [
+            984,
+            86.5,
+            198.6,
+            22
+          ],
+          "size": 19,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.95,
+          "line": "28px",
+          "transform": "uppercase",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "http #2",
+          "text": "HTTP",
+          "rect": [
+            986,
+            131,
+            69.5,
+            37
+          ],
+          "size": 31,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.86,
+          "line": "40px",
+          "transform": "uppercase",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "actif",
+          "text": "Actif",
+          "rect": [
+            1206.2,
+            140.5,
+            37.8,
+            16
+          ],
+          "size": 13.5,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.81,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(172, 241, 214)",
+          "svg": false
+        },
+        {
+          "key": "hypertext transfer protocol #2",
+          "text": "Hypertext Transfer Protocol",
+          "rect": [
+            986,
+            173,
+            226.8,
+            18
+          ],
+          "size": 16,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0.4,
+          "line": "20px",
+          "transform": "none",
+          "color": "rgb(168, 187, 232)",
+          "svg": false
+        },
+        {
+          "key": "un navigateur demande une ressource et un serveur répond avec un statut, des en-",
+          "text": "Un navigateur demande une ressource et un serveur répond avec un statut, des en-têtes et un contenu. Suivez une demande de page depuis la recherche du prénom jusqu'au code HTML qui arrive sur votre écran.",
+          "rect": [
+            986,
+            206,
+            268.6,
+            123.5
+          ],
+          "size": 13.1,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "21.5px",
+          "transform": "none",
+          "color": "rgb(169, 183, 216)",
+          "svg": false
+        },
+        {
+          "key": "couche",
+          "text": "Couche",
+          "rect": [
+            989,
+            350,
+            41.3,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "uppercase",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "application (couche 7)",
+          "text": "Application (couche 7)",
+          "rect": [
+            1105,
+            350.5,
+            140.8,
+            15
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "port par défaut",
+          "text": "Port par défaut",
+          "rect": [
+            989,
+            384,
+            103.4,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "uppercase",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "80 (https : 443)",
+          "text": "80 (HTTPS : 443)",
+          "rect": [
+            1105,
+            384.5,
+            102.4,
+            15
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "transports",
+          "text": "Transports",
+          "rect": [
+            989,
+            418,
+            68.9,
+            16
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "uppercase",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "tcp #2",
+          "text": "TCP",
+          "rect": [
+            1105,
+            418.5,
+            19.2,
+            15
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "format des données",
+          "text": "Format des données",
+          "rect": [
+            989,
+            447,
+            68.9,
+            31
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "uppercase",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "text (headers + optional body)",
+          "text": "Text (headers + optional body)",
+          "rect": [
+            1105,
+            447,
+            96,
+            31
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "méthodes courantes",
+          "text": "Méthodes courantes",
+          "rect": [
+            989,
+            486,
+            62,
+            31
+          ],
+          "size": 13,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.39,
+          "line": "15px",
+          "transform": "uppercase",
+          "color": "rgb(179, 193, 243)",
+          "svg": false
+        },
+        {
+          "key": "get, post, put, delete, head",
+          "text": "GET, POST, PUT, DELETE, HEAD",
+          "rect": [
+            1105,
+            486,
+            147.2,
+            31
+          ],
+          "size": 12.8,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "16px",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "flux de paquets",
+          "text": "Flux de paquets",
+          "rect": [
+            420,
+            545.5,
+            189,
+            27
+          ],
+          "size": 22.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 1.35,
+          "line": "28px",
+          "transform": "uppercase",
+          "color": "rgb(175, 196, 242)",
+          "svg": false
+        },
+        {
+          "key": "dns #2",
+          "text": "DNS",
+          "rect": [
+            651,
+            551.5,
+            18.4,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "tcp #3",
+          "text": "TCP",
+          "rect": [
+            696.4,
+            551.5,
+            18.4,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "demande #2",
+          "text": "Demande",
+          "rect": [
+            741.8,
+            551.5,
+            42.8,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "réponse",
+          "text": "Réponse",
+          "rect": [
+            811.6,
+            551.5,
+            42.8,
+            15
+          ],
+          "size": 12,
+          "weight": "600",
+          "style": "normal",
+          "tracking": 0.12,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(168, 184, 224)",
+          "svg": false
+        },
+        {
+          "key": "1×",
+          "text": "1×",
+          "rect": [
+            969.6,
+            551,
+            14.9,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "lire",
+          "text": "Lire",
+          "rect": [
+            1087,
+            551,
+            29.7,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "étape",
+          "text": "Étape",
+          "rect": [
+            1171.4,
+            551,
+            37.1,
+            16
+          ],
+          "size": 13.5,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.675,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(181, 197, 243)",
+          "svg": false
+        },
+        {
+          "key": "non.",
+          "text": "Non.",
+          "rect": [
+            426,
+            583.8,
+            25.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "temps",
+          "text": "Temps",
+          "rect": [
+            476,
+            583.8,
+            32.4,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "source",
+          "text": "Source",
+          "rect": [
+            556,
+            583.8,
+            38.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "destination",
+          "text": "Destination",
+          "rect": [
+            682,
+            583.8,
+            71.3,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "protocole",
+          "text": "Protocole",
+          "rect": [
+            808,
+            583.8,
+            58.3,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "informations",
+          "text": "Informations",
+          "rect": [
+            892,
+            583.8,
+            77.8,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "taille",
+          "text": "Taille",
+          "rect": [
+            1195,
+            583.8,
+            38.9,
+            15
+          ],
+          "size": 12,
+          "weight": "800",
+          "style": "normal",
+          "tracking": 0.48,
+          "line": "normal",
+          "transform": "uppercase",
+          "color": "rgb(174, 194, 235)",
+          "svg": false
+        },
+        {
+          "key": "1 #2",
+          "text": "1",
+          "rect": [
+            433.9,
+            607.6,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.000s",
+          "text": "0.000s",
+          "rect": [
+            476,
+            607.1,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #2",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            607.1,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "8.8.8.8 #2",
+          "text": "8.8.8.8",
+          "rect": [
+            682,
+            607.1,
+            45.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "dns #3",
+          "text": "DNS",
+          "rect": [
+            808,
+            607.1,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "standard query a www.example.com",
+          "text": "Standard query A www.example.com",
+          "rect": [
+            892,
+            607.1,
+            208,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "75 b",
+          "text": "75 B",
+          "rect": [
+            1195,
+            607.1,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "2 #2",
+          "text": "2",
+          "rect": [
+            433.9,
+            632.8,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.012s",
+          "text": "0.012s",
+          "rect": [
+            476,
+            632.3,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "8.8.8.8 #3",
+          "text": "8.8.8.8",
+          "rect": [
+            556,
+            632.3,
+            45.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #3",
+          "text": "192.168.1.10",
+          "rect": [
+            682,
+            632.3,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "dns #4",
+          "text": "DNS",
+          "rect": [
+            808,
+            632.3,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "standard query response a 203.0.113.10",
+          "text": "Standard query response A 203.0.113.10",
+          "rect": [
+            892,
+            632.3,
+            247,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "91 b",
+          "text": "91 B",
+          "rect": [
+            1195,
+            632.3,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "3 #3",
+          "text": "3",
+          "rect": [
+            433.9,
+            658,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.024s",
+          "text": "0.024s",
+          "rect": [
+            476,
+            657.5,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #4",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            657.5,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #2",
+          "text": "203.0.113.10",
+          "rect": [
+            682,
+            657.5,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "tcp #4",
+          "text": "TCP",
+          "rect": [
+            808,
+            657.5,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "52344 → 80 [syn] seq=0",
+          "text": "52344 → 80 [SYN] Seq=0",
+          "rect": [
+            892,
+            657.5,
+            149.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "66 b",
+          "text": "66 B",
+          "rect": [
+            1195,
+            657.5,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "4 #3",
+          "text": "4",
+          "rect": [
+            433.9,
+            683.2,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.041s",
+          "text": "0.041s",
+          "rect": [
+            476,
+            682.7,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #3",
+          "text": "203.0.113.10",
+          "rect": [
+            556,
+            682.7,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #5",
+          "text": "192.168.1.10",
+          "rect": [
+            682,
+            682.7,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "tcp #5",
+          "text": "TCP",
+          "rect": [
+            808,
+            682.7,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "80 → 52344 [syn, ack] seq=0 ack=1",
+          "text": "80 → 52344 [SYN, ACK] Seq=0 Ack=1",
+          "rect": [
+            892,
+            682.7,
+            221,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "66 b #2",
+          "text": "66 B",
+          "rect": [
+            1195,
+            682.7,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "5 #2",
+          "text": "5",
+          "rect": [
+            433.9,
+            708.3,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.058s",
+          "text": "0.058s",
+          "rect": [
+            476,
+            707.8,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #6",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            707.8,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #4",
+          "text": "203.0.113.10",
+          "rect": [
+            682,
+            707.8,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "tcp #6",
+          "text": "TCP",
+          "rect": [
+            808,
+            707.8,
+            19.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "52344 → 80 [ack] seq=1 ack=1",
+          "text": "52344 → 80 [ACK] Seq=1 Ack=1",
+          "rect": [
+            892,
+            707.8,
+            188.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "60 b",
+          "text": "60 B",
+          "rect": [
+            1195,
+            707.8,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "6",
+          "text": "6",
+          "rect": [
+            433.9,
+            733.5,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.058s #2",
+          "text": "0.058s",
+          "rect": [
+            476,
+            733,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #7",
+          "text": "192.168.1.10",
+          "rect": [
+            556,
+            733,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #5",
+          "text": "203.0.113.10",
+          "rect": [
+            682,
+            733,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "http #3",
+          "text": "HTTP",
+          "rect": [
+            808,
+            733,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "get / http/1.1",
+          "text": "GET / HTTP/1.1",
+          "rect": [
+            892,
+            733,
+            91,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "484 b",
+          "text": "484 B",
+          "rect": [
+            1195,
+            733,
+            32.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "7 #2",
+          "text": "7",
+          "rect": [
+            433.9,
+            758.7,
+            6.3,
+            15
+          ],
+          "size": 12.5,
+          "weight": "700",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(255, 255, 255)",
+          "svg": false
+        },
+        {
+          "key": "0.076s",
+          "text": "0.076s",
+          "rect": [
+            476,
+            758.2,
+            39,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "203.0.113.10 #6",
+          "text": "203.0.113.10",
+          "rect": [
+            556,
+            758.2,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "192.168.1.10 #8",
+          "text": "192.168.1.10",
+          "rect": [
+            682,
+            758.2,
+            78,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "http #4",
+          "text": "HTTP",
+          "rect": [
+            808,
+            758.2,
+            26,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "http/1.1 200 ok (text/html), 9 segments",
+          "text": "HTTP/1.1 200 OK (text/html), 9 segments",
+          "rect": [
+            892,
+            758.2,
+            253.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        },
+        {
+          "key": "12.8 kb",
+          "text": "12.8 KB",
+          "rect": [
+            1195,
+            758.2,
+            45.5,
+            16
+          ],
+          "size": 13,
+          "weight": "500",
+          "style": "normal",
+          "tracking": 0,
+          "line": "normal",
+          "transform": "none",
+          "color": "rgb(176, 193, 229)",
+          "svg": false
+        }
+      ],
+      "boxes": [
+        {
+          "key": "fr",
+          "rect": [
+            1105,
+            19,
+            82,
+            36
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "theme",
+          "rect": [
+            1193,
+            19,
+            74,
+            36
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "dark mode",
+          "rect": [
+            1230,
+            20,
+            36,
+            34
+          ],
+          "bg": "rgb(0, 65, 183)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "0px"
+        },
+        {
+          "key": "protocoles internet tout 14 noyau",
+          "rect": [
+            19,
+            76,
+            372,
+            710
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "tout 14 noyau 4 demande",
+          "rect": [
+            36,
+            131,
+            339,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(29, 48, 78)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span)",
+          "rect": [
+            37,
+            162,
+            73,
+            3
+          ],
+          "bg": "rgb(12, 63, 182)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "0px"
+        },
+        {
+          "key": "tout 14",
+          "rect": [
+            37,
+            132,
+            72.5,
+            32
+          ],
+          "bg": "color(srgb 0.121569 0.372549 0.878431 / 0.08)",
+          "borderWidth": 0,
+          "borderColor": "rgb(181, 197, 243)",
+          "radius": "0px"
+        },
+        {
+          "key": "14",
+          "rect": [
+            78.2,
+            140,
+            21,
+            16
+          ],
+          "bg": "rgb(12, 63, 182)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "8px"
+        },
+        {
+          "key": "4",
+          "rect": [
+            157,
+            140,
+            20,
+            16
+          ],
+          "bg": "rgb(20, 30, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(166, 180, 210)",
+          "radius": "8px"
+        },
+        {
+          "key": "7",
+          "rect": [
+            247.2,
+            140,
+            20,
+            16
+          ],
+          "bg": "rgb(20, 30, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(166, 180, 210)",
+          "radius": "8px"
+        },
+        {
+          "key": "3",
+          "rect": [
+            343.7,
+            140,
+            20,
+            16
+          ],
+          "bg": "rgb(20, 30, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(166, 180, 210)",
+          "radius": "8px"
+        },
+        {
+          "key": "http hypertext transfer protocol",
+          "rect": [
+            36,
+            177,
+            339,
+            46
+          ],
+          "bg": "rgb(37, 22, 32)",
+          "borderWidth": 1,
+          "borderColor": "rgb(226, 98, 107)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #2",
+          "rect": [
+            52.5,
+            193,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "1",
+          "rect": [
+            70,
+            237,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "2",
+          "rect": [
+            70,
+            281,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "3 #2",
+          "rect": [
+            70,
+            325,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "4 #2",
+          "rect": [
+            70,
+            369,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "5",
+          "rect": [
+            70,
+            413,
+            22,
+            22
+          ],
+          "bg": "rgb(50, 62, 86)",
+          "borderWidth": 0,
+          "borderColor": "rgb(255, 255, 255)",
+          "radius": "50%"
+        },
+        {
+          "key": "https http secure",
+          "rect": [
+            36,
+            462,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #3",
+          "rect": [
+            52.5,
+            478,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "tcp transmission control protocol",
+          "rect": [
+            36,
+            509,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #4",
+          "rect": [
+            52.5,
+            525,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "udp user datagram protocol",
+          "rect": [
+            36,
+            556,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #5",
+          "rect": [
+            52.5,
+            572,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "ip internet protocol",
+          "rect": [
+            36,
+            603,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #6",
+          "rect": [
+            52.5,
+            619,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "dns domain name system",
+          "rect": [
+            36,
+            650,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #7",
+          "rect": [
+            52.5,
+            666,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "dhcp dynamic host configuration",
+          "rect": [
+            36,
+            697,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #8",
+          "rect": [
+            52.5,
+            713,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "icmp internet control message",
+          "rect": [
+            36,
+            744,
+            339,
+            46
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgba(0, 0, 0, 0)",
+          "radius": "2px"
+        },
+        {
+          "key": "(span) #9",
+          "rect": [
+            52.5,
+            760,
+            14,
+            14
+          ],
+          "bg": "rgb(19, 28, 51)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "50%"
+        },
+        {
+          "key": "internet client 192.168.1.10 routeur 192.168.1.1",
+          "rect": [
+            402,
+            76,
+            554,
+            446
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "réseau séquence",
+          "rect": [
+            415,
+            89,
+            184.1,
+            34
+          ],
+          "bg": "rgba(13, 18, 32, 0.92)",
+          "borderWidth": 1,
+          "borderColor": "rgb(29, 47, 77)",
+          "radius": "3px"
+        },
+        {
+          "key": "(i)",
+          "rect": [
+            419,
+            93,
+            81,
+            26
+          ],
+          "bg": "rgb(12, 63, 182)",
+          "borderWidth": 0,
+          "borderColor": "rgb(175, 196, 242)",
+          "radius": "2px"
+        },
+        {
+          "key": "aperçu du protocole http actif",
+          "rect": [
+            966,
+            76,
+            301,
+            446
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "actif",
+          "rect": [
+            1170.2,
+            135.5,
+            85.8,
+            27
+          ],
+          "bg": "rgb(24, 66, 47)",
+          "borderWidth": 0,
+          "borderColor": "rgb(172, 241, 214)",
+          "radius": "2px"
+        },
+        {
+          "key": "(i) #2",
+          "rect": [
+            1183.2,
+            142.5,
+            13,
+            13
+          ],
+          "bg": "rgb(11, 182, 116)",
+          "borderWidth": 0,
+          "borderColor": "rgb(172, 241, 214)",
+          "radius": "50%"
+        },
+        {
+          "key": "couche application (couche 7)",
+          "rect": [
+            982,
+            341,
+            274,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "port par défaut 80 (https",
+          "rect": [
+            982,
+            375,
+            274,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "transports tcp",
+          "rect": [
+            982,
+            409,
+            274,
+            34
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "format des données text (headers",
+          "rect": [
+            982,
+            443,
+            274,
+            39
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "méthodes courantes get, post, put,",
+          "rect": [
+            982,
+            482,
+            274,
+            39
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(26, 40, 62)",
+          "radius": "0px"
+        },
+        {
+          "key": "flux de paquets dns tcp",
+          "rect": [
+            402,
+            538,
+            865,
+            248
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 1,
+          "borderColor": "rgb(60, 100, 159)",
+          "radius": "2px"
+        },
+        {
+          "key": "1×",
+          "rect": [
+            950,
+            543.5,
+            54,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "previous step",
+          "rect": [
+            1013,
+            543.5,
+            34,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "lire",
+          "rect": [
+            1052,
+            543.5,
+            100,
+            32
+          ],
+          "bg": "rgb(0, 65, 183)",
+          "borderWidth": 1,
+          "borderColor": "rgb(108, 153, 234)",
+          "radius": "2px"
+        },
+        {
+          "key": "étape",
+          "rect": [
+            1157,
+            543.5,
+            66,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "reset",
+          "rect": [
+            1228,
+            543.5,
+            34,
+            32
+          ],
+          "bg": "rgba(0, 0, 0, 0)",
+          "borderWidth": 1,
+          "borderColor": "rgb(33, 54, 87)",
+          "radius": "2px"
+        },
+        {
+          "key": "non.",
+          "rect": [
+            416,
+            581,
+            50,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "temps",
+          "rect": [
+            466,
+            581,
+            80,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "source",
+          "rect": [
+            546,
+            581,
+            126,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "destination",
+          "rect": [
+            672,
+            581,
+            126,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "protocole",
+          "rect": [
+            798,
+            581,
+            84,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "informations",
+          "rect": [
+            882,
+            581,
+            303,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        },
+        {
+          "key": "taille",
+          "rect": [
+            1185,
+            581,
+            68,
+            22
+          ],
+          "bg": "rgb(15, 22, 40)",
+          "borderWidth": 0,
+          "borderColor": "rgb(174, 194, 235)",
+          "radius": "0px"
+        }
+      ]
+    },
+    "paragraphs": [
+      {
+        "class": "description",
+        "length": 204,
+        "height": 129
+      }
+    ]
+  }
+}

@@ -1,0 +1,1002 @@
+[
+  {
+    "width": 1680,
+    "name": "reference",
+    "before": {
+      "view": "59.00 11.91 850.66 599.77",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    },
+    "after": {
+      "view": "59.00 11.91 850.66 599.77",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    }
+  },
+  {
+    "width": 1680,
+    "name": "local",
+    "before": {
+      "view": "59.00 11.35 850.66 599.77",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    },
+    "after": {
+      "view": "59.00 11.35 850.66 599.77",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    }
+  },
+  {
+    "width": 1024,
+    "name": "reference",
+    "before": {
+      "view": "51.75 51.02 857.91 518.13",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    },
+    "after": {
+      "view": "51.75 51.02 857.91 518.13",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    }
+  },
+  {
+    "width": 1024,
+    "name": "local",
+    "before": {
+      "view": "51.75 51.04 857.91 518.13",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    },
+    "after": {
+      "view": "52.86 252.92 491.21 296.66",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    }
+  },
+  {
+    "width": 700,
+    "name": "reference",
+    "before": {
+      "view": "53.03 -39.55 856.63 699.71",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    },
+    "after": {
+      "view": "53.03 -39.55 856.63 699.71",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    }
+  },
+  {
+    "width": 700,
+    "name": "local",
+    "before": {
+      "view": "53.03 -39.61 856.63 699.71",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    },
+    "after": {
+      "view": "53.95 201.08 490.12 400.34",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    }
+  },
+  {
+    "width": 375,
+    "name": "reference",
+    "before": {
+      "view": "-34.52 -203.64 999.74 1010.92",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    },
+    "after": {
+      "view": "-34.52 -203.64 999.74 1010.92",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ],
+        [
+          "relay",
+          "0"
+        ],
+        [
+          "app",
+          "0"
+        ],
+        [
+          "lan",
+          "0"
+        ],
+        [
+          "isp",
+          "0"
+        ],
+        [
+          "transit",
+          "0"
+        ],
+        [
+          "hosting",
+          "0"
+        ],
+        [
+          "remote",
+          "0"
+        ],
+        [
+          "peer",
+          "0"
+        ]
+      ],
+      "state": null
+    }
+  },
+  {
+    "width": 375,
+    "name": "local",
+    "before": {
+      "view": "-34.52 -201.77 999.71 1010.89",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    },
+    "after": {
+      "view": "-20.20 101.92 604.54 611.30",
+      "url": "url-bar is-visible",
+      "visible": [
+        [
+          "internet",
+          "0"
+        ],
+        [
+          "client",
+          "1"
+        ],
+        [
+          "router",
+          "0"
+        ],
+        [
+          "dns",
+          "0"
+        ],
+        [
+          "web",
+          "0"
+        ],
+        [
+          "root",
+          "0"
+        ],
+        [
+          "tld",
+          "0"
+        ],
+        [
+          "auth",
+          "0"
+        ],
+        [
+          "mx",
+          "0"
+        ]
+      ],
+      "state": {
+        "frame": "local",
+        "playing": false
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "unitTests": {
+    "passed": 43,
+    "failed": 0
+  },
+  "browserChecks": {
+    "passed": 7,
+    "failed": 0
+  },
+  "build": "passed",
+  "referenceLessonCount": 14,
+  "referencePacketRows": 187,
+  "scope": "Phase A fixes and existing parity repairs; later phases have not started"
+}

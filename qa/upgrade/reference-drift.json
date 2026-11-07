@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-11-07T16:54:36.687Z",
+  "reference": "https://protocol-explorer-alpha.vercel.app/",
+  "original": {
+    "lessons": 14,
+    "categories": {
+      "core": 4,
+      "application": 7,
+      "security": 3
+    },
+    "bundle": "assets/index-T6io6WnP.js",
+    "bundleSha256": "62227e6b7a4dafdd8952d2e764ec60a0fa3e7067d4094abb810029543e10dbb9",
+    "overviewCasesPassed": 10
+  },
+  "current": {
+    "lessons": 33,
+    "categories": {
+      "core": 8,
+      "application": 16,
+      "security": 9
+    },
+    "bundle": "assets/index-DFkEAQVR.js",
+    "searchPlaceholder": "Search protocols and steps",
+    "parityFlagStillShows33": true,
+    "previousBundleStatus": 404
+  },
+  "decision": "Retain the requested 14-lesson target until the user supplies a stable reference URL or chooses to retarget. Do not advance phases B–D on a false parity result."
+}

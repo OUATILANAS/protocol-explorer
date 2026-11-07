@@ -1,0 +1,1167 @@
+[
+  {
+    "name": "reference",
+    "buttons": [
+      {
+        "aria": "Protocols",
+        "text": "PROTOCOLS",
+        "html": "<svg viewBox=\"0 0 18 14\" width=\"18\" height=\"14\" aria-hidden=\"true\"><path d=\"M1.5 2h15M1.5 7h15M1.5 12h15\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg><span data-t=\"PROTOCOLS\">PROTOCOLS</span>",
+        "rect": [
+          11.828125,
+          9.859375,
+          39.46875,
+          39.46875
+        ]
+      },
+      {
+        "aria": "Language",
+        "text": "\n      EN\n    ",
+        "html": "\n      <svg viewBox=\"0 0 20 20\" width=\"17\" height=\"17\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><circle cx=\"10\" cy=\"10\" r=\"8\"></circle><ellipse cx=\"10\" cy=\"10\" rx=\"3.6\" ry=\"8\"></ellipse><path d=\"M2.4 7.2h15.2M2.4 12.8h15.2\"></path></g></svg><span class=\"lang-code\">EN</span><svg viewBox=\"0 0 10 6\" width=\"10\" height=\"6\" aria-hidden=\"true\"><path d=\"M1 1l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n    ",
+        "rect": [
+          261.625,
+          9.859375,
+          56.140625,
+          39.46875
+        ]
+      },
+      {
+        "aria": "Light mode",
+        "text": "",
+        "html": "<svg viewBox=\"0 0 20 20\" width=\"16\" height=\"16\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"3.6\" fill=\"currentColor\"></circle><path d=\"M10 1.6v2.2M10 16.2v2.2M1.6 10h2.2M16.2 10h2.2M4.1 4.1l1.5 1.5M14.4 14.4l1.5 1.5M4.1 15.9l1.5-1.5M14.4 5.6l1.5-1.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"></path></svg>",
+        "rect": [
+          324.671875,
+          10.859375,
+          37.5,
+          37.46875
+        ]
+      },
+      {
+        "aria": null,
+        "text": "\n          1\n          \n            CLIENT REQUEST\n            Browser prepares the request\n          \n        ",
+        "html": "\n          <span class=\"step-num\"><span>1</span><svg viewBox=\"0 0 12 12\" width=\"11\" height=\"11\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2.2 6.4l2.4 2.4 5.2-5.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span>\n          <span class=\"step-text\">\n            <span class=\"step-title\" data-t=\"Client Request\" data-t-upper=\"\">CLIENT REQUEST</span>\n            <span class=\"step-desc\" data-t=\"Browser prepares the request\">Browser prepares the request</span>\n          </span>\n        ",
+        "rect": [
+          -313.42498779296875,
+          163.75,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "\n          2\n          \n            DNS RESOLUTION\n            Finds the server’s IP address\n          \n        ",
+        "html": "\n          <span class=\"step-num\"><span>2</span><svg viewBox=\"0 0 12 12\" width=\"11\" height=\"11\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2.2 6.4l2.4 2.4 5.2-5.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span>\n          <span class=\"step-text\">\n            <span class=\"step-title\" data-t=\"DNS Resolution\" data-t-upper=\"\">DNS RESOLUTION</span>\n            <span class=\"step-desc\" data-t=\"Finds the server’s IP address\">Finds the server’s IP address</span>\n          </span>\n        ",
+        "rect": [
+          -313.42498779296875,
+          207.171875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "\n          3\n          \n            TCP CONNECTION\n            Establishes a reliable link\n          \n        ",
+        "html": "\n          <span class=\"step-num\"><span>3</span><svg viewBox=\"0 0 12 12\" width=\"11\" height=\"11\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2.2 6.4l2.4 2.4 5.2-5.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span>\n          <span class=\"step-text\">\n            <span class=\"step-title\" data-t=\"TCP Connection\" data-t-upper=\"\">TCP CONNECTION</span>\n            <span class=\"step-desc\" data-t=\"Establishes a reliable link\">Establishes a reliable link</span>\n          </span>\n        ",
+        "rect": [
+          -313.42498779296875,
+          250.59375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "\n          4\n          \n            HTTP EXCHANGE\n            Request and response messages\n          \n        ",
+        "html": "\n          <span class=\"step-num\"><span>4</span><svg viewBox=\"0 0 12 12\" width=\"11\" height=\"11\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2.2 6.4l2.4 2.4 5.2-5.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span>\n          <span class=\"step-text\">\n            <span class=\"step-title\" data-t=\"HTTP Exchange\" data-t-upper=\"\">HTTP EXCHANGE</span>\n            <span class=\"step-desc\" data-t=\"Request and response messages\">Request and response messages</span>\n          </span>\n        ",
+        "rect": [
+          -313.42498779296875,
+          294.015625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "\n          5\n          \n            PAGE RENDERING\n            Browser displays the content\n          \n        ",
+        "html": "\n          <span class=\"step-num\"><span>5</span><svg viewBox=\"0 0 12 12\" width=\"11\" height=\"11\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2.2 6.4l2.4 2.4 5.2-5.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span>\n          <span class=\"step-text\">\n            <span class=\"step-title\" data-t=\"Page Rendering\" data-t-upper=\"\">PAGE RENDERING</span>\n            <span class=\"step-desc\" data-t=\"Browser displays the content\">Browser displays the content</span>\n          </span>\n        ",
+        "rect": [
+          -313.42498779296875,
+          337.4375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "NETWORK",
+        "html": "<svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M8 1.8 L14 5 L8 8.2 L2 5 Z M2 8.4 L8 11.6 L14 8.4 M2 11.6 L8 14.8 L14 11.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path></svg><span data-t=\"NETWORK\">NETWORK</span>",
+        "rect": [
+          28.609375,
+          154.09375,
+          86.859375,
+          25.65625
+        ]
+      },
+      {
+        "aria": null,
+        "text": "SEQUENCE",
+        "html": "<svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M3 1.5 V14.5 M13 1.5 V14.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"></path><path d=\"M3 4.5 L12 6.5 M12 6.5 L9.6 7.4 M12 6.5 L10.2 4.6 M13 9.5 L4 11.5 M4 11.5 L5.8 9.6 M4 11.5 L6.4 12.4\" stroke=\"currentColor\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"></path></svg><span data-t=\"SEQUENCE\">SEQUENCE</span>",
+        "rect": [
+          115.46875,
+          154.09375,
+          93.484375,
+          25.65625
+        ]
+      },
+      {
+        "aria": "More",
+        "text": "",
+        "html": "<svg viewBox=\"0 0 20 6\" width=\"20\" height=\"6\" aria-hidden=\"true\"><circle cx=\"3\" cy=\"3\" r=\"2.1\"></circle><circle cx=\"10\" cy=\"3\" r=\"2.1\"></circle><circle cx=\"17\" cy=\"3\" r=\"2.1\"></circle></svg>",
+        "rect": [
+          322.703125,
+          515.734375,
+          25.65625,
+          19.734375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1×",
+        "html": "<span class=\"speed-label\">1×</span>",
+        "rect": [
+          11.828125,
+          760.703125,
+          49.328125,
+          41.4375
+        ]
+      },
+      {
+        "aria": "Previous step",
+        "text": "\n          \n        ",
+        "html": "\n          <svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M7.8 1.8 L3.6 6 L7.8 10.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n        ",
+        "rect": [
+          67.0625,
+          760.703125,
+          43.40625,
+          41.4375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "\n          \n            \n            \n          \n          PLAY\n        ",
+        "html": "\n          <span class=\"toggle-icon\">\n            <svg class=\"icon-playpause\" viewBox=\"0 0 12 14\" width=\"12\" height=\"14\" aria-hidden=\"true\"><path class=\"pp-a\"></path><path class=\"pp-b\"></path></svg>\n            <svg class=\"icon-replay\" viewBox=\"0 0 18 18\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M15 9a6 6 0 1 1-1.9-4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"></path><path d=\"M14.6 1.6v4.2h-4.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </span>\n          <span class=\"toggle-label\" style=\"min-width: 58px;\" data-text=\"PLAY\">PLAY</span>\n        ",
+        "rect": [
+          116.375,
+          760.703125,
+          128.421875,
+          41.4375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "STEP",
+        "html": "<span data-t=\"STEP\">STEP</span>",
+        "rect": [
+          250.703125,
+          760.703125,
+          65.125,
+          41.4375
+        ]
+      },
+      {
+        "aria": "Reset",
+        "text": "RESET",
+        "html": "<svg viewBox=\"0 0 18 18\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M15 9a6 6 0 1 1-1.9-4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"></path><path d=\"M14.6 1.6v4.2h-4.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg><span class=\"btn-text\" data-t=\"RESET\">RESET</span>",
+        "rect": [
+          319.765625,
+          760.703125,
+          43.40625,
+          41.4375
+        ]
+      }
+    ]
+  },
+  {
+    "name": "local",
+    "buttons": [
+      {
+        "aria": "Protocols",
+        "text": "Protocols",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 18 14\" width=\"18\" height=\"14\" aria-hidden=\"true\"><path d=\"M1.5 2h15M1.5 7h15M1.5 12h15\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg><span data-t-label=\"protocols\">Protocols</span>",
+        "rect": [
+          11.828125,
+          9.859375,
+          39.46875,
+          39.46875
+        ]
+      },
+      {
+        "aria": "EN · Choose language",
+        "text": "EN",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 20 20\" width=\"17\" height=\"17\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><circle cx=\"10\" cy=\"10\" r=\"8\"></circle><ellipse cx=\"10\" cy=\"10\" rx=\"3.6\" ry=\"8\"></ellipse><path d=\"M2.4 7.2h15.2M2.4 12.8h15.2\"></path></g></svg><span id=\"lang-code\">EN</span><svg class=\"icon lang-chevron\" viewBox=\"0 0 10 6\" aria-hidden=\"true\"><path d=\"M1 1l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "rect": [
+          262.609375,
+          9.859375,
+          55.15625,
+          39.46875
+        ]
+      },
+      {
+        "aria": "Light mode",
+        "text": "",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 20 20\" width=\"16\" height=\"16\" aria-hidden=\"true\"><circle cx=\"10\" cy=\"10\" r=\"3.6\" fill=\"currentColor\"></circle><path d=\"M10 1.6v2.2M10 16.2v2.2M1.6 10h2.2M16.2 10h2.2M4.1 4.1l1.5 1.5M14.4 14.4l1.5 1.5M4.1 15.9l1.5-1.5M14.4 5.6l1.5-1.5\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"></path></svg>",
+        "rect": [
+          324.671875,
+          10.859375,
+          37.5,
+          37.5
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Client RequestBrowser prepares the request",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Client Request</strong><small class=\"step-desc\">Browser prepares the request</small></span>",
+        "rect": [
+          -313.42498779296875,
+          163.75,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2DNS ResolutionFinds the server’s IP address",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">DNS Resolution</strong><small class=\"step-desc\">Finds the server’s IP address</small></span>",
+        "rect": [
+          -313.42498779296875,
+          207.171875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3TCP ConnectionEstablishes a reliable link",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">TCP Connection</strong><small class=\"step-desc\">Establishes a reliable link</small></span>",
+        "rect": [
+          -313.42498779296875,
+          250.59375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4HTTP ExchangeRequest and response messages",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">HTTP Exchange</strong><small class=\"step-desc\">Request and response messages</small></span>",
+        "rect": [
+          -313.42498779296875,
+          294.015625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Page RenderingBrowser displays the content",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Page Rendering</strong><small class=\"step-desc\">Browser displays the content</small></span>",
+        "rect": [
+          -313.42498779296875,
+          337.4375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Secure RequestBrowser asks for https://",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Secure Request</strong><small class=\"step-desc\">Browser asks for https://</small></span>",
+        "rect": [
+          -313.42498779296875,
+          445,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2DNS LookupSame lookup as HTTP, not encrypted",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">DNS Lookup</strong><small class=\"step-desc\">Same lookup as HTTP, not encrypted</small></span>",
+        "rect": [
+          -313.42498779296875,
+          488.421875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3TCP HandshakeOpens a connection to port 443",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">TCP Handshake</strong><small class=\"step-desc\">Opens a connection to port 443</small></span>",
+        "rect": [
+          -313.42498779296875,
+          531.84375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4TLS HandshakeAgrees on keys, checks the certificate",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">TLS Handshake</strong><small class=\"step-desc\">Agrees on keys, checks the certificate</small></span>",
+        "rect": [
+          -313.42498779296875,
+          575.265625,
+          278.90625,
+          48.375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Encrypted ExchangeHTTP inside TLS records",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Encrypted Exchange</strong><small class=\"step-desc\">HTTP inside TLS records</small></span>",
+        "rect": [
+          -313.42498779296875,
+          635.46875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6Page RenderingBrowser shows the padlock",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Page Rendering</strong><small class=\"step-desc\">Browser shows the padlock</small></span>",
+        "rect": [
+          -313.42498779296875,
+          678.890625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Open ConnectionThree-way handshake",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Open Connection</strong><small class=\"step-desc\">Three-way handshake</small></span>",
+        "rect": [
+          -313.42498779296875,
+          491.390625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Send DataEvery byte is numbered",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Send Data</strong><small class=\"step-desc\">Every byte is numbered</small></span>",
+        "rect": [
+          -313.42498779296875,
+          534.8125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Two Segments BackOne of them is lost",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Two Segments Back</strong><small class=\"step-desc\">One of them is lost</small></span>",
+        "rect": [
+          -313.42498779296875,
+          578.234375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4A Gap Is NoticedDuplicate ACK with SACK",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">A Gap Is Noticed</strong><small class=\"step-desc\">Duplicate ACK with SACK</small></span>",
+        "rect": [
+          -313.42498779296875,
+          621.65625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Resend the GapOnly the missing bytes",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Resend the Gap</strong><small class=\"step-desc\">Only the missing bytes</small></span>",
+        "rect": [
+          -313.42498779296875,
+          665.078125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6Close ConnectionEach side says goodbye",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Close Connection</strong><small class=\"step-desc\">Each side says goodbye</small></span>",
+        "rect": [
+          -313.42498779296875,
+          708.5,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Send Right AwayNo handshake, data goes first",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Send Right Away</strong><small class=\"step-desc\">No handshake, data goes first</small></span>",
+        "rect": [
+          -313.42498779296875,
+          537.78125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2A Stream of DatagramsOne every 20 ms, each on its own",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">A Stream of Datagrams</strong><small class=\"step-desc\">One every 20 ms, each on its own</small></span>",
+        "rect": [
+          -313.42498779296875,
+          581.203125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Lost on the WayNobody resends it",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Lost on the Way</strong><small class=\"step-desc\">Nobody resends it</small></span>",
+        "rect": [
+          -313.42498779296875,
+          624.625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4Replies Come BackThe other voice comes back",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Replies Come Back</strong><small class=\"step-desc\">The other voice comes back</small></span>",
+        "rect": [
+          -313.42498779296875,
+          668.046875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5The App DecidesReliability is up to the app",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">The App Decides</strong><small class=\"step-desc\">Reliability is up to the app</small></span>",
+        "rect": [
+          -313.42498779296875,
+          711.46875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Local or Not?Compare the address with the subnet",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Local or Not?</strong><small class=\"step-desc\">Compare the address with the subnet</small></span>",
+        "rect": [
+          -313.42498779296875,
+          584.171875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Find the RouterARP turns an IP into a MAC",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Find the Router</strong><small class=\"step-desc\">ARP turns an IP into a MAC</small></span>",
+        "rect": [
+          -313.42498779296875,
+          627.59375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Send the PacketAddresses, TTL and protocol",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Send the Packet</strong><small class=\"step-desc\">Addresses, TTL and protocol</small></span>",
+        "rect": [
+          -313.42498779296875,
+          671.015625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4NAT, Then Hop by HopThe router rewrites and forwards",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">NAT, Then Hop by Hop</strong><small class=\"step-desc\">The router rewrites and forwards</small></span>",
+        "rect": [
+          -313.42498779296875,
+          714.4375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5The Reply Comes BackNAT translates it for the laptop",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">The Reply Comes Back</strong><small class=\"step-desc\">NAT translates it for the laptop</small></span>",
+        "rect": [
+          -313.42498779296875,
+          757.859375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Ask the ResolverThe laptop hands the question off",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Ask the Resolver</strong><small class=\"step-desc\">The laptop hands the question off</small></span>",
+        "rect": [
+          -313.42498779296875,
+          630.5625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Root ServerPoints the way to .com",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Root Server</strong><small class=\"step-desc\">Points the way to .com</small></span>",
+        "rect": [
+          -313.42498779296875,
+          673.984375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3.com TLD ServerPoints the way to example.com",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">.com TLD Server</strong><small class=\"step-desc\">Points the way to example.com</small></span>",
+        "rect": [
+          -313.42498779296875,
+          717.40625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4Authoritative ServerGives the actual answer",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Authoritative Server</strong><small class=\"step-desc\">Gives the actual answer</small></span>",
+        "rect": [
+          -313.42498779296875,
+          760.828125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Answer & CacheThe laptop gets its address",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Answer &amp; Cache</strong><small class=\"step-desc\">The laptop gets its address</small></span>",
+        "rect": [
+          -313.42498779296875,
+          804.25,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1No Address YetThe laptop joins the network",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">No Address Yet</strong><small class=\"step-desc\">The laptop joins the network</small></span>",
+        "rect": [
+          -313.42498779296875,
+          676.953125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2DiscoverShout to the whole network",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Discover</strong><small class=\"step-desc\">Shout to the whole network</small></span>",
+        "rect": [
+          -313.42498779296875,
+          720.375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3OfferThe router proposes an address",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Offer</strong><small class=\"step-desc\">The router proposes an address</small></span>",
+        "rect": [
+          -313.42498779296875,
+          763.796875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4RequestAccept, out loud",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Request</strong><small class=\"step-desc\">Accept, out loud</small></span>",
+        "rect": [
+          -313.42498779296875,
+          807.21875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5AcknowledgeThe address is the laptop’s",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Acknowledge</strong><small class=\"step-desc\">The address is the laptop’s</small></span>",
+        "rect": [
+          -313.42498779296875,
+          850.640625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6RenewHalfway through the lease",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Renew</strong><small class=\"step-desc\">Halfway through the lease</small></span>",
+        "rect": [
+          -313.42498779296875,
+          894.0625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1PingEcho request",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Ping</strong><small class=\"step-desc\">Echo request</small></span>",
+        "rect": [
+          -313.42498779296875,
+          723.34375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Echo ReplyRound-trip time",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Echo Reply</strong><small class=\"step-desc\">Round-trip time</small></span>",
+        "rect": [
+          -313.42498779296875,
+          766.765625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3TTL 1The first router answers",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">TTL 1</strong><small class=\"step-desc\">The first router answers</small></span>",
+        "rect": [
+          -313.42498779296875,
+          810.1875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4TTL 2The next router answers",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">TTL 2</strong><small class=\"step-desc\">The next router answers</small></span>",
+        "rect": [
+          -313.42498779296875,
+          853.609375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5That’s TracerouteTTL 1, 2, 3 … until it arrives",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">That’s Traceroute</strong><small class=\"step-desc\">TTL 1, 2, 3 … until it arrives</small></span>",
+        "rect": [
+          -313.42498779296875,
+          897.03125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6UnreachableNothing listening on that port",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Unreachable</strong><small class=\"step-desc\">Nothing listening on that port</small></span>",
+        "rect": [
+          -313.42498779296875,
+          940.453125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Connect SecurelyPort 465, TLS from the start",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Connect Securely</strong><small class=\"step-desc\">Port 465, TLS from the start</small></span>",
+        "rect": [
+          -313.42498779296875,
+          769.734375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Greeting & LoginEHLO, then AUTH",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Greeting &amp; Login</strong><small class=\"step-desc\">EHLO, then AUTH</small></span>",
+        "rect": [
+          -313.42498779296875,
+          813.15625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Send the MessageEnvelope, then content",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Send the Message</strong><small class=\"step-desc\">Envelope, then content</small></span>",
+        "rect": [
+          -313.42498779296875,
+          856.578125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4Find Bob’s ServerAn MX lookup in DNS",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Find Bob’s Server</strong><small class=\"step-desc\">An MX lookup in DNS</small></span>",
+        "rect": [
+          -313.42498779296875,
+          900,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Server to ServerPort 25, upgraded with STARTTLS",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Server to Server</strong><small class=\"step-desc\">Port 25, upgraded with STARTTLS</small></span>",
+        "rect": [
+          -313.42498779296875,
+          943.421875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6DeliverThe same transaction again",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Deliver</strong><small class=\"step-desc\">The same transaction again</small></span>",
+        "rect": [
+          -313.42498779296875,
+          986.84375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Connect SecurelyPort 995, TLS from the start",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Connect Securely</strong><small class=\"step-desc\">Port 995, TLS from the start</small></span>",
+        "rect": [
+          -313.42498779296875,
+          816.125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Log InUSER, then PASS",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Log In</strong><small class=\"step-desc\">USER, then PASS</small></span>",
+        "rect": [
+          -313.42498779296875,
+          859.546875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Check the MailboxSTAT and LIST",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Check the Mailbox</strong><small class=\"step-desc\">STAT and LIST</small></span>",
+        "rect": [
+          -313.42498779296875,
+          902.96875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4DownloadRETR 1",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Download</strong><small class=\"step-desc\">RETR 1</small></span>",
+        "rect": [
+          -313.42498779296875,
+          946.390625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Delete & QuitDeleted only at QUIT",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Delete &amp; Quit</strong><small class=\"step-desc\">Deleted only at QUIT</small></span>",
+        "rect": [
+          -313.42498779296875,
+          989.8125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Connect SecurelyPort 993, TLS from the start",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Connect Securely</strong><small class=\"step-desc\">Port 993, TLS from the start</small></span>",
+        "rect": [
+          -313.42498779296875,
+          862.515625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Log InCommands carry tags",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Log In</strong><small class=\"step-desc\">Commands carry tags</small></span>",
+        "rect": [
+          -313.42498779296875,
+          905.9375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Open the InboxSELECT a folder",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Open the Inbox</strong><small class=\"step-desc\">SELECT a folder</small></span>",
+        "rect": [
+          -313.42498779296875,
+          949.359375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4Read a MessageFETCH, and the \\Seen flag",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Read a Message</strong><small class=\"step-desc\">FETCH, and the \\Seen flag</small></span>",
+        "rect": [
+          -313.42498779296875,
+          992.78125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Wait for New MailIDLE: the server pushes",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Wait for New Mail</strong><small class=\"step-desc\">IDLE: the server pushes</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1036.203125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Control ConnectionPort 21, plain text",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Control Connection</strong><small class=\"step-desc\">Port 21, plain text</small></span>",
+        "rect": [
+          -313.42498779296875,
+          908.90625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Log InUSER and PASS, readable by anyone",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Log In</strong><small class=\"step-desc\">USER and PASS, readable by anyone</small></span>",
+        "rect": [
+          -313.42498779296875,
+          952.328125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Passive ModeThe server names a data port",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Passive Mode</strong><small class=\"step-desc\">The server names a data port</small></span>",
+        "rect": [
+          -313.42498779296875,
+          995.75,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4Data ConnectionA second TCP connection",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Data Connection</strong><small class=\"step-desc\">A second TCP connection</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1039.171875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5The File ArrivesClosing the connection ends it",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">The File Arrives</strong><small class=\"step-desc\">Closing the connection ends it</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1082.59375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6QuitClose the control connection",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Quit</strong><small class=\"step-desc\">Close the control connection</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1126.015625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Say HelloVersions, in plain text",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Say Hello</strong><small class=\"step-desc\">Versions, in plain text</small></span>",
+        "rect": [
+          -313.42498779296875,
+          955.296875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Agree on AlgorithmsKEXINIT lists, first match wins",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Agree on Algorithms</strong><small class=\"step-desc\">KEXINIT lists, first match wins</small></span>",
+        "rect": [
+          -313.42498779296875,
+          998.71875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3Key ExchangeShared keys, and a host key check",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Key Exchange</strong><small class=\"step-desc\">Shared keys, and a host key check</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1042.140625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4Log In With a KeySign, don’t send a secret",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Log In With a Key</strong><small class=\"step-desc\">Sign, don’t send a secret</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1085.5625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Open a SessionChannels inside one connection",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Open a Session</strong><small class=\"step-desc\">Channels inside one connection</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1128.984375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6Type a CommandEvery key is a packet",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Type a Command</strong><small class=\"step-desc\">Every key is a packet</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1172.40625,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "1Client HelloEverything the browser supports",
+        "html": "<span aria-label=\"1\" class=\"number-dot step-num\"><span>1</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Client Hello</strong><small class=\"step-desc\">Everything the browser supports</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1001.6875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "2Server HelloChoices made, keys computed",
+        "html": "<span aria-label=\"2\" class=\"number-dot step-num\"><span>2</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Server Hello</strong><small class=\"step-desc\">Choices made, keys computed</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1045.109375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "3CertificateWho the server is, proven",
+        "html": "<span aria-label=\"3\" class=\"number-dot step-num\"><span>3</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Certificate</strong><small class=\"step-desc\">Who the server is, proven</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1088.53125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "4FinishedOne round trip, then data",
+        "html": "<span aria-label=\"4\" class=\"number-dot step-num\"><span>4</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Finished</strong><small class=\"step-desc\">One round trip, then data</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1131.953125,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "5Encrypted DataRecords, tags and tickets",
+        "html": "<span aria-label=\"5\" class=\"number-dot step-num\"><span>5</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Encrypted Data</strong><small class=\"step-desc\">Records, tags and tickets</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1175.375,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": null,
+        "text": "6Closingclose_notify, then TCP",
+        "html": "<span aria-label=\"6\" class=\"number-dot step-num\"><span>6</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><path pathLength=\"1\" d=\"M2 6l3 3 5-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path></svg></span><span><strong class=\"step-title\">Closing</strong><small class=\"step-desc\">close_notify, then TCP</small></span>",
+        "rect": [
+          -313.42498779296875,
+          1218.796875,
+          278.90625,
+          31.59375
+        ]
+      },
+      {
+        "aria": "Network view (V)",
+        "text": "Network",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M8 1.8 L14 5 L8 8.2 L2 5 Z M2 8.4 L8 11.6 L14 8.4 M2 11.6 L8 14.8 L14 11.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linejoin=\"round\"></path></svg><span data-t-label=\"network\">Network</span>",
+        "rect": [
+          28.609375,
+          154.09375,
+          86.859375,
+          25.65625
+        ]
+      },
+      {
+        "aria": "Sequence view (V)",
+        "text": "Sequence",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" aria-hidden=\"true\"><path d=\"M3 1.5 V14.5 M13 1.5 V14.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"></path><path d=\"M3 4.5 L12 6.5 M12 6.5 L9.6 7.4 M12 6.5 L10.2 4.6 M13 9.5 L4 11.5 M4 11.5 L5.8 9.6 M4 11.5 L6.4 12.4\" stroke=\"currentColor\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"></path></svg><span data-t-label=\"sequence\">Sequence</span>",
+        "rect": [
+          115.46875,
+          154.09375,
+          93.484375,
+          25.65625
+        ]
+      },
+      {
+        "aria": "Lesson options",
+        "text": "",
+        "html": "<svg width=\"20\" height=\"6\" viewBox=\"0 0 20 6\" aria-hidden=\"true\"><circle cx=\"3\" cy=\"3\" r=\"2.1\" fill=\"currentColor\"></circle><circle cx=\"10\" cy=\"3\" r=\"2.1\" fill=\"currentColor\"></circle><circle cx=\"17\" cy=\"3\" r=\"2.1\" fill=\"currentColor\"></circle></svg>",
+        "rect": [
+          320.734375,
+          513.765625,
+          27.625,
+          23.671875
+        ]
+      },
+      {
+        "aria": "1× · Cycle playback speed",
+        "text": "1×",
+        "html": "1×",
+        "rect": [
+          9.859375,
+          760.703125,
+          49.328125,
+          41.4375
+        ]
+      },
+      {
+        "aria": "Previous step",
+        "text": "",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M7.8 1.8 L3.6 6 L7.8 10.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>",
+        "rect": [
+          64.109375,
+          760.703125,
+          43.40625,
+          41.4375
+        ]
+      },
+      {
+        "aria": "Play (Space)",
+        "text": "Play",
+        "html": "<span class=\"toggle-icon\"><svg class=\"icon-playpause\" viewBox=\"0 0 12 14\" width=\"12\" height=\"14\" aria-hidden=\"true\"><path class=\"pp-a\"></path><path class=\"pp-b\"></path></svg><svg class=\"icon-replay\" viewBox=\"0 0 18 18\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M15 9a6 6 0 1 1-1.9-4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"></path><path d=\"M14.6 1.6v4.2h-4.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></span><span class=\"toggle-label\">Play</span>",
+        "rect": [
+          112.4375,
+          760.703125,
+          136.296875,
+          41.4375
+        ]
+      },
+      {
+        "aria": "Step (Right arrow)",
+        "text": "Step",
+        "html": "<span data-t-label=\"step\">Step</span>",
+        "rect": [
+          253.65625,
+          760.703125,
+          65.125,
+          41.4375
+        ]
+      },
+      {
+        "aria": "Reset",
+        "text": "Reset",
+        "html": "<svg class=\"icon\" viewBox=\"0 0 18 18\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M15 9a6 6 0 1 1-1.9-4.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"></path><path d=\"M14.6 1.6v4.2h-4.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg><span class=\"reset-label\" data-t-label=\"reset\">Reset</span>",
+        "rect": [
+          321.734375,
+          760.703125,
+          43.40625,
+          41.4375
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,842 @@
+[
+  {
+    "name": "reference",
+    "fields": {
+      "tree": [
+        403,
+        205,
+        154,
+        273
+      ],
+      "grid": "154px 398px",
+      "fields": [
+        {
+          "name": "Destination",
+          "rect": [
+            419,
+            248,
+            126,
+            212
+          ],
+          "note": {
+            "length": 62,
+            "rect": [
+              579,
+              320,
+              44,
+              135
+            ]
+          }
+        },
+        {
+          "name": "Source",
+          "rect": [
+            419,
+            460,
+            126,
+            137
+          ],
+          "note": {
+            "length": 26,
+            "rect": [
+              579,
+              532,
+              44,
+              60
+            ]
+          }
+        },
+        {
+          "name": "Type",
+          "rect": [
+            419,
+            597,
+            126,
+            88
+          ],
+          "note": {
+            "length": 23,
+            "rect": [
+              579,
+              635,
+              44,
+              45
+            ]
+          }
+        },
+        {
+          "name": "Version, header length",
+          "rect": [
+            419,
+            724,
+            126,
+            88
+          ],
+          "note": {
+            "length": 22,
+            "rect": [
+              579,
+              762,
+              44,
+              45
+            ]
+          }
+        },
+        {
+          "name": "DSCP, ECN",
+          "rect": [
+            419,
+            812,
+            126,
+            131
+          ],
+          "note": {
+            "length": 56,
+            "rect": [
+              579,
+              833,
+              55,
+              105
+            ]
+          }
+        },
+        {
+          "name": "Total length",
+          "rect": [
+            419,
+            943,
+            126,
+            86
+          ],
+          "note": {
+            "length": 37,
+            "rect": [
+              579,
+              964,
+              55,
+              60
+            ]
+          }
+        },
+        {
+          "name": "Identification",
+          "rect": [
+            419,
+            1029,
+            126,
+            163
+          ],
+          "note": {
+            "length": 65,
+            "rect": [
+              579,
+              1067,
+              55,
+              120
+            ]
+          }
+        },
+        {
+          "name": "Flags",
+          "rect": [
+            419,
+            1192,
+            126,
+            148
+          ],
+          "note": {
+            "length": 44,
+            "rect": [
+              579,
+              1230,
+              38.5,
+              105
+            ]
+          }
+        },
+        {
+          "name": "Time to live",
+          "rect": [
+            419,
+            1340,
+            126,
+            71
+          ],
+          "note": {
+            "length": 22,
+            "rect": [
+              579,
+              1361,
+              38.5,
+              45
+            ]
+          }
+        },
+        {
+          "name": "Protocol",
+          "rect": [
+            419,
+            1411,
+            126,
+            125
+          ],
+          "note": null
+        },
+        {
+          "name": "Header checksum",
+          "rect": [
+            419,
+            1536,
+            126,
+            176
+          ],
+          "note": {
+            "length": 75,
+            "rect": [
+              579,
+              1557,
+              55,
+              150
+            ]
+          }
+        },
+        {
+          "name": "Source",
+          "rect": [
+            419,
+            1712,
+            126,
+            210
+          ],
+          "note": null
+        },
+        {
+          "name": "Destination",
+          "rect": [
+            419,
+            1922,
+            126,
+            125
+          ],
+          "note": null
+        },
+        {
+          "name": "Source port",
+          "rect": [
+            419,
+            2086,
+            126,
+            91
+          ],
+          "note": null
+        },
+        {
+          "name": "Destination port",
+          "rect": [
+            419,
+            2177,
+            126,
+            40
+          ],
+          "note": null
+        },
+        {
+          "name": "Length",
+          "rect": [
+            419,
+            2217,
+            126,
+            101
+          ],
+          "note": {
+            "length": 75,
+            "rect": [
+              579,
+              2238,
+              93.5,
+              75
+            ]
+          }
+        },
+        {
+          "name": "Checksum",
+          "rect": [
+            419,
+            2318,
+            126,
+            101
+          ],
+          "note": {
+            "length": 49,
+            "rect": [
+              579,
+              2339,
+              55,
+              75
+            ]
+          }
+        },
+        {
+          "name": "Transaction ID",
+          "rect": [
+            419,
+            2458,
+            126,
+            193
+          ],
+          "note": {
+            "length": 53,
+            "rect": [
+              579,
+              2496,
+              38.5,
+              150
+            ]
+          }
+        },
+        {
+          "name": "Flags",
+          "rect": [
+            419,
+            2651,
+            126,
+            567
+          ],
+          "note": null
+        },
+        {
+          "name": "Questions",
+          "rect": [
+            419,
+            3218,
+            126,
+            23
+          ],
+          "note": null
+        },
+        {
+          "name": "Answers",
+          "rect": [
+            419,
+            3241,
+            126,
+            23
+          ],
+          "note": null
+        },
+        {
+          "name": "Authority records",
+          "rect": [
+            419,
+            3264,
+            126,
+            23
+          ],
+          "note": null
+        },
+        {
+          "name": "Additional records",
+          "rect": [
+            419,
+            3287,
+            126,
+            23
+          ],
+          "note": null
+        },
+        {
+          "name": "Question",
+          "rect": [
+            419,
+            3310,
+            126,
+            499
+          ],
+          "note": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "local",
+    "fields": {
+      "tree": [
+        403,
+        205,
+        154,
+        273
+      ],
+      "grid": "154px 398px",
+      "fields": [
+        {
+          "name": "Destination",
+          "rect": [
+            419,
+            248,
+            126,
+            242
+          ],
+          "note": {
+            "length": 73,
+            "rect": [
+              579,
+              320,
+              38.5,
+              165
+            ]
+          }
+        },
+        {
+          "name": "Source",
+          "rect": [
+            419,
+            490,
+            126,
+            120
+          ],
+          "note": {
+            "length": 38,
+            "rect": [
+              579,
+              545,
+              66,
+              60
+            ]
+          }
+        },
+        {
+          "name": "Type",
+          "rect": [
+            419,
+            610,
+            126,
+            118
+          ],
+          "note": {
+            "length": 41,
+            "rect": [
+              579,
+              648,
+              55,
+              75
+            ]
+          }
+        },
+        {
+          "name": "Version, header length",
+          "rect": [
+            419,
+            767,
+            126,
+            133
+          ],
+          "note": {
+            "length": 40,
+            "rect": [
+              579,
+              805,
+              44,
+              90
+            ]
+          }
+        },
+        {
+          "name": "DSCP, ECN",
+          "rect": [
+            419,
+            900,
+            126,
+            131
+          ],
+          "note": {
+            "length": 59,
+            "rect": [
+              579,
+              921,
+              55,
+              105
+            ]
+          }
+        },
+        {
+          "name": "Total length",
+          "rect": [
+            419,
+            1031,
+            126,
+            116
+          ],
+          "note": {
+            "length": 49,
+            "rect": [
+              579,
+              1052,
+              49.5,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Identification",
+          "rect": [
+            419,
+            1147,
+            126,
+            133
+          ],
+          "note": {
+            "length": 66,
+            "rect": [
+              579,
+              1185,
+              71.5,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Flags",
+          "rect": [
+            419,
+            1280,
+            126,
+            133
+          ],
+          "note": {
+            "length": 50,
+            "rect": [
+              579,
+              1318,
+              60.5,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Time to live",
+          "rect": [
+            419,
+            1413,
+            126,
+            116
+          ],
+          "note": {
+            "length": 61,
+            "rect": [
+              579,
+              1434,
+              66,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Protocol",
+          "rect": [
+            419,
+            1529,
+            126,
+            103
+          ],
+          "note": {
+            "length": 34,
+            "rect": [
+              579,
+              1567,
+              44,
+              60
+            ]
+          }
+        },
+        {
+          "name": "Header checksum",
+          "rect": [
+            419,
+            1632,
+            126,
+            116
+          ],
+          "note": {
+            "length": 47,
+            "rect": [
+              579,
+              1653,
+              55,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Source",
+          "rect": [
+            419,
+            1748,
+            126,
+            133
+          ],
+          "note": {
+            "length": 55,
+            "rect": [
+              579,
+              1786,
+              60.5,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Destination",
+          "rect": [
+            419,
+            1881,
+            126,
+            131
+          ],
+          "note": {
+            "length": 44,
+            "rect": [
+              579,
+              1902,
+              49.5,
+              105
+            ]
+          }
+        },
+        {
+          "name": "Source port",
+          "rect": [
+            419,
+            2051,
+            126,
+            71
+          ],
+          "note": {
+            "length": 35,
+            "rect": [
+              579,
+              2072,
+              71.5,
+              45
+            ]
+          }
+        },
+        {
+          "name": "Destination port",
+          "rect": [
+            419,
+            2122,
+            126,
+            71
+          ],
+          "note": {
+            "length": 37,
+            "rect": [
+              579,
+              2143,
+              71.5,
+              45
+            ]
+          }
+        },
+        {
+          "name": "Length",
+          "rect": [
+            419,
+            2193,
+            126,
+            133
+          ],
+          "note": {
+            "length": 45,
+            "rect": [
+              579,
+              2231,
+              44,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Checksum",
+          "rect": [
+            419,
+            2326,
+            126,
+            146
+          ],
+          "note": {
+            "length": 52,
+            "rect": [
+              579,
+              2347,
+              44,
+              120
+            ]
+          }
+        },
+        {
+          "name": "Transaction ID",
+          "rect": [
+            419,
+            2511,
+            126,
+            103
+          ],
+          "note": {
+            "length": 29,
+            "rect": [
+              579,
+              2549,
+              38.5,
+              60
+            ]
+          }
+        },
+        {
+          "name": "Flags",
+          "rect": [
+            419,
+            2614,
+            126,
+            231
+          ],
+          "note": {
+            "length": 52,
+            "rect": [
+              579,
+              2720,
+              44,
+              120
+            ]
+          }
+        },
+        {
+          "name": "Questions",
+          "rect": [
+            419,
+            2845,
+            126,
+            116
+          ],
+          "note": {
+            "length": 28,
+            "rect": [
+              579,
+              2866,
+              33,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Answers",
+          "rect": [
+            419,
+            2961,
+            126,
+            116
+          ],
+          "note": {
+            "length": 40,
+            "rect": [
+              579,
+              2982,
+              44,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Authority records",
+          "rect": [
+            419,
+            3077,
+            126,
+            116
+          ],
+          "note": {
+            "length": 47,
+            "rect": [
+              579,
+              3098,
+              49.5,
+              90
+            ]
+          }
+        },
+        {
+          "name": "Additional records",
+          "rect": [
+            419,
+            3193,
+            126,
+            101
+          ],
+          "note": {
+            "length": 38,
+            "rect": [
+              579,
+              3214,
+              55,
+              75
+            ]
+          }
+        },
+        {
+          "name": "Question name",
+          "rect": [
+            419,
+            3294,
+            126,
+            165
+          ],
+          "note": {
+            "length": 47,
+            "rect": [
+              579,
+              3349,
+              44,
+              105
+            ]
+          }
+        },
+        {
+          "name": "Question type",
+          "rect": [
+            419,
+            3459,
+            126,
+            101
+          ],
+          "note": {
+            "length": 30,
+            "rect": [
+              579,
+              3480,
+              49.5,
+              75
+            ]
+          }
+        },
+        {
+          "name": "Question class",
+          "rect": [
+            419,
+            3560,
+            126,
+            71
+          ],
+          "note": {
+            "length": 19,
+            "rect": [
+              579,
+              3581,
+              44,
+              45
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
