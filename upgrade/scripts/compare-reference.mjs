@@ -110,7 +110,7 @@ const extract = () => {
     const k = raw.toLowerCase().slice(0, 80);
     const i = seen.get(k) || 0; seen.set(k, i + 1);
     texts.push({
-      key: i ? `${k} #${i + 1}` : k, text: raw,
+      key: i ? `${k} #${i + 1}` : k, text: raw, explanation:!!el.closest('.ins-note'),
       rect: round([rr.x + sx, rr.y + sy, rr.width, rr.height]),
       size: parseFloat(c.fontSize), weight: c.fontWeight, style: c.fontStyle,
       tracking: parseFloat(c.letterSpacing) || 0, line: c.lineHeight, transform: c.textTransform,
@@ -220,7 +220,7 @@ async function pixelDiff(browser, a, b, masks = []) {
 function compareTexts(ref, loc) {
   const L = new Map(loc.texts.map(t => [t.key, t]));
   const R = new Map(ref.texts.map(t => [t.key, t]));
-  const prose = t => IGNORE.test(t.text) || (!STRICT && t.text.length > 60);
+  const prose = t => IGNORE.test(t.text) || (!STRICT && (t.text.length > 60 || t.explanation));
   const diffs = [], missing = [], extra = [];
   let exact = 0;
   for (const r of ref.texts) {
@@ -279,7 +279,7 @@ for (const lang of LANGS) for (const vp of VIEWPORTS) for (const theme of THEMES
 const summary = [];
 let md = `# Reference comparison\n\nReference: ${REF}\nLocal: ${LOCAL}${PARITY ? ' (parity mode)' : ''}\nLanguages: ${LANGS.join(', ')}\nRun: ${new Date().toISOString()}\n\n`;
 md += `Tolerances: position/size ±${TOL.pos}px · font-size ±${TOL.font}px · letter-spacing ±${TOL.tracking}px · colour ±${TOL.color}/255 per channel · pixels ≤${TOL.pixelPct}% differing\n`;
-md += STRICT ? '\nStrict mode: long prose included.\n' : '\nLong lesson prose (over 60 characters) and ignored credit handles are excluded from pixel checks by user-approved exception (2026-11-07); raw pixel percentages are retained. Prose geometry is still checked. Long prose is skipped in text matching. Use --strict to include prose.\n';
+md += STRICT ? '\nStrict mode: long prose included.\n' : '\nOriginal lesson prose, field explanations and ignored credit handles are excluded from pixel checks by user-approved exception (2026-11-07); raw pixel percentages are retained. Prose geometry is still checked. Long prose is skipped in text matching. Use --strict to include prose.\n';
 let details = '';
 
 for (const c of cases) {

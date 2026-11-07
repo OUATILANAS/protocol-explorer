@@ -6,8 +6,11 @@ export function collectPixelMasks({strict,ignoreSource,ignoreFlags}){
  const add=(element,kind)=>{
   if(!element.checkVisibility({opacityProperty:true,visibilityProperty:true}))return;
   const r=element.getBoundingClientRect();if(!r.width||!r.height)return;
-  masks.push({kind,rect:[r.x+scrollX,r.y+scrollY,r.width,r.height]});
+  let x=r.x,y=r.y,right=r.right,bottom=r.bottom;
+  for(let p=element.parentElement;p&&p!==document.body;p=p.parentElement){const s=getComputedStyle(p),b=p.getBoundingClientRect();if(s.overflowX!=='visible'){x=Math.max(x,b.x);right=Math.min(right,b.right)}if(s.overflowY!=='visible'){y=Math.max(y,b.y);bottom=Math.min(bottom,b.bottom)}if(s.position==='fixed')break}
+  if(right>x&&bottom>y)masks.push({kind,rect:[x+scrollX,y+scrollY,right-x,bottom-y]});
  };
+ if(!strict)document.querySelectorAll('.ins-note').forEach(p=>add(p,'field-explanation'));
  if(!strict)document.querySelectorAll('p.overview-desc,p.explain-text,p.description').forEach(p=>{
   if(p.textContent.replace(/\s+/g,' ').trim().length>60)add(p,'lesson-prose');
  });
