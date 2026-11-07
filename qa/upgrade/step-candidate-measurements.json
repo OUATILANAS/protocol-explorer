@@ -1,0 +1,152 @@
+[
+  {
+    "width": 1680,
+    "candidates": [
+      {
+        "suffix": " Cached records avoid another lookup. Each reply has a time to live that limits reuse.",
+        "length": 245,
+        "height": 117.5625
+      },
+      {
+        "suffix": " A cached record avoids more queries. Its time to live tells the resolver when to refresh.",
+        "length": 249,
+        "height": 117.5625
+      },
+      {
+        "suffix": " A cached answer saves a new lookup. Its time to live decides how long the resolver may reuse it.",
+        "length": 256,
+        "height": 117.5625
+      },
+      {
+        "suffix": " Cached records avoid another lookup. The reply has a time to live that limits reuse.",
+        "length": 244,
+        "height": 117.5625
+      },
+      {
+        "suffix": " Cached answers can be reused until their time to live expires. A fresh query follows.",
+        "length": 245,
+        "height": 117.5625
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "candidates": [
+      {
+        "suffix": " Cached records avoid another lookup. Each reply has a time to live that limits reuse.",
+        "length": 245,
+        "height": 136.5
+      },
+      {
+        "suffix": " A cached record avoids more queries. Its time to live tells the resolver when to refresh.",
+        "length": 249,
+        "height": 136.5
+      },
+      {
+        "suffix": " A cached answer saves a new lookup. Its time to live decides how long the resolver may reuse it.",
+        "length": 256,
+        "height": 136.5
+      },
+      {
+        "suffix": " Cached records avoid another lookup. The reply has a time to live that limits reuse.",
+        "length": 244,
+        "height": 136.5
+      },
+      {
+        "suffix": " Cached answers can be reused until their time to live expires. A fresh query follows.",
+        "length": 245,
+        "height": 136.5
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "candidates": [
+      {
+        "suffix": " Cached records avoid another lookup. Each reply has a time to live that limits reuse.",
+        "length": 245,
+        "height": 117
+      },
+      {
+        "suffix": " A cached record avoids more queries. Its time to live tells the resolver when to refresh.",
+        "length": 249,
+        "height": 117
+      },
+      {
+        "suffix": " A cached answer saves a new lookup. Its time to live decides how long the resolver may reuse it.",
+        "length": 256,
+        "height": 136.5
+      },
+      {
+        "suffix": " Cached records avoid another lookup. The reply has a time to live that limits reuse.",
+        "length": 244,
+        "height": 117
+      },
+      {
+        "suffix": " Cached answers can be reused until their time to live expires. A fresh query follows.",
+        "length": 245,
+        "height": 117
+      }
+    ]
+  },
+  {
+    "width": 700,
+    "candidates": [
+      {
+        "suffix": " Cached records avoid another lookup. Each reply has a time to live that limits reuse.",
+        "length": 245,
+        "height": 58.5
+      },
+      {
+        "suffix": " A cached record avoids more queries. Its time to live tells the resolver when to refresh.",
+        "length": 249,
+        "height": 58.5
+      },
+      {
+        "suffix": " A cached answer saves a new lookup. Its time to live decides how long the resolver may reuse it.",
+        "length": 256,
+        "height": 58.5
+      },
+      {
+        "suffix": " Cached records avoid another lookup. The reply has a time to live that limits reuse.",
+        "length": 244,
+        "height": 58.5
+      },
+      {
+        "suffix": " Cached answers can be reused until their time to live expires. A fresh query follows.",
+        "length": 245,
+        "height": 58.5
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "candidates": [
+      {
+        "suffix": " Cached records avoid another lookup. Each reply has a time to live that limits reuse.",
+        "length": 245,
+        "height": 96.25
+      },
+      {
+        "suffix": " A cached record avoids more queries. Its time to live tells the resolver when to refresh.",
+        "length": 249,
+        "height": 115.5
+      },
+      {
+        "suffix": " A cached answer saves a new lookup. Its time to live decides how long the resolver may reuse it.",
+        "length": 256,
+        "height": 115.5
+      },
+      {
+        "suffix": " Cached records avoid another lookup. The reply has a time to live that limits reuse.",
+        "length": 244,
+        "height": 96.25
+      },
+      {
+        "suffix": " Cached answers can be reused until their time to live expires. A fresh query follows.",
+        "length": 245,
+        "height": 96.25
+      }
+    ]
+  }
+]
