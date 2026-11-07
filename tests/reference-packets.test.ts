@@ -1,7 +1,7 @@
 import{test}from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';
 import{lessons}from'../src/lessons';import{Engine}from'../src/sim/engine';
 import{isPacket}from'../src/types';
-const reference=JSON.parse(readFileSync(new URL('./fixtures/reference-packets.json',import.meta.url),'utf8'));
+const reference=JSON.parse(readFileSync(new URL('../upgrade/reference/reference-packets.json',import.meta.url),'utf8'));
 for(const expected of reference.lessons){
  test(`${expected.id}: natural playback rows deep-equal the supplied capture`,()=>{
   const lesson=lessons.find(l=>l.id===expected.id)!;
