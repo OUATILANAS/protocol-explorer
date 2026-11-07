@@ -1,0 +1,15 @@
+[
+  {
+    "id": "medium-dark-overview",
+    "pass": true,
+    "pixelPct": 0.21,
+    "rawPixelPct": 0.91,
+    "maskedPixels": 45348,
+    "texts": "145/145",
+    "textDiffs": 0,
+    "missing": 0,
+    "extra": 0,
+    "boxDiffs": 0,
+    "notes": []
+  }
+]

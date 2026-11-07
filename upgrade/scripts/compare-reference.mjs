@@ -28,6 +28,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runMotion } from './motion.mjs';
+import { collectPixelMasks, compareProseGeometry } from '../../scripts/comparison-prose-mask.mjs';
 
 const args = process.argv.slice(2);
 const arg = (name, dflt) => { const i = args.indexOf(`--${name}`); return i >= 0 ? args[i + 1] : dflt; };
@@ -178,26 +179,31 @@ async function capture(browser, url, vp, theme, state, lang = 'en') {
   await page.addStyleTag({ content: '*,*::before,*::after{animation-play-state:paused!important;transition:none!important;caret-color:transparent!important}' });
   await page.waitForTimeout(100);
   const data = await page.evaluate(extract);
+  const masks = await page.evaluate(collectPixelMasks, {strict: STRICT, ignoreSource: IGNORE.source, ignoreFlags: IGNORE.flags});
   const png = await page.screenshot({ fullPage: true });
   await context.close();
-  return { data, png, errors, stateError };
+  return { data, png, masks, errors, stateError };
 }
 
 // pixel diff done in a browser canvas so no extra npm packages are needed
-async function pixelDiff(browser, a, b) {
+async function pixelDiff(browser, a, b, masks = []) {
   const page = await browser.newPage();
-  const res = await page.evaluate(async ({ a, b }) => {
+  const res = await page.evaluate(async ({ a, b, masks }) => {
     const load = src => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = src; });
     const [ia, ib] = await Promise.all([load(a), load(b)]);
     const w = Math.max(ia.width, ib.width), h = Math.max(ia.height, ib.height);
     const get = img => { const c = new OffscreenCanvas(w, h); const x = c.getContext('2d'); x.fillStyle = '#ff00ff'; x.fillRect(0, 0, w, h); x.drawImage(img, 0, 0); return x.getImageData(0, 0, w, h).data; };
     const da = get(ia), db = get(ib);
     const out = new OffscreenCanvas(w, h), ox = out.getContext('2d'), od = ox.createImageData(w, h);
-    let bad = 0;
+    const excluded = new Uint8Array(w * h);
+    for (const {rect:[x,y,width,height]} of masks) for(let py=Math.max(0,Math.floor(y));py<Math.min(h,Math.ceil(y+height));py++)
+      excluded.fill(1,py*w+Math.max(0,Math.floor(x)),py*w+Math.min(w,Math.ceil(x+width)));
+    let bad = 0, rawBad = 0;
     for (let i = 0; i < da.length; i += 4) {
       const d = Math.max(Math.abs(da[i] - db[i]), Math.abs(da[i + 1] - db[i + 1]), Math.abs(da[i + 2] - db[i + 2]));
       const grey = (da[i] * 0.3 + da[i + 1] * 0.59 + da[i + 2] * 0.11) * 0.25 + 190;
-      if (d > 24) { bad++; od.data[i] = 255; od.data[i + 1] = 0; od.data[i + 2] = 60; }
+      if(d > 24)rawBad++;
+      if (d > 24 && !excluded[i / 4]) { bad++; od.data[i] = 255; od.data[i + 1] = 0; od.data[i + 2] = 60; }
       else { od.data[i] = od.data[i + 1] = od.data[i + 2] = grey; }
       od.data[i + 3] = 255;
     }
@@ -205,8 +211,8 @@ async function pixelDiff(browser, a, b) {
     const blob = await out.convertToBlob({ type: 'image/png' });
     const buf = new Uint8Array(await blob.arrayBuffer());
     let s = ''; for (let i = 0; i < buf.length; i += 0x8000) s += String.fromCharCode(...buf.subarray(i, i + 0x8000));
-    return { pct: (bad / (w * h)) * 100, w, h, sizeA: [ia.width, ia.height], sizeB: [ib.width, ib.height], png: btoa(s) };
-  }, { a: 'data:image/png;base64,' + a.toString('base64'), b: 'data:image/png;base64,' + b.toString('base64') });
+    return { pct: (bad / (w * h)) * 100, rawPct: (rawBad / (w * h)) * 100, maskedPixels: excluded.reduce((n,v)=>n+v,0), w, h, sizeA: [ia.width, ia.height], sizeB: [ib.width, ib.height], png: btoa(s) };
+  }, { a: 'data:image/png;base64,' + a.toString('base64'), b: 'data:image/png;base64,' + b.toString('base64'), masks });
   await page.close();
   return { ...res, png: Buffer.from(res.png, 'base64') };
 }
@@ -273,20 +279,20 @@ for (const lang of LANGS) for (const vp of VIEWPORTS) for (const theme of THEMES
 const summary = [];
 let md = `# Reference comparison\n\nReference: ${REF}\nLocal: ${LOCAL}${PARITY ? ' (parity mode)' : ''}\nLanguages: ${LANGS.join(', ')}\nRun: ${new Date().toISOString()}\n\n`;
 md += `Tolerances: position/size ±${TOL.pos}px · font-size ±${TOL.font}px · letter-spacing ±${TOL.tracking}px · colour ±${TOL.color}/255 per channel · pixels ≤${TOL.pixelPct}% differing\n`;
-md += STRICT ? '\nStrict mode: long prose included.\n' : '\nLong prose (over 60 characters) is skipped because lesson explanations are meant to differ. Use --strict to include it.\n';
+md += STRICT ? '\nStrict mode: long prose included.\n' : '\nLong lesson prose (over 60 characters) and ignored credit handles are excluded from pixel checks by user-approved exception (2026-11-07); raw pixel percentages are retained. Prose geometry is still checked. Long prose is skipped in text matching. Use --strict to include prose.\n';
 let details = '';
 
 for (const c of cases) {
   process.stdout.write(`${c.id} … `);
   const [ref, loc] = await Promise.all([capture(browser, REF, c.vp, c.theme, c.state, c.lang), capture(browser, LOCAL, c.vp, c.theme, c.state, c.lang)]);
-  const px = await pixelDiff(browser, ref.png, loc.png);
+  const px = await pixelDiff(browser, ref.png, loc.png, [...ref.masks,...loc.masks]);
   await fs.writeFile(path.join(OUT, `${c.id}.ref.png`), ref.png);
   await fs.writeFile(path.join(OUT, `${c.id}.local.png`), loc.png);
   await fs.writeFile(path.join(OUT, `${c.id}.diff.png`), px.png);
   const t = compareTexts(ref.data, loc.data);
   const b = compareBoxes(ref.data, loc.data);
   const fontsMissing = ref.data.fonts.filter(f => !loc.data.fonts.includes(f));
-  const meta = [];
+  const meta = compareProseGeometry(ref.masks,loc.masks,TOL.pos);
   if (ref.data.layout !== loc.data.layout) meta.push(`data-layout is "${loc.data.layout}" (ref "${ref.data.layout}")`);
   if (ref.data.title !== loc.data.title) meta.push(`document title "${loc.data.title}" (ref "${ref.data.title}")`);
   if (ref.data.page[0] !== loc.data.page[0] || Math.abs(ref.data.page[1] - loc.data.page[1]) > 2) meta.push(`page size ${loc.data.page.join('×')} (ref ${ref.data.page.join('×')})`);
@@ -295,11 +301,11 @@ for (const c of cases) {
   if (loc.stateError) meta.push(`could not reach state on local: ${loc.stateError}`);
   if (loc.errors.length) meta.push(`console errors on local: ${loc.errors.slice(0, 3).join(' | ')}`);
   const pass = px.pct <= TOL.pixelPct && !t.diffs.length && !t.missing.length && !t.extra.length && !b.diffs.length && !b.missing.length && !meta.length;
-  const row = { id: c.id, pass, pixelPct: Math.round(px.pct * 100) / 100, texts: `${t.exact}/${t.total}`, textDiffs: t.diffs.length, missing: t.missing.length, extra: t.extra.length, boxDiffs: b.diffs.length + b.missing.length, notes: meta };
+  const row = { id: c.id, pass, pixelPct: Math.round(px.pct * 100) / 100, rawPixelPct: Math.round(px.rawPct * 100) / 100, maskedPixels: px.maskedPixels, texts: `${t.exact}/${t.total}`, textDiffs: t.diffs.length, missing: t.missing.length, extra: t.extra.length, boxDiffs: b.diffs.length + b.missing.length, notes: meta };
   summary.push(row);
   console.log(pass ? 'PASS' : `pixels ${row.pixelPct}% · texts exact ${row.texts} · box issues ${row.boxDiffs}`);
 
-  details += `\n## ${c.id} ${pass ? '✅' : '❌'}\n\nImages: \`${c.id}.ref.png\` · \`${c.id}.local.png\` · \`${c.id}.diff.png\` (red = differing pixels). Pixels differing: **${row.pixelPct}%**.\n`;
+  details += `\n## ${c.id} ${pass ? '✅' : '❌'}\n\nImages: \`${c.id}.ref.png\` · \`${c.id}.local.png\` · \`${c.id}.diff.png\` (red = differing pixels). Pixels differing: **${row.pixelPct}%** (${row.rawPixelPct}% raw; ${row.maskedPixels} prose/credit pixels excluded by user-approved exception).\n`;
   if (meta.length) details += `\n${meta.map(m => `- ⚠️ ${m}`).join('\n')}\n`;
   if (t.diffs.length) {
     details += `\n### Text that differs (${t.diffs.length}, worst first)\n\n| Text (ref position) | What differs |\n|---|---|\n`;
@@ -311,7 +317,7 @@ for (const c of cases) {
   if (b.diffs.length || b.missing.length) {
     details += `\n### Boxes (panels, buttons, badges) that differ (${b.diffs.length + b.missing.length})\n\n| Box, keyed by its first words (ref rect) | What differs |\n|---|---|\n`;
     for (const x of b.diffs.slice(0, 40)) details += `| \`${x.key.slice(0, 40)}\` @ ${x.ref.rect.map(Math.round).join(',')} | ${x.d.join('; ')} |\n`;
-    for (const x of b.missing.slice(0, 20)) details += `| \`${x.key.slice(0, 40)}\` @ ${x.ref.rect.map(Math.round).join(',')} | not found locally (bg ${hex(x.bg)}, border ${x.borderWidth}px ${hex(x.borderColor)}) |\n`;
+    for (const x of b.missing.slice(0, 20)) details += `| \`${x.key.slice(0, 40)}\` @ ${x.rect.map(Math.round).join(',')} | not found locally (bg ${hex(x.bg)}, border ${x.borderWidth}px ${hex(x.borderColor)}) |\n`;
   }
 }
 const motionCases = MOTION ? [VIEWPORTS[1], VIEWPORTS[4]].map(vp => ({ id: `motion-${vp.name}-dark`, vp, theme: 'dark' })).filter(c => !ONLY || ONLY.split(',').some(o => c.id.includes(o))) : [];
