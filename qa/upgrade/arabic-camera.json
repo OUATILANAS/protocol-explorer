@@ -1,0 +1,118 @@
+[
+  {
+    "name": "reference",
+    "data": {
+      "view": "34.88 -43.28 874.78 703.63",
+      "nodes": [
+        {
+          "id": "internet",
+          "label": "<g class=\"node-label\" data-origin=\"center-top\" transform=\"translate(751.4 510.8) scale(1.268) translate(-751.4 -510.8)\"><text class=\"node-name\" x=\"726\" y=\"524\" text-anchor=\"start\">⁧الإنترنت⁩</text></g>",
+          "bounds": [
+            647,
+            394,
+            173,
+            140.4136962890625
+          ]
+        },
+        {
+          "id": "client",
+          "label": "<g class=\"node-label\" data-origin=\"right-top\" transform=\"translate(163.0 478.3) scale(1.268) translate(-163.0 -478.3)\"><text class=\"node-name\" x=\"73\" y=\"494\" text-anchor=\"start\">⁧العميل⁩</text><text class=\"node-ip\" x=\"73\" y=\"512\" text-anchor=\"start\">⁦192.168.1.10⁩</text></g>",
+          "bounds": [
+            48.8799934387207,
+            338.12957763671875,
+            265.6000061035156,
+            193.87042236328125
+          ]
+        },
+        {
+          "id": "router",
+          "label": "<g class=\"node-label\" data-origin=\"left-top\" transform=\"translate(407.0 410.3) scale(1.268) translate(-407.0 -410.3)\"><text class=\"node-name\" x=\"407\" y=\"426\" text-anchor=\"start\">⁧الموجّه⁩</text><text class=\"node-ip\" x=\"407\" y=\"444\" text-anchor=\"start\">⁦192.168.1.1⁩</text></g>",
+          "bounds": [
+            379.3800048828125,
+            270.5,
+            150.69000244140625,
+            187.285888671875
+          ]
+        },
+        {
+          "id": "dns",
+          "label": "<g class=\"node-label\" data-origin=\"right-bottom\" transform=\"translate(654.0 180.2) scale(1.268) translate(-654.0 -180.2)\"><text class=\"node-name\" x=\"654\" y=\"160\" text-anchor=\"end\">⁧محلّل ⁦DNS⁩⁩</text><text class=\"node-ip\" x=\"654\" y=\"178\" text-anchor=\"end\">⁦8.8.8.8⁩</text></g>",
+          "bounds": [
+            572.8309326171875,
+            132.77671813964844,
+            189.21905517578125,
+            107.72328186035156
+          ]
+        },
+        {
+          "id": "web",
+          "label": "<g class=\"node-label\" data-origin=\"left-bottom\" transform=\"translate(773.0 126.2) scale(1.268) translate(-773.0 -126.2)\"><text class=\"node-name\" x=\"773\" y=\"106\" text-anchor=\"start\">⁧خادم الويب⁩</text><text class=\"node-ip\" x=\"773\" y=\"124\" text-anchor=\"start\">⁦203.0.113.10⁩</text></g>",
+          "bounds": [
+            762.97998046875,
+            81.56937408447266,
+            132.67999267578125,
+            198.0306396484375
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "name": "local",
+    "data": {
+      "view": "35.71 -43.24 873.95 702.96",
+      "nodes": [
+        {
+          "id": "internet",
+          "label": "<g class=\"node-label\" data-pivot=\"751.4,510.8\" stroke=\"none\" text-anchor=\"start\" style=\"\" transform=\"translate(751.4 510.8) scale(1.268) translate(-751.4 -510.8)\"><text class=\"node-name\" x=\"726\" y=\"524\" font-size=\"15.5\" font-weight=\"800\" fill=\"var(--ink-strong)\">⁧الإنترنت⁩</text></g>",
+          "bounds": [
+            647,
+            394,
+            173,
+            140.41259765625
+          ]
+        },
+        {
+          "id": "client",
+          "label": "<g class=\"node-label\" data-pivot=\"159.9,480.8\" stroke=\"none\" text-anchor=\"start\" style=\"\" transform=\"translate(159.9 480.8) scale(1.268) translate(-159.9 -480.8)\"><text class=\"node-name\" x=\"73\" y=\"494\" font-size=\"15.5\" font-weight=\"800\" fill=\"var(--ink-strong)\">⁧العميل⁩</text><text class=\"node-ip\" x=\"73\" y=\"512\" font-size=\"15\" font-weight=\"500\" fill=\"var(--k-text-1d3e9a)\">⁦192.168.1.10⁩</text></g>",
+          "bounds": [
+            49.7108039855957,
+            338.12957763671875,
+            264.7691955566406,
+            193.87042236328125
+          ]
+        },
+        {
+          "id": "router",
+          "label": "<g class=\"node-label\" data-pivot=\"407.0,411.7\" stroke=\"none\" text-anchor=\"start\" style=\"\" transform=\"translate(407 411.7) scale(1.268) translate(-407 -411.7)\"><text class=\"node-name\" x=\"407\" y=\"426\" font-size=\"15.5\" font-weight=\"800\" fill=\"var(--ink-strong)\">⁧الموجّه⁩</text><text class=\"node-ip\" x=\"407\" y=\"444\" font-size=\"15\" font-weight=\"500\" fill=\"var(--k-text-1d3e9a)\">⁦192.168.1.1⁩</text></g>",
+          "bounds": [
+            379.3800048828125,
+            270.5,
+            150.69000244140625,
+            186.90606689453125
+          ]
+        },
+        {
+          "id": "dns",
+          "label": "<g class=\"node-label\" data-pivot=\"654.0,182.4\" stroke=\"none\" text-anchor=\"end\" style=\"\" transform=\"translate(654 182.4) scale(1.268) translate(-654 -182.4)\"><text class=\"node-name\" x=\"654\" y=\"160\" font-size=\"15.5\" font-weight=\"800\" fill=\"var(--ink-strong)\">⁧محلّل ⁦DNS⁩⁩</text><text class=\"node-ip\" x=\"654\" y=\"178\" font-size=\"15\" font-weight=\"500\" fill=\"var(--k-text-1d3e9a)\">⁦8.8.8.8⁩</text></g>",
+          "bounds": [
+            572.833984375,
+            132.19032287597656,
+            189.21600341796875,
+            108.30967712402344
+          ]
+        },
+        {
+          "id": "web",
+          "label": "<g class=\"node-label\" data-pivot=\"773.0,128.4\" stroke=\"none\" text-anchor=\"start\" style=\"\" transform=\"translate(773 128.4) scale(1.268) translate(-773 -128.4)\"><text class=\"node-name\" x=\"773\" y=\"106\" font-size=\"15.5\" font-weight=\"800\" fill=\"var(--ink-strong)\">⁧خادم الويب⁩</text><text class=\"node-ip\" x=\"773\" y=\"124\" font-size=\"15\" font-weight=\"500\" fill=\"var(--k-text-1d3e9a)\">⁦203.0.113.10⁩</text></g>",
+          "bounds": [
+            762.97998046875,
+            80.99787902832031,
+            132.67999267578125,
+            198.6021270751953
+          ]
+        }
+      ]
+    }
+  }
+]
