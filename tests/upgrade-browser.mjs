@@ -34,7 +34,7 @@ await page.evaluate(()=>window.__protocol.engine.reset());await page.setViewport
 console.log('Paused camera remains still through a full-page capture: passed');
 
 
-await page.evaluate(()=>{const p=window.__protocol;p.engine.setLesson(p.lessons.find(l=>l.id==='https'));p.openPacket(6)});await page.waitForTimeout(400);
+await page.evaluate(async()=>{const p=window.__protocol;await p.prepareLesson('https');p.engine.setLesson(p.lessons.find(l=>l.id==='https'));p.openPacket(6)});await page.waitForTimeout(400);
 assert.equal(await page.locator('.ins-tab').count(),4);assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'0');
 assert.match(await page.locator('.hx-head').textContent(),/1,514/);
 await page.keyboard.press(']');assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'1');

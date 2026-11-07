@@ -40,6 +40,7 @@ for(const lesson of source.lessons){
  const catalog=source.catalog.find(c=>c.id===lesson.id);
  targets.push({id:lesson.id,name:lesson.name,title:lesson.title,fullName:lesson.overview.full,category:catalog.group,layer:lesson.layer,nodes:lesson.labels||{},legend:lesson.legend,packets:events.map(e=>({...e.row,wire:undefined,color:e.color,lost:e.lost||false})),steps:lesson.steps.map(s=>({title:s.title,desc:s.desc}))});
 }
+targets.sort((a,b)=>source.catalog.findIndex(c=>c.id===a.id)-source.catalog.findIndex(c=>c.id===b.id));
 await writeFile('tests/fixtures/reference-33-packets.json',JSON.stringify({reference:'https://protocol-explorer-alpha.vercel.app/',capturedAt:'2026-11-07',lessons:targets},null,2)+'\n');
 // Retain the technical lesson definitions, but not the reference’s field explanations or byte oracle.
 const technical={catalog:source.catalog,lessons:source.lessons};

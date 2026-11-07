@@ -23,7 +23,7 @@ export function sliceLayer(source:Layer,start:number,end:number):Layer{
 }
 const timestamps=new Uint8Array([1,1,8,10,0,0,0,1,0,0,0,1]);
 const synTimestamp=concat(new Uint8Array([2,4,5,180,4,2,8,10]),u32(1),u32(0),new Uint8Array([1,3,3,7]));
-const ports:Record<LessonId,[number,number]>={http:[52344,80],https:[52411,443],tcp:[49152,80],udp:[50000,5004],ip:[52344,443],dns:[59321,53],dhcp:[68,67],icmp:[52500,9999],smtp:[52900,465],pop3:[53010,995],imap:[53140,993],ftp:[52800,21],ssh:[53210,22],tls:[52411,443]};
+const ports:Partial<Record<LessonId,[number,number]>>={http:[52344,80],https:[52411,443],tcp:[49152,80],udp:[50000,5004],ip:[52344,443],dns:[59321,53],dhcp:[68,67],icmp:[52500,9999],smtp:[52900,465],pop3:[53010,995],imap:[53140,993],ftp:[52800,21],ssh:[53210,22],tls:[52411,443]};
 function serverFlight(length:number){const hello=tls('server-hello'),ccs=tls('ccs');return tlsRecords([hello,ccs,tls('encrypted',length-hello.bytes.length-ccs.bytes.length-5)])}
 function plaintext(info:string,size:number,name:string){
  let content=info.replace(/^(Client|Server): /,'').replace(/ …/g,'').replace(/“|”/g,'');
@@ -81,7 +81,7 @@ export class CaptureEncoder{
   return frame([ethernet(row.dst==='192.168.1.10'),ipv4(row.src,row.dst,1,payload.bytes.length,ttl),payload]);
  }
  private tcp(row:CaptureRow,index:number){
-  const [clientPort,service]=ports[this.id];
+  const [clientPort,service]=ports[this.id]!;
   const relay=this.id==='smtp'&&index>=19;
   const data=this.id==='ftp'&&(index>=12&&index<=14||index>=17&&index<=20);
   const explicit=row.info.match(/(\d+) → (\d+)/);

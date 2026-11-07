@@ -5,7 +5,7 @@ export interface CaptureDefinition{id:LessonId;name:string;fullName:string;title
 export const captures=data as CaptureDefinition[];
 const range=(start:number,end:number)=>Array.from({length:end-start+1},(_,i)=>start+i);
 /** Packet assignment is explicit: teaching prose and step order remain authored separately. */
-export const stepPackets:Record<LessonId,number[][]>={
+export const stepPackets:Partial<Record<LessonId,number[][]>>={
  http:[[],[0,1],[2,3,4],[5,6],[]],
  https:[[],[0,1],[2,3,4],[5,6,7],[8,9,10],[]],
  tcp:[[0,1,2],[3,4],[5,6],[7],[8,9],[10]],

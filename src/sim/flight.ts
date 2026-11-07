@@ -18,7 +18,7 @@ for(const [node,start,end] of [
  const length=Math.hypot(end.x-start.x,end.y-start.y),dx=-(end.y-start.y)/length*5.5,dy=(end.x-start.x)/length*5.5;
  lanePoints[`internet>${node}`]=[{x:start.x+dx,y:start.y+dy},{x:end.x+dx,y:end.y+dy}];lanePoints[`${node}>internet`]=[{x:end.x-dx,y:end.y-dy},{x:start.x-dx,y:start.y-dy}];
 }
-export const nodeAnchors:Record<NodeId,Point>={client:{x:214,y:446},dns:{x:701,y:180},router:{x:440,y:360},internet:{x:732,y:458},web:{x:812,y:206},root:{x:960,y:296},tld:{x:1005,y:426},auth:{x:960,y:571},mx:{x:1010,y:378}};
+export const nodeAnchors:Record<NodeId,Point>={client:{x:214,y:446},dns:{x:701,y:180},router:{x:440,y:360},internet:{x:732,y:458},web:{x:812,y:206},root:{x:960,y:296},tld:{x:1005,y:426},auth:{x:960,y:571},mx:{x:1010,y:378},relay:{x:780,y:290},app:{x:1050,y:250},lan:{x:530,y:550},isp:{x:710,y:300},transit:{x:860,y:230},hosting:{x:1000,y:310},remote:{x:1040,y:450},peer:{x:1140,y:596}};
 export function path(from:NodeId,to:NodeId):NodeId[]{
  const chain=(id:NodeId):NodeId[]=>id==='client'?['client','router','internet']:id==='router'?['router','internet']:id==='internet'?['internet']:[id,'internet'];
  const left=chain(from),right=chain(to),junction=left.find(id=>right.includes(id))!;
@@ -44,5 +44,6 @@ export function flight(route:NodeId[],fallback:(id:NodeId)=>Point){
   return legs.length?place(legs.at(-1)![0],legs.at(-1)![1],1):{...fallback(route[0]),scale,finalFade,trail:[]};
  }};
 }
-export const networkPoint=(id:NodeId):Point=>({client:{x:262,y:430},router:{x:450,y:360},internet:{x:730,y:445},dns:{x:700,y:230},web:{x:790,y:260},root:{x:925,y:280},tld:{x:970,y:420},auth:{x:925,y:570},mx:{x:968,y:370}}[id]);
+const legacyPoints:Partial<Record<NodeId,Point>>={client:{x:262,y:430},router:{x:450,y:360},internet:{x:730,y:445},dns:{x:700,y:230},web:{x:790,y:260},root:{x:925,y:280},tld:{x:970,y:420},auth:{x:925,y:570},mx:{x:968,y:370}};
+export const networkPoint=(id:NodeId):Point=>legacyPoints[id]||nodeAnchors[id];
 export const packetFlight=(from:NodeId,to:NodeId)=>flight(path(from,to),networkPoint);

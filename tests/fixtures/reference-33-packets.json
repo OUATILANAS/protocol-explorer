@@ -301,6 +301,608 @@
       ]
     },
     {
+      "id": "websocket",
+      "name": "WebSocket",
+      "title": "Live Updates",
+      "fullName": "The WebSocket Protocol",
+      "category": "application",
+      "layer": 7,
+      "nodes": {
+        "web": [
+          "www.example.com",
+          "203.0.113.10"
+        ]
+      },
+      "legend": [
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "amber",
+          "From the browser"
+        ],
+        [
+          "violet",
+          "From the server"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "TCP",
+          "info": "52360 → 80 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.017s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "80 → 52360 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.034s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "TCP",
+          "info": "52360 → 80 [ACK] Seq=1 Ack=1",
+          "len": "60 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.034s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "HTTP",
+          "info": "GET /chat HTTP/1.1",
+          "len": "547 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.052s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "HTTP",
+          "info": "HTTP/1.1 101 Switching Protocols",
+          "len": "183 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.400s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Text [FIN] [MASKED]",
+          "len": "65 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "6.810s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Text [FIN]",
+          "len": "69 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "36.810s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Ping [FIN]",
+          "len": "60 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "36.827s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Pong [FIN] [MASKED]",
+          "len": "60 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "40.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Connection Close [FIN] [MASKED]",
+          "len": "62 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "40.018s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "WebSocket",
+          "info": "WebSocket Connection Close [FIN]",
+          "len": "60 B",
+          "color": "violet",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "TCP Connection",
+          "desc": "TCP to the server, as for HTTP"
+        },
+        {
+          "title": "Ask to Upgrade",
+          "desc": "An HTTP request with Upgrade: websocket"
+        },
+        {
+          "title": "Switch Protocols",
+          "desc": "101: from now on, WebSocket"
+        },
+        {
+          "title": "Live Updates",
+          "desc": "Small frames, from either side"
+        },
+        {
+          "title": "Keeping It Alive",
+          "desc": "Ping and pong"
+        },
+        {
+          "title": "Closing",
+          "desc": "A close frame each way"
+        }
+      ]
+    },
+    {
+      "id": "webrtc",
+      "name": "WebRTC",
+      "title": "A Video Call",
+      "fullName": "Web Real-Time Communication",
+      "category": "application",
+      "layer": 7,
+      "nodes": {
+        "relay": [
+          "STUN Server",
+          "192.0.2.19"
+        ],
+        "web": [
+          "call.example.com",
+          "203.0.113.10"
+        ],
+        "remote": [
+          "Sam’s Router",
+          "198.51.100.200"
+        ],
+        "peer": [
+          "Sam’s Laptop",
+          "192.168.0.23"
+        ]
+      },
+      "legend": [
+        [
+          "blue",
+          "Signalling"
+        ],
+        [
+          "amber",
+          "STUN and ICE"
+        ],
+        [
+          "teal",
+          "DTLS"
+        ],
+        [
+          "violet",
+          "Media"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (WebSocket: join)",
+          "len": "109 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.018s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (WebSocket: peer)",
+          "len": "106 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.040s",
+          "src": "192.168.1.10",
+          "dst": "192.0.2.19",
+          "proto": "STUN",
+          "info": "Binding Request",
+          "len": "62 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.050s",
+          "src": "192.0.2.19",
+          "dst": "192.168.1.10",
+          "proto": "STUN",
+          "info": "Binding Success Response XOR-MAPPED-ADDRESS: 198.51.100.7:61022",
+          "len": "74 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.070s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (WebSocket: offer), 4 segments",
+          "len": "4.9 KB",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.088s",
+          "src": "203.0.113.10",
+          "dst": "198.51.100.200",
+          "proto": "TLSv1.3",
+          "info": "Application Data (WebSocket: offer), 4 segments",
+          "len": "4.9 KB",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "2.400s",
+          "src": "198.51.100.200",
+          "dst": "203.0.113.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (WebSocket: answer), 3 segments",
+          "len": "3.1 KB",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "2.421s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (WebSocket: answer), 3 segments",
+          "len": "3.0 KB",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "2.440s",
+          "src": "192.168.1.10",
+          "dst": "198.51.100.200",
+          "proto": "STUN",
+          "info": "Binding Request user: q7Rz:Hk2w",
+          "len": "130 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "2.466s",
+          "src": "198.51.100.200",
+          "dst": "192.168.1.10",
+          "proto": "STUN",
+          "info": "Binding Success Response XOR-MAPPED-ADDRESS: 198.51.100.7:61022",
+          "len": "106 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "2.470s",
+          "src": "198.51.100.200",
+          "dst": "192.168.1.10",
+          "proto": "DTLSv1.2",
+          "info": "Client Hello",
+          "len": "218 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "2.497s",
+          "src": "192.168.1.10",
+          "dst": "198.51.100.200",
+          "proto": "DTLSv1.2",
+          "info": "Server Hello, Certificate, Key Exchange, Cert Request, Hello Done",
+          "len": "714 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "2.530s",
+          "src": "198.51.100.200",
+          "dst": "192.168.1.10",
+          "proto": "DTLSv1.2",
+          "info": "Certificate, Key Exchange, Cert Verify, Change Cipher Spec, Finished",
+          "len": "622 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "2.557s",
+          "src": "192.168.1.10",
+          "dst": "198.51.100.200",
+          "proto": "DTLSv1.2",
+          "info": "Change Cipher Spec, Finished",
+          "len": "117 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "2.590s",
+          "src": "192.168.1.10",
+          "dst": "198.51.100.200",
+          "proto": "SRTP",
+          "info": "PT=111, SSRC=0x5D2E81A4, Seq=9021, Time=416820",
+          "len": "144 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.610s",
+          "src": "192.168.1.10",
+          "dst": "198.51.100.200",
+          "proto": "SRTP",
+          "info": "PT=111, SSRC=0x5D2E81A4, Seq=9022, Time=417780",
+          "len": "144 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.630s",
+          "src": "192.168.1.10",
+          "dst": "198.51.100.200",
+          "proto": "SRTP",
+          "info": "PT=111, SSRC=0x5D2E81A4, Seq=9023, Time=418740",
+          "len": "144 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.660s",
+          "src": "198.51.100.200",
+          "dst": "192.168.1.10",
+          "proto": "SRTP",
+          "info": "PT=96, SSRC=0x1B7C3F90, Seq=30117, Time=2286000",
+          "len": "1182 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.662s",
+          "src": "198.51.100.200",
+          "dst": "192.168.1.10",
+          "proto": "SRTP",
+          "info": "PT=96, SSRC=0x1B7C3F90, Seq=30118, Time=2286000",
+          "len": "1182 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.664s",
+          "src": "198.51.100.200",
+          "dst": "192.168.1.10",
+          "proto": "SRTP",
+          "info": "PT=96, SSRC=0x1B7C3F90, Seq=30119, Time=2286000, Mark",
+          "len": "812 B",
+          "color": "violet",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Join the Call",
+          "desc": "Through a signalling server"
+        },
+        {
+          "title": "Public Address?",
+          "desc": "Ask a STUN server"
+        },
+        {
+          "title": "The Offer",
+          "desc": "An SDP description, via the server"
+        },
+        {
+          "title": "The Answer",
+          "desc": "Sam’s browser replies"
+        },
+        {
+          "title": "Punch Through",
+          "desc": "Checks straight to each other"
+        },
+        {
+          "title": "DTLS Handshake",
+          "desc": "Keys for the media"
+        },
+        {
+          "title": "Media Flows",
+          "desc": "Audio and video, direct"
+        },
+        {
+          "title": "Peer to Peer",
+          "desc": "And when it can’t be"
+        }
+      ]
+    },
+    {
+      "id": "quic",
+      "name": "QUIC",
+      "title": "HTTP/3 over UDP",
+      "fullName": "HTTP/3 over QUIC",
+      "category": "core",
+      "layer": 4,
+      "nodes": {
+        "web": [
+          "www.example.com",
+          "203.0.113.10"
+        ]
+      },
+      "legend": [
+        [
+          "teal",
+          "Handshake"
+        ],
+        [
+          "amber",
+          "Request"
+        ],
+        [
+          "violet",
+          "Response"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "Initial, CRYPTO (Client Hello, part 1)",
+          "len": "1292 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "Initial, CRYPTO (Client Hello, part 2), PADDING",
+          "len": "1292 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.018s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Initial, ACK, CRYPTO (Server Hello)",
+          "len": "1304 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.018s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Handshake, CRYPTO (Certificate, part 1)",
+          "len": "1392 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.018s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Handshake, CRYPTO (Certificate, part 2)",
+          "len": "1392 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.018s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "Handshake, CRYPTO (Certificate Verify, Finished)",
+          "len": "272 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.036s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "Initial, ACK, PADDING; Handshake, ACK, CRYPTO (Finished)",
+          "len": "1292 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.036s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "1-RTT, HTTP/3 HEADERS (GET /)",
+          "len": "392 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.054s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "QUIC",
+          "info": "1-RTT, HANDSHAKE_DONE, HTTP/3 HEADERS (200), DATA",
+          "len": "1257 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.071s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "QUIC",
+          "info": "1-RTT, ACK",
+          "len": "73 B",
+          "color": "amber",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Choosing HTTP/3",
+          "desc": "An earlier visit said it can"
+        },
+        {
+          "title": "Initial Packets",
+          "desc": "The Client Hello, straight away"
+        },
+        {
+          "title": "Server Hello",
+          "desc": "Then the certificate, encrypted"
+        },
+        {
+          "title": "Finished + GET",
+          "desc": "The request, one round trip in"
+        },
+        {
+          "title": "The Response",
+          "desc": "On its own stream"
+        },
+        {
+          "title": "New Network",
+          "desc": "Known by ID, not by address"
+        }
+      ]
+    },
+    {
       "id": "tcp",
       "name": "TCP",
       "title": "Reliable Delivery",
@@ -761,6 +1363,320 @@
       ]
     },
     {
+      "id": "bgp",
+      "name": "BGP",
+      "title": "Internet Routes",
+      "fullName": "Border Gateway Protocol",
+      "category": "core",
+      "layer": 7,
+      "nodes": {
+        "app": [
+          "www.example.com",
+          "203.0.113.10"
+        ]
+      },
+      "legend": [
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "blue",
+          "Session"
+        ],
+        [
+          "violet",
+          "Routes"
+        ],
+        [
+          "amber",
+          "The laptop’s packets"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.0.2.5",
+          "dst": "192.0.2.4",
+          "proto": "TCP",
+          "info": "50311 → 179 [SYN] Seq=0",
+          "len": "74 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.004s",
+          "src": "192.0.2.4",
+          "dst": "192.0.2.5",
+          "proto": "TCP",
+          "info": "179 → 50311 [SYN, ACK] Seq=0 Ack=1",
+          "len": "74 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.008s",
+          "src": "192.0.2.5",
+          "dst": "192.0.2.4",
+          "proto": "TCP",
+          "info": "50311 → 179 [ACK] Seq=1 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.008s",
+          "src": "192.0.2.5",
+          "dst": "192.0.2.4",
+          "proto": "BGP",
+          "info": "OPEN Message",
+          "len": "111 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.012s",
+          "src": "192.0.2.4",
+          "dst": "192.0.2.5",
+          "proto": "BGP",
+          "info": "OPEN Message",
+          "len": "111 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.012s",
+          "src": "192.0.2.4",
+          "dst": "192.0.2.5",
+          "proto": "BGP",
+          "info": "KEEPALIVE Message",
+          "len": "85 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.016s",
+          "src": "192.0.2.5",
+          "dst": "192.0.2.4",
+          "proto": "BGP",
+          "info": "KEEPALIVE Message",
+          "len": "85 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.030s",
+          "src": "192.0.2.9",
+          "dst": "192.0.2.8",
+          "proto": "BGP",
+          "info": "UPDATE Message: 203.0.113.0/24",
+          "len": "113 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.037s",
+          "src": "192.0.2.4",
+          "dst": "192.0.2.5",
+          "proto": "BGP",
+          "info": "UPDATE Message: 203.0.113.0/24",
+          "len": "117 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "1.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.10",
+          "proto": "TCP",
+          "info": "52800 → 443 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "1.017s",
+          "src": "203.0.113.10",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "443 → 52800 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "5.000s",
+          "src": "192.0.2.9",
+          "dst": "192.0.2.8",
+          "proto": "BGP",
+          "info": "UPDATE Message: withdrawn 203.0.113.0/24",
+          "len": "93 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "5.007s",
+          "src": "192.0.2.4",
+          "dst": "192.0.2.5",
+          "proto": "BGP",
+          "info": "UPDATE Message: withdrawn 203.0.113.0/24",
+          "len": "93 B",
+          "color": "violet",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Many Networks",
+          "desc": "Each with its own number"
+        },
+        {
+          "title": "Open a Session",
+          "desc": "TCP to port 179"
+        },
+        {
+          "title": "Say Hello",
+          "desc": "OPEN, then KEEPALIVE"
+        },
+        {
+          "title": "Announce a Route",
+          "desc": "The hosting network: “I have these”"
+        },
+        {
+          "title": "Passed On",
+          "desc": "Each network adds its number"
+        },
+        {
+          "title": "Follow the Route",
+          "desc": "Packets go where BGP said"
+        },
+        {
+          "title": "Withdrawn",
+          "desc": "Routes can be taken back"
+        },
+        {
+          "title": "Trust Problems",
+          "desc": "BGP believes its neighbours"
+        }
+      ]
+    },
+    {
+      "id": "ipv6",
+      "name": "IPv6",
+      "title": "Address Setup",
+      "fullName": "IPv6: SLAAC and neighbour discovery",
+      "category": "core",
+      "layer": 3,
+      "nodes": {
+        "client": [
+          "Client",
+          "No IPv6 address"
+        ],
+        "router": [
+          "Router",
+          "fe80::1"
+        ]
+      },
+      "legend": [
+        [
+          "amber",
+          "From the laptop"
+        ],
+        [
+          "violet",
+          "From the router"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "::",
+          "dst": "ff02::1:ffb0:7c13",
+          "proto": "ICMPv6",
+          "info": "Neighbor Solicitation for fe80::8d2e:4f61:a9b0:7c13",
+          "len": "78 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "1.010s",
+          "src": "fe80::8d2e:4f61:a9b0:7c13",
+          "dst": "ff02::2",
+          "proto": "ICMPv6",
+          "info": "Router Solicitation from 00:00:5e:00:53:10",
+          "len": "70 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "1.012s",
+          "src": "fe80::1",
+          "dst": "ff02::1",
+          "proto": "ICMPv6",
+          "info": "Router Advertisement from 00:00:5e:00:53:01",
+          "len": "142 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "1.020s",
+          "src": "::",
+          "dst": "ff02::1:ffb0:7c13",
+          "proto": "ICMPv6",
+          "info": "Neighbor Solicitation for 2001:db8:1234:5678:8d2e:4f61:a9b0:7c13",
+          "len": "78 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "2.500s",
+          "src": "fe80::1",
+          "dst": "ff02::1:ffb0:7c13",
+          "proto": "ICMPv6",
+          "info": "Neighbor Solicitation for 2001:db8:1234:5678:8d2e:4f61:a9b0:7c13 from 00:00:5e:00:53:01",
+          "len": "86 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "2.502s",
+          "src": "fe80::8d2e:4f61:a9b0:7c13",
+          "dst": "fe80::1",
+          "proto": "ICMPv6",
+          "info": "Neighbor Advertisement 2001:db8:1234:5678:8d2e:4f61:a9b0:7c13 (sol, ovr) is at 00:00:5e:00:53:10",
+          "len": "86 B",
+          "color": "amber",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Link-Local First",
+          "desc": "Made by the laptop itself"
+        },
+        {
+          "title": "Any Routers?",
+          "desc": "A Router Solicitation"
+        },
+        {
+          "title": "Router Answers",
+          "desc": "Prefix, MTU and DNS in one message"
+        },
+        {
+          "title": "A Global Address",
+          "desc": "Prefix + interface ID"
+        },
+        {
+          "title": "Neighbour Lookup",
+          "desc": "Who has this address? (ARP’s job)"
+        },
+        {
+          "title": "Ready, No DHCP",
+          "desc": "And no NAT either"
+        }
+      ]
+    },
+    {
       "id": "dns",
       "name": "DNS",
       "title": "Name Resolution",
@@ -888,6 +1804,293 @@
         {
           "title": "Answer & Cache",
           "desc": "The laptop gets its address"
+        }
+      ]
+    },
+    {
+      "id": "doh",
+      "name": "DNS over HTTPS",
+      "title": "Private",
+      "fullName": "DNS queries inside HTTPS",
+      "category": "security",
+      "layer": 7,
+      "nodes": {
+        "dns": [
+          "dns.google",
+          "8.8.8.8"
+        ]
+      },
+      "legend": [
+        [
+          "blue",
+          "Plain DNS"
+        ],
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "teal",
+          "TLS"
+        ],
+        [
+          "amber",
+          "DNS inside HTTPS"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query A www.example.com",
+          "len": "75 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.012s",
+          "src": "8.8.8.8",
+          "dst": "192.168.1.10",
+          "proto": "DNS",
+          "info": "Standard query response A 203.0.113.10",
+          "len": "91 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "1.000s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "TCP",
+          "info": "52420 → 443 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "1.012s",
+          "src": "8.8.8.8",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "443 → 52420 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "1.024s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "TCP",
+          "info": "52420 → 443 [ACK] Seq=1 Ack=1",
+          "len": "60 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "1.024s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "TLSv1.3",
+          "info": "Client Hello (SNI=dns.google)",
+          "len": "571 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "1.036s",
+          "src": "8.8.8.8",
+          "dst": "192.168.1.10",
+          "proto": "TLSv1.3",
+          "info": "Server Hello + encrypted handshake, 2 segments",
+          "len": "2.9 KB",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "1.048s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "TLSv1.3",
+          "info": "Change Cipher Spec, Finished (encrypted)",
+          "len": "118 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "1.048s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "TLSv1.3",
+          "info": "Application Data (HTTP/2: DNS query)",
+          "len": "219 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "1.061s",
+          "src": "8.8.8.8",
+          "dst": "192.168.1.10",
+          "proto": "TLSv1.3",
+          "info": "Application Data (HTTP/2: DNS answer)",
+          "len": "200 B",
+          "color": "amber",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Plain DNS",
+          "desc": "Readable by anyone on the way"
+        },
+        {
+          "title": "An HTTPS Link",
+          "desc": "TCP and TLS to dns.google"
+        },
+        {
+          "title": "Sealed Question",
+          "desc": "A DNS message in an HTTP request"
+        },
+        {
+          "title": "Sealed Answer",
+          "desc": "The DNS answer in an HTTP response"
+        },
+        {
+          "title": "What Still Shows",
+          "desc": "Hidden on the way, not from the resolver"
+        }
+      ]
+    },
+    {
+      "id": "dnssec",
+      "name": "DNSSEC",
+      "title": "Signed Answers",
+      "fullName": "DNS Security Extensions",
+      "category": "security",
+      "layer": 7,
+      "nodes": {},
+      "legend": [
+        [
+          "blue",
+          "Question and answer"
+        ],
+        [
+          "amber",
+          "To the name servers"
+        ],
+        [
+          "violet",
+          "Signed answers"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query A www.example.com",
+          "len": "75 B",
+          "color": "blue",
+          "lost": false
+        },
+        {
+          "time": "0.013s",
+          "src": "8.8.8.8",
+          "dst": "198.51.100.53",
+          "proto": "DNS",
+          "info": "Standard query A www.example.com OPT",
+          "len": "86 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.033s",
+          "src": "198.51.100.53",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query response A 203.0.113.10 RRSIG",
+          "len": "209 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.054s",
+          "src": "8.8.8.8",
+          "dst": "198.51.100.53",
+          "proto": "DNS",
+          "info": "Standard query DNSKEY example.com OPT",
+          "len": "82 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.074s",
+          "src": "198.51.100.53",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query response DNSKEY DNSKEY RRSIG",
+          "len": "349 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.095s",
+          "src": "8.8.8.8",
+          "dst": "192.5.6.30",
+          "proto": "DNS",
+          "info": "Standard query DS example.com OPT",
+          "len": "82 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.110s",
+          "src": "192.5.6.30",
+          "dst": "8.8.8.8",
+          "proto": "DNS",
+          "info": "Standard query response DS RRSIG",
+          "len": "229 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.126s",
+          "src": "8.8.8.8",
+          "dst": "192.168.1.10",
+          "proto": "DNS",
+          "info": "Standard query response A 203.0.113.10",
+          "len": "91 B",
+          "color": "blue",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Ask as Usual",
+          "desc": "The laptop’s question doesn’t change"
+        },
+        {
+          "title": "Signed Answer",
+          "desc": "An RRSIG comes with the A record"
+        },
+        {
+          "title": "The Zone’s Keys",
+          "desc": "DNSKEY records, signed too"
+        },
+        {
+          "title": "Vouched by .com",
+          "desc": "The parent’s DS record"
+        },
+        {
+          "title": "Up to the Root",
+          "desc": "Where the chain ends"
+        },
+        {
+          "title": "A Checked Answer",
+          "desc": "With the AD flag"
         }
       ]
     },
@@ -1155,6 +2358,952 @@
         {
           "title": "Unreachable",
           "desc": "Nothing listening on that port"
+        }
+      ]
+    },
+    {
+      "id": "ntp",
+      "name": "NTP",
+      "title": "Setting the Clock",
+      "fullName": "Network Time Protocol",
+      "category": "application",
+      "layer": 7,
+      "nodes": {
+        "web": [
+          "time.windows.com",
+          "203.0.113.123"
+        ]
+      },
+      "legend": [
+        [
+          "amber",
+          "Request"
+        ],
+        [
+          "violet",
+          "Answer"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.123",
+          "proto": "NTP",
+          "info": "NTP Version 3, client",
+          "len": "90 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.012s",
+          "src": "203.0.113.123",
+          "dst": "192.168.1.10",
+          "proto": "NTP",
+          "info": "NTP Version 3, server",
+          "len": "90 B",
+          "color": "violet",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Clocks Drift",
+          "desc": "The laptop’s clock is a little slow"
+        },
+        {
+          "title": "Ask for the Time",
+          "desc": "T1: when the request leaves"
+        },
+        {
+          "title": "The Answer",
+          "desc": "T2 and T3 from the server, T4 on arrival"
+        },
+        {
+          "title": "The Offset",
+          "desc": "Four times, two answers"
+        },
+        {
+          "title": "Ease It In",
+          "desc": "No jumps backwards"
+        }
+      ]
+    },
+    {
+      "id": "wifi",
+      "name": "Wi-Fi",
+      "title": "Joining a Network",
+      "fullName": "Wi-Fi (802.11) with WPA2",
+      "category": "core",
+      "layer": 2,
+      "nodes": {
+        "client": [
+          "Client",
+          "00:00:5e:00:53:10"
+        ],
+        "router": [
+          "Access Point",
+          "\"HomeNet\""
+        ]
+      },
+      "legend": [
+        [
+          "violet",
+          "From the access point"
+        ],
+        [
+          "amber",
+          "From the laptop"
+        ],
+        [
+          "teal",
+          "4-way handshake"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "Broadcast",
+          "proto": "802.11",
+          "info": "Beacon, SSID \"HomeNet\"",
+          "len": "279 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.035s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "Broadcast",
+          "proto": "802.11",
+          "info": "Probe Request, any SSID",
+          "len": "134 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.036s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Probe Response, SSID \"HomeNet\"",
+          "len": "267 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.050s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "802.11",
+          "info": "Authentication (Open System), 1 of 2",
+          "len": "30 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.051s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Authentication (Open System), 2 of 2",
+          "len": "30 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.052s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "802.11",
+          "info": "Association Request, SSID \"HomeNet\"",
+          "len": "155 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.054s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Association Response, AID 1",
+          "len": "200 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.060s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 1 of 4)",
+          "len": "133 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.063s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAPOL",
+          "info": "Key (Message 2 of 4)",
+          "len": "155 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.065s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 3 of 4)",
+          "len": "189 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.066s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAPOL",
+          "info": "Key (Message 4 of 4)",
+          "len": "133 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.080s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "Broadcast",
+          "proto": "802.11",
+          "info": "QoS Data (encrypted)",
+          "len": "378 B",
+          "color": "amber",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Find the Network",
+          "desc": "A beacon, then a probe"
+        },
+        {
+          "title": "Join the Network",
+          "desc": "Two formalities: hello, then join"
+        },
+        {
+          "title": "Messages 1 and 2",
+          "desc": "The 4-way handshake: nonces"
+        },
+        {
+          "title": "Messages 3 and 4",
+          "desc": "The 4-way handshake: keys"
+        },
+        {
+          "title": "Encrypted Now",
+          "desc": "And what a listener could still do"
+        }
+      ]
+    },
+    {
+      "id": "wpa3",
+      "name": "WPA3",
+      "title": "Safer Wi-Fi",
+      "fullName": "Wi-Fi Protected Access 3",
+      "category": "security",
+      "layer": 2,
+      "nodes": {
+        "client": [
+          "Client",
+          "00:00:5e:00:53:10"
+        ],
+        "router": [
+          "Access Point",
+          "\"HomeNet\""
+        ]
+      },
+      "legend": [
+        [
+          "violet",
+          "From the access point"
+        ],
+        [
+          "amber",
+          "From the laptop"
+        ],
+        [
+          "teal",
+          "4-way handshake"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "Broadcast",
+          "proto": "802.11",
+          "info": "Beacon, SSID \"HomeNet\"",
+          "len": "279 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.040s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "802.11",
+          "info": "Authentication (SAE), Commit",
+          "len": "128 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.043s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Authentication (SAE), Commit",
+          "len": "128 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.046s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "802.11",
+          "info": "Authentication (SAE), Confirm",
+          "len": "64 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.048s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Authentication (SAE), Confirm",
+          "len": "64 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.050s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "802.11",
+          "info": "Association Request, SSID \"HomeNet\"",
+          "len": "155 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.052s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "802.11",
+          "info": "Association Response, AID 1",
+          "len": "200 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.055s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 1 of 4)",
+          "len": "133 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.058s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAPOL",
+          "info": "Key (Message 2 of 4)",
+          "len": "155 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.060s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 3 of 4)",
+          "len": "221 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.061s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAPOL",
+          "info": "Key (Message 4 of 4)",
+          "len": "133 B",
+          "color": "teal",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "A WPA3 Network",
+          "desc": "The beacon asks for SAE"
+        },
+        {
+          "title": "SAE Commit",
+          "desc": "Each side commits to the password"
+        },
+        {
+          "title": "SAE Confirm",
+          "desc": "Proof, without the password"
+        },
+        {
+          "title": "Join, Handshake",
+          "desc": "Then the 4-way handshake, as in WPA2"
+        },
+        {
+          "title": "Why It’s Safer",
+          "desc": "Forged disconnects stop working"
+        }
+      ]
+    },
+    {
+      "id": "radius",
+      "name": "RADIUS",
+      "title": "Wi-Fi Logins",
+      "fullName": "RADIUS and 802.1X (Enterprise Wi-Fi)",
+      "category": "security",
+      "layer": 2,
+      "nodes": {
+        "client": [
+          "Client",
+          "00:00:5e:00:53:10"
+        ],
+        "router": [
+          "Access Point",
+          "192.168.1.2"
+        ],
+        "lan": [
+          "RADIUS Server",
+          "192.168.1.20"
+        ]
+      },
+      "legend": [
+        [
+          "amber",
+          "EAP over Wi-Fi"
+        ],
+        [
+          "violet",
+          "RADIUS"
+        ],
+        [
+          "teal",
+          "4-way handshake"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAP",
+          "info": "Request, Identity",
+          "len": "43 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.004s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAP",
+          "info": "Response, Identity",
+          "len": "59 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.006s",
+          "src": "192.168.1.2",
+          "dst": "192.168.1.20",
+          "proto": "RADIUS",
+          "info": "Access-Request id=81",
+          "len": "190 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.008s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.2",
+          "proto": "RADIUS",
+          "info": "Access-Challenge id=81",
+          "len": "106 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.009s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAP",
+          "info": "Request, TLS EAP (EAP-TLS)",
+          "len": "44 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.012s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAP",
+          "info": "Response, TLS EAP: Client Hello",
+          "len": "261 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.014s",
+          "src": "192.168.1.2",
+          "dst": "192.168.1.20",
+          "proto": "RADIUS",
+          "info": "Access-Request id=82: Client Hello",
+          "len": "410 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.019s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.2",
+          "proto": "RADIUS",
+          "info": "Access-Challenge id=82: Server Hello, certificate",
+          "len": "1114 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.020s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAP",
+          "info": "Request, TLS EAP: Server Hello, encrypted handshake",
+          "len": "1046 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.048s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAP",
+          "info": "Response, TLS EAP: encrypted handshake",
+          "len": "860 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.050s",
+          "src": "192.168.1.2",
+          "dst": "192.168.1.20",
+          "proto": "RADIUS",
+          "info": "Access-Request id=83: encrypted handshake",
+          "len": "1015 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.056s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.2",
+          "proto": "RADIUS",
+          "info": "Access-Challenge id=83",
+          "len": "133 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.057s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAP",
+          "info": "Request, TLS EAP: Application Data",
+          "len": "71 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.060s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAP",
+          "info": "Response, TLS EAP (EAP-TLS)",
+          "len": "44 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.062s",
+          "src": "192.168.1.2",
+          "dst": "192.168.1.20",
+          "proto": "RADIUS",
+          "info": "Access-Request id=84",
+          "len": "193 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.065s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.2",
+          "proto": "RADIUS",
+          "info": "Access-Accept id=84",
+          "len": "218 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.066s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAP",
+          "info": "Success",
+          "len": "42 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.068s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 1 of 4)",
+          "len": "133 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.071s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAPOL",
+          "info": "Key (Message 2 of 4)",
+          "len": "155 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.073s",
+          "src": "00:00:5e:00:53:01",
+          "dst": "00:00:5e:00:53:10",
+          "proto": "EAPOL",
+          "info": "Key (Message 3 of 4)",
+          "len": "189 B",
+          "color": "teal",
+          "lost": false
+        },
+        {
+          "time": "0.075s",
+          "src": "00:00:5e:00:53:10",
+          "dst": "00:00:5e:00:53:01",
+          "proto": "EAPOL",
+          "info": "Key (Message 4 of 4)",
+          "len": "133 B",
+          "color": "teal",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Who Are You?",
+          "desc": "The access point asks for an identity"
+        },
+        {
+          "title": "Ask RADIUS",
+          "desc": "The login goes to the server"
+        },
+        {
+          "title": "TLS Inside EAP",
+          "desc": "The server proves who it is"
+        },
+        {
+          "title": "Laptop’s Proof",
+          "desc": "Its own certificate"
+        },
+        {
+          "title": "Handshake Done",
+          "desc": "Nothing more to send"
+        },
+        {
+          "title": "Access-Accept",
+          "desc": "And a key for the access point"
+        },
+        {
+          "title": "4-Way Handshake",
+          "desc": "As at home, from a different key"
+        },
+        {
+          "title": "Why Enterprise",
+          "desc": "One account per person"
+        }
+      ]
+    },
+    {
+      "id": "portal",
+      "name": "Captive Portal",
+      "title": "Sign-In",
+      "fullName": "Wi-Fi login pages",
+      "category": "application",
+      "layer": 7,
+      "nodes": {
+        "router": [
+          "Hotel Router",
+          "192.168.1.1 · captive portal"
+        ],
+        "web": [
+          "msftconnecttest.com",
+          "203.0.113.30"
+        ]
+      },
+      "legend": [
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "amber",
+          "From the laptop"
+        ],
+        [
+          "violet",
+          "From the router"
+        ],
+        [
+          "blue",
+          "From the test server"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.1",
+          "proto": "DNS",
+          "info": "Standard query A www.msftconnecttest.com",
+          "len": "83 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.026s",
+          "src": "192.168.1.1",
+          "dst": "192.168.1.10",
+          "proto": "DNS",
+          "info": "Standard query response A 203.0.113.30",
+          "len": "99 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.030s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "TCP",
+          "info": "52410 → 80 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.032s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "80 → 52410 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.034s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "TCP",
+          "info": "52410 → 80 [ACK] Seq=1 Ack=1",
+          "len": "60 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.034s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "HTTP",
+          "info": "GET /connecttest.txt HTTP/1.1",
+          "len": "165 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.037s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "HTTP",
+          "info": "HTTP/1.1 302 Found",
+          "len": "150 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "1.500s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.1",
+          "proto": "TCP",
+          "info": "52411 → 80 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "1.502s",
+          "src": "192.168.1.1",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "80 → 52411 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "1.504s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.1",
+          "proto": "TCP",
+          "info": "52411 → 80 [ACK] Seq=1 Ack=1",
+          "len": "60 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "1.504s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.1",
+          "proto": "HTTP",
+          "info": "GET /login HTTP/1.1",
+          "len": "485 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "1.507s",
+          "src": "192.168.1.1",
+          "dst": "192.168.1.10",
+          "proto": "HTTP",
+          "info": "HTTP/1.1 200 OK (text/html), 2 segments",
+          "len": "2.6 KB",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "9.200s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.1",
+          "proto": "HTTP",
+          "info": "POST /login HTTP/1.1 (application/x-www-form-urlencoded)",
+          "len": "602 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "9.203s",
+          "src": "192.168.1.1",
+          "dst": "192.168.1.10",
+          "proto": "HTTP",
+          "info": "HTTP/1.1 302 Found",
+          "len": "170 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "9.300s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "TCP",
+          "info": "52412 → 80 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "9.320s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "80 → 52412 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "9.340s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "TCP",
+          "info": "52412 → 80 [ACK] Seq=1 Ack=1",
+          "len": "60 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "9.340s",
+          "src": "192.168.1.10",
+          "dst": "203.0.113.30",
+          "proto": "HTTP",
+          "info": "GET /connecttest.txt HTTP/1.1",
+          "len": "165 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "9.361s",
+          "src": "203.0.113.30",
+          "dst": "192.168.1.10",
+          "proto": "HTTP",
+          "info": "HTTP/1.1 200 OK (text/plain)",
+          "len": "204 B",
+          "color": "blue",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Joined, Offline",
+          "desc": "An address, but no way out"
+        },
+        {
+          "title": "Internet Check",
+          "desc": "Windows checks a test page"
+        },
+        {
+          "title": "Redirected",
+          "desc": "The wrong answer gives it away"
+        },
+        {
+          "title": "The Login Page",
+          "desc": "Served by the router itself"
+        },
+        {
+          "title": "Accept the Terms",
+          "desc": "The router lets the laptop out"
+        },
+        {
+          "title": "Online",
+          "desc": "The same check, now real"
         }
       ]
     },
@@ -2401,6 +4550,240 @@
       ]
     },
     {
+      "id": "smb",
+      "name": "SMB",
+      "title": "Shared Folders",
+      "fullName": "Server Message Block (SMB 3)",
+      "category": "application",
+      "layer": 7,
+      "nodes": {
+        "lan": [
+          "nas (File Server)",
+          "192.168.1.20"
+        ]
+      },
+      "legend": [
+        [
+          "green",
+          "TCP"
+        ],
+        [
+          "amber",
+          "Requests"
+        ],
+        [
+          "violet",
+          "Responses"
+        ]
+      ],
+      "packets": [
+        {
+          "time": "0.000s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "TCP",
+          "info": "50532 → 445 [SYN] Seq=0",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.001s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "TCP",
+          "info": "445 → 50532 [SYN, ACK] Seq=0 Ack=1",
+          "len": "66 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.002s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "TCP",
+          "info": "50532 → 445 [ACK] Seq=1 Ack=1",
+          "len": "60 B",
+          "color": "green",
+          "lost": false
+        },
+        {
+          "time": "0.002s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Negotiate Protocol Request",
+          "len": "272 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.004s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Negotiate Protocol Response",
+          "len": "342 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.006s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Session Setup Request, NTLMSSP_NEGOTIATE",
+          "len": "220 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.008s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Session Setup Response, NTLMSSP_CHALLENGE",
+          "len": "321 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.010s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Session Setup Request, NTLMSSP_AUTH, User: \\alex",
+          "len": "723 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.013s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Session Setup Response",
+          "len": "139 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.015s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Tree Connect Request Tree: \\\\nas\\Documents",
+          "len": "160 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.017s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Tree Connect Response",
+          "len": "138 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.019s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Create Request File: report.pdf",
+          "len": "198 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.021s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Create Response File: report.pdf",
+          "len": "210 B",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.023s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Read Request Len:245760 Off:0 File: report.pdf",
+          "len": "171 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.025s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Read Response, 169 segments",
+          "len": "249.0 KB",
+          "color": "violet",
+          "lost": false
+        },
+        {
+          "time": "0.030s",
+          "src": "192.168.1.10",
+          "dst": "192.168.1.20",
+          "proto": "SMB2",
+          "info": "Close Request File: report.pdf",
+          "len": "146 B",
+          "color": "amber",
+          "lost": false
+        },
+        {
+          "time": "0.032s",
+          "src": "192.168.1.20",
+          "dst": "192.168.1.10",
+          "proto": "SMB2",
+          "info": "Close Response File: report.pdf",
+          "len": "182 B",
+          "color": "violet",
+          "lost": false
+        }
+      ],
+      "steps": [
+        {
+          "title": "Port 445",
+          "desc": "A TCP connection to the NAS"
+        },
+        {
+          "title": "Negotiate",
+          "desc": "Agree on a version"
+        },
+        {
+          "title": "NTLM Challenge",
+          "desc": "The NAS sends a random number"
+        },
+        {
+          "title": "NTLM Response",
+          "desc": "Proof, not the password"
+        },
+        {
+          "title": "Connect a Share",
+          "desc": "\\\\nas\\Documents"
+        },
+        {
+          "title": "Open the File",
+          "desc": "With CREATE"
+        },
+        {
+          "title": "Read It",
+          "desc": "The whole file in one request"
+        },
+        {
+          "title": "Close the File",
+          "desc": "And keep 445 at home"
+        }
+      ]
+    },
+    {
       "id": "ssh",
       "name": "SSH",
       "title": "Secure Remote Login",
@@ -2959,768 +5342,6 @@
         {
           "title": "Closing",
           "desc": "close_notify, then TCP"
-        }
-      ]
-    },
-    {
-      "id": "websocket",
-      "name": "WebSocket",
-      "title": "Live Updates",
-      "fullName": "The WebSocket Protocol",
-      "category": "application",
-      "layer": 7,
-      "nodes": {
-        "web": [
-          "www.example.com",
-          "203.0.113.10"
-        ]
-      },
-      "legend": [
-        [
-          "green",
-          "TCP"
-        ],
-        [
-          "amber",
-          "From the browser"
-        ],
-        [
-          "violet",
-          "From the server"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "TCP",
-          "info": "52360 → 80 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.017s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "80 → 52360 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.034s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "TCP",
-          "info": "52360 → 80 [ACK] Seq=1 Ack=1",
-          "len": "60 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.034s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "HTTP",
-          "info": "GET /chat HTTP/1.1",
-          "len": "547 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.052s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "HTTP",
-          "info": "HTTP/1.1 101 Switching Protocols",
-          "len": "183 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.400s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "WebSocket",
-          "info": "WebSocket Text [FIN] [MASKED]",
-          "len": "65 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "6.810s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "WebSocket",
-          "info": "WebSocket Text [FIN]",
-          "len": "69 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "36.810s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "WebSocket",
-          "info": "WebSocket Ping [FIN]",
-          "len": "60 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "36.827s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "WebSocket",
-          "info": "WebSocket Pong [FIN] [MASKED]",
-          "len": "60 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "40.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "WebSocket",
-          "info": "WebSocket Connection Close [FIN] [MASKED]",
-          "len": "62 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "40.018s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "WebSocket",
-          "info": "WebSocket Connection Close [FIN]",
-          "len": "60 B",
-          "color": "violet",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "TCP Connection",
-          "desc": "TCP to the server, as for HTTP"
-        },
-        {
-          "title": "Ask to Upgrade",
-          "desc": "An HTTP request with Upgrade: websocket"
-        },
-        {
-          "title": "Switch Protocols",
-          "desc": "101: from now on, WebSocket"
-        },
-        {
-          "title": "Live Updates",
-          "desc": "Small frames, from either side"
-        },
-        {
-          "title": "Keeping It Alive",
-          "desc": "Ping and pong"
-        },
-        {
-          "title": "Closing",
-          "desc": "A close frame each way"
-        }
-      ]
-    },
-    {
-      "id": "wifi",
-      "name": "Wi-Fi",
-      "title": "Joining a Network",
-      "fullName": "Wi-Fi (802.11) with WPA2",
-      "category": "core",
-      "layer": 2,
-      "nodes": {
-        "client": [
-          "Client",
-          "00:00:5e:00:53:10"
-        ],
-        "router": [
-          "Access Point",
-          "\"HomeNet\""
-        ]
-      },
-      "legend": [
-        [
-          "violet",
-          "From the access point"
-        ],
-        [
-          "amber",
-          "From the laptop"
-        ],
-        [
-          "teal",
-          "4-way handshake"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "Broadcast",
-          "proto": "802.11",
-          "info": "Beacon, SSID \"HomeNet\"",
-          "len": "279 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.035s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "Broadcast",
-          "proto": "802.11",
-          "info": "Probe Request, any SSID",
-          "len": "134 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.036s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "802.11",
-          "info": "Probe Response, SSID \"HomeNet\"",
-          "len": "267 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.050s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "802.11",
-          "info": "Authentication (Open System), 1 of 2",
-          "len": "30 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.051s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "802.11",
-          "info": "Authentication (Open System), 2 of 2",
-          "len": "30 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.052s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "802.11",
-          "info": "Association Request, SSID \"HomeNet\"",
-          "len": "155 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.054s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "802.11",
-          "info": "Association Response, AID 1",
-          "len": "200 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.060s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAPOL",
-          "info": "Key (Message 1 of 4)",
-          "len": "133 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.063s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAPOL",
-          "info": "Key (Message 2 of 4)",
-          "len": "155 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.065s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAPOL",
-          "info": "Key (Message 3 of 4)",
-          "len": "189 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.066s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAPOL",
-          "info": "Key (Message 4 of 4)",
-          "len": "133 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.080s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "Broadcast",
-          "proto": "802.11",
-          "info": "QoS Data (encrypted)",
-          "len": "378 B",
-          "color": "amber",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Find the Network",
-          "desc": "A beacon, then a probe"
-        },
-        {
-          "title": "Join the Network",
-          "desc": "Two formalities: hello, then join"
-        },
-        {
-          "title": "Messages 1 and 2",
-          "desc": "The 4-way handshake: nonces"
-        },
-        {
-          "title": "Messages 3 and 4",
-          "desc": "The 4-way handshake: keys"
-        },
-        {
-          "title": "Encrypted Now",
-          "desc": "And what a listener could still do"
-        }
-      ]
-    },
-    {
-      "id": "wpa3",
-      "name": "WPA3",
-      "title": "Safer Wi-Fi",
-      "fullName": "Wi-Fi Protected Access 3",
-      "category": "security",
-      "layer": 2,
-      "nodes": {
-        "client": [
-          "Client",
-          "00:00:5e:00:53:10"
-        ],
-        "router": [
-          "Access Point",
-          "\"HomeNet\""
-        ]
-      },
-      "legend": [
-        [
-          "violet",
-          "From the access point"
-        ],
-        [
-          "amber",
-          "From the laptop"
-        ],
-        [
-          "teal",
-          "4-way handshake"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "Broadcast",
-          "proto": "802.11",
-          "info": "Beacon, SSID \"HomeNet\"",
-          "len": "279 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.040s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "802.11",
-          "info": "Authentication (SAE), Commit",
-          "len": "128 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.043s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "802.11",
-          "info": "Authentication (SAE), Commit",
-          "len": "128 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.046s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "802.11",
-          "info": "Authentication (SAE), Confirm",
-          "len": "64 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.048s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "802.11",
-          "info": "Authentication (SAE), Confirm",
-          "len": "64 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.050s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "802.11",
-          "info": "Association Request, SSID \"HomeNet\"",
-          "len": "155 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.052s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "802.11",
-          "info": "Association Response, AID 1",
-          "len": "200 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.055s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAPOL",
-          "info": "Key (Message 1 of 4)",
-          "len": "133 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.058s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAPOL",
-          "info": "Key (Message 2 of 4)",
-          "len": "155 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.060s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAPOL",
-          "info": "Key (Message 3 of 4)",
-          "len": "221 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.061s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAPOL",
-          "info": "Key (Message 4 of 4)",
-          "len": "133 B",
-          "color": "teal",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "A WPA3 Network",
-          "desc": "The beacon asks for SAE"
-        },
-        {
-          "title": "SAE Commit",
-          "desc": "Each side commits to the password"
-        },
-        {
-          "title": "SAE Confirm",
-          "desc": "Proof, without the password"
-        },
-        {
-          "title": "Join, Handshake",
-          "desc": "Then the 4-way handshake, as in WPA2"
-        },
-        {
-          "title": "Why It’s Safer",
-          "desc": "Forged disconnects stop working"
-        }
-      ]
-    },
-    {
-      "id": "portal",
-      "name": "Captive Portal",
-      "title": "Sign-In",
-      "fullName": "Wi-Fi login pages",
-      "category": "application",
-      "layer": 7,
-      "nodes": {
-        "router": [
-          "Hotel Router",
-          "192.168.1.1 · captive portal"
-        ],
-        "web": [
-          "msftconnecttest.com",
-          "203.0.113.30"
-        ]
-      },
-      "legend": [
-        [
-          "green",
-          "TCP"
-        ],
-        [
-          "amber",
-          "From the laptop"
-        ],
-        [
-          "violet",
-          "From the router"
-        ],
-        [
-          "blue",
-          "From the test server"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.1",
-          "proto": "DNS",
-          "info": "Standard query A www.msftconnecttest.com",
-          "len": "83 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.026s",
-          "src": "192.168.1.1",
-          "dst": "192.168.1.10",
-          "proto": "DNS",
-          "info": "Standard query response A 203.0.113.30",
-          "len": "99 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.030s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.30",
-          "proto": "TCP",
-          "info": "52410 → 80 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.032s",
-          "src": "203.0.113.30",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "80 → 52410 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.034s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.30",
-          "proto": "TCP",
-          "info": "52410 → 80 [ACK] Seq=1 Ack=1",
-          "len": "60 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.034s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.30",
-          "proto": "HTTP",
-          "info": "GET /connecttest.txt HTTP/1.1",
-          "len": "165 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.037s",
-          "src": "203.0.113.30",
-          "dst": "192.168.1.10",
-          "proto": "HTTP",
-          "info": "HTTP/1.1 302 Found",
-          "len": "150 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "1.500s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.1",
-          "proto": "TCP",
-          "info": "52411 → 80 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "1.502s",
-          "src": "192.168.1.1",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "80 → 52411 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "1.504s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.1",
-          "proto": "TCP",
-          "info": "52411 → 80 [ACK] Seq=1 Ack=1",
-          "len": "60 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "1.504s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.1",
-          "proto": "HTTP",
-          "info": "GET /login HTTP/1.1",
-          "len": "485 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "1.507s",
-          "src": "192.168.1.1",
-          "dst": "192.168.1.10",
-          "proto": "HTTP",
-          "info": "HTTP/1.1 200 OK (text/html), 2 segments",
-          "len": "2.6 KB",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "9.200s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.1",
-          "proto": "HTTP",
-          "info": "POST /login HTTP/1.1 (application/x-www-form-urlencoded)",
-          "len": "602 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "9.203s",
-          "src": "192.168.1.1",
-          "dst": "192.168.1.10",
-          "proto": "HTTP",
-          "info": "HTTP/1.1 302 Found",
-          "len": "170 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "9.300s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.30",
-          "proto": "TCP",
-          "info": "52412 → 80 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "9.320s",
-          "src": "203.0.113.30",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "80 → 52412 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "9.340s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.30",
-          "proto": "TCP",
-          "info": "52412 → 80 [ACK] Seq=1 Ack=1",
-          "len": "60 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "9.340s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.30",
-          "proto": "HTTP",
-          "info": "GET /connecttest.txt HTTP/1.1",
-          "len": "165 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "9.361s",
-          "src": "203.0.113.30",
-          "dst": "192.168.1.10",
-          "proto": "HTTP",
-          "info": "HTTP/1.1 200 OK (text/plain)",
-          "len": "204 B",
-          "color": "blue",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Joined, Offline",
-          "desc": "An address, but no way out"
-        },
-        {
-          "title": "Internet Check",
-          "desc": "Windows checks a test page"
-        },
-        {
-          "title": "Redirected",
-          "desc": "The wrong answer gives it away"
-        },
-        {
-          "title": "The Login Page",
-          "desc": "Served by the router itself"
-        },
-        {
-          "title": "Accept the Terms",
-          "desc": "The router lets the laptop out"
-        },
-        {
-          "title": "Online",
-          "desc": "The same check, now real"
         }
       ]
     },
@@ -4623,1149 +6244,6 @@
       ]
     },
     {
-      "id": "quic",
-      "name": "QUIC",
-      "title": "HTTP/3 over UDP",
-      "fullName": "HTTP/3 over QUIC",
-      "category": "core",
-      "layer": 4,
-      "nodes": {
-        "web": [
-          "www.example.com",
-          "203.0.113.10"
-        ]
-      },
-      "legend": [
-        [
-          "teal",
-          "Handshake"
-        ],
-        [
-          "amber",
-          "Request"
-        ],
-        [
-          "violet",
-          "Response"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "QUIC",
-          "info": "Initial, CRYPTO (Client Hello, part 1)",
-          "len": "1292 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "QUIC",
-          "info": "Initial, CRYPTO (Client Hello, part 2), PADDING",
-          "len": "1292 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.018s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "QUIC",
-          "info": "Initial, ACK, CRYPTO (Server Hello)",
-          "len": "1304 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.018s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "QUIC",
-          "info": "Handshake, CRYPTO (Certificate, part 1)",
-          "len": "1392 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.018s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "QUIC",
-          "info": "Handshake, CRYPTO (Certificate, part 2)",
-          "len": "1392 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.018s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "QUIC",
-          "info": "Handshake, CRYPTO (Certificate Verify, Finished)",
-          "len": "272 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.036s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "QUIC",
-          "info": "Initial, ACK, PADDING; Handshake, ACK, CRYPTO (Finished)",
-          "len": "1292 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.036s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "QUIC",
-          "info": "1-RTT, HTTP/3 HEADERS (GET /)",
-          "len": "392 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.054s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "QUIC",
-          "info": "1-RTT, HANDSHAKE_DONE, HTTP/3 HEADERS (200), DATA",
-          "len": "1257 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.071s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "QUIC",
-          "info": "1-RTT, ACK",
-          "len": "73 B",
-          "color": "amber",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Choosing HTTP/3",
-          "desc": "An earlier visit said it can"
-        },
-        {
-          "title": "Initial Packets",
-          "desc": "The Client Hello, straight away"
-        },
-        {
-          "title": "Server Hello",
-          "desc": "Then the certificate, encrypted"
-        },
-        {
-          "title": "Finished + GET",
-          "desc": "The request, one round trip in"
-        },
-        {
-          "title": "The Response",
-          "desc": "On its own stream"
-        },
-        {
-          "title": "New Network",
-          "desc": "Known by ID, not by address"
-        }
-      ]
-    },
-    {
-      "id": "ipv6",
-      "name": "IPv6",
-      "title": "Address Setup",
-      "fullName": "IPv6: SLAAC and neighbour discovery",
-      "category": "core",
-      "layer": 3,
-      "nodes": {
-        "client": [
-          "Client",
-          "No IPv6 address"
-        ],
-        "router": [
-          "Router",
-          "fe80::1"
-        ]
-      },
-      "legend": [
-        [
-          "amber",
-          "From the laptop"
-        ],
-        [
-          "violet",
-          "From the router"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "::",
-          "dst": "ff02::1:ffb0:7c13",
-          "proto": "ICMPv6",
-          "info": "Neighbor Solicitation for fe80::8d2e:4f61:a9b0:7c13",
-          "len": "78 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "1.010s",
-          "src": "fe80::8d2e:4f61:a9b0:7c13",
-          "dst": "ff02::2",
-          "proto": "ICMPv6",
-          "info": "Router Solicitation from 00:00:5e:00:53:10",
-          "len": "70 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "1.012s",
-          "src": "fe80::1",
-          "dst": "ff02::1",
-          "proto": "ICMPv6",
-          "info": "Router Advertisement from 00:00:5e:00:53:01",
-          "len": "142 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "1.020s",
-          "src": "::",
-          "dst": "ff02::1:ffb0:7c13",
-          "proto": "ICMPv6",
-          "info": "Neighbor Solicitation for 2001:db8:1234:5678:8d2e:4f61:a9b0:7c13",
-          "len": "78 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "2.500s",
-          "src": "fe80::1",
-          "dst": "ff02::1:ffb0:7c13",
-          "proto": "ICMPv6",
-          "info": "Neighbor Solicitation for 2001:db8:1234:5678:8d2e:4f61:a9b0:7c13 from 00:00:5e:00:53:01",
-          "len": "86 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.502s",
-          "src": "fe80::8d2e:4f61:a9b0:7c13",
-          "dst": "fe80::1",
-          "proto": "ICMPv6",
-          "info": "Neighbor Advertisement 2001:db8:1234:5678:8d2e:4f61:a9b0:7c13 (sol, ovr) is at 00:00:5e:00:53:10",
-          "len": "86 B",
-          "color": "amber",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Link-Local First",
-          "desc": "Made by the laptop itself"
-        },
-        {
-          "title": "Any Routers?",
-          "desc": "A Router Solicitation"
-        },
-        {
-          "title": "Router Answers",
-          "desc": "Prefix, MTU and DNS in one message"
-        },
-        {
-          "title": "A Global Address",
-          "desc": "Prefix + interface ID"
-        },
-        {
-          "title": "Neighbour Lookup",
-          "desc": "Who has this address? (ARP’s job)"
-        },
-        {
-          "title": "Ready, No DHCP",
-          "desc": "And no NAT either"
-        }
-      ]
-    },
-    {
-      "id": "ntp",
-      "name": "NTP",
-      "title": "Setting the Clock",
-      "fullName": "Network Time Protocol",
-      "category": "application",
-      "layer": 7,
-      "nodes": {
-        "web": [
-          "time.windows.com",
-          "203.0.113.123"
-        ]
-      },
-      "legend": [
-        [
-          "amber",
-          "Request"
-        ],
-        [
-          "violet",
-          "Answer"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.123",
-          "proto": "NTP",
-          "info": "NTP Version 3, client",
-          "len": "90 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.012s",
-          "src": "203.0.113.123",
-          "dst": "192.168.1.10",
-          "proto": "NTP",
-          "info": "NTP Version 3, server",
-          "len": "90 B",
-          "color": "violet",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Clocks Drift",
-          "desc": "The laptop’s clock is a little slow"
-        },
-        {
-          "title": "Ask for the Time",
-          "desc": "T1: when the request leaves"
-        },
-        {
-          "title": "The Answer",
-          "desc": "T2 and T3 from the server, T4 on arrival"
-        },
-        {
-          "title": "The Offset",
-          "desc": "Four times, two answers"
-        },
-        {
-          "title": "Ease It In",
-          "desc": "No jumps backwards"
-        }
-      ]
-    },
-    {
-      "id": "doh",
-      "name": "DNS over HTTPS",
-      "title": "Private",
-      "fullName": "DNS queries inside HTTPS",
-      "category": "security",
-      "layer": 7,
-      "nodes": {
-        "dns": [
-          "dns.google",
-          "8.8.8.8"
-        ]
-      },
-      "legend": [
-        [
-          "blue",
-          "Plain DNS"
-        ],
-        [
-          "green",
-          "TCP"
-        ],
-        [
-          "teal",
-          "TLS"
-        ],
-        [
-          "amber",
-          "DNS inside HTTPS"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "DNS",
-          "info": "Standard query A www.example.com",
-          "len": "75 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.012s",
-          "src": "8.8.8.8",
-          "dst": "192.168.1.10",
-          "proto": "DNS",
-          "info": "Standard query response A 203.0.113.10",
-          "len": "91 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "1.000s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "TCP",
-          "info": "52420 → 443 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "1.012s",
-          "src": "8.8.8.8",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "443 → 52420 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "1.024s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "TCP",
-          "info": "52420 → 443 [ACK] Seq=1 Ack=1",
-          "len": "60 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "1.024s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "TLSv1.3",
-          "info": "Client Hello (SNI=dns.google)",
-          "len": "571 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "1.036s",
-          "src": "8.8.8.8",
-          "dst": "192.168.1.10",
-          "proto": "TLSv1.3",
-          "info": "Server Hello + encrypted handshake, 2 segments",
-          "len": "2.9 KB",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "1.048s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "TLSv1.3",
-          "info": "Change Cipher Spec, Finished (encrypted)",
-          "len": "118 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "1.048s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "TLSv1.3",
-          "info": "Application Data (HTTP/2: DNS query)",
-          "len": "219 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "1.061s",
-          "src": "8.8.8.8",
-          "dst": "192.168.1.10",
-          "proto": "TLSv1.3",
-          "info": "Application Data (HTTP/2: DNS answer)",
-          "len": "200 B",
-          "color": "amber",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Plain DNS",
-          "desc": "Readable by anyone on the way"
-        },
-        {
-          "title": "An HTTPS Link",
-          "desc": "TCP and TLS to dns.google"
-        },
-        {
-          "title": "Sealed Question",
-          "desc": "A DNS message in an HTTP request"
-        },
-        {
-          "title": "Sealed Answer",
-          "desc": "The DNS answer in an HTTP response"
-        },
-        {
-          "title": "What Still Shows",
-          "desc": "Hidden on the way, not from the resolver"
-        }
-      ]
-    },
-    {
-      "id": "dnssec",
-      "name": "DNSSEC",
-      "title": "Signed Answers",
-      "fullName": "DNS Security Extensions",
-      "category": "security",
-      "layer": 7,
-      "nodes": {},
-      "legend": [
-        [
-          "blue",
-          "Question and answer"
-        ],
-        [
-          "amber",
-          "To the name servers"
-        ],
-        [
-          "violet",
-          "Signed answers"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "8.8.8.8",
-          "proto": "DNS",
-          "info": "Standard query A www.example.com",
-          "len": "75 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.013s",
-          "src": "8.8.8.8",
-          "dst": "198.51.100.53",
-          "proto": "DNS",
-          "info": "Standard query A www.example.com OPT",
-          "len": "86 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.033s",
-          "src": "198.51.100.53",
-          "dst": "8.8.8.8",
-          "proto": "DNS",
-          "info": "Standard query response A 203.0.113.10 RRSIG",
-          "len": "209 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.054s",
-          "src": "8.8.8.8",
-          "dst": "198.51.100.53",
-          "proto": "DNS",
-          "info": "Standard query DNSKEY example.com OPT",
-          "len": "82 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.074s",
-          "src": "198.51.100.53",
-          "dst": "8.8.8.8",
-          "proto": "DNS",
-          "info": "Standard query response DNSKEY DNSKEY RRSIG",
-          "len": "349 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.095s",
-          "src": "8.8.8.8",
-          "dst": "192.5.6.30",
-          "proto": "DNS",
-          "info": "Standard query DS example.com OPT",
-          "len": "82 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.110s",
-          "src": "192.5.6.30",
-          "dst": "8.8.8.8",
-          "proto": "DNS",
-          "info": "Standard query response DS RRSIG",
-          "len": "229 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.126s",
-          "src": "8.8.8.8",
-          "dst": "192.168.1.10",
-          "proto": "DNS",
-          "info": "Standard query response A 203.0.113.10",
-          "len": "91 B",
-          "color": "blue",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Ask as Usual",
-          "desc": "The laptop’s question doesn’t change"
-        },
-        {
-          "title": "Signed Answer",
-          "desc": "An RRSIG comes with the A record"
-        },
-        {
-          "title": "The Zone’s Keys",
-          "desc": "DNSKEY records, signed too"
-        },
-        {
-          "title": "Vouched by .com",
-          "desc": "The parent’s DS record"
-        },
-        {
-          "title": "Up to the Root",
-          "desc": "Where the chain ends"
-        },
-        {
-          "title": "A Checked Answer",
-          "desc": "With the AD flag"
-        }
-      ]
-    },
-    {
-      "id": "radius",
-      "name": "RADIUS",
-      "title": "Wi-Fi Logins",
-      "fullName": "RADIUS and 802.1X (Enterprise Wi-Fi)",
-      "category": "security",
-      "layer": 2,
-      "nodes": {
-        "client": [
-          "Client",
-          "00:00:5e:00:53:10"
-        ],
-        "router": [
-          "Access Point",
-          "192.168.1.2"
-        ],
-        "lan": [
-          "RADIUS Server",
-          "192.168.1.20"
-        ]
-      },
-      "legend": [
-        [
-          "amber",
-          "EAP over Wi-Fi"
-        ],
-        [
-          "violet",
-          "RADIUS"
-        ],
-        [
-          "teal",
-          "4-way handshake"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAP",
-          "info": "Request, Identity",
-          "len": "43 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.004s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAP",
-          "info": "Response, Identity",
-          "len": "59 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.006s",
-          "src": "192.168.1.2",
-          "dst": "192.168.1.20",
-          "proto": "RADIUS",
-          "info": "Access-Request id=81",
-          "len": "190 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.008s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.2",
-          "proto": "RADIUS",
-          "info": "Access-Challenge id=81",
-          "len": "106 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.009s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAP",
-          "info": "Request, TLS EAP (EAP-TLS)",
-          "len": "44 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.012s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAP",
-          "info": "Response, TLS EAP: Client Hello",
-          "len": "261 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.014s",
-          "src": "192.168.1.2",
-          "dst": "192.168.1.20",
-          "proto": "RADIUS",
-          "info": "Access-Request id=82: Client Hello",
-          "len": "410 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.019s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.2",
-          "proto": "RADIUS",
-          "info": "Access-Challenge id=82: Server Hello, certificate",
-          "len": "1114 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.020s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAP",
-          "info": "Request, TLS EAP: Server Hello, encrypted handshake",
-          "len": "1046 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.048s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAP",
-          "info": "Response, TLS EAP: encrypted handshake",
-          "len": "860 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.050s",
-          "src": "192.168.1.2",
-          "dst": "192.168.1.20",
-          "proto": "RADIUS",
-          "info": "Access-Request id=83: encrypted handshake",
-          "len": "1015 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.056s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.2",
-          "proto": "RADIUS",
-          "info": "Access-Challenge id=83",
-          "len": "133 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.057s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAP",
-          "info": "Request, TLS EAP: Application Data",
-          "len": "71 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.060s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAP",
-          "info": "Response, TLS EAP (EAP-TLS)",
-          "len": "44 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.062s",
-          "src": "192.168.1.2",
-          "dst": "192.168.1.20",
-          "proto": "RADIUS",
-          "info": "Access-Request id=84",
-          "len": "193 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.065s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.2",
-          "proto": "RADIUS",
-          "info": "Access-Accept id=84",
-          "len": "218 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.066s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAP",
-          "info": "Success",
-          "len": "42 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.068s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAPOL",
-          "info": "Key (Message 1 of 4)",
-          "len": "133 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.071s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAPOL",
-          "info": "Key (Message 2 of 4)",
-          "len": "155 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.073s",
-          "src": "00:00:5e:00:53:01",
-          "dst": "00:00:5e:00:53:10",
-          "proto": "EAPOL",
-          "info": "Key (Message 3 of 4)",
-          "len": "189 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "0.075s",
-          "src": "00:00:5e:00:53:10",
-          "dst": "00:00:5e:00:53:01",
-          "proto": "EAPOL",
-          "info": "Key (Message 4 of 4)",
-          "len": "133 B",
-          "color": "teal",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Who Are You?",
-          "desc": "The access point asks for an identity"
-        },
-        {
-          "title": "Ask RADIUS",
-          "desc": "The login goes to the server"
-        },
-        {
-          "title": "TLS Inside EAP",
-          "desc": "The server proves who it is"
-        },
-        {
-          "title": "Laptop’s Proof",
-          "desc": "Its own certificate"
-        },
-        {
-          "title": "Handshake Done",
-          "desc": "Nothing more to send"
-        },
-        {
-          "title": "Access-Accept",
-          "desc": "And a key for the access point"
-        },
-        {
-          "title": "4-Way Handshake",
-          "desc": "As at home, from a different key"
-        },
-        {
-          "title": "Why Enterprise",
-          "desc": "One account per person"
-        }
-      ]
-    },
-    {
-      "id": "smb",
-      "name": "SMB",
-      "title": "Shared Folders",
-      "fullName": "Server Message Block (SMB 3)",
-      "category": "application",
-      "layer": 7,
-      "nodes": {
-        "lan": [
-          "nas (File Server)",
-          "192.168.1.20"
-        ]
-      },
-      "legend": [
-        [
-          "green",
-          "TCP"
-        ],
-        [
-          "amber",
-          "Requests"
-        ],
-        [
-          "violet",
-          "Responses"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "TCP",
-          "info": "50532 → 445 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.001s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "445 → 50532 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.002s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "TCP",
-          "info": "50532 → 445 [ACK] Seq=1 Ack=1",
-          "len": "60 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.002s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Negotiate Protocol Request",
-          "len": "272 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.004s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Negotiate Protocol Response",
-          "len": "342 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.006s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Session Setup Request, NTLMSSP_NEGOTIATE",
-          "len": "220 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.008s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Session Setup Response, NTLMSSP_CHALLENGE",
-          "len": "321 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.010s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Session Setup Request, NTLMSSP_AUTH, User: \\alex",
-          "len": "723 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.013s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Session Setup Response",
-          "len": "139 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.015s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Tree Connect Request Tree: \\\\nas\\Documents",
-          "len": "160 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.017s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Tree Connect Response",
-          "len": "138 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.019s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Create Request File: report.pdf",
-          "len": "198 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.021s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Create Response File: report.pdf",
-          "len": "210 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.023s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Read Request Len:245760 Off:0 File: report.pdf",
-          "len": "171 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.025s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Read Response, 169 segments",
-          "len": "249.0 KB",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.030s",
-          "src": "192.168.1.10",
-          "dst": "192.168.1.20",
-          "proto": "SMB2",
-          "info": "Close Request File: report.pdf",
-          "len": "146 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.032s",
-          "src": "192.168.1.20",
-          "dst": "192.168.1.10",
-          "proto": "SMB2",
-          "info": "Close Response File: report.pdf",
-          "len": "182 B",
-          "color": "violet",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Port 445",
-          "desc": "A TCP connection to the NAS"
-        },
-        {
-          "title": "Negotiate",
-          "desc": "Agree on a version"
-        },
-        {
-          "title": "NTLM Challenge",
-          "desc": "The NAS sends a random number"
-        },
-        {
-          "title": "NTLM Response",
-          "desc": "Proof, not the password"
-        },
-        {
-          "title": "Connect a Share",
-          "desc": "\\\\nas\\Documents"
-        },
-        {
-          "title": "Open the File",
-          "desc": "With CREATE"
-        },
-        {
-          "title": "Read It",
-          "desc": "The whole file in one request"
-        },
-        {
-          "title": "Close the File",
-          "desc": "And keep 445 at home"
-        }
-      ]
-    },
-    {
       "id": "modbus",
       "name": "Modbus",
       "title": "Talking to a PLC",
@@ -5932,484 +6410,6 @@
         {
           "title": "No Security",
           "desc": "Anyone who can reach it"
-        }
-      ]
-    },
-    {
-      "id": "bgp",
-      "name": "BGP",
-      "title": "Internet Routes",
-      "fullName": "Border Gateway Protocol",
-      "category": "core",
-      "layer": 7,
-      "nodes": {
-        "app": [
-          "www.example.com",
-          "203.0.113.10"
-        ]
-      },
-      "legend": [
-        [
-          "green",
-          "TCP"
-        ],
-        [
-          "blue",
-          "Session"
-        ],
-        [
-          "violet",
-          "Routes"
-        ],
-        [
-          "amber",
-          "The laptop’s packets"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.0.2.5",
-          "dst": "192.0.2.4",
-          "proto": "TCP",
-          "info": "50311 → 179 [SYN] Seq=0",
-          "len": "74 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.004s",
-          "src": "192.0.2.4",
-          "dst": "192.0.2.5",
-          "proto": "TCP",
-          "info": "179 → 50311 [SYN, ACK] Seq=0 Ack=1",
-          "len": "74 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.008s",
-          "src": "192.0.2.5",
-          "dst": "192.0.2.4",
-          "proto": "TCP",
-          "info": "50311 → 179 [ACK] Seq=1 Ack=1",
-          "len": "66 B",
-          "color": "green",
-          "lost": false
-        },
-        {
-          "time": "0.008s",
-          "src": "192.0.2.5",
-          "dst": "192.0.2.4",
-          "proto": "BGP",
-          "info": "OPEN Message",
-          "len": "111 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.012s",
-          "src": "192.0.2.4",
-          "dst": "192.0.2.5",
-          "proto": "BGP",
-          "info": "OPEN Message",
-          "len": "111 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.012s",
-          "src": "192.0.2.4",
-          "dst": "192.0.2.5",
-          "proto": "BGP",
-          "info": "KEEPALIVE Message",
-          "len": "85 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.016s",
-          "src": "192.0.2.5",
-          "dst": "192.0.2.4",
-          "proto": "BGP",
-          "info": "KEEPALIVE Message",
-          "len": "85 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.030s",
-          "src": "192.0.2.9",
-          "dst": "192.0.2.8",
-          "proto": "BGP",
-          "info": "UPDATE Message: 203.0.113.0/24",
-          "len": "113 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "0.037s",
-          "src": "192.0.2.4",
-          "dst": "192.0.2.5",
-          "proto": "BGP",
-          "info": "UPDATE Message: 203.0.113.0/24",
-          "len": "117 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "1.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "TCP",
-          "info": "52800 → 443 [SYN] Seq=0",
-          "len": "66 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "1.017s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "TCP",
-          "info": "443 → 52800 [SYN, ACK] Seq=0 Ack=1",
-          "len": "66 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "5.000s",
-          "src": "192.0.2.9",
-          "dst": "192.0.2.8",
-          "proto": "BGP",
-          "info": "UPDATE Message: withdrawn 203.0.113.0/24",
-          "len": "93 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "5.007s",
-          "src": "192.0.2.4",
-          "dst": "192.0.2.5",
-          "proto": "BGP",
-          "info": "UPDATE Message: withdrawn 203.0.113.0/24",
-          "len": "93 B",
-          "color": "violet",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Many Networks",
-          "desc": "Each with its own number"
-        },
-        {
-          "title": "Open a Session",
-          "desc": "TCP to port 179"
-        },
-        {
-          "title": "Say Hello",
-          "desc": "OPEN, then KEEPALIVE"
-        },
-        {
-          "title": "Announce a Route",
-          "desc": "The hosting network: “I have these”"
-        },
-        {
-          "title": "Passed On",
-          "desc": "Each network adds its number"
-        },
-        {
-          "title": "Follow the Route",
-          "desc": "Packets go where BGP said"
-        },
-        {
-          "title": "Withdrawn",
-          "desc": "Routes can be taken back"
-        },
-        {
-          "title": "Trust Problems",
-          "desc": "BGP believes its neighbours"
-        }
-      ]
-    },
-    {
-      "id": "webrtc",
-      "name": "WebRTC",
-      "title": "A Video Call",
-      "fullName": "Web Real-Time Communication",
-      "category": "application",
-      "layer": 7,
-      "nodes": {
-        "relay": [
-          "STUN Server",
-          "192.0.2.19"
-        ],
-        "web": [
-          "call.example.com",
-          "203.0.113.10"
-        ],
-        "remote": [
-          "Sam’s Router",
-          "198.51.100.200"
-        ],
-        "peer": [
-          "Sam’s Laptop",
-          "192.168.0.23"
-        ]
-      },
-      "legend": [
-        [
-          "blue",
-          "Signalling"
-        ],
-        [
-          "amber",
-          "STUN and ICE"
-        ],
-        [
-          "teal",
-          "DTLS"
-        ],
-        [
-          "violet",
-          "Media"
-        ]
-      ],
-      "packets": [
-        {
-          "time": "0.000s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "TLSv1.3",
-          "info": "Application Data (WebSocket: join)",
-          "len": "109 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.018s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "TLSv1.3",
-          "info": "Application Data (WebSocket: peer)",
-          "len": "106 B",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.040s",
-          "src": "192.168.1.10",
-          "dst": "192.0.2.19",
-          "proto": "STUN",
-          "info": "Binding Request",
-          "len": "62 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.050s",
-          "src": "192.0.2.19",
-          "dst": "192.168.1.10",
-          "proto": "STUN",
-          "info": "Binding Success Response XOR-MAPPED-ADDRESS: 198.51.100.7:61022",
-          "len": "74 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "0.070s",
-          "src": "192.168.1.10",
-          "dst": "203.0.113.10",
-          "proto": "TLSv1.3",
-          "info": "Application Data (WebSocket: offer), 4 segments",
-          "len": "4.9 KB",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "0.088s",
-          "src": "203.0.113.10",
-          "dst": "198.51.100.200",
-          "proto": "TLSv1.3",
-          "info": "Application Data (WebSocket: offer), 4 segments",
-          "len": "4.9 KB",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "2.400s",
-          "src": "198.51.100.200",
-          "dst": "203.0.113.10",
-          "proto": "TLSv1.3",
-          "info": "Application Data (WebSocket: answer), 3 segments",
-          "len": "3.1 KB",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "2.421s",
-          "src": "203.0.113.10",
-          "dst": "192.168.1.10",
-          "proto": "TLSv1.3",
-          "info": "Application Data (WebSocket: answer), 3 segments",
-          "len": "3.0 KB",
-          "color": "blue",
-          "lost": false
-        },
-        {
-          "time": "2.440s",
-          "src": "192.168.1.10",
-          "dst": "198.51.100.200",
-          "proto": "STUN",
-          "info": "Binding Request user: q7Rz:Hk2w",
-          "len": "130 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "2.466s",
-          "src": "198.51.100.200",
-          "dst": "192.168.1.10",
-          "proto": "STUN",
-          "info": "Binding Success Response XOR-MAPPED-ADDRESS: 198.51.100.7:61022",
-          "len": "106 B",
-          "color": "amber",
-          "lost": false
-        },
-        {
-          "time": "2.470s",
-          "src": "198.51.100.200",
-          "dst": "192.168.1.10",
-          "proto": "DTLSv1.2",
-          "info": "Client Hello",
-          "len": "218 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "2.497s",
-          "src": "192.168.1.10",
-          "dst": "198.51.100.200",
-          "proto": "DTLSv1.2",
-          "info": "Server Hello, Certificate, Key Exchange, Cert Request, Hello Done",
-          "len": "714 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "2.530s",
-          "src": "198.51.100.200",
-          "dst": "192.168.1.10",
-          "proto": "DTLSv1.2",
-          "info": "Certificate, Key Exchange, Cert Verify, Change Cipher Spec, Finished",
-          "len": "622 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "2.557s",
-          "src": "192.168.1.10",
-          "dst": "198.51.100.200",
-          "proto": "DTLSv1.2",
-          "info": "Change Cipher Spec, Finished",
-          "len": "117 B",
-          "color": "teal",
-          "lost": false
-        },
-        {
-          "time": "2.590s",
-          "src": "192.168.1.10",
-          "dst": "198.51.100.200",
-          "proto": "SRTP",
-          "info": "PT=111, SSRC=0x5D2E81A4, Seq=9021, Time=416820",
-          "len": "144 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.610s",
-          "src": "192.168.1.10",
-          "dst": "198.51.100.200",
-          "proto": "SRTP",
-          "info": "PT=111, SSRC=0x5D2E81A4, Seq=9022, Time=417780",
-          "len": "144 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.630s",
-          "src": "192.168.1.10",
-          "dst": "198.51.100.200",
-          "proto": "SRTP",
-          "info": "PT=111, SSRC=0x5D2E81A4, Seq=9023, Time=418740",
-          "len": "144 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.660s",
-          "src": "198.51.100.200",
-          "dst": "192.168.1.10",
-          "proto": "SRTP",
-          "info": "PT=96, SSRC=0x1B7C3F90, Seq=30117, Time=2286000",
-          "len": "1182 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.662s",
-          "src": "198.51.100.200",
-          "dst": "192.168.1.10",
-          "proto": "SRTP",
-          "info": "PT=96, SSRC=0x1B7C3F90, Seq=30118, Time=2286000",
-          "len": "1182 B",
-          "color": "violet",
-          "lost": false
-        },
-        {
-          "time": "2.664s",
-          "src": "198.51.100.200",
-          "dst": "192.168.1.10",
-          "proto": "SRTP",
-          "info": "PT=96, SSRC=0x1B7C3F90, Seq=30119, Time=2286000, Mark",
-          "len": "812 B",
-          "color": "violet",
-          "lost": false
-        }
-      ],
-      "steps": [
-        {
-          "title": "Join the Call",
-          "desc": "Through a signalling server"
-        },
-        {
-          "title": "Public Address?",
-          "desc": "Ask a STUN server"
-        },
-        {
-          "title": "The Offer",
-          "desc": "An SDP description, via the server"
-        },
-        {
-          "title": "The Answer",
-          "desc": "Sam’s browser replies"
-        },
-        {
-          "title": "Punch Through",
-          "desc": "Checks straight to each other"
-        },
-        {
-          "title": "DTLS Handshake",
-          "desc": "Keys for the media"
-        },
-        {
-          "title": "Media Flows",
-          "desc": "Audio and video, direct"
-        },
-        {
-          "title": "Peer to Peer",
-          "desc": "And when it can’t be"
         }
       ]
     }

@@ -28,6 +28,7 @@ export class Engine {
   else if(e.type==='type-url'){this.scene.url=e.text;this.scene.urlVisible=true;this.scene.urlLoaded=false;this.scene.urlTyping=false}
   else if(e.type==='hide-url'){this.scene.urlVisible=false;this.scene.urlTyping=false}
   else if(e.type==='loaded-url'){this.scene.url=e.text;this.scene.urlVisible=true;this.scene.urlLoaded=true;this.scene.urlTyping=false}
+  else if(e.type==='label')this.scene.labels={...this.scene.labels,[e.at]:e.label};
   else if(e.type==='note')this.scene.notes.push({at:e.at,text:e.text,tone:e.tone||'amber'});
  }
  beginStep(index:number){
