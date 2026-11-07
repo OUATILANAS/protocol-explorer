@@ -32,3 +32,15 @@ html.is-single .speed-menu{animation-name:menu-up}.search-dialog{animation:dialo
 .lang-badge svg{display:none}.lang-menu button[aria-checked=true] .lang-short{display:none}.lang-menu button[aria-checked=true] .lang-badge svg{display:block}.lang-menu button[aria-checked=true] .lang-badge{background:var(--k-fill-003ca8);border-color:var(--k-line-003ca8);color:white}
 .lang-names{display:flex;flex-direction:column;min-width:0}.lang-native,.lang-local{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lang-native{font-size:13.5px;line-height:17px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--k-text-0b2b86)}.lang-local{font-size:12px;line-height:15px;font-weight:500;letter-spacing:.01em;color:var(--k-text-6982b8)}.lang-menu button[aria-checked=true] .lang-native{color:var(--active)}
 .is-single .language-menu.lang-menu{width:min(320px,calc(100vw - 24px));max-height:70vh;overflow-y:auto}.is-single .lang-grid{grid-auto-flow:row;grid-template-rows:none;grid-template-columns:minmax(0,1fr)}
+/* Match shared table and tab geometry rather than offsetting individual labels. */
+.sidebar .filter-tabs button:first-of-type{border-inline-start:0}
+th{border-block-end:0;box-shadow:inset 0 -1px 0 var(--line-soft)}
+html[data-layout=wide] th:first-child{padding-inline-start:14px}
+td{transition:background-color .4s,box-shadow .4s}
+/* The reference retains the overview track width despite its -1px seam overlap. */
+.side-panel{width:100%}
+/* Auto-sized fact rows include their own padding and hairline borders. */
+html.is-single .facts>.fact,html.is-single .facts>.fact:last-child{height:auto;min-height:34px}
+th{padding-block:1px;padding-inline-end:1px}
+html.is-single .speed-box>.speed-btn{flex:none;inline-size:100%;min-inline-size:0}
+html.is-single .transport .speed-box>.btn[data-action=speed]{width:100%;inline-size:100%}
