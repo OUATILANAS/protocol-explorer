@@ -1,1 +1,30 @@
-.device-fill{fill:var(--bg)}.device-screen{fill:color-mix(in srgb,var(--active) 10%,var(--bg))}.led{fill:var(--green);stroke:none}.links path{fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 5;animation:lane-flow 8s linear infinite;opacity:.8}.device.arrived{animation:step-pop .7s var(--ease-out)}.url-caret{animation:caret 1s steps(1) infinite}@keyframes lane-flow{to{stroke-dashoffset:-90}}@keyframes caret{50%{opacity:0}}@keyframes dot-pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}@keyframes step-in{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes step-spin{to{transform:rotate(360deg)}}@keyframes step-pop{0%{filter:drop-shadow(0 0 0 var(--blue))}50%{filter:drop-shadow(0 0 7px var(--blue))}100%{filter:drop-shadow(0 0 0 var(--blue))}}@keyframes seg-fill{from{opacity:.2;transform:scaleX(.1)}to{opacity:1;transform:scaleX(1)}}@keyframes menu-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}@keyframes pending-sheen{0%{opacity:.35}50%{opacity:1}100%{opacity:.35}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+@keyframes pending-sheen { 
+  0% { background-position: 100% 0px; }
+  100% { background-position: 0px 0px; }
+}
+@keyframes seg-fill { 
+  0% { transform: scaleX(0); }
+}
+@keyframes menu-in { 
+  0% { opacity: 0; transform: translateY(-4px) scale(0.97); }
+}
+@keyframes dot-pop { 
+  40% { transform: scale(1.35); }
+}
+@keyframes step-in { 
+  0% { opacity: 0; transform: translateY(-6px); }
+}
+@keyframes step-spin { 
+  100% { rotate: 360deg; }
+}
+@keyframes step-pop { 
+  40% { scale: 1.2; }
+}
+@keyframes lane-flow { 
+  100% { stroke-dashoffset: -11; }
+}
+@keyframes caret { 
+  50% { opacity: 1; }
+}.device-screen{fill:color-mix(in srgb,var(--active) 10%,var(--panel))}.led{fill:var(--green);stroke:none}
+.links path{fill:none;transition:stroke .35s,stroke-width .35s}
+@media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}

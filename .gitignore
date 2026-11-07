@@ -4,3 +4,7 @@ qa/*.png
 *.tgz
 .openai/local/
 qa/translation-cache.json
+
+reference-diff/
+qa/corrections/
+qa/**/*.png

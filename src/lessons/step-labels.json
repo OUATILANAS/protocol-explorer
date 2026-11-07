@@ -1,0 +1,108 @@
+{
+  "http": [
+    "Browser prepares the request",
+    "Finds the server’s IP address",
+    "Establishes a reliable link",
+    "Request and response messages",
+    "Browser displays the content"
+  ],
+  "https": [
+    "Browser asks for https://",
+    "Same lookup as HTTP, not encrypted",
+    "Opens a connection to port 443",
+    "Agrees on keys, checks the certificate",
+    "HTTP inside TLS records",
+    "Browser shows the padlock"
+  ],
+  "tcp": [
+    "Three-way handshake",
+    "Every byte is numbered",
+    "One of them is lost",
+    "Duplicate ACK with SACK",
+    "Only the missing bytes",
+    "Each side says goodbye"
+  ],
+  "udp": [
+    "No handshake, data goes first",
+    "One every 20 ms, each on its own",
+    "Nobody resends it",
+    "The other voice comes back",
+    "Reliability is up to the app"
+  ],
+  "ip": [
+    "Compare the address with the subnet",
+    "ARP turns an IP into a MAC",
+    "Addresses, TTL and protocol",
+    "The router rewrites and forwards",
+    "NAT translates it for the laptop"
+  ],
+  "dns": [
+    "The laptop hands the question off",
+    "Points the way to .com",
+    "Points the way to example.com",
+    "Gives the actual answer",
+    "The laptop gets its address"
+  ],
+  "dhcp": [
+    "The laptop joins the network",
+    "Shout to the whole network",
+    "The router proposes an address",
+    "Accept, out loud",
+    "The address is the laptop’s",
+    "Halfway through the lease"
+  ],
+  "icmp": [
+    "Echo request",
+    "Round-trip time",
+    "The first router answers",
+    "The next router answers",
+    "TTL 1, 2, 3 … until it arrives",
+    "Nothing listening on that port"
+  ],
+  "smtp": [
+    "Port 465, TLS from the start",
+    "EHLO, then AUTH",
+    "Envelope, then content",
+    "An MX lookup in DNS",
+    "Port 25, upgraded with STARTTLS",
+    "The same transaction again"
+  ],
+  "pop3": [
+    "Port 995, TLS from the start",
+    "USER, then PASS",
+    "STAT and LIST",
+    "RETR 1",
+    "Deleted only at QUIT"
+  ],
+  "imap": [
+    "Port 993, TLS from the start",
+    "Commands carry tags",
+    "SELECT a folder",
+    "FETCH, and the \\Seen flag",
+    "IDLE: the server pushes"
+  ],
+  "ftp": [
+    "Port 21, plain text",
+    "USER and PASS, readable by anyone",
+    "The server names a data port",
+    "A second TCP connection",
+    "Closing the connection ends it",
+    "Close the control connection"
+  ],
+  "ssh": [
+    "Versions, in plain text",
+    "KEXINIT lists, first match wins",
+    "Shared keys, and a host key check",
+    "Sign, don’t send a secret",
+    "Channels inside one connection",
+    "Every key is a packet"
+  ],
+  "tls": [
+    "Everything the browser supports",
+    "Choices made, keys computed",
+    "Who the server is, proven",
+    "One round trip, then data",
+    "Records, tags and tickets",
+    "close_notify, then TCP"
+  ]
+}

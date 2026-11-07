@@ -15,7 +15,7 @@ Branding lives in `src/config.ts`. Theme tokens live in `src/styles/tokens.css`.
 
 ## Use
 
-Choose a protocol from **Protocols**, press **Play**, and open an arrived table row to inspect its layers. The response aggregate in HTTP has a segment selector: each of its nine real Ethernet frames has its own complete field tree and byte dump. Hover or focus a field or hex byte to see their correspondence.
+Choose a protocol from the desktop sidebar or the **Protocols** drawer, press **Play**, and open a table row to inspect its layers. The response aggregate in HTTP has a segment selector: each of its nine real Ethernet frames has its own complete field tree and byte dump. Hover or focus a field or hex byte to see their correspondence.
 
 - Space: play or pause.
 - Left / Right: previous or next step, reversed in RTL.
@@ -34,7 +34,7 @@ TLS and SSH records are structurally educational captures, not working cryptogra
 
 English is bundled; the other 14 languages load as separate chunks. Translations were machine generated from original English, with protocol-token preservation checks. Native-speaker review would improve editorial quality. Iosevka does not cover every script; those characters use the configured monospace fallback.
 
-The annotated PDF is a layout reference, not a pixel-perfect oracle: its figures contain placeholder prose, simplified art and some conflicting state/layout descriptions. `DECISIONS.md` records how those conflicts were resolved.
+The live reference supersedes the earlier PDFs and written measurements. Original long lesson prose is retained. `DECISIONS.md` records measured behavior, comparison results and unresolved differences.
 
 ## Verification
 
@@ -49,6 +49,32 @@ The browser checks use Playwright and an installed Google Chrome. `tests/browser
 npx tsx scripts/export-captures.ts
 ```
 
-During development the inspector download button exports the current capture as `.pcap`. It is excluded from production. The HTTP seven-row capture exports 15 actual frames because its final row represents nine segments. Wireshark/tshark can decode the files without a backend.
+During development the lesson options menu exports the current capture as `.pcap`. It is excluded from production. The HTTP seven-row capture exports 15 actual frames because its final row represents nine segments. Wireshark/tshark can decode the files without a backend.
 
 Translation regeneration scripts are build-time maintenance tools only; they use an online translation service and are never included in the shipped app. The checked-in locale modules need no network service at runtime.
+
+## Live-reference comparison
+
+```sh
+npx playwright install chromium
+npm run compare -- --only medium-dark-overview
+npm run compare -- --no-motion
+npm run compare -- --only motion
+```
+
+The supplied comparator defaults to the development server on port 5173. To compare the production build, start `npm run preview` and pass `--local http://127.0.0.1:4173/`. Reports, screenshots, differences and motion traces are written under `reference-diff/` and are excluded from Git. Its cases, tolerances and ignore list are unchanged. See `DECISIONS.md` for failing cases and the limits of exact comparisons with retained prose and changing full-page camera bounds.
+
+`src/styles/measured.css` contains the shared measured component styles and raw color remaps. `src/ui/motion.ts` implements frame-driven text/panel swaps; packet routes and camera interpolation remain in `src/sim/`. The comparison does not currently pass in full; a successful build or packet test is not a visual-match claim.
+
+## Vercel production
+
+Live app: https://protocol-explorer-hamada.vercel.app/
+
+Deploy the compiled static app without source, recordings or QA files:
+
+```sh
+npm run build
+npx vercel@65.12.1 deploy dist --prod --yes --project protocol-explorer-hamada --scope acme-7153
+```
+
+The Vercel project uses static files from `dist/`; it requires no backend or environment variables. Deployment and live browser checks are recorded in `qa/vercel/`.
