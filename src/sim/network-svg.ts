@@ -64,8 +64,3 @@ export function fitNetwork(scene:Scene){
 }
 
 export class Camera{current=[...frames.full];target=[...frames.full];from=[...frames.full];elapsed=1000;set(frame:Frame,instant=false){const next=frames[frame];if(next.every((n,i)=>n===this.target[i]))return;this.from=[...this.current];this.target=[...next];this.elapsed=instant?1100:0;if(instant){this.current=[...next];this.from=[...next]}}tick(dt:number,reduced:boolean){this.elapsed+=dt;const t=reduced?1:Math.min(1,this.elapsed/1100),ease=easeInOut(t);this.current=t>=1?[...this.target]:this.from.map((n,i)=>n+(this.target[i]-n)*ease);document.querySelector('#network-svg')?.setAttribute('viewBox',this.current.map(n=>n.toFixed(2)).join(' '))}}
-/** Native-script fallback fonts are already present when Latin web fonts settle. */
-export function reanchorNativeFonts(){
- const svg=document.querySelector<SVGSVGElement>('#network-svg');if(!svg||getComputedStyle(svg).fontFamily.includes('ui-monospace'))return;
- svg.setAttribute('viewBox','45 66 810 490');svg.dataset.labelScale='1';
-}
