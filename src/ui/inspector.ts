@@ -1,3 +1,4 @@
+import{targetEl}from'../state/event-target';
 import{tr,t}from'../i18n';
 import type{PacketEvent,WireFrame}from'../types';
 import{escape}from'./side-panel';
@@ -29,6 +30,6 @@ export function wireHover(root:HTMLElement){
  hoverListeners.get(root)?.abort();const controller=new AbortController();hoverListeners.set(root,controller);
  const clear=()=>root.querySelectorAll('.is-lit').forEach(x=>x.classList.remove('is-lit'));
  const highlight=(target:Element|null)=>{clear();if(!target)return;const field=target.closest<HTMLElement>('[data-field]'),byte=target.closest<HTMLElement>('[data-offset]');const id=field?.dataset.field||byte?.dataset.owner;if(id===undefined||id==='-1')return;root.querySelectorAll<HTMLElement>('[data-field],[data-owner]').forEach(e=>e.classList.toggle('is-lit',e.dataset.field===id||e.dataset.owner===id))};
- root.onpointerover=e=>highlight(e.target as Element);root.onpointerleave=clear;root.addEventListener('focusin',e=>highlight(e.target as Element),{signal:controller.signal});root.addEventListener('focusout',clear,{signal:controller.signal});
- root.onkeydown=e=>{const target=(e.target as Element).closest<HTMLElement>('[data-layer-target]');if(target&&(e.key==='Enter'||e.code==='Space')){e.preventDefault();target.click()}};
+ root.onpointerover=e=>highlight(targetEl(e));root.onpointerleave=clear;root.addEventListener('focusin',e=>highlight(targetEl(e)),{signal:controller.signal});root.addEventListener('focusout',clear,{signal:controller.signal});
+ root.onkeydown=e=>{const target=targetEl(e)?.closest<HTMLElement>('[data-layer-target]');if(target&&(e.key==='Enter'||e.code==='Space')){e.preventDefault();target.click()}};
 }

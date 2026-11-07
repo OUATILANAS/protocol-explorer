@@ -1,0 +1,13 @@
+[
+  {
+    "id": "medium-dark-overview",
+    "pass": false,
+    "pixelPct": 2.25,
+    "texts": "135/145",
+    "textDiffs": 10,
+    "missing": 0,
+    "extra": 2,
+    "boxDiffs": 5,
+    "notes": []
+  }
+]

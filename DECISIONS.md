@@ -94,3 +94,9 @@ At the user's request, created a separate 100-second tour in `brag-output/tour-1
 ## Requested narration
 
 Added user-requested English narration to the 100-second tour using Hyperframes' local Kokoro-82M workflow and af_heart voice. Installed its dependencies in a separate Python environment under the Hyperframes cache. All thirteen original chapter scripts are generated as editable WAV clips, normalized, checked for overruns and aligned to their chapters. Music ducks to .12 under speech and returns to .16 during longer gaps. The separate `brag-output/tour-100s/narration.wav` is exactly 100 seconds; peak speech level is −1.5 dBFS. The final composition check passes with no audio, runtime, layout or lint errors. No application code or Vercel deployment changed; this update affects the video preview and its audio artifacts. The final MP4 remains pending preview approval.
+
+## Upgrade baseline and Phase A §1
+
+The supplied upgrade audit's claim of a green visual baseline was not reproduced. Before any upgrade source changes, its unchanged comparator reported medium-dark-overview: 2.25% differing pixels, 135/145 exact text elements and 5 box issues. The user explicitly chose to fix existing parity failures before advancing beyond Phase A. Comparison scripts remain unchanged; baseline metrics are in `qa/upgrade/baseline-summary.json`.
+
+Phase A §1 uses one `targetEl` helper for delegated handlers. Text nodes resolve to their parent element; document/window targets resolve to null. This preserves normal interaction while avoiding unsafe `.closest()`/`.matches()` calls. Tests: 24/24, plus the browser regression dispatching synthetic document and text-node events without errors.
