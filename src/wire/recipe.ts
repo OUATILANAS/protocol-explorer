@@ -7,7 +7,7 @@ import{explainField}from'./field-explanations';
 
 /** Declarative field inputs, never a prebuilt Ethernet frame. */
 export type WirePart=['uint',number,string]|['little',number,string]|['text',string]|['hex',string]|['opaque',number]|['ipv4',string]|['ipv6',string]|['mac',string];
-export interface RecipeField{name:string;value:string;offset:number;length:number;eg?:boolean;depth?:number}
+export interface RecipeField{inlineNote?:boolean;name:string;value:string;offset:number;length:number;eg?:boolean;depth?:number}
 export interface LayerRecipe{id:string;name:string;color:Layer['color'];parts:WirePart[];fields:RecipeField[]}
 export interface PacketRecipe{layers:LayerRecipe[];mss?:number;udpChecksumDisabled?:boolean}
 export interface RecipeOptions{mss?:number;ttl?:number}

@@ -3,7 +3,7 @@ export type NodeId='client'|'router'|'dns'|'internet'|'web'|'root'|'tld'|'auth'|
 export type Frame='client'|'local'|'lookup'|'full'|'root'|'tld'|'path'|'mailhost'|'backend'|'bgp'|'call'|'office'|'relay'|'route';
 export type LessonId='http'|'https'|'tcp'|'udp'|'ip'|'dns'|'dhcp'|'icmp'|'smtp'|'pop3'|'imap'|'ftp'|'ssh'|'tls'|'websocket'|'webrtc'|'quic'|'bgp'|'ipv6'|'doh'|'dnssec'|'ntp'|'wifi'|'wpa3'|'radius'|'portal'|'smb'|'proxy'|'socks'|'reverse'|'wireguard'|'ipsec'|'modbus'|'ethernet';
 export type Fact=[string,string];
-export interface Field{name:string;value:string;note:string;eg?:boolean;depth?:number;offset:number;length:number}
+export interface Field{inlineNote?:boolean;name:string;value:string;note:string;eg?:boolean;depth?:number;offset:number;length:number}
 export interface Layer{name:string;color:Color;fields:Field[];bytes:Uint8Array;opaque?:number[]}
 export interface WireFrame{layers:Layer[];bytes:Uint8Array;frames?:WireFrame[];segments?:WireFrame[];reassembled?:WireFrame}
 export interface PacketEvent{type:'packet'|'handshake'|'ccs'|'appdata';from:NodeId;to:NodeId;color:Color;tag:string;lines:string[];row:{time:string;src:string;dst:string;proto:string;info:string;len:string};wire:()=>WireFrame;lost?:boolean;sequence?:{at:number;latency:number;labelFraction?:number}}

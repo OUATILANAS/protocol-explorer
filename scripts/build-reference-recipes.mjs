@@ -20,7 +20,7 @@ function parts(bytes,fields,id){
  }return out;
 }
 function layerRecipe(id,name,bytes,fields){
- const normalized=fields.map(f=>({name:f.name,value:String(f.value),offset:f.from,length:f.to-f.from,...(f.example?{eg:true}:{}),...(f.depth?{depth:f.depth}:{})}));
+ const normalized=fields.map(f=>({name:f.name,value:String(f.value),inlineNote:!!f.note,offset:f.from,length:f.to-f.from,...(f.example?{eg:true}:{}),...(f.depth?{depth:f.depth}:{})}));
  return{id,name:name.replace(/ · \d+ bytes$/,''),color:colors[id]||'violet',parts:parts(bytes,fields,id),fields:normalized};
 }
 const targets=[];await mkdir('src/lessons/reference-models',{recursive:true});
