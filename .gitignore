@@ -10,3 +10,5 @@ qa/corrections/
 qa/**/*.png
 
 qa/reference-33/
+
+qa/upgrade/translated-locales/
