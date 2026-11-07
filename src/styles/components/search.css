@@ -44,3 +44,34 @@ html.is-single .facts>.fact,html.is-single .facts>.fact:last-child{height:auto;m
 th{padding-block:1px;padding-inline-end:1px}
 html.is-single .speed-box>.speed-btn{flex:none;inline-size:100%;min-inline-size:0}
 html.is-single .transport .speed-box>.btn[data-action=speed]{width:100%;inline-size:100%}
+/* Logical insets preserve the same component geometry in either direction. */
+html:not(.is-stacked) .shell{padding-block:0 14px;padding-inline:19px 13px}
+.sidebar{padding-block:10px 0;padding-inline:16px 15px}
+.sidebar .panel-head{padding-inline:1px 0}
+.side-panel .panel-head{padding-inline:17px 14px}
+.packet-panel .panel-head{padding-inline:17px 4px}
+.side-body{padding-block:11px 4px;padding-inline:19px 10px}
+.facts{margin-inline:-4px 0}
+.facts dt{padding-block:3px;padding-inline:7px 0}
+.table-scroll table{margin-block:0;margin-inline:13px 0}
+td{padding-block:0;padding-inline:14px 0}
+th{padding-inline-start:14px}
+.sidebar .drawer-steps{padding-block:14px 4px;padding-inline:34px 8px}
+.sidebar .protocol-list{margin-block:12px 0;margin-inline:0 -10px;padding-block:0 12px;padding-inline:0 10px}
+[dir=rtl] .table-scroll td:has(bdi){text-align:right;padding-inline:0 14px}
+html:not([data-layout=wide])[dir=rtl] .table-scroll td:has(bdi){padding-inline:0 10px}
+
+/* Script fallbacks follow the base root font declaration in the cascade. */
+[lang|=ja]{font-family:Iosevka,Hiragino Sans,Hiragino Kaku Gothic ProN,Yu Gothic UI,Yu Gothic,Meiryo,Noto Sans JP,Noto Sans CJK JP,IPAGothic,sans-serif;font-synthesis:weight}
+[lang|=zh]{font-family:Iosevka,PingFang SC,Hiragino Sans GB,Microsoft YaHei UI,Microsoft YaHei,Noto Sans SC,Noto Sans CJK SC,Source Han Sans SC,WenQuanYi Zen Hei,sans-serif;font-synthesis:weight}
+[lang=zh-TW],[lang|=zh-Hant]{font-family:Iosevka,PingFang TC,Microsoft JhengHei UI,Microsoft JhengHei,Noto Sans TC,Noto Sans CJK TC,Source Han Sans TC,WenQuanYi Zen Hei,sans-serif}
+[lang|=ko]{font-family:Iosevka,Apple SD Gothic Neo,Malgun Gothic,Noto Sans KR,Noto Sans CJK KR,Nanum Gothic,WenQuanYi Zen Hei,sans-serif;font-synthesis:weight;word-break:keep-all;overflow-wrap:break-word}
+[lang|=hi]{font-family:Iosevka,Kohinoor Devanagari,Nirmala UI,Mangal,Noto Sans Devanagari,FreeSans,sans-serif;font-synthesis:weight}
+[lang|=ar]{font-family:Iosevka,Geeza Pro,Segoe UI,Noto Sans Arabic,Tahoma,DejaVu Sans,sans-serif;font-synthesis:weight}
+[lang|=he]{font-family:Iosevka,Arial Hebrew,Segoe UI,Noto Sans Hebrew,Arial,DejaVu Sans,sans-serif;font-synthesis:weight}
+.sidebar .proto-row{padding-inline:15.5px 14px}
+.view-switch button{padding-block:0;padding-inline:9px 11px}
+[dir=rtl] .table-scroll td:has(bdi){direction:ltr;unicode-bidi:isolate}
+.credit{min-width:calc(104px + 12 * var(--credit-tracking,.28px))}
+[lang|=ar],[lang|=hi]{--credit-tracking:0px}
+#network-svg.is-scaled .node-label text{paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}

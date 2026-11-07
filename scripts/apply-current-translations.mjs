@@ -12,7 +12,7 @@ for(const file of files){const code=file.slice(0,-10),staged=`qa/upgrade/transla
  if(!asset)throw Error('Missing captured native locale '+code);
  const tree=parseSync(asset.path,await readFile('qa/reference-33'+asset.path,'utf8')).program;let native={};
  for(const n of tree.body)for(const d of n.declarations||[])if(d.init?.type==='ObjectExpression'){
-  const entries=d.init.properties.filter(p=>p.key&&p.value?.type==='Literal'&&typeof p.value.value==='string').map(p=>[p.key.name??p.key.value,p.value.value]);if(entries.some(([key])=>key==='PLAY'))native=Object.fromEntries(entries.filter(([key])=>key.length<=60));
+  const entries=d.init.properties.filter(p=>p.key&&p.value?.type==='Literal'&&typeof p.value.value==='string').map(p=>[p.key.name??p.key.value,p.value.value]);native={...native,...Object.fromEntries(entries.filter(([key])=>key.length<=60))};
  }
  const lookup=new Map(Object.entries(native).map(([k,v])=>[norm(k),v]));
  for(const[key,value]of Object.entries(english))if(!['stepWord','overviewWord','of','steps','packet'].includes(key)&&lookup.has(norm(value)))data.ui[key]=lookup.get(norm(value));

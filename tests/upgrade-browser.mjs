@@ -49,8 +49,8 @@ for(const width of [1680,375])for(const theme of ['light','dark']){
 await page.setViewportSize({width:1280,height:800});
 for(const code of ['fr','ar','en']){
  await page.locator('[data-action=language]').click();await page.locator(`[data-locale="${code}"]`).click();await page.waitForFunction(c=>document.documentElement.lang===c,code);await page.waitForTimeout(500);
- assert.equal(await page.locator('tr[data-packet="0"] td:nth-child(6)').textContent(),'Standard query A www.example.com');
- assert.equal(await page.locator('.full-name').textContent(),'HTTP Secure');
+ assert.equal((await page.locator('tr[data-packet="0"] td:nth-child(6)').textContent()).replace(/[\u2066-\u2069]/g,''),'Standard query A www.example.com');
+ assert.equal(await page.locator('.protocol-name h3').textContent(),'HTTPS');assert.ok((await page.locator('.full-name').textContent()).trim());
  await page.evaluate(()=>window.__protocol.openPacket(0));assert.ok((await page.locator('.ins-name').allTextContents()).includes('Source'));
  if(code==='ar')assert.equal(await page.locator('html').getAttribute('dir'),'rtl');await page.keyboard.press('Escape');
 }

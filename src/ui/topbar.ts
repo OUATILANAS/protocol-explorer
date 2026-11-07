@@ -1,11 +1,12 @@
 import{workspaceTools}from'./workspace-tools';
 import{searchButton}from'./search';
+import {tr} from '../i18n';
 import {config} from '../config';
 import {icon,logo} from './icons';
 const sep=(extra='')=>`<span class="separator ${extra}" aria-hidden="true"></span>`;
 export function topbar(){return `<header class="topbar is-lean">
 <button class="btn drawer-btn" data-action="drawer" aria-label="Protocols" aria-controls="protocols" aria-expanded="false">${icon('menu')}<span data-t-label="protocols">Protocols</span></button>
-<div class="brand">${logo}<div><h1>PROTOCOL <em>EXPLORER</em></h1><p class="tagline">${config.tagline}</p></div></div>
+<div class="brand">${logo}<div><h1>PROTOCOL <em>EXPLORER</em></h1><p class="tagline">${tr(config.tagline)}</p></div></div>
 ${sep('brand-separator')}
 <div class="now"><span class="label" data-t-label="now">Now learning</span><strong id="now-title"></strong><div class="now-progress"><span id="now-dots"></span><span id="now-status"></span></div></div>
 ${sep('osi-separator')}
