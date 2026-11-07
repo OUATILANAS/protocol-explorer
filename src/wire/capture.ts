@@ -131,7 +131,7 @@ export class CaptureEncoder{
    f.layers[1]=ipv4(row.src,row.dst,6,new DataView(ipLayer.bytes.buffer).getUint16(2)-20,ttl);f.bytes.set(f.layers[1].bytes,14);
    frames.push(f);
   }
-  const result=count===1?frames[0]:aggregate(frames);
+  const result=count===1?frames[0]:aggregate(frames,payload?frame([payload]):undefined);
   this.sequence.set(forward,Math.max(this.sequence.get(forward)||0,seq+length+(syn||fin?1:0)));
   return result;
  }

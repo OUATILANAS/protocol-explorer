@@ -5,7 +5,7 @@ export type LessonId='http'|'https'|'tcp'|'udp'|'ip'|'dns'|'dhcp'|'icmp'|'smtp'|
 export type Fact=[string,string];
 export interface Field{name:string;value:string;note:string;eg?:boolean;depth?:number;offset:number;length:number}
 export interface Layer{name:string;color:Color;fields:Field[];bytes:Uint8Array;opaque?:number[]}
-export interface WireFrame{layers:Layer[];bytes:Uint8Array;frames?:WireFrame[]}
+export interface WireFrame{layers:Layer[];bytes:Uint8Array;frames?:WireFrame[];segments?:WireFrame[];reassembled?:WireFrame}
 export interface PacketEvent{type:'packet'|'handshake'|'ccs'|'appdata';from:NodeId;to:NodeId;color:Color;tag:string;lines:string[];row:{time:string;src:string;dst:string;proto:string;info:string;len:string};wire:()=>WireFrame;lost?:boolean;sequence?:{at:number;latency:number;labelFraction?:number}}
 export type Event={type:'wait';duration:number}|{type:'hide-url'}|{type:'loaded-url';text:string}|{type:'show';nodes:NodeId[];frame?:Frame}|{type:'camera';frame:Frame}|{type:'type-url';text:string}|{type:'note';at:NodeId;text:string;tone?:Color}|PacketEvent;
 export interface Step{title:string;desc:string;detail:string;facts:Fact[];events:Event[]}

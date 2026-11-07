@@ -9,4 +9,17 @@ await page.evaluate(()=>{
  const span=document.createElement('span');span.textContent='Synthetic target';document.body.append(span);span.firstChild.dispatchEvent(new MouseEvent('click',{bubbles:true}));span.remove();window.__protocol.engine.reset();window.__protocol.switchView('network');
 });
 await page.waitForTimeout(500);assert.deepEqual(errors,[]);console.log('Document, window and text-node event delegation: passed');
+await page.evaluate(()=>{const p=window.__protocol;p.engine.setLesson(p.lessons.find(l=>l.id==='https'));p.openPacket(6)});await page.waitForTimeout(400);
+assert.equal(await page.locator('.ins-tab').count(),4);assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'0');
+assert.match(await page.locator('.hx-head').textContent(),/1,514/);
+await page.keyboard.press(']');assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'1');
+await page.keyboard.press(']');assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'2');
+await page.keyboard.press('[');assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'1');
+await page.keyboard.press('End');assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'3');assert.equal(await page.locator('.ins-layer').count(),1);assert.match(await page.locator('.ins-where').textContent(),/not a network frame/);
+await page.keyboard.press('Escape');
+for(const width of [1680,375])for(const theme of ['light','dark']){
+ await page.setViewportSize({width,height:width===375?812:945});await page.evaluate(t=>document.querySelector(`.theme-toggle [data-theme="${t}"]`).click(),theme);
+ await page.evaluate(()=>window.__protocol.openPacket(6));await page.waitForTimeout(300);assert.equal(await page.locator('.ins-tab').count(),4);await page.screenshot({path:`qa/upgrade/segments-${width}-${theme}.png`});await page.keyboard.press('Escape');
+}
+assert.deepEqual(errors,[]);console.log('Segment tabs, reassembly, keyboard navigation and both themes/widths: passed');
 await browser.close();

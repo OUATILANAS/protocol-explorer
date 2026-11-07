@@ -3,3 +3,5 @@
 #inspector-host:empty{display:none}#inspector-host{position:absolute;inset:0;z-index:5}.simulation{container-type:inline-size}
 html.is-stacked .inspector{position:fixed;inset:0;z-index:60;max-block-size:none}.lost .number-dot{outline:1px solid #d6404c;outline-offset:2px}.lost td:nth-child(6)::after{content:' ×';color:#d6404c}
 .sidebar .step-btn{padding-block:4px;line-height:1.2}.sidebar .step-btn strong{line-height:17px}
+.ins-tabs{display:flex;flex:none;gap:5px;overflow-x:auto;scrollbar-width:thin;padding-block:8px;padding-inline:10px;border-block-end:1px solid var(--line-soft)}.ins-tab{flex:1 0 138px;min-block-size:44px;padding-block:6px;padding-inline:8px;border:1px solid var(--line-mid);background:var(--panel);color:var(--ink-strong);font:800 11px/1.35 Iosevka,ui-monospace,monospace;letter-spacing:.04em;text-align:start;text-transform:uppercase}.ins-tab.selected{border-color:var(--segment-color);background:color-mix(in srgb,var(--segment-color) 10%,var(--panel))}.ins-tab.reassembled{border-style:dashed}.ins-tab:focus-visible{outline:2px solid var(--active);outline-offset:2px}
+.inspector.has-segments .ins-seg{min-inline-size:70px}
