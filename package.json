@@ -9,7 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "tsx --test tests/*.test.ts",
     "qa": "node tests/corrections-browser.mjs",
-    "compare": "node scripts/compare-reference.mjs"
+    "compare": "node upgrade/scripts/compare-reference.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
