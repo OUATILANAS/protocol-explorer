@@ -1,5 +1,5 @@
 import en,{ui}from'./en';import{read,write}from'../state/storage';import type{Lesson,Fact}from'../types';
-export const locales=[['en','English'],['es','Español'],['pt','Português'],['fr','Français'],['de','Deutsch'],['tr','Türkçe'],['uk','Українська'],['id','Bahasa Indonesia'],['ja','日本語'],['zh','简体中文'],['zh-TW','繁體中文'],['ko','한국어'],['hi','हिन्दी'],['ar','العربية'],['he','עברית']];
+export const locales=[['en','English'],['es','Español'],['pt','Português'],['fr','Français'],['it','Italiano'],['de','Deutsch'],['nl','Nederlands'],['pl','Polski'],['tr','Türkçe'],['id','Bahasa Indonesia'],['vi','Tiếng Việt'],['el','Ελληνικά'],['uk','Українська'],['ru','Русский'],['zh','简体中文'],['zh-TW','繁體中文'],['ja','日本語'],['ko','한국어'],['hi','हिन्दी'],['ar','العربية'],['he','עברית']];
 type Locale=typeof en;let current:Locale=en;export let language='en';
 const loaders=import.meta.glob<{default:Locale}>('./*.locale.ts');
 export const t=(key:string)=>current.ui[key]||ui[key]||key;export const tr=(value:string)=>current.text[value]||value;
