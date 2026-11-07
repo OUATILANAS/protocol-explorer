@@ -1,0 +1,292 @@
+[
+  {
+    "width": 1680,
+    "height": 945,
+    "reference": [
+      {
+        "class": "overview-desc",
+        "length": 241,
+        "x": 1352.453125,
+        "y": 204.921875,
+        "width": 303.453125,
+        "height": 129.65625,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      },
+      {
+        "class": "explain-text",
+        "length": 218,
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "lineHeight": "19.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "local": [
+      {
+        "class": "description",
+        "length": 177,
+        "x": 1352.453125,
+        "y": 204.921875,
+        "width": 303.453125,
+        "height": 108.046875,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "candidates": [
+      {
+        "suffix": " Each packet can be paused, opened and read one byte at a time.",
+        "length": 240,
+        "height": 129.65625
+      },
+      {
+        "suffix": " Watch each packet leave the laptop, cross the network and reach its next hop.",
+        "length": 255,
+        "height": 129.65625
+      },
+      {
+        "suffix": " Pause the exchange to inspect the headers and payload of each packet.",
+        "length": 247,
+        "height": 129.65625
+      }
+    ]
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "reference": [
+      {
+        "class": "overview-desc",
+        "length": 241,
+        "x": 986,
+        "y": 204,
+        "width": 270,
+        "height": 150.5,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      },
+      {
+        "class": "explain-text",
+        "length": 218,
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "lineHeight": "19.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "local": [
+      {
+        "class": "description",
+        "length": 177,
+        "x": 986,
+        "y": 204,
+        "width": 270,
+        "height": 107.5,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "candidates": [
+      {
+        "suffix": " Each packet can be paused, opened and read one byte at a time.",
+        "length": 240,
+        "height": 150.5
+      },
+      {
+        "suffix": " Watch each packet leave the laptop, cross the network and reach its next hop.",
+        "length": 255,
+        "height": 150.5
+      },
+      {
+        "suffix": " Pause the exchange to inspect the headers and payload of each packet.",
+        "length": 247,
+        "height": 150.5
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "reference": [
+      {
+        "class": "overview-desc",
+        "length": 241,
+        "x": 708,
+        "y": 290,
+        "width": 289,
+        "height": 129,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      },
+      {
+        "class": "explain-text",
+        "length": 218,
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "lineHeight": "19.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "local": [
+      {
+        "class": "description",
+        "length": 177,
+        "x": 708,
+        "y": 290,
+        "width": 289,
+        "height": 107.5,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "candidates": [
+      {
+        "suffix": " Each packet can be paused, opened and read one byte at a time.",
+        "length": 240,
+        "height": 129
+      },
+      {
+        "suffix": " Watch each packet leave the laptop, cross the network and reach its next hop.",
+        "length": 255,
+        "height": 129
+      },
+      {
+        "suffix": " Pause the exchange to inspect the headers and payload of each packet.",
+        "length": 247,
+        "height": 129
+      }
+    ]
+  },
+  {
+    "width": 700,
+    "height": 900,
+    "reference": [
+      {
+        "class": "overview-desc",
+        "length": 241,
+        "x": 36,
+        "y": 848,
+        "width": 637,
+        "height": 64.5,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      },
+      {
+        "class": "explain-text",
+        "length": 218,
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "lineHeight": "19.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "local": [
+      {
+        "class": "description",
+        "length": 177,
+        "x": 36,
+        "y": 848,
+        "width": 637,
+        "height": 43,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "candidates": [
+      {
+        "suffix": " Each packet can be paused, opened and read one byte at a time.",
+        "length": 240,
+        "height": 64.5
+      },
+      {
+        "suffix": " Watch each packet leave the laptop, cross the network and reach its next hop.",
+        "length": 255,
+        "height": 64.5
+      },
+      {
+        "suffix": " Pause the exchange to inspect the headers and payload of each packet.",
+        "length": 247,
+        "height": 64.5
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "height": 812,
+    "reference": [
+      {
+        "class": "overview-desc",
+        "length": 241,
+        "x": 26.640625,
+        "y": 630.671875,
+        "width": 323.703125,
+        "height": 106.09375,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      },
+      {
+        "class": "explain-text",
+        "length": 218,
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0,
+        "lineHeight": "19.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "local": [
+      {
+        "class": "description",
+        "length": 177,
+        "x": 26.640625,
+        "y": 630.671875,
+        "width": 323.703125,
+        "height": 84.875,
+        "lineHeight": "21.5px",
+        "fontSize": "13.1px",
+        "weight": "500"
+      }
+    ],
+    "candidates": [
+      {
+        "suffix": " Each packet can be paused, opened and read one byte at a time.",
+        "length": 240,
+        "height": 106.09375
+      },
+      {
+        "suffix": " Watch each packet leave the laptop, cross the network and reach its next hop.",
+        "length": 255,
+        "height": 127.3125
+      },
+      {
+        "suffix": " Pause the exchange to inspect the headers and payload of each packet.",
+        "length": 247,
+        "height": 127.3125
+      }
+    ]
+  }
+]
