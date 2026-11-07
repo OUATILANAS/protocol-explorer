@@ -164,6 +164,6 @@ function refitNetwork(){
 networkResize=new ResizeObserver(refitNetwork);networkResize.observe($("#network-svg"));
 window.addEventListener('resize',()=>{
  // SVG glyph bounds can change after a viewport resize even at the same label scale.
- $('#network-svg').dataset.labelScale='0';refitNetwork();
+ const svg=$('#network-svg');svg.removeAttribute('viewBox');svg.dataset.labelScale='0';refitNetwork();
 });
 document.fonts.ready.then(()=>{booting=false;expanded=engine.lessonId;lastPackets=-1;render()});

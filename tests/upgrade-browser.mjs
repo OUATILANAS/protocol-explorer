@@ -9,6 +9,12 @@ await page.evaluate(()=>{
  const span=document.createElement('span');span.textContent='Synthetic target';document.body.append(span);span.firstChild.dispatchEvent(new MouseEvent('click',{bubbles:true}));span.remove();window.__protocol.engine.reset();window.__protocol.switchView('network');
 });
 await page.waitForTimeout(500);assert.deepEqual(errors,[]);console.log('Document, window and text-node event delegation: passed');
+for(const width of [1,1280]){
+ await page.setViewportSize({width,height:800});await page.waitForTimeout(150);
+ const viewBox=await page.locator('#network-svg').getAttribute('viewBox');
+ assert.ok(viewBox.split(/\s+/).map(Number).every(Number.isFinite),'camera remains finite while viewport collapses');
+}
+console.log('Camera survives a collapsed viewport and restores without SVG errors: passed');
 await page.evaluate(()=>{const p=window.__protocol;p.engine.setLesson(p.lessons.find(l=>l.id==='https'));p.openPacket(6)});await page.waitForTimeout(400);
 assert.equal(await page.locator('.ins-tab').count(),4);assert.equal(await page.locator('.ins-tab[aria-selected=true]').getAttribute('data-segment'),'0');
 assert.match(await page.locator('.hx-head').textContent(),/1,514/);
