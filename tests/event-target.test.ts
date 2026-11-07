@@ -1,6 +1,6 @@
 import{test}from'node:test';import assert from'node:assert/strict';import{chromium}from'playwright';import{targetEl}from'../src/state/event-target';
 test('delegated targets safely resolve elements, text nodes, documents and windows',async()=>{
- const browser=await chromium.launch({channel:'chrome'});
+ const browser=await chromium.launch();
  try{const page=await browser.newPage();const result=await page.evaluate(source=>{
   const resolve=new Function(`return (${source})`)();
   const button=document.createElement('button');button.textContent='Open';document.body.append(button);

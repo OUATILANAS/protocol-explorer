@@ -154,7 +154,7 @@ async function selectLanguage(code:string){$('#language-menu').innerHTML=langMen
 document.addEventListener('keydown',e=>{menuKeyboard(e);if(e.key==='Escape'&&targetEl(e)?.closest('.language-menu')){e.preventDefault();toggleLanguage()}});
 document.addEventListener('click',e=>{if(!targetEl(e)?.closest('.language-wrap')&&!$('#language-menu').hidden){$('#language-menu').hidden=true;$('[data-action=language]').setAttribute('aria-expanded','false')}});
 
-engine.onChange=render;engine.onFrame=renderFrame;theme(document.documentElement.dataset.theme||'light');render();observeLayout();renderDrawer();window.addEventListener('protocol-layout',()=>{if(overlay)close();sceneKey='';render();renderSequence()});let last=performance.now();function frame(now:number){const dt=Math.min(100,now-last);last=now;if(!document.hidden)engine.tick(dt);if(!document.hidden&&(engine.playing||engine.stepIndex<0||engine.complete))camera.tick(dt,engine.reduced());if(engine.stepIndex<0&&(fades.size||pulses.length))renderFrame();requestAnimationFrame(frame)}requestAnimationFrame(frame);document.addEventListener('visibilitychange',()=>{last=performance.now()});
+engine.onChange=render;engine.onFrame=renderFrame;theme(document.documentElement.dataset.theme||'light');render();observeLayout();renderDrawer();window.addEventListener('protocol-layout',()=>{if(overlay)close();sceneKey='';render();renderSequence()});let last=performance.now();function frame(now:number){const dt=Math.max(0,now-last);last=now;if(!document.hidden)engine.tick(dt);if(!document.hidden&&(engine.playing||engine.stepIndex<0||engine.complete))camera.tick(dt,engine.reduced());if(engine.stepIndex<0&&(fades.size||pulses.length))renderFrame();requestAnimationFrame(frame)}requestAnimationFrame(frame);document.addEventListener('visibilitychange',()=>{last=performance.now()});
 if(import.meta.env.DEV)Object.assign(window,{__protocol:{engine,lessons,switchView,openPacket}});
 
 function refitNetwork(){
@@ -163,6 +163,8 @@ function refitNetwork(){
 }
 networkResize=new ResizeObserver(refitNetwork);networkResize.observe($("#network-svg"));
 window.addEventListener('resize',()=>{
+ // Keep a paused scene's camera at its current position when only the window changes.
+ if(!engine.playing&&engine.stepIndex>=0&&!engine.complete)return;
  // SVG glyph bounds can change after a viewport resize even at the same label scale.
  const svg=$('#network-svg');svg.removeAttribute('viewBox');svg.dataset.labelScale='0';refitNetwork();
 });

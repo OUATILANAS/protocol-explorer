@@ -48,9 +48,9 @@ export function fitNetwork(scene:Scene){
  if(![x0,y0,x1,y1].every(Number.isFinite))return;
  const aspect=panel.width/panel.height,w=Math.max(x1-x0+28,(y1-y0+28)*aspect),h=w/aspect;
  if(scene.frame==='client'){
-  const client=svg.querySelector<SVGGElement>('[data-node="client"]')!,art=client.querySelector<SVGGElement>('.device-art')!.getBBox(),label=client.querySelector<SVGGElement>('.node-label')!,lb=label.getBBox(),lm=label.transform.baseVal.consolidate()!.matrix,url=client.querySelector<SVGGElement>('#url-overlay')!,bar=url.querySelector<SVGGElement>('.url-bar')!,ub=bar.getBBox(),um=url.transform.baseVal.consolidate()!.matrix;
-  const rects=[art,{x:lm.a*lb.x+lm.e,y:lm.d*lb.y+lm.f,width:lm.a*lb.width,height:lm.d*lb.height},{x:um.a*(ub.x+ub.width*.83*.2)+um.e,y:um.d*(ub.y+ub.height*.2)+um.f,width:um.a*ub.width*.8,height:um.d*ub.height*.8}],left=Math.min(...rects.map(r=>r.x)),top=Math.min(...rects.map(r=>r.y)),right=Math.max(...rects.map(r=>r.x+r.width)),bottom=Math.max(...rects.map(r=>r.y+r.height)),width=Math.max(right-left+28,(bottom-top+28)*aspect,470),height=width/aspect;
-  frames.client=[(left+right-width)/2,(top+bottom-height)/2,width,height];
+  const client=svg.querySelector<SVGGElement>('[data-node="client"]')!,bounds=client.getBBox();
+  const width=Math.max(bounds.width+28,(bounds.height+28)*aspect,470),height=width/aspect;
+  frames.client=[bounds.x+(bounds.width-width)/2,bounds.y+(bounds.height-height)/2,width,height];
  }else frames[scene.frame]=[(x0+x1-w)/2,(y0+y1-h)/2,w,h];
 }
 
