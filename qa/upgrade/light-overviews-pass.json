@@ -1,0 +1,67 @@
+[
+  {
+    "id": "wide-light-overview",
+    "pass": true,
+    "pixelPct": 0.46,
+    "rawPixelPct": 0.94,
+    "maskedPixels": 44402,
+    "texts": "164/164",
+    "textDiffs": 0,
+    "missing": 0,
+    "extra": 0,
+    "boxDiffs": 0,
+    "notes": []
+  },
+  {
+    "id": "medium-light-overview",
+    "pass": true,
+    "pixelPct": 0.4,
+    "rawPixelPct": 1.1,
+    "maskedPixels": 45348,
+    "texts": "145/145",
+    "textDiffs": 0,
+    "missing": 0,
+    "extra": 0,
+    "boxDiffs": 0,
+    "notes": []
+  },
+  {
+    "id": "tablet-light-overview",
+    "pass": true,
+    "pixelPct": 0.24,
+    "rawPixelPct": 1.03,
+    "maskedPixels": 41859,
+    "texts": "128/128",
+    "textDiffs": 0,
+    "missing": 0,
+    "extra": 0,
+    "boxDiffs": 0,
+    "notes": []
+  },
+  {
+    "id": "narrow-light-overview",
+    "pass": true,
+    "pixelPct": 0.28,
+    "rawPixelPct": 0.43,
+    "maskedPixels": 45983,
+    "texts": "110/110",
+    "textDiffs": 0,
+    "missing": 0,
+    "extra": 0,
+    "boxDiffs": 0,
+    "notes": []
+  },
+  {
+    "id": "phone-light-overview",
+    "pass": true,
+    "pixelPct": 0.21,
+    "rawPixelPct": 1.6,
+    "maskedPixels": 39162,
+    "texts": "86/86",
+    "textDiffs": 0,
+    "missing": 0,
+    "extra": 0,
+    "boxDiffs": 0,
+    "notes": []
+  }
+]
