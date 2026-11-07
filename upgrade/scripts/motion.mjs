@@ -2,6 +2,7 @@
 // then compares CSS animations/transitions, keyframes, the playback timeline, moving elements,
 // reduced-motion behaviour, and a filmstrip of frames. Used by compare-reference.mjs.
 import fs from 'node:fs/promises';
+import { collectPixelMasks } from '../../scripts/comparison-prose-mask.mjs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -53,7 +54,7 @@ async function record(browser, url, vp, theme, reducedMotion = 'no-preference') 
   return { ...data, errors };
 }
 
-async function filmstrip(browser, url, vp, theme, times) {
+async function filmstrip(browser, url, vp, theme, times, exclusions) {
   const { context, page } = await newPage(browser, url, vp, theme, 'no-preference');
   await page.evaluate(() => window.__motion.stop());
   await sleep(3500);
@@ -63,7 +64,8 @@ async function filmstrip(browser, url, vp, theme, times) {
   for (const t of times) {
     const wait = t0 + t - Date.now();
     if (wait > 0) await sleep(wait);
-    shots.push({ t, actual: Date.now() - t0, png: await page.screenshot() });
+    const masks=await page.evaluate(collectPixelMasks,exclusions),scroll=await page.evaluate(()=>({x:scrollX,y:scrollY}));
+    shots.push({ t, actual: Date.now() - t0, png: await page.screenshot(), masks:masks.map(m=>({...m,rect:[m.rect[0]-scroll.x,m.rect[1]-scroll.y,m.rect[2],m.rect[3]]})) });
   }
   await context.close();
   return shots;
@@ -197,7 +199,7 @@ async function contactSheet(browser, refShots, locShots, scale = 0.4) {
     const c = new OffscreenCanvas(w * 3 + 40, (h + pad) * rows.length + 30), x = c.getContext('2d');
     x.fillStyle = '#fff'; x.fillRect(0, 0, c.width, c.height); x.fillStyle = '#111'; x.font = 'bold 15px sans-serif';
     x.fillText('reference', 10, 20); x.fillText('local', w + 20, 20); x.fillText('difference (red)', 2 * w + 30, 20);
-    const pct = [];
+    const pct = [],rawPct=[];
     imgs.forEach(([a, b], i) => {
       const y = 30 + i * (h + pad);
       x.font = '13px sans-serif'; x.fillStyle = '#111'; x.fillText(`t = ${rows[i].t} ms (actual ${rows[i].ta} / ${rows[i].tb})`, 10, y + 16);
@@ -205,17 +207,18 @@ async function contactSheet(browser, refShots, locShots, scale = 0.4) {
       const W = a.width, H = a.height, ca = new OffscreenCanvas(W, H), cb = new OffscreenCanvas(W, H);
       ca.getContext('2d').drawImage(a, 0, 0); cb.getContext('2d').drawImage(b, 0, 0, W, H);
       const da = ca.getContext('2d').getImageData(0, 0, W, H).data, db = cb.getContext('2d').getImageData(0, 0, W, H).data;
-      const od = new ImageData(W, H); let bad = 0;
-      for (let p = 0; p < da.length; p += 4) { const d = Math.max(Math.abs(da[p] - db[p]), Math.abs(da[p + 1] - db[p + 1]), Math.abs(da[p + 2] - db[p + 2])); const g = 200 + da[p] * 0.2; if (d > 24) { bad++; od.data[p] = 255; od.data[p + 1] = 0; od.data[p + 2] = 60; } else { od.data[p] = od.data[p + 1] = od.data[p + 2] = g; } od.data[p + 3] = 255; }
+      const excluded=new Uint8Array(W*H);for(const{rect:[mx,my,mw,mh]}of rows[i].masks)for(let y=Math.max(0,Math.floor(my));y<Math.min(H,Math.ceil(my+mh));y++)for(let x=Math.max(0,Math.floor(mx));x<Math.min(W,Math.ceil(mx+mw));x++)excluded[y*W+x]=1;
+      const od = new ImageData(W, H); let bad = 0,rawBad=0;
+      for (let p = 0; p < da.length; p += 4) { const d = Math.max(Math.abs(da[p] - db[p]), Math.abs(da[p + 1] - db[p + 1]), Math.abs(da[p + 2] - db[p + 2])); const g = 200 + da[p] * 0.2; if(d>24)rawBad++;if (d > 24 && !excluded[p/4]) { bad++; od.data[p] = 255; od.data[p + 1] = 0; od.data[p + 2] = 60; } else { od.data[p] = od.data[p + 1] = od.data[p + 2] = g; } od.data[p + 3] = 255; }
       const cd = new OffscreenCanvas(W, H); cd.getContext('2d').putImageData(od, 0, 0); x.drawImage(cd, 2 * w + 30, y + pad - 6, w, h);
-      pct.push(Math.round((bad / (W * H)) * 10000) / 100);
+      pct.push(Math.round((bad / (W * H)) * 10000) / 100);rawPct.push(Math.round((rawBad/(W*H))*10000)/100);
     });
     const blob = await c.convertToBlob({ type: 'image/png' }); const buf = new Uint8Array(await blob.arrayBuffer());
     let s = ''; for (let i = 0; i < buf.length; i += 0x8000) s += String.fromCharCode(...buf.subarray(i, i + 0x8000));
-    return { png: btoa(s), pct };
-  }, { rows: refShots.map((r, i) => ({ t: r.t, ta: r.actual, tb: locShots[i].actual, a: b64(r), b: b64(locShots[i]) })), scale });
+    return { png: btoa(s), pct,rawPct };
+  }, { rows: refShots.map((r, i) => ({ t: r.t, ta: r.actual, tb: locShots[i].actual, a: b64(r), b: b64(locShots[i]),masks:[...r.masks,...locShots[i].masks] })), scale });
   await page.close();
-  return { png: Buffer.from(res.png, 'base64'), pct: res.pct };
+  return { png: Buffer.from(res.png, 'base64'), pct: res.pct,rawPct:res.rawPct };
 }
 
 // Re-zero every phase (except page load) on the moment the page received the first key press or click of
@@ -231,9 +234,11 @@ function align(rec) {
   return rec;
 }
 
-export async function runMotion(browser, { REF, LOCAL, OUT, vp, theme, id }) {
+export async function runMotion(browser, { REF, LOCAL, OUT, vp, theme, id, strict=false,ignoreSource='dilumsanjaya|@anas',ignoreFlags='i' }) {
+  const exclusions={strict,ignoreSource,ignoreFlags};
   const ref = align(await record(browser, REF, vp, theme));
   const loc = align(await record(browser, LOCAL, vp, theme));
+  for(const rec of [ref,loc])omitIgnoredMotionCredit(rec,ignoreSource,ignoreFlags);
   const sections = [];
   const add = (title, items) => sections.push({ title, items });
   add('Keyframes', compareKeyframes(ref, loc));
@@ -249,13 +254,16 @@ export async function runMotion(browser, { REF, LOCAL, OUT, vp, theme, id }) {
   if (errs.length) add('Could not run', errs);
 
   const times = [300, 800, 1500, 2500, 3500, 5000, 7000, 9000, 12000, 15000, 18000, 22000];
-  const sheet = await contactSheet(browser, await filmstrip(browser, REF, vp, theme, times), await filmstrip(browser, LOCAL, vp, theme, times));
+  const sheet = await contactSheet(browser, await filmstrip(browser, REF, vp, theme, times,exclusions), await filmstrip(browser, LOCAL, vp, theme, times,exclusions));
   await fs.writeFile(path.join(OUT, `${id}.filmstrip.png`), sheet.png);
   await fs.writeFile(path.join(OUT, `${id}.trace.json`), JSON.stringify({ reference: ref, local: loc }, null, 1));
 
   const issues = sections.reduce((n, s) => n + s.items.length, 0);
   let md = `\n## ${id} ${issues ? '❌' : '✅'}\n\nRecorded in real time while both apps go through: ${phasesFor(vp).map(p => p.name).join(' → ')}. Each phase after load is timed from the moment the page receives its first key press or click. Timing tolerance ±${MOTION_TOL.ms} ms for events, ±${MOTION_TOL.timingMs} ms for durations, ±${MOTION_TOL.delayMs} ms for delays, ±${MOTION_TOL.px} px for paths.\n`;
-  md += `\nFilmstrip: \`${id}.filmstrip.png\` (reference · local · difference at the same moments after pressing play; pixels differing per frame: ${sheet.pct.join('% · ')}%). Raw recordings: \`${id}.trace.json\`.\n`;
+  md += `\nFilmstrip: \`${id}.filmstrip.png\` (reference · local · difference at the same moments after pressing play; pixels differing per frame: ${sheet.pct.join('% · ')}%). Raw frame percentages before approved prose/credit exclusions: ${sheet.rawPct.join('% · ')}%. Raw recordings: \`${id}.trace.json\`.\n`;
   for (const s of sections) if (s.items.length) md += `\n### ${s.title} (${s.items.length})\n\n${s.items.slice(0, 40).map(i => `- ${i}`).join('\n')}${s.items.length > 40 ? `\n- …${s.items.length - 40} more` : ''}\n`;
   return { md, row: { id, pass: !issues, pixelPct: Math.max(...sheet.pct), texts: '—', textDiffs: issues, missing: 0, extra: 0, boxDiffs: 0, notes: [] } };
 }
+
+// Apply the existing comparator credit ignore consistently to short-text paths.
+export function omitIgnoredMotionCredit(record,source,flags='i'){const ignore=new RegExp(source,flags);for(const frame of record.frames)for(const key of Object.keys(frame.pos)){ignore.lastIndex=0;if(ignore.test(key))delete frame.pos[key]}}

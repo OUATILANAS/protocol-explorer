@@ -60,7 +60,7 @@ const THEMES = ['dark', 'light'];
 const key = async (page, k, n = 1) => { for (let i = 0; i < n; i++) { await page.keyboard.press(k); await page.waitForTimeout(120); } };
 const visibleText = (page, re) => page.locator('button:visible, [role=button]:visible').filter({ hasText: re }).first();
 async function waitForReplay(page) {
-  await page.waitForFunction(() => [...document.querySelectorAll('button')].some(b => b.offsetParent && /replay/i.test(b.innerText)), null, { timeout: 30000 });
+  await page.waitForFunction(() => [...document.querySelectorAll('button')].some(b => b.offsetParent && (b.matches('.toggle.is-done') || /replay/i.test(b.innerText))), null, { timeout: 30000 });
 }
 async function complete(page) { await page.locator('body').click({ position: { x: 2, y: 2 } }).catch(() => {}); await key(page, 'ArrowRight', 5); await waitForReplay(page); }
 const STATES = {
@@ -324,7 +324,7 @@ const motionCases = MOTION ? [VIEWPORTS[1], VIEWPORTS[4]].map(vp => ({ id: `moti
 for (const c of motionCases) {
   process.stdout.write(`${c.id} (records ~2 min) … `);
   try {
-    const m = await runMotion(browser, { REF, LOCAL, OUT, vp: c.vp, theme: c.theme, id: c.id });
+    const m = await runMotion(browser, { REF, LOCAL, OUT, vp: c.vp, theme: c.theme, id: c.id, strict: STRICT,ignoreSource:IGNORE.source,ignoreFlags:IGNORE.flags });
     summary.push(m.row); details += m.md;
     console.log(m.row.pass ? 'PASS' : `${m.row.textDiffs} motion issues · filmstrip frames up to ${m.row.pixelPct}% different`);
   } catch (e) {

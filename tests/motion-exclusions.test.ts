@@ -1,0 +1,2 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{omitIgnoredMotionCredit,MOTION_TOL}from'../upgrade/scripts/motion.mjs';
+test('motion paths honor only the same explicit credit ignore as static comparisons',()=>{const record={frames:[{pos:{dilumsanjaya:[0,0],'@anas':[1,1],'dns query':[2,2],'ethernet ii':[3,3]}}]};omitIgnoredMotionCredit(record,'dilumsanjaya|@anas');assert.deepEqual(Object.keys(record.frames[0].pos),['dns query','ethernet ii']);assert.deepEqual(MOTION_TOL,{ms:120,timingMs:20,px:6,delayMs:20,jitterMs:40})});
