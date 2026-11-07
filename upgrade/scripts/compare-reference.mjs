@@ -127,7 +127,12 @@ const extract = () => {
     if (!vis(el)) continue;
     const r = el.getBoundingClientRect();
     if (r.width * r.height < 120 || clipped(el, r)) continue;
-    const label = norm(el.innerText || el.getAttribute('aria-label') || '').toLowerCase().split(' ').slice(0, 5).join(' ') || `(${el.tagName.toLowerCase()})`;
+    // Explanations may differ; they must not change the identity of a bordered panel.
+    let labelText = norm(el.innerText || el.getAttribute('aria-label') || '');
+    for (const prose of el.querySelectorAll('p.overview-desc,p.explain-text,p.description')) {
+      const text = norm(prose.innerText || ''); if (text.length > 60) labelText = labelText.replace(text, '');
+    }
+    const label = norm(labelText).toLowerCase().split(' ').slice(0, 5).join(' ') || `(${el.tagName.toLowerCase()})`;
     const k = label.slice(0, 60);
     const i = bseen.get(k) || 0; bseen.set(k, i + 1);
     boxes.push({ key: i ? `${k} #${i + 1}` : k, rect: round([r.x + sx, r.y + sy, r.width, r.height]),
