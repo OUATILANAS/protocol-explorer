@@ -1,5 +1,5 @@
 /** Upgrades are disabled together for reference comparisons. Read once per load. */
-export type Feature='lab'|'compare'|'quiz'|'filter'|'glossary'|'capture'|'shortcuts'|'offline'|'deepLinks'|'newLessons';
+export type Feature='lab'|'compare'|'quiz'|'filter'|'glossary'|'capture'|'shortcuts'|'offline'|'deepLinks'|'newLessons'|'readablePlayback';
 export function featurePolicy(search:string){
  const parity=new URLSearchParams(search).get('parity')==='1';
  return{parity,has:(_feature:Feature)=>!parity};

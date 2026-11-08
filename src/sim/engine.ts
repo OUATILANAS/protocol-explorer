@@ -1,3 +1,4 @@
+import{has}from'../features';
 import type {Lesson,Scene,Event} from '../types';
 import {isPacket} from '../types';
 import {read,write} from '../state/storage';
@@ -57,7 +58,7 @@ export class Engine {
  tick(dt:number){
   if(!this.playing)return;
   let remaining=Math.max(0,Math.min(dt,10000))*this.speed,guard=0;
-  const reduced=this.reduced(),timing=this.lesson.playback;
+  const reduced=this.reduced(),timing=this.lesson.playback??(has('readablePlayback')?{packetGap:1200,stepGap:1800,urlHold:400,characterTime:80}:undefined);
   // The simulation clock advances only for consumed time, including at event boundaries.
   const consume=(duration:number)=>{const d=Math.min(remaining,Math.max(0,duration-this.elapsed));this.elapsed+=d;this.clock+=d;remaining-=d;return this.elapsed>=duration};
   while(this.playing&&remaining>=0&&guard++<300){
