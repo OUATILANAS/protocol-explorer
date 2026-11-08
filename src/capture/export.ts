@@ -1,0 +1,10 @@
+import type{PacketEvent}from'../types';import{concat}from'../wire/checksum';
+const encode=new TextEncoder(),padding=(n:number)=>(n+3)&~3;
+function option(code:number,data:Uint8Array){const result=new Uint8Array(4+padding(data.length)),v=new DataView(result.buffer);v.setUint16(0,code,true);v.setUint16(2,data.length,true);result.set(data,4);return result}
+function block(type:number,body:Uint8Array){const result=new Uint8Array(12+padding(body.length)),v=new DataView(result.buffer);v.setUint32(0,type,true);v.setUint32(4,result.length,true);result.set(body,8);v.setUint32(result.length-4,result.length,true);return result}
+export function exportCapture(packets:PacketEvent[]){
+ const metadata={version:1,rows:packets.map(p=>({row:p.row,color:p.color,tag:p.tag,lost:!!p.lost,count:(p.wire().frames||[p.wire()]).length}))},comment=encode.encode('ProtocolExplorer:'+JSON.stringify(metadata));const sh=new Uint8Array(16),sv=new DataView(sh.buffer);sv.setUint32(0,0x1a2b3c4d,true);sv.setUint16(4,1,true);sh.fill(255,8);const iface=new Uint8Array(8),iv=new DataView(iface.buffer);iv.setUint16(0,1,true);iv.setUint32(4,65535,true);const blocks=[block(0x0a0d0d0a,concat(sh,...(comment.length<=65535?[option(1,comment)]:[]),new Uint8Array(4))),block(1,iface)];
+ for(const p of packets){const w=p.wire();for(const[f,wire]of(w.frames||[w]).entries()){const at=Math.round((Number(p.row.time)+f*.002)*1e6),data=new Uint8Array(20+padding(wire.bytes.length)),v=new DataView(data.buffer);v.setUint32(4,Math.floor(at/4294967296),true);v.setUint32(8,at>>>0,true);v.setUint32(12,wire.bytes.length,true);v.setUint32(16,wire.bytes.length,true);data.set(wire.bytes,20);blocks.push(block(6,data))}}
+ return concat(...blocks);
+}
+export function downloadCapture(bytes:Uint8Array,name='protocol-explorer.pcapng'){const url=URL.createObjectURL(new Blob([bytes as BlobPart],{type:'application/vnd.tcpdump.pcap'})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
