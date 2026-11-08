@@ -1,0 +1,98 @@
+[
+  {
+    "style": "400",
+    "subset": "basic",
+    "originalBytes": 75928,
+    "bytes": 24028,
+    "codepoints": 221,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "500",
+    "subset": "basic",
+    "originalBytes": 76056,
+    "bytes": 24220,
+    "codepoints": 221,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "600",
+    "subset": "basic",
+    "originalBytes": 75844,
+    "bytes": 24212,
+    "codepoints": 221,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "700",
+    "subset": "basic",
+    "originalBytes": 75672,
+    "bytes": 24308,
+    "codepoints": 221,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "800",
+    "subset": "basic",
+    "originalBytes": 75492,
+    "bytes": 24144,
+    "codepoints": 221,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "800-italic",
+    "subset": "basic",
+    "originalBytes": 84244,
+    "bytes": 26508,
+    "codepoints": 221,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "400",
+    "subset": "extended",
+    "originalBytes": 75928,
+    "bytes": 19464,
+    "codepoints": 336,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "500",
+    "subset": "extended",
+    "originalBytes": 76056,
+    "bytes": 19424,
+    "codepoints": 336,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "600",
+    "subset": "extended",
+    "originalBytes": 75844,
+    "bytes": 19248,
+    "codepoints": 336,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "700",
+    "subset": "extended",
+    "originalBytes": 75672,
+    "bytes": 19416,
+    "codepoints": 336,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "800",
+    "subset": "extended",
+    "originalBytes": 75492,
+    "bytes": 19432,
+    "codepoints": 336,
+    "glyphMetricsAndOutlinesVerified": true
+  },
+  {
+    "style": "800-italic",
+    "subset": "extended",
+    "originalBytes": 84244,
+    "bytes": 21768,
+    "codepoints": 336,
+    "glyphMetricsAndOutlinesVerified": true
+  }
+]
