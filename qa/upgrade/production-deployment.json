@@ -1,0 +1,44 @@
+{
+  "id": "dpl_27fMQsrE9UdWqoFiihJj1rJsoChu",
+  "url": "https://protocol-explorer-hamada-cn8z26jtl-acme-7153.vercel.app",
+  "productionUrl": "https://protocol-explorer-hamada.vercel.app",
+  "readyState": "READY",
+  "target": "production",
+  "checkedAt": "2026-11-08T02:56:40.923Z",
+  "codeCommit": "a502c1e",
+  "unitTests": {
+    "passed": 150,
+    "total": 150
+  },
+  "build": "pass",
+  "smoke": {
+    "checkedAt": "2026-11-08T02:56:40.923Z",
+    "url": "https://protocol-explorer-hamada.vercel.app/",
+    "status": 200,
+    "lessons": 34,
+    "tlsFirstTwoDeparturesMs": 4460,
+    "checks": [
+      "public access",
+      "34 upgraded lessons",
+      "packet inspector",
+      "comparison",
+      "TLS readable playback",
+      "all TLS devices visible",
+      "French lazy chunk",
+      "dark theme",
+      "phone overflow and drawer"
+    ],
+    "errors": [],
+    "failures": []
+  },
+  "assets": [
+    {
+      "file": "index-CcMojUn8.js",
+      "sha256": "87872e175ce143b8f93557c8e999b295720cf3ae63d9d7f137b24786b26faac8"
+    },
+    {
+      "file": "index-B87vUY1i.css",
+      "sha256": "57e9df6fc3382659daeeee54ee00abefa39d19268e9a760a7bb18fe258b32beb"
+    }
+  ]
+}

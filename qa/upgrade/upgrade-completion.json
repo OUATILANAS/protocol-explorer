@@ -952,6 +952,9 @@
     "Machine-draft translations need native-speaker editorial review.",
     "Base CSS remains over original approximate 15KB gzip target."
   ],
-  "deployed": false,
-  "localUrl": "http://127.0.0.1:5173/"
+  "deployed": true,
+  "localUrl": "http://127.0.0.1:5173/",
+  "productionUrl": "https://protocol-explorer-hamada.vercel.app",
+  "deploymentRecord": "qa/upgrade/production-deployment.json",
+  "followUp": "Device reset/play visibility fixed; normal-mode packet travel matches HTTP. Latest deployment passes 150 tests, build, and public live browser smoke."
 }

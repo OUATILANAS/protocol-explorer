@@ -83,7 +83,7 @@ npm run build
 npx vercel@65.12.1 deploy dist --prod --yes --project protocol-explorer-hamada --scope acme-7153
 ```
 
-The currently deployed site predates the in-progress 33-lesson upgrade. Local verification does not deploy changes.
+Production was updated on 8 November 2026 with all 34 lessons, upgrade features, the device visibility fix and readable packet pacing. The public live browser checks pass; see `qa/upgrade/production-deployment.json`.
 
 The Vercel project uses static files from `dist/`; it requires no backend or environment variables. Deployment and live browser checks are recorded in `qa/vercel/`.
 
@@ -99,4 +99,4 @@ Normal mode now has **34 lessons, 200 steps and 450 rows**. Ethernet adds a swit
 - Lesson options import `.pcap`/`.pcapng` captures or export grouped lesson rows as `.pcapng`. Parsing runs in a worker, with 50 MB / 100,000-packet limits and a virtualized table. Nothing is uploaded.
 - Production builds precache assets, fonts, lessons and locales. Local production previews require `?sw=1`; parity mode and Vite development never register the service worker.
 
-The Phase D English static matrix passes **56/56**, with the agreed original-prose/credit exclusions. The final production overview check passes **10/10**. Motion parity remains unreliable: the reference-versus-itself control fails, so the user approved static parity as the phase gate. Spanish, German and Arabic retain documented visual differences because technical Info stays English. See `qa/upgrade/upgrade-completion.json` for the verification record. This local upgrade has not been deployed to production.
+The Phase D English static matrix passes **56/56**, with the agreed original-prose/credit exclusions. The final production overview check passes **10/10**. Motion parity remains unreliable: the reference-versus-itself control fails, so the user approved static parity as the phase gate. Spanish, German and Arabic retain documented visual differences because technical Info stays English. See `qa/upgrade/upgrade-completion.json` for the verification record. This upgrade is deployed at https://protocol-explorer-hamada.vercel.app/.

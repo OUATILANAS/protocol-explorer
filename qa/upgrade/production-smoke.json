@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-08T02:56:40.923Z",
+  "url": "https://protocol-explorer-hamada.vercel.app/",
+  "status": 200,
+  "lessons": 34,
+  "tlsFirstTwoDeparturesMs": 4460,
+  "checks": [
+    "public access",
+    "34 upgraded lessons",
+    "packet inspector",
+    "comparison",
+    "TLS readable playback",
+    "all TLS devices visible",
+    "French lazy chunk",
+    "dark theme",
+    "phone overflow and drawer"
+  ],
+  "errors": [],
+  "failures": []
+}
