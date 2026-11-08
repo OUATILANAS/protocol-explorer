@@ -1,12 +1,13 @@
 // Build-time drafts only. The application never contacts a translation service.
 import{readFileSync,writeFileSync,mkdirSync,existsSync}from'node:fs';import{currentLessons,prepareLesson}from'../src/lessons/current';import{ui}from'../src/i18n/en';
 import{lessons as legacyLessons}from'../src/lessons';
+import{ethernetLesson}from'../src/lessons/ethernet';
 import{explainField}from'../src/wire/field-explanations';
 await Promise.all(currentLessons.map(l=>prepareLesson(l.id)));
-const extra=['Search protocols','Search protocols and steps','No matching protocols or steps.','↑ ↓ to navigate · Enter to open · Esc to close','Protocol list','Diagram only','Fullscreen','Keyboard shortcuts','Close','Playback speed','Play / pause','Previous / next step','Network / sequence','Previous / next segment','Close / reset'];
+const extra=['MAC address table','Port','Age','Expired','Not learned','After 300 seconds without source traffic, learned entries expire.','Router port 8 was learned in an earlier ARP exchange (not shown).','Joining HomeNet','Beacon','SAE','Associate','4-way','Encrypted','Each stage advances when its exchange completes.','Search protocols','Search protocols and steps','No matching protocols or steps.','↑ ↓ to navigate · Enter to open · Esc to close','Protocol list','Diagram only','Fullscreen','Keyboard shortcuts','Close','Playback speed','Play / pause','Previous / next step','Network / sequence','Previous / next segment','Close / reset'];
 const texts=new Set(extra);Object.values(ui).forEach(s=>texts.add(s));
-for(const l of [...currentLessons,...legacyLessons]){[l.name,l.title,l.drawerFull||'',l.overview.full,l.overview.description,l.outro.title,l.outro.desc,l.outro.text,...l.overview.facts.flat(),...l.outro.facts.flat(),...l.legend.map(x=>x[1]),...l.steps.flatMap(s=>[s.title,s.desc,s.detail,...s.facts.flat()])].filter(Boolean).forEach(s=>texts.add(s));}
-for(const lesson of currentLessons)for(const step of lesson.steps)for(const event of step.events)if('wire'in event){const capture=event.wire();for(const layer of [...capture.layers,...(capture.reassembled?.layers||[])])for(const field of layer.fields)texts.add(field.note)}
+for(const l of [...currentLessons,...legacyLessons,ethernetLesson]){[l.name,l.title,l.drawerFull||'',l.overview.full,l.overview.description,l.outro.title,l.outro.desc,l.outro.text,...l.overview.facts.flat(),...l.outro.facts.flat(),...l.legend.map(x=>x[1]),...l.steps.flatMap(s=>[s.title,s.desc,s.detail,...s.facts.flat()])].filter(Boolean).forEach(s=>texts.add(s));}
+for(const lesson of [...currentLessons,ethernetLesson])for(const step of lesson.steps)for(const event of step.events)if('wire'in event){const capture=event.wire();for(const layer of [...capture.layers,...(capture.reassembled?.layers||[])])for(const field of layer.fields)texts.add(field.note)}
 const strings=[...texts].filter(s=>!/^\d[\d.: /-]*$/.test(s)&&!/^\b(?:TCP|UDP|TLS|HTTP|IPv4|IPv6|ICMP|DNS)\b$/.test(s));
 writeFileSync('qa/upgrade/current-translation-inventory.json',JSON.stringify({strings,ui},null,2));
 mkdirSync('qa/upgrade/translated-locales',{recursive:true});

@@ -45,7 +45,7 @@ export const currentLessons:Lesson[]=data.map(raw=>{
  return result;
 });
 export async function prepareLesson(id:LessonId){
- const[,texts]=await Promise.all([loadModels(id),loadProse()]);
+ const[,texts]=await Promise.all([loadModels(id),loadProse()]);if(id==='websocket'&&!hydrated.has(id)){const{websocketAccept}=await import('../wire/websocket');const key=model(id,3).layers.flatMap(l=>l.parts).find(p=>p[0]==='text'&&p[1].startsWith('Sec-WebSocket-Key:'));if(!key||key[0]!=='text')throw Error('Missing WebSocket key');const accept=await websocketAccept(key[1].split(':')[1]);for(const layer of model(id,4).layers){for(const part of layer.parts)if(part[0]==='text'&&part[1].startsWith('Sec-WebSocket-Accept:'))part[1]=`Sec-WebSocket-Accept: ${accept}\r\n`;for(const field of layer.fields)if(field.value.startsWith('Sec-WebSocket-Accept:'))field.value=`Sec-WebSocket-Accept: ${accept}␍␊`}}
  const lesson=currentLessons.find(l=>l.id===id)!;
  if(!hydrated.has(id)){
   const content=texts[id];if(!content)throw Error('Missing authored lesson '+id);

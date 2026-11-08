@@ -1,5 +1,5 @@
 export type Color='blue'|'green'|'amber'|'violet'|'teal'|'slate';
-export type NodeId='client'|'router'|'dns'|'internet'|'web'|'root'|'tld'|'auth'|'mx'|'relay'|'app'|'lan'|'isp'|'transit'|'hosting'|'remote'|'peer';
+export type NodeId='client'|'router'|'dns'|'internet'|'web'|'root'|'tld'|'auth'|'mx'|'relay'|'app'|'lan'|'isp'|'transit'|'hosting'|'remote'|'peer'|'switch'|'desktop';
 export type Frame='client'|'local'|'lookup'|'full'|'root'|'tld'|'path'|'mailhost'|'backend'|'bgp'|'call'|'office'|'relay'|'route';
 export type LessonId='http'|'https'|'tcp'|'udp'|'ip'|'dns'|'dhcp'|'icmp'|'smtp'|'pop3'|'imap'|'ftp'|'ssh'|'tls'|'websocket'|'webrtc'|'quic'|'bgp'|'ipv6'|'doh'|'dnssec'|'ntp'|'wifi'|'wpa3'|'radius'|'portal'|'smb'|'proxy'|'socks'|'reverse'|'wireguard'|'ipsec'|'modbus'|'ethernet';
 export type Fact=[string,string];
