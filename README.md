@@ -93,10 +93,32 @@ Normal mode now has **34 lessons, 200 steps and 450 rows**. Ethernet adds a swit
 
 - Deep links restore a lesson, step, packet or sequence view paused; Shift+L copies the current link.
 - Compare displays packet-derived DNS, transport, encryption and response timing for 2–3 lessons.
-- L opens the seeded what-if lab for HTTP, HTTPS, TCP, UDP and QUIC. Reset to lesson restores the source capture.
+- L opens the seeded what-if lab for HTTP, HTTPS, TCP, UDP and QUIC. Repeated TCP/QUIC losses use exponential recovery backoff with an eight-retry limit; scope and remaining losses are shown. Reset to lesson restores the source capture. This is an illustrative recovery model, not a full congestion controller.
 - `/` focuses the visual packet filter. `?` shows enabled shortcuts.
-- Summary quizzes cover the supplied 20 lessons, with saved scores and packet links. Explanation terms open glossary cards.
-- Lesson options import `.pcap`/`.pcapng` captures or export grouped lesson rows as `.pcapng`. Parsing runs in a worker, with 50 MB / 100,000-packet limits and a virtualized table. Nothing is uploaded.
+- Quizzes cover all 34 lessons (102 questions), with saved scores, explicit answer feedback and packet links. Explanation terms open glossary cards.
+- Lesson options import `.pcap`/`.pcapng` captures or export grouped lesson rows as `.pcapng`. Parsing runs in a worker, with 50 MB / 100,000-packet limits and a virtualized table. Nothing is uploaded. Follow TCP stream reassembles up to 2 MB per direction, marks missing/conflicting bytes, handles retransmissions and separates reused connections. It never decrypts protected traffic.
 - Production builds precache assets, fonts, lessons and locales. Local production previews require `?sw=1`; parity mode and Vite development never register the service worker.
 
 The Phase D English static matrix passes **56/56**, with the agreed original-prose/credit exclusions. The final production overview check passes **10/10**. Motion parity remains unreliable: the reference-versus-itself control fails, so the user approved static parity as the phase gate. Spanish, German and Arabic retain documented visual differences because technical Info stays English. See `qa/upgrade/upgrade-completion.json` for the verification record. This upgrade is deployed at https://protocol-explorer-hamada.vercel.app/.
+
+
+## Learning tools and performance update
+
+The side panel exposes Guide, Quiz, Capture and Listen, plus Lab on supported lessons. First-time visitors get a dismissible introduction. These additions are hidden together by `?parity=1`.
+
+Listen uses only matching voices reported as installed locally by the browser. It never selects a remote voice or starts automatically after reload. Install a system voice if none is available; captions still work without one. Voice and reading speed preferences stay on this device. Narration pauses with playback and when the page is hidden.
+
+Quiz translations and packet-field notes load only when needed, and lesson explanations load per lesson. Lossless Latin font subsets preserve original outlines, advances and global metrics; full and native-script faces remain available. The normal app preloads the small fonts, while parity preserves the reference's initial font/camera measurement timing. Lighthouse measured **96 performance / 100 accessibility** on the compressed local production preview (mobile simulation, native Node 24); this is a local audit, not a guaranteed score on every device. Main JS remains below the approximate 80 KB gzip target. CSS remains above its original approximate 15 KB target; reference styling is retained.
+
+Offline registration waits until initial fonts are ready and the browser is idle. Navigations fetch fresh HTML first; offline fallback prefers the current release. One previous asset cache is retained for already-open tabs that request an older lazy chunk. A three-release regression test checks this upgrade path.
+
+```sh
+npm run test:playback
+npm run test:features
+node tests/offline-browser.mjs
+node tests/cache-updates-browser.mjs
+npm run preview:compressed
+npm run qa:production
+```
+
+Browser suites use the documented development/preview ports (5173 and 5175); `preview:compressed` serves `dist/` on 5177 for compressed-delivery audits. Translation and content generation commands are maintenance tools. The checked-in lazy chunks are used at runtime, with no translation service calls.

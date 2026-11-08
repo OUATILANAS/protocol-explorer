@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-11-08T14:15:35.779Z",
+  "scope": "Normal-mode improvement pass; production deployment pending final static matrix",
+  "unitTests": {
+    "passed": 162,
+    "total": 162
+  },
+  "catalog": {
+    "lessons": 34,
+    "rows": 450,
+    "quizQuestions": 102
+  },
+  "playback": {
+    "controlledFullLessons": 34,
+    "realClockFirstTwoPackets": 34
+  },
+  "accessibility": {
+    "states": 16,
+    "violations": 0
+  },
+  "browserChecks": [
+    "guide and visible tools desktop/phone",
+    "local-only narration, captions and no autoplay",
+    "stale/duplicate quiz opening",
+    "French/Arabic/Hebrew/Hindi lazy quiz and field chunks",
+    "TCP stream inspection desktop/phone",
+    "offline Japanese quiz/inspector/captions and unopened lesson",
+    "three-release cache update/retention"
+  ],
+  "lighthouse": {
+    "report": "qa/upgrade/lighthouse-improvements.json",
+    "fetchTime": "2026-11-08T14:20:20.770Z",
+    "environment": "native Node 24, compressed local production preview, mobile simulated",
+    "performance": 96,
+    "accessibility": 100
+  },
+  "bundle": {
+    "mainJavaScriptGzipBytes": 70883,
+    "mainCssGzipBytes": 22193,
+    "cssBudgetExceeded": true
+  },
+  "knownLimits": [
+    "Motion comparator reference-versus-itself control fails; static parity is the user-approved gate.",
+    "Technical packet text remains English; existing localized visual exceptions are documented.",
+    "No local system voice means captions only.",
+    "TCP recovery and QUIC PTO remain bounded illustrative models, not full congestion controllers.",
+    "Translations are machine drafts pending native editorial review."
+  ],
+  "staticParity": {
+    "passed": 56,
+    "total": 56,
+    "maxPixelPct": 0.32,
+    "report": "reference-diff/improvement-verified/report.md",
+    "exceptions": "Existing approved explanatory prose/credit masks; raw percentages retained",
+    "liveReferenceAssetsReverified": true
+  }
+}

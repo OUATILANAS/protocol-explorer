@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-11-08T03:05:08.808Z",
+  "checkedAt": "2026-11-08T14:18:12.603Z",
   "mode": "actual foreground requestAnimationFrame at supported 2× speed; normal motion",
   "results": [
     {
       "id": "http",
       "width": 1280,
-      "clock": 16532.800000000003,
+      "clock": 16532.6,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -13,7 +13,7 @@
     {
       "id": "https",
       "width": 375,
-      "clock": 11466.2,
+      "clock": 11466.399999999998,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -29,7 +29,7 @@
     {
       "id": "webrtc",
       "width": 375,
-      "clock": 7299.799999999996,
+      "clock": 7300,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -37,7 +37,7 @@
     {
       "id": "quic",
       "width": 1280,
-      "clock": 10699.599999999999,
+      "clock": 10666.200000000004,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -45,7 +45,7 @@
     {
       "id": "tcp",
       "width": 375,
-      "clock": 7299.599999999991,
+      "clock": 7299.799999999996,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -53,7 +53,7 @@
     {
       "id": "udp",
       "width": 1280,
-      "clock": 9066.399999999994,
+      "clock": 9066.400000000009,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -61,7 +61,7 @@
     {
       "id": "ip",
       "width": 375,
-      "clock": 5233.200000000012,
+      "clock": 5233,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -69,7 +69,7 @@
     {
       "id": "bgp",
       "width": 1280,
-      "clock": 4866.400000000009,
+      "clock": 4866.200000000012,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -77,7 +77,7 @@
     {
       "id": "ipv6",
       "width": 375,
-      "clock": 5233.199999999997,
+      "clock": 5233,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -85,7 +85,7 @@
     {
       "id": "ethernet",
       "width": 1280,
-      "clock": 7133,
+      "clock": 7133.200000000012,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -93,7 +93,7 @@
     {
       "id": "dns",
       "width": 375,
-      "clock": 10099.800000000003,
+      "clock": 10099.599999999991,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -101,7 +101,7 @@
     {
       "id": "doh",
       "width": 1280,
-      "clock": 7433.199999999997,
+      "clock": 7433,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -109,7 +109,7 @@
     {
       "id": "dnssec",
       "width": 375,
-      "clock": 8399.800000000003,
+      "clock": 8433.199999999997,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -117,7 +117,7 @@
     {
       "id": "dhcp",
       "width": 1280,
-      "clock": 7033.199999999997,
+      "clock": 7033.200000000012,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -125,7 +125,7 @@
     {
       "id": "icmp",
       "width": 375,
-      "clock": 9099.600000000006,
+      "clock": 9099.799999999988,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -141,7 +141,7 @@
     {
       "id": "wifi",
       "width": 375,
-      "clock": 3433.2000000000116,
+      "clock": 3433.1999999999825,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -157,7 +157,7 @@
     {
       "id": "radius",
       "width": 375,
-      "clock": 3433.2000000000116,
+      "clock": 3433.1999999999825,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -165,7 +165,7 @@
     {
       "id": "portal",
       "width": 1280,
-      "clock": 5233,
+      "clock": 5233.1999999999825,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -189,7 +189,7 @@
     {
       "id": "imap",
       "width": 375,
-      "clock": 7299.600000000006,
+      "clock": 7299.8000000000175,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -197,7 +197,7 @@
     {
       "id": "ftp",
       "width": 1280,
-      "clock": 7299.600000000006,
+      "clock": 7299.799999999988,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -205,7 +205,7 @@
     {
       "id": "smb",
       "width": 375,
-      "clock": 4399.8000000000175,
+      "clock": 4399.799999999988,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -213,7 +213,7 @@
     {
       "id": "ssh",
       "width": 1280,
-      "clock": 7299.600000000006,
+      "clock": 7299.799999999988,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -221,7 +221,7 @@
     {
       "id": "tls",
       "width": 375,
-      "clock": 7299.600000000006,
+      "clock": 7300,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -229,7 +229,7 @@
     {
       "id": "proxy",
       "width": 1280,
-      "clock": 10832.800000000017,
+      "clock": 10833,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -253,7 +253,7 @@
     {
       "id": "wireguard",
       "width": 375,
-      "clock": 9232.799999999988,
+      "clock": 9232.99999999997,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -261,7 +261,7 @@
     {
       "id": "ipsec",
       "width": 1280,
-      "clock": 7433.199999999953,
+      "clock": 7433,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
@@ -269,7 +269,7 @@
     {
       "id": "modbus",
       "width": 375,
-      "clock": 4399.600000000035,
+      "clock": 4400,
       "packets": 2,
       "hidden": [],
       "nonFinite": false
