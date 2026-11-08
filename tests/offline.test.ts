@@ -1,0 +1,2 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{offlineAllowed}from'../src/state/offline';
+test('service worker gate excludes parity and local development',()=>{assert.equal(offlineAllowed('https://example.com/',true),true);for(const url of['https://example.com/?parity=1','http://localhost/','http://127.0.0.1/'])assert.equal(offlineAllowed(url,true),false);assert.equal(offlineAllowed('http://localhost/?sw=1',true),true);assert.equal(offlineAllowed('http://localhost/?sw=1',false),false)});

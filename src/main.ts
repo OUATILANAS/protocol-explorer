@@ -195,3 +195,5 @@ if(has('deepLinks')){window.addEventListener('popstate',()=>void restoreRoute())
 if(has('filter'))document.addEventListener('keydown',e=>{if(e.key==='/'&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!overlay&&!targetEl(e)?.closest('input,textarea,select,[contenteditable],dialog,[role=menu]')){e.preventDefault();focusPacketFilter()}});
 
 if(has('capture'))void import('./ui/capture').then(m=>m.initializeCapture(()=>engine.pause(),id=>{if(lessons.some(l=>l.id===id))void selectLesson(id as LessonId)}));
+
+if(has('offline'))void import('./state/offline').then(m=>m.registerOffline());
