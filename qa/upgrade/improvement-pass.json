@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-08T14:15:35.779Z",
-  "scope": "Normal-mode improvement pass; production deployment pending final static matrix",
+  "checkedAt": "2026-11-08T14:21:58.157Z",
+  "scope": "Normal-mode improvement pass; deployed and public-browser verified",
   "unitTests": {
     "passed": 162,
     "total": 162
@@ -52,6 +52,19 @@
     "maxPixelPct": 0.32,
     "report": "reference-diff/improvement-verified/report.md",
     "exceptions": "Existing approved explanatory prose/credit masks; raw percentages retained",
-    "liveReferenceAssetsReverified": true
+    "liveReferenceAssetsReverified": true,
+    "finalBuildSmoke": {
+      "passed": 2,
+      "total": 2,
+      "report": "reference-diff/release-build-smoke/report.md"
+    }
+  },
+  "build": "pass",
+  "deployment": {
+    "id": "dpl_12GtdbFcVShDxpV3pHzNtbZPDexY",
+    "url": "https://protocol-explorer-hamada.vercel.app",
+    "codeCommit": "b87befad0674c04d0f8816b54b3d14c123dbfbc0",
+    "publicSmoke": "pass",
+    "assetHashesVerified": true
   }
 }

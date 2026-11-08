@@ -83,7 +83,7 @@ npm run build
 npx vercel@65.12.1 deploy dist --prod --yes --project protocol-explorer-hamada --scope acme-7153
 ```
 
-Production was updated on 8 November 2026 with all 34 lessons, upgrade features, the device visibility fix and readable packet pacing. The public live browser checks pass; see `qa/upgrade/production-deployment.json`.
+Production was updated on 8 November 2026 with all 34 lessons, 102 quiz questions, visible learning tools, local narration/captions, TCP stream inspection, recovery backoff, smaller initial downloads and reliable offline updates. The public live browser checks pass; see `qa/upgrade/production-deployment.json`.
 
 The Vercel project uses static files from `dist/`; it requires no backend or environment variables. Deployment and live browser checks are recorded in `qa/vercel/`.
 
