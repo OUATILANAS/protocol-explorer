@@ -9,7 +9,13 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "tsx --test tests/*.test.ts",
     "qa": "node tests/corrections-browser.mjs",
-    "compare": "node upgrade/scripts/compare-reference.mjs"
+    "compare": "node upgrade/scripts/compare-reference.mjs",
+    "test:playback": "node tests/all-lessons-playback-browser.mjs && node tests/all-lessons-realtime-browser.mjs",
+    "test:features": "node tests/guide-narration-browser.mjs && node tests/stream-browser.mjs && node tests/lazy-locales-browser.mjs && node tests/features-a11y.mjs",
+    "translations:apply": "node scripts/apply-current-translations.mjs && tsx scripts/split-quiz-translations.ts",
+    "qa:production": "node tests/production-smoke.mjs",
+    "preview:compressed": "node scripts/serve-compressed.mjs",
+    "content:generate": "tsx scripts/split-lesson-prose.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
