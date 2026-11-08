@@ -1,0 +1,2 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';import legacy from'../src/lessons/legacy-content.json';import{authored}from'../src/lessons/current-prose';import catalog from'../src/lessons/current-catalog.json';
+test('lazy prose chunks preserve every original explanation exactly',()=>{const source={...legacy,...authored};for(const lesson of catalog)assert.deepEqual(JSON.parse(readFileSync('src/lessons/prose/'+lesson.id+'.json','utf8')),source[lesson.id as keyof typeof source],lesson.id)});

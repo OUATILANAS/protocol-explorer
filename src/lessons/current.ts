@@ -1,12 +1,10 @@
+import{loadOriginalProse as loadProse}from'./prose-loader';
 import data from'./current-catalog.json';
 import type{Lesson,LessonId,NodeId,Frame,Event,PacketEvent,Fact,Color}from'../types';
 import httpCalibration from'./http-calibration.json';
 import{loadModels,model,lessonEvents}from'./model-loader';
 import{encodeRecipe}from'../wire/recipe';
 interface ReferencePacket{type:'packet';from:NodeId;to:NodeId;color:Color;label:string;payload:string[];lost?:boolean;row:PacketEvent['row']}
-type Prose={overview:string;outro:string;steps:string[]};
-let prose:Promise<Record<string,Prose>>|undefined;
-const loadProse=():Promise<Record<string,Prose>>=>prose??=Promise.all([import('./legacy-content.json'),import('./current-prose')]).then(([old,current])=>({...old.default,...current.authored} as Record<string,Prose>));
 export const catalogOrder=data.map(l=>l.id) as LessonId[];
 const hydrators=new Map<LessonId,()=>void>();
 const hydrated=new Set<LessonId>();
@@ -45,10 +43,10 @@ export const currentLessons:Lesson[]=data.map(raw=>{
  return result;
 });
 export async function prepareLesson(id:LessonId){
- const[,texts]=await Promise.all([loadModels(id),loadProse()]);if(id==='websocket'&&!hydrated.has(id)){const{websocketAccept}=await import('../wire/websocket');const key=model(id,3).layers.flatMap(l=>l.parts).find(p=>p[0]==='text'&&p[1].startsWith('Sec-WebSocket-Key:'));if(!key||key[0]!=='text')throw Error('Missing WebSocket key');const accept=await websocketAccept(key[1].split(':')[1]);for(const layer of model(id,4).layers){for(const part of layer.parts)if(part[0]==='text'&&part[1].startsWith('Sec-WebSocket-Accept:'))part[1]=`Sec-WebSocket-Accept: ${accept}\r\n`;for(const field of layer.fields)if(field.value.startsWith('Sec-WebSocket-Accept:'))field.value=`Sec-WebSocket-Accept: ${accept}␍␊`}}
+ const[,texts]=await Promise.all([loadModels(id),loadProse(id)]);if(id==='websocket'&&!hydrated.has(id)){const{websocketAccept}=await import('../wire/websocket');const key=model(id,3).layers.flatMap(l=>l.parts).find(p=>p[0]==='text'&&p[1].startsWith('Sec-WebSocket-Key:'));if(!key||key[0]!=='text')throw Error('Missing WebSocket key');const accept=await websocketAccept(key[1].split(':')[1]);for(const layer of model(id,4).layers){for(const part of layer.parts)if(part[0]==='text'&&part[1].startsWith('Sec-WebSocket-Accept:'))part[1]=`Sec-WebSocket-Accept: ${accept}\r\n`;for(const field of layer.fields)if(field.value.startsWith('Sec-WebSocket-Accept:'))field.value=`Sec-WebSocket-Accept: ${accept}␍␊`}}
  const lesson=currentLessons.find(l=>l.id===id)!;
  if(!hydrated.has(id)){
-  const content=texts[id];if(!content)throw Error('Missing authored lesson '+id);
+  const content=texts;if(!content)throw Error('Missing authored lesson '+id);
   lesson.overview.description=content.overview;lesson.outro.text=content.outro;
   lesson.steps.forEach((step,index)=>{if(!content.steps[index])throw Error(`Missing explanation ${id}/${index}`);step.detail=content.steps[index]});
   hydrators.get(id)!();hydrated.add(id);
