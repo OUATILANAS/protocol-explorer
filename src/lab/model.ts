@@ -10,10 +10,10 @@ export function labRun(base:Lesson,settings:LabSettings):LabResult{
  const original=base.steps.flatMap(s=>s.events).filter(isPacket),last=Number(original.at(-1)?.row.time)||0;
  const reliable=base.id!=='udp';
  const steps=base.steps.map(step=>({...step,facts:step.facts.map(f=>[...f] as [string,string]),events:step.events.flatMap((event):Event[]=>{
-  if(!isPacket(event))return[{...event}];const drop=random()*100<loss,p:PacketEvent={...event,lines:[...event.lines],row:{...event.row,time:(Number(event.row.time)*scale+delay).toFixed(3)},lost:drop,labStatus:drop?'lost':undefined,sequence:event.sequence?{...event.sequence,latency:event.sequence.latency*scale}:undefined};if(!drop)return[p];lost++;
+  if(!isPacket(event))return[{...event}];const drop=random()*100<loss,p:PacketEvent={...event,lines:[...event.lines],row:{...event.row,time:(Number(event.row.time)*scale+delay).toFixed(3)},lost:drop,labStatus:drop?'lost':undefined,sequence:event.sequence?{...event.sequence,at:(Number(event.row.time)*scale+delay)*1000,latency:event.sequence.latency*scale}:undefined};if(!drop)return[p];lost++;
   if(!reliable)return[p];
   const index=original.indexOf(event),duplicateAcks=original.slice(index+1,index+5).filter(q=>/Dup ACK/.test(q.row.info)).length,timeout=base.id==='quic'?Math.max(.02,3*rtt/1000):duplicateAcks>=3?rtt/1000:1;
-  delay+=timeout;resent++;const repeat:PacketEvent={...p,row:{...p.row,time:(Number(p.row.time)+timeout).toFixed(3)},lost:false,labStatus:'resent',tag:p.tag+' · RESENT'};
+  delay+=timeout;resent++;const repeat:PacketEvent={...p,row:{...p.row,time:(Number(p.row.time)+timeout).toFixed(3)},lost:false,labStatus:'resent',sequence:p.sequence?{...p.sequence,at:(Number(p.row.time)+timeout)*1000}:undefined,tag:p.tag+' · RESENT'};
   return[p,{type:'wait',duration:timeout*1000},repeat];
  })}));
  const duration=last*scale+delay;return{lesson:{...base,steps,labTiming:scale,legend:[...base.legend,[null,'Lab run · not the lesson capture']]},lost,resent,ratio:last?duration/last:scale,baselineRtt,duration};

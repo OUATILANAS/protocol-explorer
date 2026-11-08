@@ -1,0 +1,52 @@
+[
+  {
+    "theme": "light",
+    "state": "compare",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "lab",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "quiz",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "quiz-answer",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "capture",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "compare",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "lab",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "quiz",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "quiz-answer",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "capture",
+    "violations": []
+  }
+]

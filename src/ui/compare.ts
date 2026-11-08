@@ -11,7 +11,7 @@ export async function renderCompare(lessons:Lesson[],prepare:(id:LessonId)=>Prom
  host.innerHTML='<div class="compare-heading">'+escape(tr('Time from first packet · original capture timing'))+'</div><svg viewBox="0 0 800 '+height+'" role="img" aria-label="'+escape(tr('Lesson timing comparison'))+'">'+axis.map(t=>'<line x1="'+x(t)+'" x2="'+x(t)+'" y1="30" y2="'+(height-45)+'" stroke="var(--line-soft)"/>'+text(x(t),height-20,Number(t.toFixed(1))+' ms','text-anchor="middle"')).join('')+data.map((d,i)=>{
   const y=65+i*95;
   return text(10,y+5,d.name,'class="compare-name"')+d.phases.map(p=>'<rect x="'+x(p.start)+'" y="'+(y-15)+'" width="'+Math.max(2,x(p.end)-x(p.start))+'" height="28" fill="var(--'+p.color+')" fill-opacity=".16" stroke="var(--'+p.color+')"/>'+text(x(p.start)+5,y+3,tr(p.name))).join('')+
-   (d.request===null?'':'<path d="M'+x(d.request)+' '+(y-30)+'v55" stroke="var(--amber)" stroke-width="2"/>'+text(x(d.request)+4,y-34,'GET '+Number(d.request.toFixed(1))+' ms','style="fill:var(--amber)"'))+
+   (d.request===null?'':'<path d="M'+x(d.request)+' '+(y-30)+'v55" stroke="var(--amber)" stroke-width="2"/>'+text(x(d.request)+4,y-34,'GET '+Number(d.request.toFixed(1))+' ms','style="fill:var(--upgrade-amber-ink)"'))+
    (d.firstByte===null?'':'<path d="M'+(x(d.firstByte)-4)+' '+(y+24)+'l4-7 4 7Z" fill="var(--green)"/>'+text(x(d.firstByte)+6,y+30,Number(d.firstByte.toFixed(1))+' ms','style="fill:var(--green)"'));
  }).join('')+'</svg>';
  const side=document.querySelector<HTMLElement>('#side-panel')!;

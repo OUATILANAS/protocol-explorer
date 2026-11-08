@@ -55,7 +55,7 @@ The current upgrade browser checks use Playwright Chromium. Legacy browser check
 npx tsx scripts/export-captures.ts
 ```
 
-During development the lesson options menu exports the current capture as `.pcap`. It is excluded from production. The HTTP seven-row capture exports 15 actual frames because its final row represents nine segments. Wireshark/tshark can decode the files without a backend.
+The parity development menu exports classic `.pcap`; normal mode exports `.pcapng` in production too. The HTTP seven-row capture exports 15 actual frames because its final row represents nine segments. Wireshark/tshark can decode the files without a backend.
 
 Translation regeneration scripts are build-time maintenance tools only; they use an online translation service and are never included in the shipped app. The checked-in locale modules need no network service at runtime.
 
@@ -70,7 +70,7 @@ npm run compare -- --only motion
 
 `npm run compare` runs the upgrade comparator, which enables `?parity=1`. The supplied comparator defaults to the development server on port 5173. To compare the production build, start `npm run preview` and pass `--local http://127.0.0.1:4173/`. Reports, screenshots, differences and motion traces are written under `reference-diff/` and are excluded from Git. Its cases, tolerances and ignore list are unchanged. See `DECISIONS.md` for failing cases and the limits of exact comparisons with retained prose and changing full-page camera bounds.
 
-`src/styles/measured.css` contains the shared measured component styles and raw color remaps. `src/ui/motion.ts` implements frame-driven text/panel swaps; packet routes and camera interpolation remain in `src/sim/`. The comparison does not currently pass in full; a successful build or packet test is not a visual-match claim.
+`src/styles/measured.css` contains the shared measured component styles and raw color remaps. `src/ui/motion.ts` implements frame-driven text/panel swaps; packet routes and camera interpolation remain in `src/sim/`. The full motion comparison remains unresolved; English static parity passes under the agreed phase gate.
 
 ## Vercel production
 
@@ -86,3 +86,17 @@ npx vercel@65.12.1 deploy dist --prod --yes --project protocol-explorer-hamada -
 The currently deployed site predates the in-progress 33-lesson upgrade. Local verification does not deploy changes.
 
 The Vercel project uses static files from `dist/`; it requires no backend or environment variables. Deployment and live browser checks are recorded in `qa/vercel/`.
+
+## Upgrade features
+
+Normal mode now has **34 lessons, 200 steps and 450 rows**. Ethernet adds a switch, desktop, computed frames and a live MAC learning table. `?parity=1` disables all upgrade features together and retains the 33-lesson reference catalog.
+
+- Deep links restore a lesson, step, packet or sequence view paused; Shift+L copies the current link.
+- Compare displays packet-derived DNS, transport, encryption and response timing for 2–3 lessons.
+- L opens the seeded what-if lab for HTTP, HTTPS, TCP, UDP and QUIC. Reset to lesson restores the source capture.
+- `/` focuses the visual packet filter. `?` shows enabled shortcuts.
+- Summary quizzes cover the supplied 20 lessons, with saved scores and packet links. Explanation terms open glossary cards.
+- Lesson options import `.pcap`/`.pcapng` captures or export grouped lesson rows as `.pcapng`. Parsing runs in a worker, with 50 MB / 100,000-packet limits and a virtualized table. Nothing is uploaded.
+- Production builds precache assets, fonts, lessons and locales. Local production previews require `?sw=1`; parity mode and Vite development never register the service worker.
+
+The Phase D English static matrix passes **56/56**, with the agreed original-prose/credit exclusions. The final production overview check passes **10/10**. Motion parity remains unreliable: the reference-versus-itself control fails, so the user approved static parity as the phase gate. Spanish, German and Arabic retain documented visual differences because technical Info stays English. See `qa/upgrade/upgrade-completion.json` for the verification record. This local upgrade has not been deployed to production.
