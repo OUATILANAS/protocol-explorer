@@ -11,8 +11,8 @@ export default defineConfig({
   const version=createHash('sha256').update(JSON.stringify(paths)).digest('hex').slice(0,16);
   const source=`const CACHE='protocol-explorer-${version}',FILES=${JSON.stringify(paths)};
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('protocol-explorer-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',event=>{const request=event.request,url=new URL(request.url);if(request.method!=='GET'||url.origin!==self.location.origin||url.searchParams.get('parity')==='1')return;event.respondWith(caches.match(request,{ignoreSearch:true}).then(hit=>hit||fetch(request).catch(error=>{if(request.mode==='navigate')return caches.match(new URL('index.html',self.registration.scope));throw error})))})`;
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('protocol-explorer-')&&key!==CACHE).slice(0,-1).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{const request=event.request,url=new URL(request.url);if(request.method!=='GET'||url.origin!==self.location.origin||url.searchParams.get('parity')==='1')return;if(request.mode==='navigate'){event.respondWith(fetch(request).then(async response=>{if(response.ok){const cache=await caches.open(CACHE);await cache.put(new URL('index.html',self.registration.scope),response.clone())}return response}).catch(()=>caches.open(CACHE).then(cache=>cache.match(new URL('index.html',self.registration.scope)))));return}event.respondWith(caches.open(CACHE).then(cache=>cache.match(request,{ignoreSearch:true})).then(hit=>hit||caches.match(request,{ignoreSearch:true})).then(hit=>hit||fetch(request).catch(error=>{if(request.mode==='navigate')return caches.match(new URL('index.html',self.registration.scope));throw error})))})`;
   this.emitFile({type:'asset',fileName:'sw.js',source});
  }}
 },{
