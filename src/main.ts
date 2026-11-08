@@ -1,3 +1,4 @@
+import{updateGlossary}from'./ui/glossary';
 import{canQuiz,showQuiz}from'./ui/quiz';
 import{updatePacketFilter,focusPacketFilter}from'./ui/packet-filter';
 import{parseRoute,routeHash}from'./state/router';import{toast}from'./ui/toast';
@@ -52,7 +53,7 @@ function renderSide(lesson:ReturnType<typeof localizedLesson>){
   slideSwap(body,()=>{
    const next=document.createElement('div');next.innerHTML=content();const nextBody=next.querySelector<HTMLElement>('.side-body')!;
    if(sameDetails&&body.querySelector('.step-counter')){for(const selector of ['.step-counter',':scope>h3','.step-subtitle','.description','.facts']){const target=body.querySelector(selector),source=nextBody.querySelector(selector);if(target&&source)target.innerHTML=source.innerHTML}updateCard(host,next)}
-   else {body.className=nextBody.className;body.innerHTML=nextBody.innerHTML}updateQuizEntry();
+   else {body.className=nextBody.className;body.innerHTML=nextBody.innerHTML}updateQuizEntry();updateGlossary(lessonPackets(),openPacket);
   },{dir:index>=previousRank?1:-1,distance:previousKind==='overview'||kind==='overview'?32:24});
   return;
  }
@@ -67,7 +68,7 @@ function updateCard(host:Element,next:Element){
  if(wasOpen)slideSwap(inner,update,{dir:/→ (CLIENT|DNS RESOLVER)/i.test(nextCard.querySelector('.route')!.textContent||'')?1:-1,distance:18});else update();
 }
 function updateQuizEntry(){if(!has('quiz'))return;const body=$('#side-panel .side-body');if(!body)return;const visible=engine.complete&&canQuiz(engine.lessonId);const existing=body.querySelector('.quiz-entry');if(!visible){existing?.remove();return}if(!existing)body.insertAdjacentHTML('beforeend',`<button class="btn quiz-entry" data-action="quiz">${tr('Check yourself')}</button>`)}
-function renderFrame(){updateQuizEntry();
+function renderFrame(){updateQuizEntry();updateGlossary(lessonPackets(),openPacket);
  const s=engine.scene,p=s.active,chip=$('#packet-chip');
  for(const id of Object.keys(nodes) as NodeId[]){const fallback=nodeLabel(id,engine.lesson),label=s.labels?.[id]||[fallback.name,fallback.ip];const node=document.querySelector(`[data-node="${id}"]`),name=node?.querySelector('.node-name'),ip=node?.querySelector('.node-ip');if(name&&name.textContent!==tr(label[0]))name.textContent=tr(label[0]);if(ip&&ip.textContent!==technical(label[1]))ip.textContent=technical(label[1])}
 

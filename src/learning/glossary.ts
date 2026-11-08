@@ -1,0 +1,3 @@
+export interface TermMatch{start:number;end:number;term:string}
+/** Long terms take precedence; each term is marked once per explanation. */
+export function glossaryMatches(text:string,terms:string[]):TermMatch[]{const candidates:TermMatch[]=[],word=(char:string)=>/[\p{L}\p{N}_]/u.test(char);for(const term of [...terms].sort((a,b)=>b.length-a.length)){const query=term.toLocaleLowerCase(),lower=text.toLocaleLowerCase();let at=0;while((at=lower.indexOf(query,at))>=0){const end=at+term.length;if((at===0||!word(text[at-1]))&&(end===text.length||!word(text[end]))&&!candidates.some(m=>at<m.end&&end>m.start)){candidates.push({start:at,end,term});break}at=end}}return candidates.sort((a,b)=>a.start-b.start)}
