@@ -15,7 +15,8 @@
     "translations:apply": "node scripts/apply-current-translations.mjs && tsx scripts/split-quiz-translations.ts",
     "qa:production": "node tests/production-smoke.mjs",
     "preview:compressed": "node scripts/serve-compressed.mjs",
-    "content:generate": "tsx scripts/split-lesson-prose.ts"
+    "content:generate": "tsx scripts/split-lesson-prose.ts",
+    "test:theme": "node tests/theme-transition-browser.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

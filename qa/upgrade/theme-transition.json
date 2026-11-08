@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-11-08T16:07:16.318Z",
+  "reference": "https://protocol-explorer-alpha.vercel.app/",
+  "results": [
+    {
+      "width": 1280,
+      "reduced": false,
+      "matchedReference": true,
+      "maxGeometryDelta": 0
+    },
+    {
+      "width": 1280,
+      "reduced": true,
+      "matchedReference": true,
+      "maxGeometryDelta": 0
+    },
+    {
+      "width": 375,
+      "reduced": false,
+      "matchedReference": true,
+      "maxGeometryDelta": 0.015625
+    },
+    {
+      "width": 375,
+      "reduced": true,
+      "matchedReference": true,
+      "maxGeometryDelta": 0
+    }
+  ],
+  "unsupportedBrowserFallback": "pass",
+  "rapidSwitch": "pass",
+  "reloadWithoutAnimation": "pass"
+}

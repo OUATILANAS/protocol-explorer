@@ -115,6 +115,7 @@ Offline registration waits until initial fonts are ready and the browser is idle
 ```sh
 npm run test:playback
 npm run test:features
+npm run test:theme
 node tests/offline-browser.mjs
 node tests/cache-updates-browser.mjs
 npm run preview:compressed
@@ -122,3 +123,5 @@ npm run qa:production
 ```
 
 Browser suites use the documented development/preview ports (5173 and 5175); `preview:compressed` serves `dist/` on 5177 for compressed-delivery audits. Translation and content generation commands are maintenance tools. The checked-in lazy chunks are used at runtime, with no translation service calls.
+
+Theme changes use the reference's 650ms circular View Transition from the clicked sun/moon control. Reduced motion and unsupported browsers switch immediately; startup/reload never animate. `test:theme` compares both directions with the live reference at desktop and phone widths, including rapid switching and saved preferences.
