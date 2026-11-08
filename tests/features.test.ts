@@ -1,6 +1,6 @@
 import{test}from'node:test';import assert from'node:assert/strict';
 import{featurePolicy,type Feature}from'../src/features';
-const features:Feature[]=['lab','compare','quiz','filter','glossary','capture','shortcuts','offline','deepLinks','newLessons','readablePlayback'];
+const features:Feature[]=['lab','compare','quiz','filter','glossary','capture','shortcuts','offline','deepLinks','newLessons','readablePlayback','guide','narration','efficientScene'];
 test('parity disables every upgrade through one policy',()=>{
  for(const feature of features){assert.equal(featurePolicy('?parity=1').has(feature),false,feature);assert.equal(featurePolicy('').has(feature),true,feature)}
 });

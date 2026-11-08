@@ -1,0 +1,4 @@
+/** Local voices only: never select a browser voice backed by a remote service. */
+export function localVoices<T extends{localService:boolean;lang:string}>(voices:T[],language:string){const base=language.toLowerCase().split('-')[0];return voices.filter(v=>v.localService&&v.lang.toLowerCase().split('-')[0]===base)}
+export function narrationText(lesson:{name:string;overview:{description:string};steps:{title:string;detail:string}[];outro:{title:string;text:string}},index:number){return index<0?lesson.name+'. '+lesson.overview.description:index>=lesson.steps.length?lesson.outro.title+'. '+lesson.outro.text:lesson.steps[index].title+'. '+lesson.steps[index].detail}
+export function sentenceAt(text:string,offset:number){const sentences=[...text.matchAll(/[\s\S]+?(?:[.!?](?=\s|$)|$)/g)];const match=sentences.find(m=>offset>=m.index!&&offset<m.index!+m[0].length)||sentences[0];return match?.[0].trim()||text}

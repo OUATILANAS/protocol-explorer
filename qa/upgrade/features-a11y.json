@@ -25,6 +25,21 @@
     "violations": []
   },
   {
+    "theme": "light",
+    "state": "stream",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "guide",
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "state": "narration",
+    "violations": []
+  },
+  {
     "theme": "dark",
     "state": "compare",
     "violations": []
@@ -47,6 +62,21 @@
   {
     "theme": "dark",
     "state": "capture",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "stream",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "guide",
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "state": "narration",
     "violations": []
   }
 ]
