@@ -79,7 +79,7 @@ export class Engine {
    if(!timed){this.apply(event);this.eventIndex++;this.onChange();continue}
    if(!this.started){
     this.started=true;this.elapsed=0;
-    this.duration=reduced?1:event.type==='wait'?event.duration:event.type==='type-url'?(timing?timing.urlHold+event.text.length*timing.characterTime:1100):timing?packetFlight(event.from,event.to,this.lesson.nodes).duration:900*(this.lesson.latency[`${event.from}-${event.to}`]||1);
+    this.duration=reduced?1:event.type==='wait'?event.duration:event.type==='type-url'?(timing?timing.urlHold+event.text.length*timing.characterTime:1100):timing?packetFlight(event.from,event.to,this.lesson.nodes).duration:900*(this.lesson.latency[`${event.from}-${event.to}`]||1);if(!reduced&&isPacket(event)&&this.lesson.labTiming)this.duration*=this.lesson.labTiming;
     if(isPacket(event)){this.scene.active=event;this.scene.fraction=0}
     else if(event.type==='type-url'){this.scene.url='';this.scene.urlVisible=true;this.scene.urlLoaded=false;this.scene.urlTyping=true}
     this.onChange();
