@@ -79,7 +79,7 @@
     ],
     "http3": [
       {
-        "q": "Why is the client's first QUIC datagram padded to 1,200 bytes?",
+        "q": "Why must a client QUIC Initial datagram be at least 1,200 bytes?",
         "options": [
           "So the server can't be used to amplify attacks",
           "Because UDP has a minimum size",
@@ -88,7 +88,7 @@
         ],
         "answer": 0,
         "why": "The server may send at most three times what it received until the address is verified.",
-        "packet": 3
+        "packet": 2
       },
       {
         "q": "When does the GET leave in HTTP/3?",
@@ -289,7 +289,7 @@
           "The web server"
         ],
         "answer": 0,
-        "why": "The Router Advertisement provides 2001:db8:1::/64; the laptop adds its 64-bit identifier.",
+        "why": "The Router Advertisement supplies the 2001:db8:1234:5678::/64 prefix. The laptop combines it with its interface identifier.",
         "packet": 3
       },
       {
@@ -345,16 +345,16 @@
     ],
     "wifi": [
       {
-        "q": "Does the Wi-Fi password travel over the air in WPA3?",
+        "q": "Does WPA2 send the Wi-Fi password in the four-way handshake?",
         "options": [
-          "No; SAE proves knowledge of it without sending it",
-          "Yes, encrypted with AES",
-          "Yes, hashed",
-          "Only in the beacon"
+          "No; the peers prove that they derived matching keys",
+          "Yes, in the beacon",
+          "Yes, in the association request",
+          "Only when the password is short"
         ],
         "answer": 0,
-        "why": "SAE exchanges commit and confirm values derived from the password.",
-        "packet": 2
+        "why": "The peers exchange nonces and authentication tags. They derive keys from the shared secret without sending that secret.",
+        "packet": 9
       },
       {
         "q": "What does the 4-way handshake produce?",
@@ -366,7 +366,7 @@
         ],
         "answer": 0,
         "why": "Nonces plus the PMK give the PTK; message 3 delivers the GTK.",
-        "packet": 8
+        "packet": 10
       },
       {
         "q": "Which fields of an encrypted data frame are still visible?",
@@ -433,28 +433,28 @@
         "packet": 9
       },
       {
-        "q": "What does DNSSEC add?",
+        "q": "Why does this DoH connection use TCP port 443?",
         "options": [
-          "Proof the answer wasn't forged (signatures)",
-          "Encryption of the query",
-          "Faster lookups",
-          "A new port"
+          "It carries DNS messages inside HTTPS",
+          "DNS always requires TCP port 443",
+          "The DNS answer chooses that port",
+          "Port 53 is reserved for email"
         ],
         "answer": 0,
-        "why": "RRSIG records are verified with DNSKEYs chained to the root.",
-        "packet": 11
+        "why": "DoH uses an HTTPS connection to the resolver. The DNS message is application data protected by TLS.",
+        "packet": 9
       },
       {
-        "q": "What can an observer still see after DoH?",
+        "q": "What can an observer read in the first ordinary DNS exchange?",
         "options": [
-          "The SNI of the site you then connect to (without ECH)",
-          "The DNS question",
-          "The DNS answer",
-          "Nothing at all"
+          "The queried name and the returned IP address",
+          "Only encrypted DNS bytes",
+          "The TLS session key",
+          "The Wi-Fi password"
         ],
         "answer": 0,
-        "why": "Encrypted Client Hello is needed to hide the site name in TLS.",
-        "packet": 14
+        "why": "The first query and response are plain DNS over UDP. The later DoH messages hide their DNS contents inside TLS.",
+        "packet": 1
       }
     ],
     "dhcp": [
