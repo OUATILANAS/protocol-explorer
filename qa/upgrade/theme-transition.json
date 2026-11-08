@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-08T16:07:16.318Z",
+  "checkedAt": "2026-11-08T16:08:49.507Z",
   "reference": "https://protocol-explorer-alpha.vercel.app/",
   "results": [
     {
@@ -29,5 +29,13 @@
   ],
   "unsupportedBrowserFallback": "pass",
   "rapidSwitch": "pass",
-  "reloadWithoutAnimation": "pass"
+  "reloadWithoutAnimation": "pass",
+  "localTestUrl": "https://protocol-explorer-hamada.vercel.app",
+  "deployment": {
+    "id": "dpl_6DEhPm2TqhH3mtpGpuT5v3QrRsPG",
+    "codeCommit": "579a80029f00089dd476103c88841bd3e798943f",
+    "readyState": "READY",
+    "publicSmoke": "pass",
+    "assetHashesVerified": true
+  }
 }

@@ -1,22 +1,22 @@
 {
-  "id": "dpl_12GtdbFcVShDxpV3pHzNtbZPDexY",
-  "url": "https://protocol-explorer-hamada-f8mfqxhg1-acme-7153.vercel.app",
+  "id": "dpl_6DEhPm2TqhH3mtpGpuT5v3QrRsPG",
+  "url": "https://protocol-explorer-hamada-kqow5c5xk-acme-7153.vercel.app",
   "productionUrl": "https://protocol-explorer-hamada.vercel.app",
   "readyState": "READY",
   "target": "production",
-  "checkedAt": "2026-11-08T14:21:58.157Z",
-  "codeCommit": "b87befad0674c04d0f8816b54b3d14c123dbfbc0",
+  "checkedAt": "2026-11-08T16:09:00.005Z",
+  "codeCommit": "579a80029f00089dd476103c88841bd3e798943f",
   "unitTests": {
     "passed": 162,
     "total": 162
   },
   "build": "pass",
   "smoke": {
-    "checkedAt": "2026-11-08T14:21:58.157Z",
+    "checkedAt": "2026-11-08T16:09:00.005Z",
     "url": "https://protocol-explorer-hamada.vercel.app/",
     "status": 200,
     "lessons": 34,
-    "tlsFirstTwoDeparturesMs": 4474,
+    "tlsFirstTwoDeparturesMs": 4500,
     "checks": [
       "public access",
       "34 upgraded lessons",
@@ -36,12 +36,12 @@
   },
   "assets": [
     {
-      "file": "index-CTBUjttD.js",
-      "sha256": "50e4bad41d42ca85b7d41a67a2766a1532840ec165a97ea7e8b7932765c704e1"
+      "file": "index-B6fNKKWa.js",
+      "sha256": "25a22761287511f9426e6b4496946d74a0521ed1a35c9195466b66acff0497c4"
     },
     {
-      "file": "index-DmqYDRHS.css",
-      "sha256": "8e52b8dbc0f416d9fbfcdbe97fb206de0d8879e1bd4daf99a090b067060a8139"
+      "file": "index-CAkcSQ5L.css",
+      "sha256": "fc4043213b18d3d7389418314383f55408499ef55b2db40f63fb3d4328c3cc7c"
     }
   ]
 }
