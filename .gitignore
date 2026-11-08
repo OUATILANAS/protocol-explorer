@@ -12,3 +12,5 @@ qa/**/*.png
 qa/reference-33/
 
 qa/upgrade/translated-locales/
+
+dist-offline/
