@@ -1,0 +1,245 @@
+{
+  "checkedAt": "2026-11-08T13:18:24.521Z",
+  "mode": "normal motion; controlled 50ms simulation increments, no reduced-motion shortcut",
+  "results": [
+    {
+      "id": "http",
+      "steps": 6,
+      "packets": 7,
+      "ticks": 868,
+      "faults": []
+    },
+    {
+      "id": "https",
+      "steps": 7,
+      "packets": 11,
+      "ticks": 1197,
+      "faults": []
+    },
+    {
+      "id": "websocket",
+      "steps": 7,
+      "packets": 11,
+      "ticks": 1150,
+      "faults": []
+    },
+    {
+      "id": "webrtc",
+      "steps": 9,
+      "packets": 20,
+      "ticks": 2048,
+      "faults": []
+    },
+    {
+      "id": "quic",
+      "steps": 7,
+      "packets": 10,
+      "ticks": 1098,
+      "faults": []
+    },
+    {
+      "id": "tcp",
+      "steps": 7,
+      "packets": 14,
+      "ticks": 1405,
+      "faults": []
+    },
+    {
+      "id": "udp",
+      "steps": 6,
+      "packets": 11,
+      "ticks": 1112,
+      "faults": []
+    },
+    {
+      "id": "ip",
+      "steps": 6,
+      "packets": 6,
+      "ticks": 507,
+      "faults": []
+    },
+    {
+      "id": "bgp",
+      "steps": 9,
+      "packets": 13,
+      "ticks": 914,
+      "faults": []
+    },
+    {
+      "id": "ipv6",
+      "steps": 7,
+      "packets": 6,
+      "ticks": 494,
+      "faults": []
+    },
+    {
+      "id": "ethernet",
+      "steps": 6,
+      "packets": 5,
+      "ticks": 487,
+      "faults": []
+    },
+    {
+      "id": "dns",
+      "steps": 6,
+      "packets": 8,
+      "ticks": 808,
+      "faults": []
+    },
+    {
+      "id": "doh",
+      "steps": 6,
+      "packets": 10,
+      "ticks": 1042,
+      "faults": []
+    },
+    {
+      "id": "dnssec",
+      "steps": 7,
+      "packets": 8,
+      "ticks": 808,
+      "faults": []
+    },
+    {
+      "id": "dhcp",
+      "steps": 7,
+      "packets": 6,
+      "ticks": 494,
+      "faults": []
+    },
+    {
+      "id": "icmp",
+      "steps": 7,
+      "packets": 10,
+      "ticks": 951,
+      "faults": []
+    },
+    {
+      "id": "ntp",
+      "steps": 6,
+      "packets": 2,
+      "ticks": 350,
+      "faults": []
+    },
+    {
+      "id": "wifi",
+      "steps": 6,
+      "packets": 12,
+      "ticks": 736,
+      "faults": []
+    },
+    {
+      "id": "wpa3",
+      "steps": 6,
+      "packets": 11,
+      "ticks": 690,
+      "faults": []
+    },
+    {
+      "id": "radius",
+      "steps": 9,
+      "packets": 21,
+      "ticks": 1223,
+      "faults": []
+    },
+    {
+      "id": "portal",
+      "steps": 7,
+      "packets": 19,
+      "ticks": 1289,
+      "faults": []
+    },
+    {
+      "id": "smtp",
+      "steps": 7,
+      "packets": 36,
+      "ticks": 2944,
+      "faults": []
+    },
+    {
+      "id": "pop3",
+      "steps": 6,
+      "packets": 21,
+      "ticks": 1963,
+      "faults": []
+    },
+    {
+      "id": "imap",
+      "steps": 6,
+      "packets": 18,
+      "ticks": 1709,
+      "faults": []
+    },
+    {
+      "id": "ftp",
+      "steps": 7,
+      "packets": 24,
+      "ticks": 2256,
+      "faults": []
+    },
+    {
+      "id": "smb",
+      "steps": 9,
+      "packets": 17,
+      "ticks": 1236,
+      "faults": []
+    },
+    {
+      "id": "ssh",
+      "steps": 7,
+      "packets": 29,
+      "ticks": 2679,
+      "faults": []
+    },
+    {
+      "id": "tls",
+      "steps": 7,
+      "packets": 14,
+      "ticks": 1406,
+      "faults": []
+    },
+    {
+      "id": "proxy",
+      "steps": 8,
+      "packets": 17,
+      "ticks": 1611,
+      "faults": []
+    },
+    {
+      "id": "socks",
+      "steps": 5,
+      "packets": 14,
+      "ticks": 1274,
+      "faults": []
+    },
+    {
+      "id": "reverse",
+      "steps": 7,
+      "packets": 13,
+      "ticks": 1111,
+      "faults": []
+    },
+    {
+      "id": "wireguard",
+      "steps": 7,
+      "packets": 7,
+      "ticks": 790,
+      "faults": []
+    },
+    {
+      "id": "ipsec",
+      "steps": 7,
+      "packets": 8,
+      "ticks": 875,
+      "faults": []
+    },
+    {
+      "id": "modbus",
+      "steps": 7,
+      "packets": 11,
+      "ticks": 830,
+      "faults": []
+    }
+  ],
+  "errors": []
+}
