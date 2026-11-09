@@ -1,1 +1,1 @@
-export const config = { name: 'Protocol Explorer', tagline: 'Learn how the internet works', credit: '@Anas', creditUrl: 'https://x.com/', description: 'Explore the internet one packet at a time. Interactive networking lessons with live diagrams and a byte-level packet inspector.' };
+export const config = { name: 'Protocol Explorer', tagline: 'Learn how the internet works', credit: '@Hamada', creditUrl: 'https://x.com/', description: 'Explore the internet one packet at a time. Interactive networking lessons with live diagrams and a byte-level packet inspector.' };
